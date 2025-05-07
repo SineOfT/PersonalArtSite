@@ -1,0 +1,44 @@
+{
+    "ghibli": {
+        "title": "Studio Ghibli Artworks",
+        "start-year": 2024,
+        "end-year": "",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "artworks": [
+            "ponyo",
+            "medium-totoro"
+        ],
+        "thumbnail": "medium-totoro"
+    },
+    "ink24": {
+        "title": "Inktober 2024",
+        "start-year": 2024,
+        "end-year": 2024,
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "artworks": [
+            "tomioka-ink24",
+            "rengoku-ink24"
+        ],
+        "thumbnail": "tomioka-ink24"
+    },
+    "kny-animal": {
+        "title": "Kimetsu no Yaiba + Favorite Animal Series",
+        "start-year": 2025,
+        "end-year": "",
+        "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "artworks": [
+            "kanroji-bunny"
+        ],
+        "thumbnail": "kanroji-bunny"
+    },
+    "pokemon": {
+        "title": "Pokemon Artworks",
+        "start-year": 2024,
+        "end-year": "",
+        "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "artworks": [
+            "mimikyu"
+        ],
+        "thumbnail": "mimikyu"
+    }
+}

@@ -1,0 +1,39 @@
+<dialog id="focus-artwork-modal">
+    <div class="focus-artwork-container">
+        <div class="focus-artwork-heading flex-row-between">
+            <button class="focus-artwork-control close-button">X</button>
+            <h2 class="focus-artwork-title heading-inline fs-m"></h2>
+            <span class="focus-artwork-year text-secondary fs-m"></span>
+        </div>
+        <div class="focus-artwork-image-container">
+            <img src="assets/artworks/not-found.png" class="focus-artwork-image" />
+        </div>
+        <div class="focus-artwork-control-container flex-row-between">
+            <div class="flex-row-between">
+                <button class="focus-artwork-control control-zoom-out">-</button>
+                <div>
+                    <div class="control-zoom-display"></div>
+                    <div>Zoom on Hover</div>
+                </div>
+                <button class="focus-artwork-control control-zoom-in">+</button>
+            </div>
+            <div class="focus-artwork-control-layer flex-row-between">
+                <button class="focus-artwork-control control-layer-up">^</button>
+                <button class="focus-artwork-control control-layer-down">v</button>
+            </div>
+        </div>
+    </div>
+</dialog>
+
+<script type="module" defer>
+    import initFocusArtwork from "../scripts/focus-artwork.js";
+
+    const artworksData = %__ARTWORKS_DATA__%;
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+        initFocusArtwork(artworksData);
+
+    }, { once: true });
+
+</script>

@@ -1,0 +1,32 @@
+[
+    {
+        "sectionId": "home",
+        "hashId": "",
+        "title": "Home",
+        "fade": false
+    },
+    {
+        "sectionId": "digital",
+        "hashId": "digital",
+        "title": "Digital",
+        "fade": true
+    },
+    {
+        "sectionId": "digital2",
+        "hashId": "digital2",
+        "title": "Digital2",
+        "fade": true
+    },
+    {
+        "sectionId": "timeline",
+        "hashId": "timeline",
+        "title": "Timeline",
+        "fade": true
+    },
+    {
+        "sectionId": "end",
+        "hashId": "footer",
+        "title": "Footer",
+        "fade": false
+    }
+]

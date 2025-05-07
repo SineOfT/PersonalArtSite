@@ -1,0 +1,52 @@
+{
+    "kanroji-bunny": {
+        "title": "Kanroji Mitsuri + Bunny",
+        "year": 2025,
+        "month": 4,
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "main": "kanroji-bunny/main.png",
+        "process": []
+    },
+    "medium-totoro": {
+        "title": "Medium & Small Totoro",
+        "year": 2024,
+        "month": 1,
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "main": "medium-totoro/main.png",
+        "process": []
+    },
+    "mimikyu": {
+        "title": "Mimikyu Autumn",
+        "year": 2024,
+        "month": 11,
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "main": "mimikyu/main.png",
+        "process": []
+    },
+    "ponyo": {
+        "title": "Ponyo",
+        "year": 2024,
+        "month": 1,
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "main": "ponyo/main.png",
+        "process": []
+    },
+    "rengoku-ink24": {
+        "title": "Rengoku Kyojuro and Kamado Tanjiro, __",
+        "year": 2024,
+        "month": 10,
+        "day": 31,
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "main": "rengoku-ink24/main.png",
+        "process": []
+    },
+    "tomioka-ink24": {
+        "title": "Tomioka Giyu, __",
+        "year": 2024,
+        "month": 10,
+        "day": 30,
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "main": "tomioka-ink24/main.png",
+        "process": []
+    }
+}
