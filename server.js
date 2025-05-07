@@ -4,6 +4,7 @@ const path = require("path");
 const url = require("url");
 
 const handleAssets = require("./server/assets");
+const handleStyles = require("./server/styles");
 const handleScripts = require("./server/scripts");
 const getHomeHtml = require("./home/home");
 const getSectionHtml = require("./section/section");
@@ -32,6 +33,11 @@ const server = http.createServer(async (req, res) => {
 
     if (pathname.startsWith("/assets")) {
         await handleAssets(req, res, path.join(__dirname, pathname));
+        return;
+    }
+    
+    if (pathname.startsWith("/styles")) {
+        await handleStyles(req, res, path.join(__dirname, pathname));
         return;
     }
 
