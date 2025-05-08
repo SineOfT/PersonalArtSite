@@ -1,7 +1,7 @@
-export default function initScrollFunctions(scrollBehaviorData) {
+export default function initScrollFunctions(scrollData) {
     function initScroll() {
         const scrollHeight = document.body.offsetHeight - window.innerHeight;
-        const sectionOffsets = scrollBehaviorData.map(({ sectionId: id, fade }) => {
+        const sectionOffsets = scrollData.map(({ sectionId: id, fade }) => {
             const element = document.getElementById(id);
             if (!element) { return { id, fadeElement: false, offset: scrollHeight }; }
             const viewportOffset = element.getBoundingClientRect();

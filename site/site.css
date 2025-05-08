@@ -28,17 +28,6 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-    scrollbar-width: 0;
-    overflow-x: hidden;
-    overflow-y: scroll;
-}
-
-html::-webkit-scrollbar {
-    display: none;
-}
-
 body {
     margin: 0;
 }

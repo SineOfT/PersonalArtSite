@@ -1,31 +1,3 @@
-.home-scrollbar-container {
-    position: sticky;
-    bottom: 0;
-    width: 100%;
-    background-color: brown;
-    overflow-x: hidden;
-}
-
-.home-scrollbar {
-    background-color: green;
-}
-
-.scroll-section {
-    height: calc(100rem * var(--fr));
-}
-
-.scroll-anchors-container {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-}
-
-.scroll-anchor {
-    width: 0;
-    flex-grow: var(--fr, 0);
-    order: var(--index);
-}
-
 .home-section-container {
     height: 100rem;
     margin-bottom: -100vh;

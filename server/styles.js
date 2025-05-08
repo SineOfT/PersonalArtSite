@@ -8,7 +8,6 @@ async function handleStyles(req, res, pathname) {
     }
     
     const stylePathname = getStylePathname(pathname);
-    console.log(stylePathname);
     
     try {
         const lastModified = await new Promise((resolve, reject) => {

@@ -1,0 +1,40 @@
+
+html {
+    scroll-behavior: smooth;
+    scrollbar-width: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+.home-scrollbar-container {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    background-color: brown;
+    overflow-x: hidden;
+}
+
+.home-scrollbar {
+    background-color: green;
+}
+
+.scroll-section {
+    height: calc(100rem * var(--fr));
+}
+
+.scroll-anchors-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    height: 1.5rem;
+}
+
+.scroll-anchor {
+    width: 0;
+    flex-grow: var(--fr, 0);
+    order: var(--index);
+}

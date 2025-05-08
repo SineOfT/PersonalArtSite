@@ -10,20 +10,3 @@
     </section>
     <section id="end" class="home-section-end"></section>
 </div>
-<div class="home-scrollbar-container">
-    <div class="home-scrollbar" id="home-scrollbar">Scrollbar</div>
-    <div class="scroll-anchors-container" id="scroll-anchors-container">
-        <div class="scroll-anchor" id="scroll-anchor-start-padding"></div>
-        %__SCROLL_ANCHORS__%
-    </div>
-</div>
-
-<script type="module" defer>
-    import initScrollFunctions from "/scripts/scroll.js";
-    
-    const scrollBehaviorData = %__SCROLL_BEHAVIOR_DATA__%;
-
-    document.addEventListener("DOMContentLoaded", () => {
-        initScrollFunctions(scrollBehaviorData);
-    }, { once: true });
-</script>

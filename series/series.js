@@ -25,7 +25,7 @@ function getSeriesHtml(seriesId, sectionsData, seriesData, artworksData) {
                 .replaceAll("%__ARTWORK_DESCRIPTION__%", artwork["description"]);
         })
         .join("\n");
-    const updatedSeriesHtml =
+    const html =
         getFocusArtworkHtml(artworksData) +
         getBreadcrumbsHtml([
             { "href": `/#${sectionId}`, "title": "Home" },
@@ -34,7 +34,7 @@ function getSeriesHtml(seriesId, sectionsData, seriesData, artworksData) {
         seriesHtml.toString()
             .replaceAll("%__SERIES_ARTWORKS__%", updatedArtworksHtml)
             .replaceAll("%__SERIES_TITLE__%", series["title"]);
-    return updatedSeriesHtml;
+    return { html, scrollData: [] };
 }
 
 module.exports = getSeriesHtml;

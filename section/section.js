@@ -23,14 +23,14 @@ function getSectionHtml(sectionId, sectionsData, seriesData, artworksData) {
                 .replaceAll("%__SERIES_THUMBNAIL__%", artworksData[series["thumbnail"]]?.["main"] ?? "not-found.png");
         })
         .join("\n");
-    const updatedSectionHtml = 
+    const html = 
         getBreadcrumbsHtml([
             { "href": `/#${sectionId}`, "title": "Home" }
         ]) +
         sectionHtml.toString()
             .replaceAll("%__SECTION_SERIES__%", updatedSeriesHtml)
             .replaceAll("%__SECTION_TITLE__%", section["title"]);
-    return updatedSectionHtml;
+    return { html, scrollData: [] };
 }
 
 module.exports = getSectionHtml;

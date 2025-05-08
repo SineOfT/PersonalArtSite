@@ -2,9 +2,17 @@ const fs = require("fs");
 const { getETag } = require("./utility");
 
 async function handleScripts(req, res, pathname) {
+    function getScriptPathname(pathname) {
+        const [_, dirname, script] = pathname.match(/(.*)(?:\/scripts\/)(.*)(?:.js)/) ?? [];
+        return `${dirname}/${script}/init-${script}.js`;
+    }
+    
+    const scriptPathname = getScriptPathname(pathname);
+    console.log(scriptPathname);
+    
     try {
         const lastModified = await new Promise((resolve, reject) => {
-            fs.stat(pathname, (err, stats) => {
+            fs.stat(scriptPathname, (err, stats) => {
                 if (err) { reject(err); return; }
                 resolve(stats.mtime);
             });
@@ -21,7 +29,7 @@ async function handleScripts(req, res, pathname) {
         }
 
         await new Promise((resolve, reject) => {
-            fs.readFile(pathname, (err, data) => {
+            fs.readFile(scriptPathname, (err, data) => {
                 if (err) { reject(err); return; }
 
                 res.writeHead(200, {
