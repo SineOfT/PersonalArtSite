@@ -1,92 +1,56 @@
-const http = require("http");
 const fs = require("fs");
 const path = require("path");
-const url = require("url");
 
-const handleAssets = require("./server/assets");
-const handleStyles = require("./server/styles");
-const handleScripts = require("./server/scripts");
-const getSiteHtml = require("./site/site");
-const getHomeHtml = require("./home/home");
-const getSectionHtml = require("./section/section");
-const getSeriesHtml = require("./series/series");
-const getScrollHtml = require("./scroll/scroll");
+const generateHome = require("./home/generator");
+const generateSectionSites = require("./section/generator");
+const generateSeriesSites = require("./series/generator");
+const generateError = require("./error/generator");
 
-const pagesData          = JSON.parse(fs.readFileSync(path.join(__dirname, "/data/pages.json")));
 const sectionOrderData   = JSON.parse(fs.readFileSync(path.join(__dirname, "/data/section-order.json")));
 const sectionsData       = JSON.parse(fs.readFileSync(path.join(__dirname, "/data/sections.json")));
 const seriesData         = JSON.parse(fs.readFileSync(path.join(__dirname, "/data/series.json")));
 const artworksData       = JSON.parse(fs.readFileSync(path.join(__dirname, "/data/artworks.json")));
 const scrollBehaviorData = JSON.parse(fs.readFileSync(path.join(__dirname, "/data/scroll-behavior.json")));
 
+function clearGeneratedDirectory() {
+    const dirPathname = path.join(__dirname, "public");
+    fs.rmSync(dirPathname, { recursive: true, force: true });
+}
 
-const server = http.createServer(async (req, res) => {
+function copyDirectory(pathname) {
+    const sourcePathname = path.join(__dirname, pathname);
+    const destPathname   = path.join(__dirname, "public", pathname);
+    fs.cpSync(sourcePathname, destPathname, { recursive: true });
+}
 
-    const { pathname } = url.parse(req.url);
-    console.log(pathname);
-
-    if (pathname.startsWith("/assets")) {
-        await handleAssets(req, res, path.join(__dirname, pathname));
-        return;
-    }
-    
-    if (pathname.startsWith("/styles")) {
-        await handleStyles(req, res, path.join(__dirname, pathname));
-        return;
-    }
-
-    if (pathname.startsWith("/scripts")) {
-        await handleScripts(req, res, path.join(__dirname, pathname));
-        return;
-    }
-
-    res.setHeader("Content-Type", "text/html");
-
-    let html;
-    let scrollData = [];
-
-
-    const pathnameMatch = pagesData.reduce(
-        (acc, page) => {
-            if (acc) { return acc; }
-            const match = pathname.match(new RegExp(page.regex));
-            console.log(match);
-            if (match) { return match; }
-            return false;
-        }, 
-        false
+function writeGeneratedFile(file, pathname, filename) {
+    const dirPathname = path.join(__dirname, "public", pathname);
+    fs.mkdirSync(dirPathname, { recursive: true });
+    fs.writeFile(
+        path.join(dirPathname, filename),
+        file,
+        (err) => { if (err) { throw err; } }
     );
+}
 
-    console.log(pathnameMatch);
+function writeGeneratedHtml(html, pathname) {
+    writeGeneratedFile(html, pathname, "index.html");
+}
 
-    if (pathname === "/") {
-        ({ html, scrollData } = getHomeHtml(sectionOrderData, sectionsData, artworksData, scrollBehaviorData));
-        res.statusCode = 200;
+function writeGeneratedHtmlList(htmlList, pathname) {
+    htmlList.forEach(({ id, html }) => {
+        writeGeneratedHtml(html, path.join(pathname, id));
+    });
+}
 
-    } else if (pathname.startsWith("/section")) {
-        const sectionId = pathname.slice(9);
-        ({ html, scrollData } = getSectionHtml(sectionId, sectionsData, seriesData, artworksData));
-        res.statusCode = 200;
 
-    } else if (pathname.startsWith("/series")) {
-        const seriesId = pathname.slice(8);
-        ({ html, scrollData } = getSeriesHtml(seriesId, sectionsData, seriesData, artworksData));
-        console.log(scrollData);
-        res.statusCode = 200;
+clearGeneratedDirectory();
 
-    } else {
-        html = "<h1>Error</h1>";
-        res.statusCode = 404;
-    }
+copyDirectory("/assets");
+copyDirectory("/styles");
+copyDirectory("/scripts");
 
-    // console.log(scrollData);
-
-    const scrollHtml = getScrollHtml(scrollData);
-    
-    const siteHtml = getSiteHtml(html, scrollHtml);
-    res.end(siteHtml);
-});
-
-server.listen(3000, "localhost", () => {
-    console.log("Server started");
-});
+writeGeneratedHtml(generateHome(sectionOrderData, sectionsData, artworksData, scrollBehaviorData), "");
+writeGeneratedHtmlList(generateSectionSites(sectionsData, seriesData, artworksData), "/section");
+writeGeneratedHtmlList(generateSeriesSites(sectionsData, seriesData, artworksData), "/series");
+writeGeneratedFile(generateError(), "", "404.html");

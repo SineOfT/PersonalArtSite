@@ -113,6 +113,11 @@ img {
     background-color: transparent;
 }
 
+.anchor-unstyled {
+    text-decoration: inherit;
+    color: inherit;
+}
+
 .flex-row-between {
     display: flex;
     flex-direction: row;
@@ -165,6 +170,10 @@ img {
 /* SITE CSS */
 /*#region ***/
 
+body {
+    min-height: 100vh;
+}
+
 #header {
     background: var(--color-site-accent);
     position: sticky;
@@ -195,6 +204,10 @@ img {
 
 #header .toggle-button {
     width: 100%;
+}
+
+#site-main {
+    min-height: 100vh;
 }
 
 #footer {

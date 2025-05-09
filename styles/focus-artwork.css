@@ -36,7 +36,7 @@
     backdrop-filter: blur(5px);
 }
 
-body:has(#focus-artwork-modal[open]) {
+html:has(#focus-artwork-modal[open]) {
     overflow: hidden;
 }
 

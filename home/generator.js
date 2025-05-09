@@ -1,10 +1,12 @@
 const fs = require("fs");
 const path = require("path");
 
+const generateScrollSite = require("../scroll/generator");
+
 const homeHtml = fs.readFileSync(path.join(__dirname, "/home.html"));
 const sectionHtml = fs.readFileSync(path.join(__dirname, "/section.html"));
 
-function getHomeHtml(sectionOrderData, sectionsData, artworksData, scrollBehaviorData) {
+function generateHome(sectionOrderData, sectionsData, artworksData, scrollBehaviorData) {
     const updatedSectionsHtml = sectionOrderData
         .map((id) => {
             const section = sectionsData[id];
@@ -20,8 +22,10 @@ function getHomeHtml(sectionOrderData, sectionsData, artworksData, scrollBehavio
                 .replaceAll("%__SECTION_THUMBNAIL_4__%", artworksData[section["thumbnail-4"]]?.["main"] ?? "not-found.png");
         })
         .join("\n");
-    const html = homeHtml.toString().replaceAll("%__HOME_SECTIONS__%", updatedSectionsHtml);
-    return { html, scrollData: scrollBehaviorData };
+    const updatedHomeHtml = homeHtml.toString()
+        .replaceAll("%__HOME_SECTIONS__%", updatedSectionsHtml);
+
+    return generateScrollSite(updatedHomeHtml, scrollBehaviorData);
 }
 
-module.exports = getHomeHtml;
+module.exports = generateHome;

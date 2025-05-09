@@ -1,10 +1,12 @@
 const fs = require("fs");
 const path = require("path");
 
-const scrollHtml = fs.readFileSync(path.join(__dirname, "scroll.html"));
+const generateSite = require("../site/generator");
+
+const scrollHtml = fs.readFileSync(path.join(__dirname, "/scroll.html"));
 const scrollAnchorHtml = fs.readFileSync(path.join(__dirname, "/scroll-anchor.html"));
 
-function getScrollHtml(scrollData) {
+function generateScrollSite(mainHtml, scrollData) {
     const updatedScrollAnchorsHtml = scrollData
         .map(({ sectionId, hashId, title }) => {
             return scrollAnchorHtml.toString()
@@ -13,10 +15,11 @@ function getScrollHtml(scrollData) {
                 .replaceAll("%__SECTION_TITLE__%", title);
         })
         .join("\n");
-        const html = scrollHtml.toString()
-            .replaceAll("%__SCROLL_ANCHORS__%", updatedScrollAnchorsHtml)
-            .replaceAll("%__SCROLL_DATA__%", JSON.stringify(scrollData));
-        return html;
+    const updatedScrollHtml = scrollHtml.toString()
+        .replaceAll("%__SCROLL_ANCHORS__%", updatedScrollAnchorsHtml)
+        .replaceAll("%__SCROLL_DATA__%", JSON.stringify(scrollData));
+
+    return generateSite(mainHtml, updatedScrollHtml);
 }
 
-module.exports = getScrollHtml;
+module.exports = generateScrollSite;

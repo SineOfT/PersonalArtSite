@@ -4,7 +4,7 @@ const path = require("path");
 const breadcrumbsHtml = fs.readFileSync(path.join(__dirname, "/breadcrumbs.html"));
 const backHtml = fs.readFileSync(path.join(__dirname, "/back.html"));
 
-function getBreadcrumbsHtml(breadcrumbs) {
+function generateBreadcrumbs(breadcrumbs) {
     const backsHtml = breadcrumbs
         .map((breadcrumb) => {
             return backHtml.toString()
@@ -17,4 +17,4 @@ function getBreadcrumbsHtml(breadcrumbs) {
     return updatedBreadcrumbsHtml;
 }
 
-module.exports = getBreadcrumbsHtml;
+module.exports = generateBreadcrumbs;
