@@ -1,12 +1,12 @@
 export default function initScrollFunctions(scrollData) {
     function initScroll() {
-        const scrollHeight = document.body.offsetHeight - window.innerHeight;
-        const sectionOffsets = scrollData.map(({ sectionId: id, fade }) => {
+        const screenHeight = window.innerHeight;
+        const scrollHeight = document.body.offsetHeight - screenHeight;
+        const sectionOffsets = scrollData.map(({ sectionId: id, screenFr, anchor, transition }) => {
             const element = document.getElementById(id);
-            if (!element) { return { id, fadeElement: false, offset: scrollHeight }; }
-            const viewportOffset = element.getBoundingClientRect();
-            const offset = viewportOffset.top + window.scrollY;
-            return { id, fadeElement: fade ? element : false, offset };
+            if (!element) { return { id, transitionElement: false, offset: scrollHeight }; }
+            const offset = getAndConfigureOffset(element, screenFr, anchor);
+            return { id, transitionElement: transition ? element : false, offset };
         });
         sectionOffsets.sort((a, b) => { a.offset - b.offset });
 
@@ -14,24 +14,27 @@ export default function initScrollFunctions(scrollData) {
 
         let prevScroll = scrollHeight;
 
+        function getAndConfigureOffset(element, screenFr, anchor) {
+            const viewportOffset = element.getBoundingClientRect();
+            const scrollOffset = window.scrollY + viewportOffset.top;
+            const anchorOffset = screenHeight * screenFr - viewportOffset.height * anchor;
+            const offset = scrollOffset - anchorOffset;
+            if (anchorOffset !== 0) {
+                if (element.previousElementSibling) {
+                    element.previousElementSibling.style.marginBottom = `-${anchorOffset}px`;
+                }
+                element.style.paddingTop = `${anchorOffset}px`;
+            }
+            return offset;
+        }
+
         function initScrollAnchors() {
-            const scrollAnchors = [
-                { id: "scroll-anchor-start-padding", offset: 0 },
-                ...sectionOffsets.map(({ id, offset}) => ({ id: `${id}-anchor`, offset })),
-                {id: null, offset: scrollHeight}
-            ];
-            
-            scrollAnchors.slice(1).reduce(
-                (prev, curr, index) => {
-                    const offset = Math.min(curr.offset, scrollHeight);
-                    const fr = offset - prev.offset;
-                    const sectionAnchor = document.getElementById(prev.id);
-                    sectionAnchor.style.setProperty("--fr", fr);
-                    sectionAnchor.style.setProperty("--index", index + 1);
-                    return { id: curr.id, offset };
-                },
-                scrollAnchors[0]
-            );
+            sectionOffsets.forEach(({ id, offset }) => {
+                const sectionScrollFr = offset / scrollHeight;
+                const sectionAnchor = document.getElementById(`${id}-anchor`);
+                sectionAnchor.style.setProperty("--fr", sectionScrollFr);
+                sectionAnchor.classList.add("scroll-anchor-position");
+            });
         }
 
         function updateScroll(prevScrollHeight) {
@@ -47,12 +50,12 @@ export default function initScrollFunctions(scrollData) {
                 const { currSection, isNew } = getCurrSection(currScroll);
 
                 if (isNew) {
-                    sectionOffsets.forEach(({ id, fadeElement }) => {
-                        if (!fadeElement) { return; }
+                    sectionOffsets.forEach(({ id, transitionElement }) => {
+                        if (!transitionElement) { return; }
                         if (id === currSection) {
-                            showSection(fadeElement);
+                            showSection(transitionElement);
                         } else {
-                            hideSection(fadeElement);
+                            hideSection(transitionElement);
                         }
                     });
                 }

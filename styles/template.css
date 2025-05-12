@@ -1,0 +1,33 @@
+:root {
+    --color-backdrop: #000B;
+    --color-site-accent: #CCC;
+
+    --artwork-aspect-ratio: calc(2880/1800);
+
+    --site-header-height: 5rem;
+
+    --home-section-cycle-display-duration: 30s;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 1em;
+    margin: 0;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    display: block;
+}

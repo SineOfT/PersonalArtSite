@@ -1,5 +1,5 @@
 .home-section-container {
-    height: 100rem;
+    height: 200rem;
     margin-bottom: -100vh;
 }
 
@@ -57,24 +57,3 @@
     80%, 95% { transform: translate(75%, 100%) scale(0.25); z-index: 0;   }
     100%     { transform: translate(0, 0)      scale(1);    z-index: 999; }
 }
-
-/************/
-/* FADE CSS */
-/*#region ***/
-
-.fade {
-    position: relative;
-    transition: opacity var(--fade-duration);
-}
-
-.hide {
-    opacity: 0;
-    z-index: -1;
-}
-
-.show {
-    opacity: 100%;
-    transition-delay: calc(var(--fade-duration) * (1 - var(--fade-threshold)));
-}
-
-/*#endregion */

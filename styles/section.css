@@ -1,7 +1,3 @@
-.section-series-container:not(:last-child) {
-    margin-bottom: 5rem;
-}
-
 .section-series-body {
     display: flex;
     flex-direction: row-reverse;

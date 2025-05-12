@@ -1,0 +1,40 @@
+/* FADE */
+
+.fade {
+    --fade-duration: 0.3s;
+    --fade-threshold: 0.5;
+
+    position: relative;
+}
+
+.fade-transition {
+    transition: opacity var(--fade-duration);
+}
+
+.fade.hide {
+    opacity: 0;
+    z-index: -1;
+}
+
+.fade.show {
+    opacity: 100%;
+    transition-delay: calc(var(--fade-duration) * (1 - var(--fade-threshold)));
+}
+
+
+
+/* SLIDE */
+
+.slide {
+    --slide-duration: 0.5s;
+    --slide-delay-increment: 0.1s;
+}
+
+.slide-transition {
+    transition: transform var(--slide-duration) calc(var(--slide-delay-increment) * var(--index, 0));
+    transition-timing-function: ease-out;
+}
+
+.slide.hide {
+    transform: translateX(100vw);
+}

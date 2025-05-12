@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const generateScrollSite = require("../scroll/generator");
+const generateSite = require("../site/generator");
 
 const homeHtml = fs.readFileSync(path.join(__dirname, "/home.html"));
 const sectionHtml = fs.readFileSync(path.join(__dirname, "/section.html"));
@@ -25,7 +25,7 @@ function generateHome(sectionOrderData, sectionsData, artworksData, scrollBehavi
     const updatedHomeHtml = homeHtml.toString()
         .replaceAll("%__HOME_SECTIONS__%", updatedSectionsHtml);
 
-    return generateScrollSite(updatedHomeHtml, scrollBehaviorData);
+    return generateSite(updatedHomeHtml, scrollBehaviorData);
 }
 
 module.exports = generateHome;

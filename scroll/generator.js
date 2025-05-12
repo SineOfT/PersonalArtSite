@@ -1,25 +1,22 @@
 const fs = require("fs");
 const path = require("path");
 
-const generateSite = require("../site/generator");
-
 const scrollHtml = fs.readFileSync(path.join(__dirname, "/scroll.html"));
 const scrollAnchorHtml = fs.readFileSync(path.join(__dirname, "/scroll-anchor.html"));
 
-function generateScrollSite(mainHtml, scrollData) {
+function generateScroll(scrollData) {
     const updatedScrollAnchorsHtml = scrollData
         .map(({ sectionId, hashId, title }) => {
             return scrollAnchorHtml.toString()
                 .replaceAll("%__SECTION_ID__%", sectionId)
-                .replaceAll("%__SECTION_HASH__%", hashId)
-                .replaceAll("%__SECTION_TITLE__%", title);
+                .replaceAll("%__SECTION_HASH__%", hashId);
         })
         .join("\n");
     const updatedScrollHtml = scrollHtml.toString()
         .replaceAll("%__SCROLL_ANCHORS__%", updatedScrollAnchorsHtml)
         .replaceAll("%__SCROLL_DATA__%", JSON.stringify(scrollData));
 
-    return generateSite(mainHtml, updatedScrollHtml);
+    return updatedScrollHtml;
 }
 
-module.exports = generateScrollSite;
+module.exports = generateScroll;

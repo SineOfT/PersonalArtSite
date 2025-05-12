@@ -1,0 +1,152 @@
+.text-secondary {
+    color: #555;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.heading-inline {
+    display: inline;
+    margin: 0;
+    padding-inline-end: 1rem;
+}
+
+.text-block {
+    display: block;
+}
+
+.paragraph-nospace {
+    margin: 0;
+}
+
+.fs-xxl {
+    font-size: 2.5em;
+}
+
+.fs-xl {
+    font-size: 2em;
+}
+
+.fs-l {
+    font-size: 1.7em;
+}
+
+.fs-m {
+    font-size: 1.5em;
+}
+
+.fs-s {
+    font-size: 1.2em;
+}
+
+.fs-xs {
+    font-size: 1.1em;
+}
+
+.p-m { padding: 1rem; }
+.px-m { padding-inline: 1rem; }
+.py-m { padding-block: 1rem; }
+
+.p-s { padding: 0.5rem; }
+.px-s { padding-inline: 0.5rem; }
+.py-s { padding-block: 0.5rem; }
+
+.p-xs { padding: 0.2rem; }
+.px-xs { padding-inline: 0.2rem; }
+.py-xs { padding-block: 0.2rem; }
+
+.button-unstyled {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+}
+
+.anchor-unstyled {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+.flex-row-between {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.flex-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.align-start {
+    align-self: start;
+}
+
+.align-center {
+    align-self: center;
+}
+
+.align-end {
+    align-self: end;
+}
+
+.toggle-button {
+    display: none;
+}
+
+.toggle-button + .toggle-button-label {
+    display: block;
+    width: 100%;
+    height: 2rem;
+    font-size: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.toggle-button + .toggle-button-label::after {
+    content: "v";
+}
+
+.toggle-button:checked + .toggle-button-label::after {
+    content: "^";
+}
+
+.position-relative {
+    position: relative;
+}
+
+.overlay-link::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 9999;
+}
+
+.info-hover-container {
+    position: relative;
+    font-size: 1rem;
+    z-index: 99999;
+}
+
+.info-hover-container::after {
+    content: "\24D8";
+}
+
+.info-hover {
+    position: absolute;
+    display: block;
+    left: calc(100% + 0.2rem);
+    top: 0;
+    padding: 0.2rem;
+    border-radius: 0.5rem;
+    background-color: var(--color-backdrop);
+    color: white;
+    visibility: hidden;
+}
+
+.info-hover-container:hover .info-hover {
+    visibility: visible;
+}

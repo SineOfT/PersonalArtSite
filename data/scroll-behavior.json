@@ -2,31 +2,36 @@
     {
         "sectionId": "home",
         "hashId": "",
-        "title": "Home",
-        "fade": false
+        "screenFr": 0,
+        "anchor": 0,
+        "transition": false
     },
     {
         "sectionId": "digital",
         "hashId": "digital",
-        "title": "Digital",
-        "fade": true
+        "screenFr": 0,
+        "anchor": 0,
+        "transition": true
     },
     {
         "sectionId": "digital2",
         "hashId": "digital2",
-        "title": "Digital2",
-        "fade": true
+        "screenFr": 0,
+        "anchor": 0,
+        "transition": true
     },
     {
         "sectionId": "timeline",
         "hashId": "timeline",
-        "title": "Timeline",
-        "fade": true
+        "screenFr": 0,
+        "anchor": 0,
+        "transition": true
     },
     {
         "sectionId": "end",
         "hashId": "footer",
-        "title": "Footer",
-        "fade": false
+        "screenFr": 0,
+        "anchor": 0,
+        "transition": false
     }
 ]

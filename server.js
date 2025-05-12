@@ -1,9 +1,11 @@
 const fs = require("fs");
 const path = require("path");
 
+const generateTemplate = require("./template/generator");
 const generateHome = require("./home/generator");
 const generateSectionSites = require("./section/generator");
 const generateSeriesSites = require("./series/generator");
+const generateArtworkSites = require("./artwork/generator");
 const generateError = require("./error/generator");
 
 const sectionOrderData   = JSON.parse(fs.readFileSync(path.join(__dirname, "/data/section-order.json")));
@@ -23,23 +25,23 @@ function copyDirectory(pathname) {
     fs.cpSync(sourcePathname, destPathname, { recursive: true });
 }
 
-function writeGeneratedFile(file, pathname, filename) {
+function writeGeneratedHtml(html, pathname, filename) {
     const dirPathname = path.join(__dirname, "public", pathname);
     fs.mkdirSync(dirPathname, { recursive: true });
     fs.writeFile(
         path.join(dirPathname, filename),
-        file,
+        generateTemplate(html),
         (err) => { if (err) { throw err; } }
     );
 }
 
-function writeGeneratedHtml(html, pathname) {
-    writeGeneratedFile(html, pathname, "index.html");
+function writeGeneratedHtmlDirectory(html, pathname) {
+    writeGeneratedHtml(html, pathname, "index.html");
 }
 
 function writeGeneratedHtmlList(htmlList, pathname) {
     htmlList.forEach(({ id, html }) => {
-        writeGeneratedHtml(html, path.join(pathname, id));
+        writeGeneratedHtmlDirectory(html, path.join(pathname, id));
     });
 }
 
@@ -50,7 +52,8 @@ copyDirectory("/assets");
 copyDirectory("/styles");
 copyDirectory("/scripts");
 
-writeGeneratedHtml(generateHome(sectionOrderData, sectionsData, artworksData, scrollBehaviorData), "");
+writeGeneratedHtmlDirectory(generateHome(sectionOrderData, sectionsData, artworksData, scrollBehaviorData), "");
 writeGeneratedHtmlList(generateSectionSites(sectionsData, seriesData, artworksData), "/section");
 writeGeneratedHtmlList(generateSeriesSites(sectionsData, seriesData, artworksData), "/series");
-writeGeneratedFile(generateError(), "", "404.html");
+writeGeneratedHtmlList(generateArtworkSites(seriesData, artworksData), "/artwork");
+writeGeneratedHtml(generateError(), "", "404.html");

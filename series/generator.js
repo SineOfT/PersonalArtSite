@@ -1,9 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 const { getDate } = require("../server/utility");
-const generateFocusArtwork = require("../focus-artwork/generator");
 const generateBreadcrumbs = require("../breadcrumbs/generator");
-const generateScrollSite = require("../scroll/generator");
+const generateSite = require("../site/generator");
 
 const seriesHtml = fs.readFileSync(path.join(__dirname, "/series.html"));
 const artworkHtml = fs.readFileSync(path.join(__dirname, "/artwork.html"));
@@ -35,9 +34,7 @@ function generateSeriesSites(sectionsData, seriesData, artworksData) {
             ...(sectionId ? [{ "href": `/section/${sectionId}`, "title": section["title"] }] : [])
         ]);
 
-        const focusArtwork = generateFocusArtwork(artworksData);
-
-        const updatedSeriesSite = generateScrollSite(seriesBreadcrumbs + updatedSeriesHtml + focusArtwork, []);
+        const updatedSeriesSite = generateSite(seriesBreadcrumbs + updatedSeriesHtml, []);
 
         return { id: seriesId, html: updatedSeriesSite };
     });

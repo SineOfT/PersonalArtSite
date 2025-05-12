@@ -4,32 +4,32 @@
         "year": 2025,
         "month": 4,
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
-        "main": "kanroji-bunny/main.png",
-        "process": []
+        "main": "kanroji-bunny/0.png",
+        "layer-count": 1
     },
     "medium-totoro": {
         "title": "Medium & Small Totoro",
         "year": 2024,
         "month": 1,
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
-        "main": "medium-totoro/main.png",
-        "process": []
+        "main": "medium-totoro/0.png",
+        "layer-count": 1
     },
     "mimikyu": {
         "title": "Mimikyu Autumn",
         "year": 2024,
         "month": 11,
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
-        "main": "mimikyu/main.png",
-        "process": []
+        "main": "mimikyu/0.png",
+        "layer-count": 1
     },
     "ponyo": {
         "title": "Ponyo",
         "year": 2024,
         "month": 1,
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
-        "main": "ponyo/main.png",
-        "process": []
+        "main": "ponyo/0.png",
+        "layer-count": 1
     },
     "rengoku-ink24": {
         "title": "Rengoku Kyojuro and Kamado Tanjiro, __",
@@ -37,8 +37,8 @@
         "month": 10,
         "day": 31,
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
-        "main": "rengoku-ink24/main.png",
-        "process": []
+        "main": "rengoku-ink24/0.png",
+        "layer-count": 1
     },
     "tomioka-ink24": {
         "title": "Tomioka Giyu, __",
@@ -46,7 +46,7 @@
         "month": 10,
         "day": 30,
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
-        "main": "tomioka-ink24/main.png",
-        "process": []
+        "main": "tomioka-ink24/0.png",
+        "layer-count": 5
     }
 }

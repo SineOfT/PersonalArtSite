@@ -1,0 +1,163 @@
+html {
+    overflow: hidden;
+}
+
+.artwork-main {
+    isolation: isolate;
+}
+
+.artwork-container {    
+    position: fixed;
+    background-color: var(--color-backdrop);
+    z-index: -1;
+}
+
+.artwork-container .text-secondary {
+    color: #DDD;
+}
+
+.artwork-layout {
+    --control-size: 3rem;
+
+    padding: 1rem;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-areas:
+        "heading heading heading"
+        "image image image"
+        "zoom . layer";
+    grid-template-columns: 1fr minmax(0, 1fr) 1fr;
+    grid-template-rows: var(--control-size) 1fr calc(var(--control-size) * 2);
+    /* grid-template-areas:
+        "close heading control"
+        ". image control"
+        "instruction instruction control";
+    grid-template-columns: 2rem auto 2rem;
+    grid-template-rows: 2rem auto 2rem; */
+    gap: 1rem;
+    text-align: center;
+    text-wrap: nowrap;
+    color: white;
+    pointer-events: none;
+}
+
+.artwork-control {
+    display: block;
+    padding: 0;
+    border: none;
+    width: var(--control-size);
+    height: var(--control-size);
+    color: black;
+    background-color: white;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.artwork-control.hidden {
+    background-color: transparent;
+}
+
+.artwork-control.disabled {
+    cursor: initial;
+    pointer-events: none;
+}
+
+.artwork-control.disabled::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #8888;
+}
+
+.artwork-heading {
+    grid-area: heading;
+    pointer-events: auto;
+}
+
+.artwork-image-container {
+    grid-area: image;
+    width: 100%;
+    height: 100%;
+    background-color: #FFF1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.artwork-image-hover {
+    pointer-events: auto;
+}
+
+.artwork-image {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.artwork-main:has(.artwork-image-hover:hover) .artwork-image {
+    transform:
+        translate(
+            calc(-50% + (100% * var(--hover-x, 0))),
+            calc(-50% + (100% * var(--hover-y, 0)))
+        )
+        scale(var(--zoom, 1))
+        translate(
+            calc(50% - (100% * var(--hover-x, 0))),
+            calc(50% - (100% * var(--hover-y, 0)))
+        );
+}
+
+.artwork-control-zoom {
+    grid-area: zoom;
+    pointer-events: auto;
+}
+
+.artwork-control-layer {
+    grid-area: layer;
+    pointer-events: auto;
+}
+
+.artwork-control-container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-areas:
+        "text text"
+        "button-left button-right";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr var(--control-size);
+}
+
+.artwork-control-text {
+    grid-area: text;
+}
+
+.artwork-control-button-left {
+    grid-area: button-left;
+    justify-self: start;
+}
+
+.artwork-control-button-right {
+    grid-area: button-right;
+    justify-self: end;
+}
+
+.artwork-control-display {
+    font-size: calc(var(--control-size) - 1.5em);
+}
+
+@media (min-width: 50rem) {
+    .artwork-layout {
+        grid-template-rows: var(--control-size) auto var(--control-size);
+    }
+
+    .artwork-control-container {
+        grid-template-areas: "button-left text button-right";
+        grid-template-columns: var(--control-size) auto var(--control-size);
+        grid-template-rows: auto;
+    }
+}
