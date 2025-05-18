@@ -1,0 +1,30 @@
+.artworks-list-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+}
+
+.list-artwork-image {
+    width: 100%;
+}
+
+.list-artwork-link {
+    display: block;
+    border: 2px solid black;
+    padding: 0;
+    position: relative;
+}
+
+.list-artwork-link::after {
+    content: "Click to focus on the artwork";
+    position: absolute;
+    inset: auto 0 0;
+    padding-block: 0.3rem;
+    transition: opacity 0.3s;
+    background-color: var(--color-backdrop);
+    color: white;
+    opacity: 0;
+}
+
+.list-artwork-link:hover::after {
+    opacity: 1;
+}

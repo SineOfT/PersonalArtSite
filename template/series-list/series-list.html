@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="/styles/series-list.css" />
+<link rel="stylesheet" href="/styles/transition.css" />
+
+<div class="flex-stack gap-xxl p-l">
+    %__SERIES_LIST__%
+</div>
+
+<script type="module" defer>
+    import initSeriesList from "/scripts/series-list.js";
+
+    document.addEventListener("DOMContentLoaded", () => {
+        initSeriesList();
+    }, { once: true });
+</script>

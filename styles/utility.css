@@ -18,29 +18,26 @@
     margin: 0;
 }
 
-.fs-xxl {
-    font-size: 2.5em;
-}
 
-.fs-xl {
-    font-size: 2em;
-}
+.fs-xxl { font-size: 2.5em; }
+.fs-xl { font-size: 2em; }
+.fs-l { font-size: 1.7em; }
+.fs-m { font-size: 1.5em; }
+.fs-s { font-size: 1.2em; }
+.fs-xs { font-size: 1.1em; }
 
-.fs-l {
-    font-size: 1.7em;
-}
 
-.fs-m {
-    font-size: 1.5em;
-}
+.p-xxl { padding: 3rem; }
+.px-xxl { padding-inline: 3rem; }
+.py-xxl { padding-block: 3rem; }
 
-.fs-s {
-    font-size: 1.2em;
-}
+.p-xl { padding: 2rem; }
+.px-xl { padding-inline: 2rem; }
+.py-xl { padding-block: 2rem; }
 
-.fs-xs {
-    font-size: 1.1em;
-}
+.p-l { padding: 1.5rem; }
+.px-l { padding-inline: 1.5rem; }
+.py-l { padding-block: 1.5rem; }
 
 .p-m { padding: 1rem; }
 .px-m { padding-inline: 1rem; }
@@ -53,6 +50,28 @@
 .p-xs { padding: 0.2rem; }
 .px-xs { padding-inline: 0.2rem; }
 .py-xs { padding-block: 0.2rem; }
+
+
+.gap-xxl { gap: 3rem; }
+.gapx-xxl { column-gap: 3rem; }
+.gapy-xxl { row-gap: 3rem; }
+
+.gap-xl { gap: 2rem; }
+.gapx-xl { column-gap: 2rem; }
+.gapy-xl { row-gap: 2rem; }
+
+.gap-l { gap: 1.5rem; }
+.gapx-l { column-gap: 1.5rem; }
+.gapy-l { row-gap: 1.5rem; }
+
+.gap-m { gap: 1rem; }
+.gapx-m { column-gap: 1rem; }
+.gapy-m { row-gap: 1rem; }
+
+.gap-s { gap: 0.5rem; }
+.gapx-s { column-gap: 0.5rem; }
+.gapy-s { row-gap: 0.5rem; }
+
 
 .button-unstyled {
     padding: 0;
@@ -69,7 +88,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 0.5rem;
 }
 
 .flex-stack {
@@ -77,7 +95,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
 }
 
 .align-start {

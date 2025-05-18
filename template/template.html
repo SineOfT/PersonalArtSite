@@ -6,8 +6,16 @@
     <title>Shyuu's Art</title>
     <link rel="stylesheet" href="/styles/utility.css" />
     <link rel="stylesheet" href="/styles/template.css" />
+    <script type="module" defer>
+        import initFragAnchors from "/scripts/frag-anchor.js";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initFragAnchors();
+        }, { once: true });
+    </script>
 </head>
 <body>
     %__SITE__%
+    <div id="page-bottom"></div>
 </body>
 </html>

@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="/styles/artwork.css" />
+
+<main class="artwork-main" id="artwork">
+    <div class="artwork-container artwork-layout">
+        <div class="artwork-heading flex-row-between">
+            <a href="/artworks#%__ARTWORK_ID__%" class="artwork-control close-button">X</a>
+            <h2 class="artwork-title heading-inline fs-m">%__ARTWORK_TITLE__%</h2>
+            <span class="artwork-year text-secondary fs-m">%__ARTWORK_YEAR__%</span>
+        </div>
+        <div class="artwork-image-container artwork-image-hover"></div>
+        <div class="artwork-control-container artwork-control-zoom">
+            <div class="artwork-control-text">
+                <div>Zoom on Hover</div>
+                <div class="artwork-control-display control-zoom-display">None <span class="info-hover-container"
+                    ><div class="info-hover">JavaScript must be enabled</div></span
+                ></div>
+            </div>
+            <button class="artwork-control artwork-control-button-left control-zoom-out disabled"></button>
+            <button class="artwork-control artwork-control-button-right control-zoom-in disabled"></button>
+        </div>
+        <div class="artwork-control-layer">
+            <div class="artwork-control-container">
+                <div class="artwork-control artwork-control-button-left control-layer-up">^</div>
+                <div class="artwork-control artwork-control-button-right control-layer-down">v</div>
+            </div>
+        </div>
+    </div>
+    %__ARTWORK_LAYERS__%
+</main>
+
+<script type="module" defer>
+    import initArtwork from "/scripts/artwork.js";
+
+    const artworkId = "%__ARTWORK_ID__%";
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+        initArtwork(artworkId);
+
+    }, { once: true });
+
+</script>

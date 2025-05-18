@@ -1,0 +1,19 @@
+.list-series-body {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+    width: 100%;
+}
+
+.list-series-text {
+    flex-basis: 20rem;
+    flex-grow: 3;
+}
+
+.list-series-thumbnail {
+    width: 20rem;
+    max-width: 30rem;
+    flex-grow: 1;
+}

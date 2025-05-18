@@ -2,36 +2,31 @@
     {
         "sectionId": "home",
         "hashId": "",
-        "screenFr": 0,
-        "anchor": 0,
+        "title": "Home",
         "transition": false
     },
     {
         "sectionId": "digital",
         "hashId": "digital",
-        "screenFr": 0,
-        "anchor": 0,
+        "title": "Digital",
         "transition": true
     },
     {
         "sectionId": "digital2",
         "hashId": "digital2",
-        "screenFr": 0,
-        "anchor": 0,
+        "title": "Digital2",
         "transition": true
     },
     {
         "sectionId": "timeline",
         "hashId": "timeline",
-        "screenFr": 0,
-        "anchor": 0,
+        "title": "Timeline",
         "transition": true
     },
     {
         "sectionId": "end",
-        "hashId": "footer",
-        "screenFr": 0,
-        "anchor": 0,
+        "hashId": "page-bottom",
+        "title": "Footer",
         "transition": false
     }
 ]
