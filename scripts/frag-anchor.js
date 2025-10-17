@@ -17,6 +17,10 @@ export default function initFragAnchors() {
             if (fragAnchorOffset !== 0) {
                 element.style.paddingTop = `${fragAnchorOffset}px`;
                 element.style.marginTop = `-${fragAnchorOffset}px`;
+                element.style.pointerEvents = "none";
+                for (const child of element.children) {
+                    child.style.pointerEvents = "auto";
+                }
             }
         }
     }

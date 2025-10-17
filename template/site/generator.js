@@ -6,11 +6,15 @@ const generateScroll = require("../scroll/generator");
 const siteHtml = fs.readFileSync(path.join(__dirname, "/site.html"));
 
 function generateSite(mainHtml, scrollData) {
-    const scrollHtml = generateScroll(scrollData);
+    const { html: scrollHtml, styles: scrollStyles } = generateScroll(scrollData);
     const updatedSiteHtml = siteHtml.toString()
         .replaceAll("%__SITE_MAIN__%", mainHtml)
         .replaceAll("%__SITE_SCROLL__%", scrollHtml);
-    return updatedSiteHtml;
+    
+    return {
+        html: updatedSiteHtml,
+        styles: [...scrollStyles, "site"]
+    };
 }
 
 module.exports = generateSite;

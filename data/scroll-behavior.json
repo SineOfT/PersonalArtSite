@@ -6,15 +6,15 @@
         "transition": false
     },
     {
-        "sectionId": "digital",
-        "hashId": "digital",
-        "title": "Digital",
+        "sectionId": "study",
+        "hashId": "study",
+        "title": "Studies",
         "transition": true
     },
     {
-        "sectionId": "digital2",
-        "hashId": "digital2",
-        "title": "Digital2",
+        "sectionId": "digital",
+        "hashId": "digital",
+        "title": "Digital",
         "transition": true
     },
     {

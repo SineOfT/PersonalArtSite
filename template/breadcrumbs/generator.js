@@ -14,7 +14,11 @@ function generateBreadcrumbs(breadcrumbs) {
         .join("\n");
     const updatedBreadcrumbsHtml = breadcrumbsHtml.toString()
         .replaceAll("%__BREADCRUMBS_BACKS__%", backsHtml);
-    return updatedBreadcrumbsHtml;
+    
+    return {
+        html: updatedBreadcrumbsHtml,
+        styles: []
+    };
 }
 
 module.exports = generateBreadcrumbs;

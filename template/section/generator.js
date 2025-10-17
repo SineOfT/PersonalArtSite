@@ -19,9 +19,10 @@ function generateSectionSites(sectionsData, seriesData, artworksData) {
             };
         });
         
-        const updatedSectionSeriesListHtml = generateSeriesList(sectionSeriesList, seriesData, artworksData);
+        const { html: updatedSectionSeriesListHtml, styles: seriesStyles } =
+            generateSeriesList(sectionSeriesList, seriesData, artworksData);
 
-        const sectionBreadcrumbs = generateBreadcrumbs([
+        const { html: sectionBreadcrumbs, styles: breadcrumbsStyles } = generateBreadcrumbs([
             { "href": `/#${sectionId}`, "title": "Home" }
         ]);
 
@@ -30,9 +31,13 @@ function generateSectionSites(sectionsData, seriesData, artworksData) {
             .replaceAll("%__SECTION_BREADCRUMBS__%", sectionBreadcrumbs)
             .replaceAll("%__SECTION_TITLE__%", section["title"]);
 
-        const updatedSectionSite = generateSite(updatedSectionHtml, seriesScroll);
+        const { html: updatedSectionSite, styles: siteStyles } = generateSite(updatedSectionHtml, seriesScroll);
 
-        return { id: sectionId, html: updatedSectionSite };
+        return {
+            id: sectionId,
+            html: updatedSectionSite,
+            styles: [...siteStyles, ...breadcrumbsStyles, ...seriesStyles]
+        };
     });
 }
 

@@ -10,14 +10,17 @@ function generateArtworksSearch(artworksData) {
     let artworksListEntries = Object.entries(artworksData);
     artworksListEntries.sort(([_aId, a], [_bId, b]) => cmpDate(a["date"], b["date"]));
     const artworksList = artworksListEntries.map(([artworkId, _]) => artworkId);
-    const updatedArtworksListHtml = generateArtworksList(artworksList, "", artworksData);
+    const { html: updatedArtworksListHtml, styles: artworksStyles } = generateArtworksList(artworksList, "", artworksData);
 
     const updatedArtworkSearchHtml = artworksSearchHtml.toString()
         .replace("%__ARTWORKS_LIST__%", updatedArtworksListHtml);
 
-    const updatedArtworksSearchSite = generateSite(updatedArtworkSearchHtml, []);
+    const { html: updatedArtworksSearchSite, styles: siteStyles } = generateSite(updatedArtworkSearchHtml, []);
 
-    return updatedArtworksSearchSite;
+    return {
+        html: updatedArtworksSearchSite,
+        styles: [...siteStyles, ...artworksStyles]
+    };
 }
 
 module.exports = generateArtworksSearch;

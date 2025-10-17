@@ -1,0 +1,14 @@
+.artwork-thumbnail-container {
+    border: 2px solid black;
+}
+
+.artwork-thumbnail {
+    width: 100%;
+    aspect-ratio: var(--artwork-aspect-ratio);
+    object-fit: cover;
+    object-position: calc(100% * var(--x, 0.5)) calc(100% * var(--y, 0.5));
+}
+
+.censor {
+    filter: blur(5px);
+}

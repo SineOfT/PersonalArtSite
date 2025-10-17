@@ -1,4 +1,61 @@
 {
+    "anatomy": {
+        "title": "Anatomy Studies",
+        "date-span": {
+            "start-date": {
+                "year": 2022
+            },
+            "end-date": "current"
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "artworks": [
+            "anatomy-tracing",
+            "anatomy-joints",
+            "anatomy-spine-0",
+            "anatomy-spine-1",
+            "anatomy-spine-2",
+            "anatomy-pelvis",
+            "anatomy-ribcage",
+            "anatomy-shoulder-blades",
+            "anatomy-repractice",
+            "anatomy-pecs",
+            "anatomy-breasts-0",
+            "anatomy-breasts-1",
+            "anatomy-abs-0",
+            "anatomy-abs-1",
+            "anatomy-obliques-0",
+            "anatomy-obliques-1",
+            "anatomy-obliques-2",
+            "anatomy-shoulders",
+            "anatomy-lower-back",
+            "anatomy-upper-back",
+            "anatomy-arm-bones",
+            "anatomy-hand-bones",
+            "anatomy-deltoids",
+            "anatomy-biceps-0",
+            "anatomy-biceps-1",
+            "anatomy-triceps-0",
+            "anatomy-triceps-1",
+            "anatomy-forearms",
+            "anatomy-hands-0",
+            "anatomy-hands-1",
+            "anatomy-hands-2",
+            "anatomy-leg-bones-0",
+            "anatomy-leg-bones-1",
+            "anatomy-foot-bones",
+            "anatomy-butt",
+            "anatomy-abductors-0",
+            "anatomy-abductors-1",
+            "anatomy-quadriceps-0",
+            "anatomy-quadriceps-1",
+            "anatomy-hamstrings",
+            "anatomy-calves",
+            "anatomy-anterolaterals",
+            "anatomy-foot-0",
+            "anatomy-foot-1"
+        ],
+        "thumbnail": "anatomy-hands-0"
+    },
     "ghibli": {
         "title": "Studio Ghibli Artworks",
         "date-span": {
@@ -25,8 +82,36 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "artworks": [
+            "inosuke-ink24",
+            "himejima-ink24",
+            "kokushibo-ink24",
+            "uzui-ink24",
+            "tokito-ink24",
+            "gyokko-ink24",
+            "gyutaro-ink24",
+            "akaza-ink24",
+            "hantengu-ink24",
+            "urokodaki-ink24",
+            "kanao-ink24",
+            "shinjuro-ink24",
+            "ubuyashiki-ink24",
+            "nezuko-ink24",
+            "enmu-ink24",
+            "zenitsu-ink24",
+            "kibutsuji-ink24",
+            "rui-ink24",
+            "shinazugawa-ink24",
+            "haganezuka-ink24",
+            "yushiro-ink24",
+            "daki-ink24",
+            "kanroji-ink24",
+            "doma-ink24",
+            "iguro-ink24",
+            "nakime-ink24",
+            "kocho-ink24",
+            "murata-ink24",
             "tomioka-ink24",
-            "rengoku-ink24"
+            "kyojuro-ink24"
         ],
         "thumbnail": "tomioka-ink24"
     },
@@ -40,9 +125,10 @@
         },
         "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "artworks": [
-            "kanroji-bunny"
+            "kanroji-bunny",
+            "iguro-kaburamaru"
         ],
-        "thumbnail": "kanroji-bunny"
+        "thumbnail": "iguro-kaburamaru"
     },
     "pokemon": {
         "title": "Pokemon Artworks",

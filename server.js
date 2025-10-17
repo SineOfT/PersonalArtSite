@@ -50,23 +50,23 @@ function copyTemplateFiles(extension, filename, outDirname) {
     });
 }
 
-function writeGeneratedHtml(html, pathname, filename) {
+function writeGeneratedHtml({ html, styles }, pathname, filename) {
     const dirPathname = path.join(__dirname, "public", pathname);
     fs.mkdirSync(dirPathname, { recursive: true });
     fs.writeFile(
         path.join(dirPathname, filename),
-        generateTemplate(html),
+        generateTemplate(html, styles),
         (err) => { if (err) { throw err; } }
     );
 }
 
-function writeGeneratedHtmlDirectory(html, pathname) {
-    writeGeneratedHtml(html, pathname, "index.html");
+function writeGeneratedHtmlDirectory(htmlStyles, pathname) {
+    writeGeneratedHtml(htmlStyles, pathname, "index.html");
 }
 
 function writeGeneratedHtmlList(htmlList, pathname) {
-    htmlList.forEach(({ id, html }) => {
-        writeGeneratedHtmlDirectory(html, path.join(pathname, id));
+    htmlList.forEach(({ id, html, styles }) => {
+        writeGeneratedHtmlDirectory({ html, styles }, path.join(pathname, id));
     });
 }
 

@@ -24,22 +24,67 @@ html {
     height: 100vh;
     display: grid;
     grid-template-areas:
-        "heading heading heading"
-        "image image image"
-        "zoom . layer";
-    grid-template-columns: 1fr minmax(0, 1fr) 1fr;
+        "close heading heading heading ."
+        "left image image image right"
+        "zoom zoom . layer layer";
+    grid-template-columns: var(--control-size) 1fr minmax(0, 1fr) 1fr var(--control-size);
     grid-template-rows: var(--control-size) 1fr calc(var(--control-size) * 2);
-    /* grid-template-areas:
-        "close heading control"
-        ". image control"
-        "instruction instruction control";
-    grid-template-columns: 2rem auto 2rem;
-    grid-template-rows: 2rem auto 2rem; */
     gap: 1rem;
     text-align: center;
-    text-wrap: nowrap;
     color: white;
     pointer-events: none;
+}
+
+.artwork-heading {
+    grid-area: heading;
+    display: flex;
+    flex-direction: column;
+    pointer-events: auto;    
+}
+
+.artwork-title {
+    font-size: calc(var(--control-size) - 1.2rem);
+    line-height: 100%;
+}
+
+.artwork-date {
+    font-size: 1.2rem;
+    line-height: 100%;
+}
+
+
+.artwork-index-container {
+    position: relative;
+    display: grid;
+    grid-template-areas:
+        "index ."
+        ". count";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    pointer-events: auto;
+}
+
+.artwork-index-container::after {
+    content: "";
+    position: absolute;
+    width: calc(100% * 1.414);
+    height: 2px;
+    top: 100%;
+    transform-origin: 0 0;
+    transform: rotate(-45deg); 
+    background-color: currentColor;
+}
+
+.artwork-index {
+    grid-area: index;
+    font-size: calc(var(--control-size) / 2);
+    line-height: 100%;
+}
+
+.artwork-count {
+    grid-area: count;
+    font-size: calc(var(--control-size) / 2);
+    line-height: 100%;
 }
 
 .artwork-control {
@@ -69,11 +114,6 @@ html {
     width: 100%;
     height: 100%;
     background-color: #8888;
-}
-
-.artwork-heading {
-    grid-area: heading;
-    pointer-events: auto;
 }
 
 .artwork-image-container {
@@ -111,6 +151,11 @@ html {
         );
 }
 
+.artwork-control-close {
+    grid-area: close;
+    pointer-events: auto;
+}
+
 .artwork-control-zoom {
     grid-area: zoom;
     pointer-events: auto;
@@ -118,6 +163,20 @@ html {
 
 .artwork-control-layer {
     grid-area: layer;
+    pointer-events: auto;
+}
+
+.artwork-control-scroll {
+    align-self: center;    
+}
+
+.artwork-control-scroll-left {
+    grid-area: left;
+    pointer-events: auto;
+}
+
+.artwork-control-scroll-right {
+    grid-area: right;
     pointer-events: auto;
 }
 

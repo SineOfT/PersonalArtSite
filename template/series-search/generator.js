@@ -10,14 +10,18 @@ function generateSeriesSearch(seriesData, artworksData) {
     let seriesListEntries = Object.entries(seriesData);
     seriesListEntries.sort(([_aId, a], [_bId, b]) => cmpDateSpan(a["date-span"], b["date-span"]));
     const seriesList = seriesListEntries.map(([seriesId, _]) => seriesId);
-    const updatedSeriesListHtml = generateSeriesList(seriesList, seriesData, artworksData);
+    const { html: updatedSeriesListHtml, styles: seriesStyles } =
+        generateSeriesList(seriesList, seriesData, artworksData);
     
     const updatedSeriesSearchHtml = seriesSearchHtml.toString()
         .replaceAll("%__SERIES_LIST__%", updatedSeriesListHtml);
 
-    const updatedSeriesSearchSite = generateSite(updatedSeriesSearchHtml, []);
+    const { html: updatedSeriesSearchSite, styles: siteStyles } = generateSite(updatedSeriesSearchHtml, []);
 
-    return updatedSeriesSearchSite;
+    return {
+        html: updatedSeriesSearchSite,
+        styles: [...siteStyles, ...seriesStyles]
+    };
 }
 
 module.exports = generateSeriesSearch;

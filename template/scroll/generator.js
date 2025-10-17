@@ -17,7 +17,10 @@ function generateScroll(scrollData) {
         .replaceAll("%__SCROLL_ANCHORS__%", updatedScrollAnchorsHtml)
         .replaceAll("%__SCROLL_DATA__%", JSON.stringify(scrollData));
 
-    return updatedScrollHtml;
+    return {
+        html: updatedScrollHtml,
+        styles: ["scroll"]
+    };
 }
 
 module.exports = generateScroll;

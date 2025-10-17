@@ -15,17 +15,22 @@ function generateHomeSite(sectionOrderData, sectionsData, artworksData, scrollBe
                 .replaceAll("%__SECTION_ID__%", id)
                 .replaceAll("%__SECTION_TITLE__%", section["title"])
                 .replaceAll("%__SECTION_DESCRIPTION__%", section["description"])
-                .replaceAll("%__SECTION_THUMBNAIL_0__%", artworksData[section["thumbnail-0"]]?.["main"] ?? "not-found.png")
-                .replaceAll("%__SECTION_THUMBNAIL_1__%", artworksData[section["thumbnail-1"]]?.["main"] ?? "not-found.png")
-                .replaceAll("%__SECTION_THUMBNAIL_2__%", artworksData[section["thumbnail-2"]]?.["main"] ?? "not-found.png")
-                .replaceAll("%__SECTION_THUMBNAIL_3__%", artworksData[section["thumbnail-3"]]?.["main"] ?? "not-found.png")
-                .replaceAll("%__SECTION_THUMBNAIL_4__%", artworksData[section["thumbnail-4"]]?.["main"] ?? "not-found.png");
+                .replaceAll("%__SECTION_THUMBNAIL_0__%", artworksData[section["thumbnail-0"]]?.["thumbnail"] ?? "not-found.jpg")
+                .replaceAll("%__SECTION_THUMBNAIL_1__%", artworksData[section["thumbnail-1"]]?.["thumbnail"] ?? "not-found.jpg")
+                .replaceAll("%__SECTION_THUMBNAIL_2__%", artworksData[section["thumbnail-2"]]?.["thumbnail"] ?? "not-found.jpg")
+                .replaceAll("%__SECTION_THUMBNAIL_3__%", artworksData[section["thumbnail-3"]]?.["thumbnail"] ?? "not-found.jpg")
+                .replaceAll("%__SECTION_THUMBNAIL_4__%", artworksData[section["thumbnail-4"]]?.["thumbnail"] ?? "not-found.jpg");
         })
         .join("\n");
     const updatedHomeHtml = homeHtml.toString()
         .replaceAll("%__HOME_SECTIONS__%", updatedSectionsHtml);
 
-    return generateSite(updatedHomeHtml, scrollBehaviorData);
+    const { html: updatedHomeSite, styles: siteStyles } = generateSite(updatedHomeHtml, scrollBehaviorData);
+
+    return {
+        html: updatedHomeSite,
+        styles: [...siteStyles, "transition", "home"]
+    };
 }
 
 module.exports = generateHomeSite;

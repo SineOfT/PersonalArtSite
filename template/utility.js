@@ -72,7 +72,7 @@ function cmpDate(dateA, dateB) {
     const cmpMonth = cmpNumberOrNull(dateA.month, dateB.month);
     if (cmpMonth) { return cmpMonth; }
 
-    const cmpDay = cmpNumberOrNull(dateA.day, dateB.day);
+    const cmpDay = cmpNumberOrNull(dateA.day || dateA["approx-day"], dateB.day || dateB["approx-day"]);
     if (cmpDay) { return cmpDay; }
 
     return 0;

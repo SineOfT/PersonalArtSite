@@ -11,9 +11,10 @@ function generateSeriesSites(sectionsData, seriesData, artworksData) {
         const [sectionId, section] = Object.entries(sectionsData)
             .find(([_sectionId, section]) => section["series"].includes(seriesId));
         const seriesArtworksList = series["artworks"] ?? [];
-        const updatedSeriesArtworksListHtml = generateArtworksList(seriesArtworksList, `?series=${seriesId}`, artworksData);
+        const { html: updatedSeriesArtworksListHtml, styles: artworksStyles } =
+            generateArtworksList(seriesArtworksList, `?series=${seriesId}`, artworksData);
 
-        const seriesBreadcrumbs = generateBreadcrumbs([
+        const { html: seriesBreadcrumbs, styles: breadcrumbsStyles } = generateBreadcrumbs([
             { "href": `/#${sectionId}`, "title": "Home" },
             ...(sectionId ? [{ "href": `/sections/${sectionId}#${seriesId}`, "title": section["title"] }] : [])
         ]);
@@ -23,9 +24,13 @@ function generateSeriesSites(sectionsData, seriesData, artworksData) {
             .replaceAll("%__SERIES_BREADCRUMBS__%", seriesBreadcrumbs)
             .replaceAll("%__SERIES_TITLE__%", series["title"]);
 
-        const updatedSeriesSite = generateSite(updatedSeriesHtml, []);
+        const { html: updatedSeriesSite, styles: siteStyles } = generateSite(updatedSeriesHtml, []);
 
-        return { id: seriesId, html: updatedSeriesSite };
+        return {
+            id: seriesId,
+            html: updatedSeriesSite,
+            styles: [...siteStyles, ...breadcrumbsStyles, ...artworksStyles]
+        };
     });
 }
 

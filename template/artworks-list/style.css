@@ -1,15 +1,11 @@
 .artworks-list-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-}
-
-.list-artwork-image {
-    width: 100%;
+    grid-auto-flow: dense;
 }
 
 .list-artwork-link {
     display: block;
-    border: 2px solid black;
     padding: 0;
     position: relative;
 }

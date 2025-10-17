@@ -1,20 +1,17 @@
 {
-    "digital": {
-        "title": "Digital Art",
+    "study": {
+        "title": "Art Studies",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "series": [
-            "ink24",
-            "kny-animal",
-            "ghibli",
-            "pokemon"
+            "anatomy"
         ],
         "thumbnail-0": "kanroji-bunny",
-        "thumbnail-1": "mimikyu",
-        "thumbnail-2": "rengoku-ink24",
-        "thumbnail-3": "medium-totoro",
-        "thumbnail-4": "tomioka-ink24"
+        "thumbnail-1": "kanroji-bunny",
+        "thumbnail-2": "kanroji-bunny",
+        "thumbnail-3": "kanroji-bunny",
+        "thumbnail-4": "kanroji-bunny"
     },
-    "digital2": {
+    "digital": {
         "title": "Digital Art",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "series": [
