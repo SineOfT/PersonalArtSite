@@ -40,7 +40,7 @@ body {
 #footer {
     position: sticky;
     bottom: calc(var(--site-footer-height) * -1);
-    background: brown;
+    background: var(--color-site-dirt);
     color: white;
     z-index: 99999;
 }

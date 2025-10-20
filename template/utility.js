@@ -10,6 +10,10 @@ function getDateSpan(dateSpan) {
         return `${startDateString} &ndash; Current`;
     }
 
+    if (startDate.year === endDate.year) {
+        endDate.year = "";
+    }
+
     const endDateString = getDate(endDate);
     return `${startDateString} &ndash; ${endDateString}`
 }
@@ -74,6 +78,9 @@ function cmpDate(dateA, dateB) {
 
     const cmpDay = cmpNumberOrNull(dateA.day || dateA["approx-day"], dateB.day || dateB["approx-day"]);
     if (cmpDay) { return cmpDay; }
+
+    const cmpOrder = cmpNumberOrNull(dateA.order, dateB.order);
+    if (cmpOrder) { return cmpOrder; }
 
     return 0;
 }

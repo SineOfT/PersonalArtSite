@@ -1,7 +1,7 @@
 const MIN_ZOOM = 1;
 const MAX_ZOOM = 10;
 
-export default function initArtwork(artworkId) {
+export default function initArtwork(artworkId, seriesArtworksData) {
     const artworkElement = document.getElementById("artwork");
 
     const artworkCloseButton               = artworkElement.querySelector(".close-button");
@@ -9,11 +9,44 @@ export default function initArtwork(artworkId) {
     const artworkControlZoomInElement      = artworkElement.querySelector(".control-zoom-in");
     const artworkControlZoomOutElement     = artworkElement.querySelector(".control-zoom-out");
     const artworkControlZoomDisplayElement = artworkElement.querySelector(".control-zoom-display");
+    const artworkControlLeftElement        = artworkElement.querySelector(".control-artwork-left");
+    const artworkControlRightElement       = artworkElement.querySelector(".control-artwork-right");
+    const seriesArtworkIndexContainer      = artworkElement.querySelector(".series-artwork-index-container");
+    const seriesArtworkIndex               = artworkElement.querySelector(".series-artwork-index");
+    const seriesArtworkCount               = artworkElement.querySelector(".series-artwork-count");
+
+    const searchParams = new URLSearchParams(window.location.search);
+    const seriesId = searchParams.get("series");
+
+    if (seriesId) {
+        const seriesArtworks = seriesArtworksData[seriesId];
+        if (seriesArtworks) {
+            const index = seriesArtworks.indexOf(artworkId);
+
+            seriesArtworkIndexContainer.classList.remove("d-none");
+            seriesArtworkIndex.textContent = index+1;
+            seriesArtworkCount.textContent = seriesArtworks.length;
+
+            const seriesArtworkLeftId = seriesArtworks[index-1];
+            if (seriesArtworkLeftId) {
+                artworkControlLeftElement.href = `/artworks/${seriesArtworkLeftId}/?series=${seriesId}`;
+                artworkControlLeftElement.classList.remove("disabled");
+            } else {
+                artworkControlLeftElement.classList.add("disabled");
+            }
+
+            const seriesArtworkRightId = seriesArtworks[index+1];
+            if (seriesArtworkRightId) {
+                artworkControlRightElement.href = `/artworks/${seriesArtworkRightId}/?series=${seriesId}`;
+                artworkControlRightElement.classList.remove("disabled");
+            } else {
+                artworkControlRightElement.classList.add("disabled");
+            }
+        }
+    }
 
     artworkCloseButton.addEventListener("click", (event) => {
         event.preventDefault();
-        const searchParams = new URLSearchParams(window.location.search);
-        const seriesId = searchParams.get("series");
         if (seriesId) {
             window.location.href = `/series/${seriesId}#${artworkId}`
         } else {
@@ -27,14 +60,29 @@ export default function initArtwork(artworkId) {
         artworkElement.style.setProperty("--zoom", zoom);
     }
 
-    artworkControlZoomInElement.classList.remove("disabled");
+    if (zoom < MAX_ZOOM) {
+        artworkControlZoomInElement.classList.remove("disabled");
+    }
     artworkControlZoomInElement.addEventListener("click", () => {
-        zoom = Math.min(zoom + 1, MAX_ZOOM);
+        zoom++;
+        if (zoom >= MAX_ZOOM) {
+            zoom = MAX_ZOOM;
+            artworkControlZoomInElement.classList.add("disabled");
+        }
+        artworkControlZoomOutElement.classList.remove("disabled");
         updateZoom();
     });
-    artworkControlZoomOutElement.classList.remove("disabled");
+
+    if (zoom > MIN_ZOOM) {
+        artworkControlZoomOutElement.classList.remove("disabled");
+    }
     artworkControlZoomOutElement.addEventListener("click", () => {
-        zoom = Math.max(zoom - 1, MIN_ZOOM);
+        zoom--;
+        if (zoom <= MIN_ZOOM) {
+            zoom = MIN_ZOOM;
+            artworkControlZoomOutElement.classList.add("disabled");
+        }
+        artworkControlZoomInElement.classList.remove("disabled");
         updateZoom();
     });
     updateZoom();

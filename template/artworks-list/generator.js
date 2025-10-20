@@ -10,7 +10,7 @@ function generateArtworksList(artworksList, searchParams, artworksData) {
     let artworkStyles = [];
     const updatedListArtworksHtml = artworksList
         .map((artworkId) => {
-            const artwork = artworksData[artworkId];
+            const artwork = artworksData.get(artworkId);
             if (!artwork) {
                 console.warn(`Artwork ${artworkId} not found`);
                 return "";

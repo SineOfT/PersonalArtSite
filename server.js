@@ -9,12 +9,20 @@ const generateArtworkSites = require("./template/artwork/generator");
 const generateSeriesSearch = require("./template/series-search/generator");
 const generateArtworksSearch = require("./template/artworks-search/generator");
 const generateError = require("./template/error/generator");
+const { cmpDate, cmpDateSpan } = require("./template/utility");
 
 const sectionOrderData   = JSON.parse(fs.readFileSync(path.join(__dirname, "/data/section-order.json")));
-const sectionsData       = JSON.parse(fs.readFileSync(path.join(__dirname, "/data/sections.json")));
-const seriesData         = JSON.parse(fs.readFileSync(path.join(__dirname, "/data/series.json")));
-const artworksData       = JSON.parse(fs.readFileSync(path.join(__dirname, "/data/artworks.json")));
 const scrollBehaviorData = JSON.parse(fs.readFileSync(path.join(__dirname, "/data/scroll-behavior.json")));
+
+const sectionsData = new Map(JSON.parse(fs.readFileSync(path.join(__dirname, "/data/sections.json"))));
+
+const seriesDataArray = JSON.parse(fs.readFileSync(path.join(__dirname, "/data/series.json")));
+seriesDataArray.sort(([_aId, a], [_bId, b]) => cmpDateSpan(a["date-span"], b["date-span"]));
+const seriesData = new Map(seriesDataArray);
+
+const artworksDataArray = JSON.parse(fs.readFileSync(path.join(__dirname, "/data/artworks.json")));
+artworksDataArray.sort(([_aId, a], [_bId, b]) => cmpDate(a["date"], b["date"]));
+const artworksData = new Map(artworksDataArray);
 
 function clearGeneratedDirectory() {
     const dirPathname = path.join(__dirname, "public");

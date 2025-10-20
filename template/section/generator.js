@@ -7,10 +7,10 @@ const generateSite = require("../site/generator");
 const sectionHtml = fs.readFileSync(path.join(__dirname, "/section.html"));
 
 function generateSectionSites(sectionsData, seriesData, artworksData) {
-    return Object.entries(sectionsData).map(([sectionId, section]) => {
+    return [...sectionsData.entries()].map(([sectionId, section]) => {
         const sectionSeriesList = section["series"] ?? [];
         const seriesScroll = sectionSeriesList.map((seriesId) => {
-            const series = seriesData[seriesId];
+            const series = seriesData.get(seriesId);
             return {
                 sectionId: seriesId,
                 hashId: seriesId,

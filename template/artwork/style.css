@@ -52,41 +52,6 @@ html {
     line-height: 100%;
 }
 
-
-.artwork-index-container {
-    position: relative;
-    display: grid;
-    grid-template-areas:
-        "index ."
-        ". count";
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    pointer-events: auto;
-}
-
-.artwork-index-container::after {
-    content: "";
-    position: absolute;
-    width: calc(100% * 1.414);
-    height: 2px;
-    top: 100%;
-    transform-origin: 0 0;
-    transform: rotate(-45deg); 
-    background-color: currentColor;
-}
-
-.artwork-index {
-    grid-area: index;
-    font-size: calc(var(--control-size) / 2);
-    line-height: 100%;
-}
-
-.artwork-count {
-    grid-area: count;
-    font-size: calc(var(--control-size) / 2);
-    line-height: 100%;
-}
-
 .artwork-control {
     display: block;
     padding: 0;
@@ -207,6 +172,40 @@ html {
 
 .artwork-control-display {
     font-size: calc(var(--control-size) - 1.5em);
+}
+
+.series-artwork-index-container {
+    position: relative;
+    display: grid;
+    grid-template-areas:
+        "index ."
+        ". count";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    pointer-events: auto;
+}
+
+.series-artwork-index-container::after {
+    content: "";
+    position: absolute;
+    width: calc(100% * 1.414);
+    height: 2px;
+    top: 100%;
+    transform-origin: 0 0;
+    transform: rotate(-45deg); 
+    background-color: currentColor;
+}
+
+.series-artwork-index {
+    grid-area: index;
+    font-size: calc(var(--control-size) / 2);
+    line-height: 100%;
+}
+
+.series-artwork-count {
+    grid-area: count;
+    font-size: calc(var(--control-size) / 2);
+    line-height: 100%;
 }
 
 @media (min-width: 50rem) {

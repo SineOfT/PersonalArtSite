@@ -6,20 +6,10 @@ const artworkHtml = fs.readFileSync(path.join(__dirname, "/artwork.html"));
 const layerHtml = fs.readFileSync(path.join(__dirname, "/layer.html"));
 
 function generateArtworkSites(seriesData, artworksData) {
-    return Object.entries(artworksData).map(([artworkId, artwork]) => {
+    const seriesArtworksData = Object.fromEntries(
+        [...seriesData.entries()].map(([seriesId, series]) => [seriesId, series.artworks]));
 
-        const findSeries = Object.entries(seriesData).reduce(
-            (acc, [seriesId, series]) => {
-                if (acc) { return acc; }
-                const artworks = series["artworks"];
-                const index = artworks.indexOf(artworkId);
-                if (index >= 0) {
-                    return { seriesId, artworks, index };
-                }
-                return null;
-            },
-            null
-        );
+    return [...artworksData.entries()].map(([artworkId, artwork], artworkIndex) => {
 
         const layerCount = artwork["layer-count"];
 
@@ -48,25 +38,18 @@ function generateArtworkSites(seriesData, artworksData) {
                 )
             ).join("\n");
 
+        const artworkLeftId  = [...artworksData.keys()][artworkIndex-1] ?? "";
+        const artworkRightId = [...artworksData.keys()][artworkIndex+1] ?? "";
         let updatedArtworkHtml = artworkHtml.toString()
+            .replaceAll("%__SERIES_ARTWORKS_DATA__%", JSON.stringify(seriesArtworksData))
             .replaceAll("%__ARTWORK_ID__%", artworkId)
             .replaceAll("%__ARTWORK_TITLE__%", artwork["title"])
             .replaceAll("%__ARTWORK_DATE__%", getDate(artwork["date"]))
-            .replaceAll("%__ARTWORK_LAYERS__%", updatedLayersHtml);
-
-        if (findSeries) {
-            const { seriesId, artworks, index } = findSeries;
-            const artworkLeftId = artworks[index-1] ?? "";
-            const artworkRightId = artworks[index+1] ?? "";
-            updatedArtworkHtml = updatedArtworkHtml
-                .replaceAll("%__SERIES_ID__%", seriesId)
-                .replaceAll("%__ARTWORK_INDEX__%", index + 1)
-                .replaceAll("%__ARTWORK_COUNT__%", artworks.length)
-                .replaceAll("%__ARTWORK_LEFT_ID__%", artworkLeftId)
-                .replaceAll("%__ARTWORK_RIGHT_ID__%", artworkRightId)
-                .replaceAll("%__ARTWORK_LEFT_CLASS__%", artworkLeftId ? "" : "disabled")
-                .replaceAll("%__ARTWORK_RIGHT_CLASS__%", artworkRightId ? "" : "disabled");
-        }
+            .replaceAll("%__ARTWORK_LAYERS__%", updatedLayersHtml)
+            .replaceAll("%__ARTWORK_LEFT_ID__%",  artworkLeftId)
+            .replaceAll("%__ARTWORK_RIGHT_ID__%", artworkRightId)
+            .replaceAll("%__ARTWORK_LEFT_CLASS__%",  artworkLeftId  ? "" : "disabled")
+            .replaceAll("%__ARTWORK_RIGHT_CLASS__%", artworkRightId ? "" : "disabled");
 
         return {
             id: artworkId,

@@ -10,14 +10,14 @@ function generateSeriesList(seriesList, seriesData, artworksData) {
     let artworkStyles = [];
     const updatedListSeries = seriesList
         .map((seriesId, index) => {
-            const series = seriesData[seriesId];
+            const series = seriesData.get(seriesId);
             if (!series) {
                 console.warn(`Series ${seriesId} not found`);
                 return "";
             }
 
             const { html: seriesThumbnail, styles: thisArtworkStyles } =
-                generateArtworkThumbnail(artworksData[series["thumbnail"]]);
+                generateArtworkThumbnail(artworksData.get(series["thumbnail"]));
 
             if (artworkStyles.length === 0) { artworkStyles = thisArtworkStyles; }
 

@@ -1,97 +1,107 @@
-{
-    "anatomy-tracing": {
+[
+    ["anatomy-tracing", {
         "title": "1 - Anatomy Tracing",
         "date": {
             "year": 2025,
-            "month": 1
+            "month": 1,
+            "order": 1
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/1-tracing.jpg",
         "layer-count": 0,
-        "censor": false
-    },
-    "anatomy-joints": {
+        "sketch": true
+    }],
+    ["anatomy-joints", {
         "title": "2 - Joints",
         "date": {
             "year": 2025,
-            "month": 1
+            "month": 1,
+            "order": 2
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/2-joints.jpg",
         "layer-count": 0,
-        "censor": false
-    },
-    "anatomy-spine-0": {
+        "sketch": true
+    }],
+    ["anatomy-spine-0", {
         "title": "3 - Spine (1)",
         "date": {
             "year": 2025,
-            "month": 1
+            "month": 1,
+            "order": 3
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/3-spine-0.jpg",
         "layer-count": 0,
-        "censor": false
-    },
-    "anatomy-spine-1": {
+        "sketch": true
+    }],
+    ["anatomy-spine-1", {
         "title": "3 - Spine (2)",
         "date": {
             "year": 2025,
-            "month": 1
+            "month": 1,
+            "order": 3.1
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/3-spine-1.jpg",
         "layer-count": 0,
-        "censor": false
-    },
-    "anatomy-spine-2": {
+        "sketch": true
+    }],
+    ["anatomy-spine-2", {
         "title": "3 - Spine (3)",
         "date": {
             "year": 2025,
-            "month": 1
+            "month": 1,
+            "order": 3.2
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/3-spine-2.jpg",
         "layer-count": 0,
+        "sketch": true,
         "censor": true
-    },
-    "anatomy-pelvis": {
+    }],
+    ["anatomy-pelvis", {
         "title": "4 - Pelvis",
         "date": {
             "year": 2025,
-            "month": 1
+            "month": 1,
+            "order": 4
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/4-pelvis.jpg",
         "layer-count": 0,
-        "censor": false
-    },
-    "anatomy-ribcage": {
+        "sketch": true
+    }],
+    ["anatomy-ribcage", {
         "title": "5 - Ribcage",
         "date": {
             "year": 2025,
-            "month": 1
+            "month": 1,
+            "order": 5
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/5-ribcage.jpg",
         "layer-count": 0,
-        "censor": false
-    },
-    "anatomy-shoulder-blades": {
+        "sketch": true
+    }],
+    ["anatomy-shoulder-blades", {
         "title": "6 - Shoulder Blades",
         "date": {
             "year": 2025,
-            "month": 1
+            "month": 1,
+            "order": 6
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/6-shoulder-blades.jpg",
         "layer-count": 0,
-        "censor": false
-    },
-    "anatomy-repractice": {
+        "sketch": true
+    }],
+    ["anatomy-repractice", {
         "title": "Anatomy Bones Repractice",
         "date": {
             "year": 2025,
-            "month": 1
+            "month": 1,
+            "order": 6.5
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/repractice.jpg",
@@ -99,25 +109,28 @@
         "position": {
             "y": 0.1
         },
-        "censor": false
-    },
-    "anatomy-pecs": {
+        "sketch": true
+    }],
+    ["anatomy-pecs", {
         "title": "7 - Pecs",
         "date": {
             "year": 2025,
-            "month": 2
+            "month": 2,
+            "order": 7
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/7-pecs.jpg",
         "layer-count": 0,
-        "censor": false
-    },
-    "anatomy-breasts-0": {
+        "sketch": true,
+        "censor": true
+    }],
+    ["anatomy-breasts-0", {
         "title": "8 - Breasts (1)",
         "date": {
             "year": 2025,
             "month": 2,
-            "day": 17
+            "day": 17,
+            "order": 8
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/8-breasts-0.jpg",
@@ -125,277 +138,307 @@
         "position": {
             "y": 0.7
         },
+        "sketch": true,
         "censor": true
-    },
-    "anatomy-breasts-1": {
+    }],
+    ["anatomy-breasts-1", {
         "title": "8 - Breasts (2)",
         "date": {
             "year": 2025,
             "month": 2,
-            "day": 17
+            "day": 17,
+            "order": 8.1
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/8-breasts-1.jpg",
         "layer-count": 0,
+        "sketch": true,
         "censor": true
-    },
-    "anatomy-abs-0": {
+    }],
+    ["anatomy-abs-0", {
         "title": "9 - Abs (1)",
         "date": {
             "year": 2025,
             "month": 2,
-            "day": 18
+            "day": 18,
+            "order": 9
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/9-abs-0.jpg",
         "layer-count": 0,
+        "sketch": true,
         "censor": true
-    },
-    "anatomy-abs-1": {
+    }],
+    ["anatomy-abs-1", {
         "title": "9 - Abs (2)",
         "date": {
             "year": 2025,
             "month": 2,
-            "day": 18
+            "day": 18,
+            "order": 9.1
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/9-abs-1.jpg",
         "layer-count": 0,
+        "sketch": true,
         "censor": true
-    },
-    "anatomy-obliques-0": {
+    }],
+    ["anatomy-obliques-0", {
         "title": "10 - Obliques (1)",
         "date": {
             "year": 2025,
             "month": 2,
-            "day": 19
+            "day": 19,
+            "order": 10
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/10-obliques-0.jpg",
         "layer-count": 0,
-        "censor": false
-    },
-    "anatomy-obliques-1": {
+        "sketch": true
+    }],
+    ["anatomy-obliques-1", {
         "title": "10 - Obliques (2)",
         "date": {
             "year": 2025,
             "month": 2,
-            "day": 20
+            "day": 20,
+            "order": 10.1
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/10-obliques-1.jpg",
         "layer-count": 0,
+        "sketch": true,
         "censor": true
-    },
-    "anatomy-obliques-2": {
+    }],
+    ["anatomy-obliques-2", {
         "title": "10 - Obliques (3)",
         "date": {
             "year": 2025,
             "month": 2,
-            "day": 20
+            "day": 20,
+            "order": 10.2
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/10-obliques-2.jpg",
         "layer-count": 0,
-        "censor": false
-    },
-    "anatomy-shoulders": {
+        "sketch": true
+    }],
+    ["anatomy-shoulders", {
         "title": "11 - Shoulders",
         "date": {
             "year": 2025,
             "month": 2,
-            "day": 21
+            "day": 21,
+            "order": 11
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/11-shoulders.jpg",
         "layer-count": 0,
-        "censor": false
-    },
-    "anatomy-lower-back": {
+        "sketch": true
+    }],
+    ["anatomy-lower-back", {
         "title": "12 - Lower Back",
         "date": {
             "year": 2025,
             "month": 2,
-            "day": 22
+            "day": 22,
+            "order": 12
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/12-lower-back.jpg",
         "layer-count": 0,
-        "censor": false
-    },
-    "anatomy-upper-back": {
+        "sketch": true
+    }],
+    ["anatomy-upper-back", {
         "title": "13 - Upper Back",
         "date": {
             "year": 2025,
             "month": 2,
-            "day": 28
+            "day": 28,
+            "order": 13
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/13-upper-back.jpg",
         "layer-count": 0,
-        "censor": false
-    },
-    "anatomy-arm-bones": {
+        "sketch": true
+    }],
+    ["anatomy-arm-bones", {
         "title": "15 - Arm Bones",
         "date": {
             "year": 2025,
-            "month": 2
+            "month": 3,
+            "order": 15
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/15-arm-bones.jpg",
         "layer-count": 0,
-        "censor": false
-    },
-    "anatomy-hand-bones": {
+        "sketch": true,
+        "censor": true
+    }],
+    ["anatomy-hand-bones", {
         "title": "16 - Hand Bones",
         "date": {
             "year": 2025,
             "month": 3,
-            "day": 14
+            "day": 14,
+            "order": 16
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/16-hand-bones.jpg",
         "layer-count": 0,
-        "censor": false
-    },
-    "anatomy-deltoids": {
+        "sketch": true
+    }],
+    ["anatomy-deltoids", {
         "title": "17 - Deltoids",
         "date": {
             "year": 2025,
             "month": 3,
-            "day": 15
+            "day": 15,
+            "order": 17
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/17-deltoids.jpg",
         "layer-count": 0,
-        "censor": false
-    },
-    "anatomy-biceps-0": {
+        "sketch": true
+    }],
+    ["anatomy-biceps-0", {
         "title": "18 - Biceps (1)",
         "date": {
             "year": 2025,
             "month": 4,
-            "day": 14
+            "day": 14,
+            "order": 18
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/18-biceps-0.jpg",
         "layer-count": 0,
-        "censor": false
-    },
-    "anatomy-biceps-1": {
+        "sketch": true
+    }],
+    ["anatomy-biceps-1", {
         "title": "18 - Biceps (2)",
         "date": {
             "year": 2025,
             "month": 4,
-            "day": 14
+            "day": 14,
+            "order": 18.1
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/18-biceps-1.jpg",
         "layer-count": 0,
-        "censor": false
-    },
-    "anatomy-triceps-0": {
+        "sketch": true
+    }],
+    ["anatomy-triceps-0", {
         "title": "19 - Triceps (1)",
         "date": {
             "year": 2025,
             "month": 4,
-            "day": 15
+            "day": 15,
+            "order": 19
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/19-triceps-0.jpg",
         "layer-count": 0,
-        "censor": false
-    },
-    "anatomy-triceps-1": {
+        "sketch": true
+    }],
+    ["anatomy-triceps-1", {
         "title": "19 - Triceps (2)",
         "date": {
             "year": 2025,
             "month": 4,
-            "day": 15
+            "day": 15,
+            "order": 19.1
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/19-triceps-1.jpg",
         "layer-count": 0,
-        "censor": false
-    },
-    "anatomy-forearms": {
+        "sketch": true
+    }],
+    ["anatomy-forearms", {
         "title": "20 - Forearms",
         "date": {
             "year": 2025,
             "month": 4,
-            "day": 15
+            "day": 15,
+            "order": 20
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/20-forearms.jpg",
         "layer-count": 0,
-        "censor": false
-    },
-    "anatomy-hands-0": {
+        "sketch": true
+    }],
+    ["anatomy-hands-0", {
         "title": "21 - Hands",
         "date": {
             "year": 2025,
             "month": 4,
-            "day": 16
+            "day": 16,
+            "order": 21
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/21-hands.jpg",
         "layer-count": 0,
-        "censor": false
-    },
-    "anatomy-hands-1": {
+        "sketch": true
+    }],
+    ["anatomy-hands-1", {
         "title": "22 - Hands (Invention)",
         "date": {
             "year": 2025,
             "month": 4,
-            "day": 16
+            "day": 16,
+            "order": 22
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/22-hands.jpg",
         "layer-count": 0,
-        "censor": false
-    },
-    "anatomy-hands-2": {
+        "sketch": true
+    }],
+    ["anatomy-hands-2", {
         "title": "23 - Hands (Imagination)",
         "date": {
             "year": 2025,
             "month": 4,
-            "day": 17
+            "day": 17,
+            "order": 23
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/23-hands.jpg",
         "layer-count": 0,
-        "censor": false
-    },
-    "anatomy-leg-bones-0": {
+        "sketch": true
+    }],
+    ["anatomy-leg-bones-0", {
         "title": "24 - Leg Bones (1)",
         "date": {
             "year": 2025,
             "month": 4,
-            "day": 20
+            "day": 20,
+            "order": 24
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/24-leg-bones-0.jpg",
         "layer-count": 0,
-        "censor": false
-    },
-    "anatomy-leg-bones-1": {
+        "sketch": true
+    }],
+    ["anatomy-leg-bones-1", {
         "title": "24 - Leg Bones (2)",
         "date": {
             "year": 2025,
             "month": 4,
-            "day": 20
+            "day": 20,
+            "order": 24.1
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/24-leg-bones-1.jpg",
         "layer-count": 0,
-        "censor": false
-    },
-    "anatomy-foot-bones": {
+        "sketch": true,
+        "censor": true
+    }],
+    ["anatomy-foot-bones", {
         "title": "25 - Foot Bones",
         "date": {
             "year": 2025,
             "month": 4,
-            "day": 21
+            "day": 21,
+            "order": 25
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/25-foot-bones.jpg",
@@ -403,14 +446,15 @@
         "position": {
             "y": 1
         },
-        "censor": false
-    },
-    "anatomy-butt": {
+        "sketch": true
+    }],
+    ["anatomy-butt", {
         "title": "26 - Butt",
         "date": {
             "year": 2025,
             "month": 4,
-            "day": 21
+            "day": 21,
+            "order": 26
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/26-butt.jpg",
@@ -418,62 +462,67 @@
         "position": {
             "y": 0.6
         },
-        "censor": false
-    },
-    "anatomy-abductors-0": {
+        "sketch": true
+    }],
+    ["anatomy-abductors-0", {
         "title": "27 - Abductors (1)",
         "date": {
             "year": 2025,
             "month": 4,
-            "day": 22
+            "day": 22,
+            "order": 27
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/27-abductors-0.jpg",
         "layer-count": 0,
-        "censor": false
-    },
-    "anatomy-abductors-1": {
+        "sketch": true
+    }],
+    ["anatomy-abductors-1", {
         "title": "27 - Abductors (2)",
         "date": {
             "year": 2025,
             "month": 4,
-            "day": 22
+            "day": 22,
+            "order": 27.1
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/27-abductors-1.jpg",
         "layer-count": 0,
-        "censor": false
-    },
-    "anatomy-quadriceps-0": {
+        "sketch": true
+    }],
+    ["anatomy-quadriceps-0", {
         "title": "28 - Quadriceps (1)",
         "date": {
             "year": 2025,
             "month": 4,
-            "day": 22
+            "day": 22,
+            "order": 28
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/28-quadriceps-0.jpg",
         "layer-count": 0,
-        "censor": false
-    },
-    "anatomy-quadriceps-1": {
+        "sketch": true
+    }],
+    ["anatomy-quadriceps-1", {
         "title": "28 - Quadriceps (2)",
         "date": {
             "year": 2025,
             "month": 4,
-            "day": 23
+            "day": 23,
+            "order": 28.1
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/28-quadriceps-1.jpg",
         "layer-count": 0,
-        "censor": false
-    },
-    "anatomy-hamstrings": {
+        "sketch": true
+    }],
+    ["anatomy-hamstrings", {
         "title": "29 - Hamstrings",
         "date": {
             "year": 2025,
             "month": 4,
-            "day": 23
+            "day": 23,
+            "order": 29
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/29-hamstrings.jpg",
@@ -481,14 +530,16 @@
         "position": {
             "y": 0.3
         },
-        "censor": false
-    },
-    "anatomy-calves": {
+        "sketch": true,
+        "censor": true
+    }],
+    ["anatomy-calves", {
         "title": "30 - Calves",
         "date": {
             "year": 2025,
             "month": 4,
-            "day": 24
+            "day": 24,
+            "order": 30
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/30-calves.jpg",
@@ -496,14 +547,15 @@
         "position": {
             "y": 0.2
         },
-        "censor": false
-    },
-    "anatomy-anterolaterals": {
+        "sketch": true
+    }],
+    ["anatomy-anterolaterals", {
         "title": "31 - Anterolaterals",
         "date": {
             "year": 2025,
             "month": 4,
-            "day": 25
+            "day": 25,
+            "order": 31
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/31-anterolaterals.jpg",
@@ -511,14 +563,15 @@
         "position": {
             "y": 0.8
         },
-        "censor": false
-    },
-    "anatomy-foot-0": {
+        "sketch": true
+    }],
+    ["anatomy-foot-0", {
         "title": "32 - Foot (1)",
         "date": {
             "year": 2025,
             "month": 4,
-            "day": 25
+            "day": 25,
+            "order": 32
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/32-foot-0.jpg",
@@ -526,14 +579,15 @@
         "position": {
             "y": 0.6
         },
-        "censor": false
-    },
-    "anatomy-foot-1": {
+        "sketch": true
+    }],
+    ["anatomy-foot-1", {
         "title": "32 - Foot (2)",
         "date": {
             "year": 2025,
             "month": 4,
-            "day": 26
+            "day": 26,
+            "order": 32.1
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "anatomy/32-foot-1.jpg",
@@ -541,9 +595,9 @@
         "position": {
             "y": 0.65
         },
-        "censor": false
-    },
-    "medium-totoro": {
+        "sketch": true
+    }],
+    ["medium-totoro", {
         "title": "Medium & Small Totoro",
         "date": {
             "year": 2024,
@@ -551,10 +605,9 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "medium-totoro/0.jpg",
-        "layer-count": 1,
-        "censor": false
-    },
-    "mimikyu": {
+        "layer-count": 1
+    }],
+    ["mimikyu", {
         "title": "Mimikyu Autumn",
         "date": {
             "year": 2024,
@@ -562,10 +615,9 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "mimikyu/0.jpg",
-        "layer-count": 1,
-        "censor": false
-    },
-    "ponyo": {
+        "layer-count": 1
+    }],
+    ["ponyo", {
         "title": "Ponyo",
         "date": {
             "year": 2024,
@@ -573,10 +625,9 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "ponyo/0.jpg",
-        "layer-count": 1,
-        "censor": false
-    },
-    "inosuke-ink24": {
+        "layer-count": 1
+    }],
+    ["inosuke-ink24", {
         "title": "Hashibira Inosuke (Wolf)",
         "date": {
             "year": 2024,
@@ -585,10 +636,9 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "/inosuke-ink24/0.jpg",
-        "layer-count": 5,
-        "censor": false
-    },
-    "himejima-ink24": {
+        "layer-count": 5
+    }],
+    ["himejima-ink24", {
         "title": "Himejima Gyomei (Chains)",
         "date": {
             "year": 2024,
@@ -597,10 +647,9 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "himejima-ink24/0.jpg",
-        "layer-count": 5,
-        "censor": false
-    },
-    "kokushibo-ink24": {
+        "layer-count": 5
+    }],
+    ["kokushibo-ink24", {
         "title": "Kokushibo (Monster)",
         "date": {
             "year": 2024,
@@ -609,10 +658,9 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "kokushibo-ink24/0.jpg",
-        "layer-count": 5,
-        "censor": false
-    },
-    "uzui-ink24": {
+        "layer-count": 5
+    }],
+    ["uzui-ink24", {
         "title": "Uzui Tengen (Blade)",
         "date": {
             "year": 2024,
@@ -621,10 +669,9 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "uzui-ink24/0.jpg",
-        "layer-count": 5,
-        "censor": false
-    },
-    "tokito-ink24": {
+        "layer-count": 5
+    }],
+    ["tokito-ink24", {
         "title": "Tokito Muichiro (Hollow)",
         "date": {
             "year": 2024,
@@ -633,10 +680,9 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "tokito-ink24/0.jpg",
-        "layer-count": 3,
-        "censor": false
-    },
-    "gyokko-ink24": {
+        "layer-count": 3
+    }],
+    ["gyokko-ink24", {
         "title": "Gyokko (Murder)",
         "date": {
             "year": 2024,
@@ -645,10 +691,9 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "gyokko-ink24/0.jpg",
-        "layer-count": 5,
-        "censor": false
-    },
-    "gyutaro-ink24": {
+        "layer-count": 5
+    }],
+    ["gyutaro-ink24", {
         "title": "Gyutaro (Bones)",
         "date": {
             "year": 2024,
@@ -657,10 +702,9 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "gyutaro-ink24/0.jpg",
-        "layer-count": 5,
-        "censor": false
-    },
-    "akaza-ink24": {
+        "layer-count": 5
+    }],
+    ["akaza-ink24", {
         "title": "Akaza (Ghost)",
         "date": {
             "year": 2024,
@@ -669,10 +713,9 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "akaza-ink24/0.jpg",
-        "layer-count": 5,
-        "censor": false
-    },
-    "hantengu-ink24": {
+        "layer-count": 5
+    }],
+    ["hantengu-ink24", {
         "title": "Hantengu (Heathen)",
         "date": {
             "year": 2024,
@@ -681,10 +724,9 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "hantengu-ink24/0.jpg",
-        "layer-count": 5,
-        "censor": false
-    },
-    "urokodaki-ink24": {
+        "layer-count": 5
+    }],
+    ["urokodaki-ink24", {
         "title": "Urokodaki Sakonji, Sabito, and Makomo (Ocean)",
         "date": {
             "year": 2024,
@@ -693,10 +735,9 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "urokodaki-ink24/0.jpg",
-        "layer-count": 5,
-        "censor": false
-    },
-    "kanao-ink24": {
+        "layer-count": 5
+    }],
+    ["kanao-ink24", {
         "title": "Tsuyuri Kanao (Pressure)",
         "date": {
             "year": 2024,
@@ -705,10 +746,9 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "kanao-ink24/0.jpg",
-        "layer-count": 5,
-        "censor": false
-    },
-    "shinjuro-ink24": {
+        "layer-count": 5
+    }],
+    ["shinjuro-ink24", {
         "title": "Rengoku Shinjuro (Addiction)",
         "date": {
             "year": 2024,
@@ -717,10 +757,9 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "shinjuro-ink24/0.jpg",
-        "layer-count": 5,
-        "censor": false
-    },
-    "ubuyashiki-ink24": {
+        "layer-count": 5
+    }],
+    ["ubuyashiki-ink24", {
         "title": "Ubuyashiki Kagaya and Amane (Empathy)",
         "date": {
             "year": 2024,
@@ -729,10 +768,9 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "ubuyashiki-ink24/0.jpg",
-        "layer-count": 5,
-        "censor": false
-    },
-    "nezuko-ink24": {
+        "layer-count": 5
+    }],
+    ["nezuko-ink24", {
         "title": "Kamado Nezuko (Devotion)",
         "date": {
             "year": 2024,
@@ -741,10 +779,9 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "nezuko-ink24/0.jpg",
-        "layer-count": 5,
-        "censor": false
-    },
-    "enmu-ink24": {
+        "layer-count": 5
+    }],
+    ["enmu-ink24", {
         "title": "Enmu (Madness)",
         "date": {
             "year": 2024,
@@ -753,10 +790,9 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "enmu-ink24/0.jpg",
-        "layer-count": 5,
-        "censor": false
-    },
-    "zenitsu-ink24": {
+        "layer-count": 5
+    }],
+    ["zenitsu-ink24", {
         "title": "Agatsuma Zenitsu (Fall)",
         "date": {
             "year": 2024,
@@ -765,10 +801,9 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "zenitsu-ink24/0.jpg",
-        "layer-count": 5,
-        "censor": false
-    },
-    "kibutsuji-ink24": {
+        "layer-count": 5
+    }],
+    ["kibutsuji-ink24", {
         "title": "Kibutsuji Muzan (Desperation)",
         "date": {
             "year": 2024,
@@ -777,10 +812,9 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "kibutsuji-ink24/0.jpg",
-        "layer-count": 5,
-        "censor": false
-    },
-    "rui-ink24": {
+        "layer-count": 5
+    }],
+    ["rui-ink24", {
         "title": "Rui and Mother Spider (Freedom)",
         "date": {
             "year": 2024,
@@ -789,10 +823,9 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "rui-ink24/0.jpg",
-        "layer-count": 5,
-        "censor": false
-    },
-    "shinazugawa-ink24": {
+        "layer-count": 5
+    }],
+    ["shinazugawa-ink24", {
         "title": "Shinazugawa Sanemi and Genya (Broken)",
         "date": {
             "year": 2024,
@@ -801,10 +834,9 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "shinazugawa-ink24/0.jpg",
-        "layer-count": 5,
-        "censor": false
-    },
-    "haganezuka-ink24": {
+        "layer-count": 5
+    }],
+    ["haganezuka-ink24", {
         "title": "Haganezuka Hotaru and Kotetsu (Youth)",
         "date": {
             "year": 2024,
@@ -813,10 +845,9 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "haganezuka-ink24/0.jpg",
-        "layer-count": 5,
-        "censor": false
-    },
-    "yushiro-ink24": {
+        "layer-count": 5
+    }],
+    ["yushiro-ink24", {
         "title": "Yushiro and Tamayo (Love)",
         "date": {
             "year": 2024,
@@ -825,10 +856,9 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "yushiro-ink24/0.jpg",
-        "layer-count": 5,
-        "censor": false
-    },
-    "daki-ink24": {
+        "layer-count": 5
+    }],
+    ["daki-ink24", {
         "title": "Daki (Night)",
         "date": {
             "year": 2024,
@@ -837,10 +867,9 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "daki-ink24/0.jpg",
-        "layer-count": 5,
-        "censor": false
-    },
-    "kanroji-ink24": {
+        "layer-count": 5
+    }],
+    ["kanroji-ink24", {
         "title": "Kanroji Mitsuri (Warn)",
         "date": {
             "year": 2024,
@@ -849,10 +878,9 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "kanroji-ink24/0.jpg",
-        "layer-count": 5,
-        "censor": false
-    },
-    "doma-ink24": {
+        "layer-count": 5
+    }],
+    ["doma-ink24", {
         "title": "Doma (House)",
         "date": {
             "year": 2024,
@@ -861,10 +889,9 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "doma-ink24/0.jpg",
-        "layer-count": 5,
-        "censor": false
-    },
-    "iguro-ink24": {
+        "layer-count": 5
+    }],
+    ["iguro-ink24", {
         "title": "Iguro Obanai and Kaburamaru (Belong)",
         "date": {
             "year": 2024,
@@ -873,10 +900,9 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "iguro-ink24/0.jpg",
-        "layer-count": 5,
-        "censor": false
-    },
-    "nakime-ink24": {
+        "layer-count": 5
+    }],
+    ["nakime-ink24", {
         "title": "Nakime (Atmosphere)",
         "date": {
             "year": 2024,
@@ -885,10 +911,9 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "nakime-ink24/0.jpg",
-        "layer-count": 5,
-        "censor": false
-    },
-    "kocho-ink24": {
+        "layer-count": 5
+    }],
+    ["kocho-ink24", {
         "title": "Kocho Shinobu and Kanae (Speed)",
         "date": {
             "year": 2024,
@@ -897,10 +922,9 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "kocho-ink24/0.jpg",
-        "layer-count": 5,
-        "censor": false
-    },
-    "murata-ink24": {
+        "layer-count": 5
+    }],
+    ["murata-ink24", {
         "title": "Murata (Faded)",
         "date": {
             "year": 2024,
@@ -909,10 +933,9 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "murata-ink24/0.jpg",
-        "layer-count": 5,
-        "censor": false
-    },
-    "tomioka-ink24": {
+        "layer-count": 5
+    }],
+    ["tomioka-ink24", {
         "title": "Tomioka Giyu  (Lost)",
         "date": {
             "year": 2024,
@@ -921,10 +944,9 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "tomioka-ink24/0.jpg",
-        "layer-count": 5,
-        "censor": false
-    },
-    "kyojuro-ink24": {
+        "layer-count": 5
+    }],
+    ["kyojuro-ink24", {
         "title": "Rengoku Kyojuro and Kamado Tanjiro (Passion)",
         "date": {
             "year": 2024,
@@ -933,22 +955,20 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "kyojuro-ink24/0.jpg",
-        "layer-count": 6,
-        "censor": false
-    },
-    "kanroji-bunny": {
+        "layer-count": 6
+    }],
+    ["kanroji-bunny", {
         "title": "Kanroji Mitsuri + Bunny",
         "date": {
             "year": 2025,
             "month": 4,
-            "approx-day": 19
+            "day": 19
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "kanroji-bunny/0.jpg",
-        "layer-count": 9,
-        "censor": false
-    },
-    "iguro-kaburamaru": {
+        "layer-count": 9
+    }],
+    ["iguro-kaburamaru", {
         "title": "Iguro Obanai + Kaburamaru",
         "date": {
             "year": 2025,
@@ -956,7 +976,6 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "thumbnail": "iguro-kaburamaru/0.jpg",
-        "layer-count": 10,
-        "censor": false
-    }
-}
+        "layer-count": 10
+    }]
+]

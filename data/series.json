@@ -1,11 +1,15 @@
-{
-    "anatomy": {
+[
+    ["anatomy", {
         "title": "Anatomy Studies",
         "date-span": {
             "start-date": {
-                "year": 2022
+                "year": 2025,
+                "month": 1
             },
-            "end-date": "current"
+            "end-date": {
+                "year": 2025,
+                "month": 4
+            }
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "artworks": [
@@ -55,8 +59,8 @@
             "anatomy-foot-1"
         ],
         "thumbnail": "anatomy-hands-0"
-    },
-    "ghibli": {
+    }],
+    ["ghibli", {
         "title": "Studio Ghibli Artworks",
         "date-span": {
             "start-date": {
@@ -70,8 +74,8 @@
             "medium-totoro"
         ],
         "thumbnail": "medium-totoro"
-    },
-    "ink24": {
+    }],
+    ["ink24", {
         "title": "Inktober 2024",
         "date-span": {
             "start-date": {
@@ -114,8 +118,8 @@
             "kyojuro-ink24"
         ],
         "thumbnail": "tomioka-ink24"
-    },
-    "kny-animal": {
+    }],
+    ["kny-animal", {
         "title": "Kimetsu no Yaiba + Favorite Animal Series",
         "date-span": {
             "start-date": {
@@ -129,8 +133,8 @@
             "iguro-kaburamaru"
         ],
         "thumbnail": "iguro-kaburamaru"
-    },
-    "pokemon": {
+    }],
+    ["pokemon", {
         "title": "Pokemon Artworks",
         "date-span": {
             "start-date": {
@@ -143,5 +147,5 @@
             "mimikyu"
         ],
         "thumbnail": "mimikyu"
-    }
-}
+    }]
+]

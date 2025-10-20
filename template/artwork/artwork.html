@@ -8,9 +8,9 @@
         <div class="artwork-control-close">
             <a href="/artworks#%__ARTWORK_ID__%" class="artwork-control close-button">X</a>
         </div>
-        <div class="artwork-index-container">
-            <div class="artwork-index">%__ARTWORK_INDEX__%</div>
-            <div class="artwork-count">%__ARTWORK_COUNT__%</div>
+        <div class="series-artwork-index-container d-none">
+            <div class="series-artwork-index"></div>
+            <div class="series-artwork-count"></div>
         </div>
         <div class="artwork-control-container artwork-control-zoom">
             <div class="artwork-control-text">
@@ -28,14 +28,14 @@
         </div>
         <div class="artwork-control-scroll artwork-control-scroll-left">
             <a
-                href="/artworks/%__ARTWORK_LEFT_ID__%?series=%__SERIES_ID__%"
-                class="artwork-control %__ARTWORK_LEFT_CLASS__%"
+                href="/artworks/%__ARTWORK_LEFT_ID__%/"
+                class="artwork-control control-artwork-left %__ARTWORK_LEFT_CLASS__%"
             ></a>
         </div>
         <div class="artwork-control-scroll artwork-control-scroll-right">
             <a
-                href="/artworks/%__ARTWORK_RIGHT_ID__%?series=%__SERIES_ID__%"
-                class="artwork-control %__ARTWORK_RIGHT_CLASS__%"
+                href="/artworks/%__ARTWORK_RIGHT_ID__%/"
+                class="artwork-control control-artwork-right %__ARTWORK_RIGHT_CLASS__%"
             ></a>
         </div>
     </div>
@@ -46,10 +46,11 @@
     import initArtwork from "/scripts/artwork.js";
 
     const artworkId = "%__ARTWORK_ID__%";
+    const seriesArtworksData = JSON.parse('%__SERIES_ARTWORKS_DATA__%');
 
     document.addEventListener("DOMContentLoaded", () => {
 
-        initArtwork(artworkId);
+        initArtwork(artworkId, seriesArtworksData);
 
     }, { once: true });
 

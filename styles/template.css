@@ -1,6 +1,9 @@
 :root {
     --color-backdrop: #000B;
-    --color-site-accent: #CCC;
+    --color-site-main: hsl(198, 50%, 95%);
+    --color-site-accent: hsl(9, 25%, 65%);
+
+    --color-site-dirt: hsl(9, 50%, 30%);
 
     --artwork-aspect-ratio: calc(2880/1800);
 
@@ -15,6 +18,7 @@
 
 body {
     margin: 0;
+    background-color: var(--color-site-main);
 }
 
 h1, h2, h3, h4, h5, h6 {

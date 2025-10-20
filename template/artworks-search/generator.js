@@ -2,13 +2,12 @@ const fs = require("fs");
 const path = require("path");
 const generateArtworksList = require("../artworks-list/generator");
 const generateSite = require("../site/generator");
-const { cmpDate } = require("../utility");
 
 const artworksSearchHtml = fs.readFileSync(path.join(__dirname, "/artworks-search.html"));
 
 function generateArtworksSearch(artworksData) {
-    let artworksListEntries = Object.entries(artworksData);
-    artworksListEntries.sort(([_aId, a], [_bId, b]) => cmpDate(a["date"], b["date"]));
+    let artworksListEntries = [...artworksData.entries()];
+    artworksListEntries = artworksListEntries.filter(([_, artwork]) => !artwork.sketch);
     const artworksList = artworksListEntries.map(([artworkId, _]) => artworkId);
     const { html: updatedArtworksListHtml, styles: artworksStyles } = generateArtworksList(artworksList, "", artworksData);
 

@@ -1,5 +1,5 @@
-{
-    "study": {
+[
+    ["study", {
         "title": "Art Studies",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "series": [
@@ -10,8 +10,8 @@
         "thumbnail-2": "kanroji-bunny",
         "thumbnail-3": "kanroji-bunny",
         "thumbnail-4": "kanroji-bunny"
-    },
-    "digital": {
+    }],
+    ["digital", {
         "title": "Digital Art",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "series": [
@@ -25,5 +25,5 @@
         "thumbnail-2": "rengoku-ink24",
         "thumbnail-3": "medium-totoro",
         "thumbnail-4": "tomioka-ink24"
-    }
-}
+    }]
+]

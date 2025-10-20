@@ -7,8 +7,8 @@ const generateSite = require("../site/generator");
 const seriesHtml = fs.readFileSync(path.join(__dirname, "/series.html"));
 
 function generateSeriesSites(sectionsData, seriesData, artworksData) {
-    return Object.entries(seriesData).map(([seriesId, series]) => {    
-        const [sectionId, section] = Object.entries(sectionsData)
+    return [...seriesData.entries()].map(([seriesId, series]) => {
+        const [sectionId, section] = [...sectionsData.entries()]
             .find(([_sectionId, section]) => section["series"].includes(seriesId));
         const seriesArtworksList = series["artworks"] ?? [];
         const { html: updatedSeriesArtworksListHtml, styles: artworksStyles } =
