@@ -1,1 +1,35 @@
+<div class="search-banner">
+    <form method="get" id="search-form">
+        <div class="flex-row-stretch pb-m">
+            <input type="text" name="search" class="search-input flex-item-main" placeholder="Search" />
+            <button type="submit" class="search-btn">Search</button>
+        </div>
+        <div class="flex-row-wrap">
+            <div class="py-l">
+                <input type="checkbox" name="include-sketches" id="include-sketches-check" class="include-sketches-check" />
+                <label for="include-sketches-check">Include sketches</label>
+            </div>
+            <fieldset class="section-checkboxes">
+                <legend>In section</legend>
+                %__SECTIONS_CHECKBOXES__%
+            </fieldset>
+            <fieldset class="series-checkboxes">
+                <legend>In series</legend>
+                %__SERIES_CHECKBOXES__%
+            </fieldset>
+        </div>
+    </form>
+</div>
+
 %__ARTWORKS_LIST__%
+
+<script type="module" defer>
+    import initArtworksSearch from "/scripts/artworks-search.js";
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+        initArtworksSearch();
+
+    }, { once: true });
+
+</script>

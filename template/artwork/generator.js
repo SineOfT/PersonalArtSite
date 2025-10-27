@@ -5,10 +5,7 @@ const { getDate } = require("../utility");
 const artworkHtml = fs.readFileSync(path.join(__dirname, "/artwork.html"));
 const layerHtml = fs.readFileSync(path.join(__dirname, "/layer.html"));
 
-function generateArtworkSites(seriesData, artworksData) {
-    const seriesArtworksData = Object.fromEntries(
-        [...seriesData.entries()].map(([seriesId, series]) => [seriesId, series.artworks]));
-
+function generateArtworkSites(artworksData) {
     return [...artworksData.entries()].map(([artworkId, artwork], artworkIndex) => {
 
         const layerCount = artwork["layer-count"];
@@ -41,7 +38,7 @@ function generateArtworkSites(seriesData, artworksData) {
         const artworkLeftId  = [...artworksData.keys()][artworkIndex-1] ?? "";
         const artworkRightId = [...artworksData.keys()][artworkIndex+1] ?? "";
         let updatedArtworkHtml = artworkHtml.toString()
-            .replaceAll("%__SERIES_ARTWORKS_DATA__%", JSON.stringify(seriesArtworksData))
+            .replaceAll("%__ARTWORKS_DATA__%", JSON.stringify([...artworksData.entries()]))
             .replaceAll("%__ARTWORK_ID__%", artworkId)
             .replaceAll("%__ARTWORK_TITLE__%", artwork["title"])
             .replaceAll("%__ARTWORK_DATE__%", getDate(artwork["date"]))

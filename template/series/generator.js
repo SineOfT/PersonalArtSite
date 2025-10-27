@@ -8,15 +8,17 @@ const seriesHtml = fs.readFileSync(path.join(__dirname, "/series.html"));
 
 function generateSeriesSites(sectionsData, seriesData, artworksData) {
     return [...seriesData.entries()].map(([seriesId, series]) => {
-        const [sectionId, section] = [...sectionsData.entries()]
-            .find(([_sectionId, section]) => section["series"].includes(seriesId));
-        const seriesArtworksList = series["artworks"] ?? [];
+        const section = sectionsData.get(series.section);
+        const seriesArtworksData = new Map([...artworksData.entries()]
+            .filter(([_artworkId, artwork]) => artwork.series.includes(seriesId)));
         const { html: updatedSeriesArtworksListHtml, styles: artworksStyles } =
-            generateArtworksList(seriesArtworksList, `?series=${seriesId}`, artworksData);
+            generateArtworksList(seriesArtworksData, `?series=${seriesId}&return-url=%2Fseries%2F${seriesId}%2F`);
 
         const { html: seriesBreadcrumbs, styles: breadcrumbsStyles } = generateBreadcrumbs([
-            { "href": `/#${sectionId}`, "title": "Home" },
-            ...(sectionId ? [{ "href": `/sections/${sectionId}#${seriesId}`, "title": section["title"] }] : [])
+            { "href": `/#${series.section}`, "title": "Home" },
+            ...(series.section
+                ? [{ "href": `/sections/${series.section}#${seriesId}`, "title": section["title"] }]
+                : [])
         ]);
 
         const updatedSeriesHtml = seriesHtml.toString()

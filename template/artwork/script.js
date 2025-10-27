@@ -1,7 +1,9 @@
+import { filterArtworksData } from "/scripts/artworks-search.js";
+
 const MIN_ZOOM = 1;
 const MAX_ZOOM = 10;
 
-export default function initArtwork(artworkId, seriesArtworksData) {
+export default function initArtwork(artworkId, artworksData) {
     const artworkElement = document.getElementById("artwork");
 
     const artworkCloseButton               = artworkElement.querySelector(".close-button");
@@ -16,42 +18,47 @@ export default function initArtwork(artworkId, seriesArtworksData) {
     const seriesArtworkCount               = artworkElement.querySelector(".series-artwork-count");
 
     const searchParams = new URLSearchParams(window.location.search);
-    const seriesId = searchParams.get("series");
+    const returnUrl = searchParams.get("return-url");
 
-    if (seriesId) {
-        const seriesArtworks = seriesArtworksData[seriesId];
-        if (seriesArtworks) {
-            const index = seriesArtworks.indexOf(artworkId);
+    const filteredArtworksData = filterArtworksData(artworksData);
+    const filteredArtworkIds = filteredArtworksData.map(([artworkId, _artwork]) => artworkId);
 
-            seriesArtworkIndexContainer.classList.remove("d-none");
-            seriesArtworkIndex.textContent = index+1;
-            seriesArtworkCount.textContent = seriesArtworks.length;
+    const index = filteredArtworkIds.indexOf(artworkId);
 
-            const seriesArtworkLeftId = seriesArtworks[index-1];
-            if (seriesArtworkLeftId) {
-                artworkControlLeftElement.href = `/artworks/${seriesArtworkLeftId}/?series=${seriesId}`;
-                artworkControlLeftElement.classList.remove("disabled");
-            } else {
-                artworkControlLeftElement.classList.add("disabled");
-            }
+    seriesArtworkIndexContainer.classList.remove("d-none");
+    seriesArtworkIndex.textContent = index+1;
+    seriesArtworkCount.textContent = filteredArtworksData.length;
 
-            const seriesArtworkRightId = seriesArtworks[index+1];
-            if (seriesArtworkRightId) {
-                artworkControlRightElement.href = `/artworks/${seriesArtworkRightId}/?series=${seriesId}`;
-                artworkControlRightElement.classList.remove("disabled");
-            } else {
-                artworkControlRightElement.classList.add("disabled");
-            }
-        }
+    const seriesArtworkLeftId = filteredArtworkIds[index-1];
+    if (seriesArtworkLeftId) {
+        artworkControlLeftElement.href = `/artworks/${seriesArtworkLeftId}/${window.location.search}`;
+        artworkControlLeftElement.classList.remove("disabled");
+    } else {
+        artworkControlLeftElement.classList.add("disabled");
+    }
+
+    const seriesArtworkRightId = filteredArtworkIds[index+1];
+    if (seriesArtworkRightId) {
+        artworkControlRightElement.href = `/artworks/${seriesArtworkRightId}/${window.location.search}`;
+        artworkControlRightElement.classList.remove("disabled");
+    } else {
+        artworkControlRightElement.classList.add("disabled");
     }
 
     artworkCloseButton.addEventListener("click", (event) => {
         event.preventDefault();
-        if (seriesId) {
-            window.location.href = `/series/${seriesId}#${artworkId}`
+        let url;
+        if (returnUrl == null) {
+            url = new URL(event.target.href, window.location.origin);
+            url.hash = artworkId;
+            for (const [name, value] of new URLSearchParams(window.location.search)) {
+                url.searchParams.append(name, value);
+            }
         } else {
-            window.location.href = event.target.href;
+            url = new URL(returnUrl, window.location.origin);
+            url.hash = artworkId;
         }
+        window.location.href = url.toString();
     });
 
     let zoom = 1;

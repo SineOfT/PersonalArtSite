@@ -34,26 +34,32 @@
 .p-xxl { padding: 3rem; }
 .px-xxl { padding-inline: 3rem; }
 .py-xxl { padding-block: 3rem; }
+.pb-xxl { padding-bottom: 3rem; }
 
 .p-xl { padding: 2rem; }
 .px-xl { padding-inline: 2rem; }
 .py-xl { padding-block: 2rem; }
+.pb-xl { padding-bottom: 2rem; }
 
 .p-l { padding: 1.5rem; }
 .px-l { padding-inline: 1.5rem; }
 .py-l { padding-block: 1.5rem; }
+.pb-l { padding-bottom: 1.5rem; }
 
 .p-m { padding: 1rem; }
 .px-m { padding-inline: 1rem; }
 .py-m { padding-block: 1rem; }
+.pb-m { padding-bottom: 1rem; }
 
 .p-s { padding: 0.5rem; }
 .px-s { padding-inline: 0.5rem; }
 .py-s { padding-block: 0.5rem; }
+.pb-s { padding-bottom: 0.5rem; }
 
 .p-xs { padding: 0.2rem; }
 .px-xs { padding-inline: 0.2rem; }
 .py-xs { padding-block: 0.2rem; }
+.pb-xs { padding-bottom: 0.2rem; }
 
 
 .gap-xxl { gap: 3rem; }
@@ -92,6 +98,28 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.flex-row-wrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.flex-row-stretch {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    gap: 0.5rem;
+}
+
+.flex-row-stretch > * {
+    flex-grow: 1;
+}
+
+.flex-row-stretch > .flex-item-main {
+    flex-grow: 99999;
 }
 
 .flex-stack {

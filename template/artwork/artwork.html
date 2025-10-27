@@ -6,7 +6,7 @@
         </div>
         <div class="artwork-image-container artwork-image-hover"></div>
         <div class="artwork-control-close">
-            <a href="/artworks#%__ARTWORK_ID__%" class="artwork-control close-button">X</a>
+            <a href="/artworks/#%__ARTWORK_ID__%" class="artwork-control close-button">X</a>
         </div>
         <div class="series-artwork-index-container d-none">
             <div class="series-artwork-index"></div>
@@ -46,11 +46,11 @@
     import initArtwork from "/scripts/artwork.js";
 
     const artworkId = "%__ARTWORK_ID__%";
-    const seriesArtworksData = JSON.parse('%__SERIES_ARTWORKS_DATA__%');
+    const artworksData = JSON.parse('%__ARTWORKS_DATA__%');
 
     document.addEventListener("DOMContentLoaded", () => {
 
-        initArtwork(artworkId, seriesArtworksData);
+        initArtwork(artworkId, artworksData);
 
     }, { once: true });
 

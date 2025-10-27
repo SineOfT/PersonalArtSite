@@ -23,6 +23,10 @@ body {
     #header:hover {
         top: 0;
     }
+
+    #header:hover .toggle-button-label::after {
+        content: "^";
+    }
 }
 
 #header .header-body {

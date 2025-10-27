@@ -14,14 +14,40 @@ const { cmpDate, cmpDateSpan } = require("./template/utility");
 const sectionOrderData   = JSON.parse(fs.readFileSync(path.join(__dirname, "/data/section-order.json")));
 const scrollBehaviorData = JSON.parse(fs.readFileSync(path.join(__dirname, "/data/scroll-behavior.json")));
 
-const sectionsData = new Map(JSON.parse(fs.readFileSync(path.join(__dirname, "/data/sections.json"))));
+let sectionsDataArray = JSON.parse(fs.readFileSync(path.join(__dirname, "/data/sections.json")));
 
-const seriesDataArray = JSON.parse(fs.readFileSync(path.join(__dirname, "/data/series.json")));
+let seriesDataArray = JSON.parse(fs.readFileSync(path.join(__dirname, "/data/series.json")));
 seriesDataArray.sort(([_aId, a], [_bId, b]) => cmpDateSpan(a["date-span"], b["date-span"]));
-const seriesData = new Map(seriesDataArray);
 
-const artworksDataArray = JSON.parse(fs.readFileSync(path.join(__dirname, "/data/artworks.json")));
+let artworksDataArray = JSON.parse(fs.readFileSync(path.join(__dirname, "/data/artworks.json")));
 artworksDataArray.sort(([_aId, a], [_bId, b]) => cmpDate(a["date"], b["date"]));
+
+sectionsDataArray.forEach(([_sectionId, section]) => {
+    let seriesWithKeys = section.series.map(seriesId =>
+        [seriesId, seriesDataArray.findIndex(([sId, _s]) => sId === seriesId)]);
+    seriesWithKeys.sort(([_aId, aKey], [_bId, bKey]) => aKey - bKey);
+    section.series = seriesWithKeys.map(([seriesId, _key]) => seriesId);
+});
+
+seriesDataArray.forEach(([seriesId, series]) => {
+    let artworksWithKeys = series.artworks.map(artworkId =>
+        [artworkId, artworksDataArray.findIndex(([aId, _a]) => aId === artworkId)]);
+    artworksWithKeys.sort(([_aId, aKey], [_bId, bKey]) => aKey - bKey);
+    series.artworks = artworksWithKeys.map(([artworkId, _key]) => artworkId);
+    series.section = sectionsDataArray
+        .find(([_sectionId, section]) => section.series.includes(seriesId))
+        [0]; // id
+});
+
+artworksDataArray.forEach(([artworkId, artwork]) => {
+    let artworkSeries = seriesDataArray
+        .filter(([_seriesId, series]) => series.artworks.includes(artworkId));
+    artwork.series = artworkSeries.map(([seriesId, _series]) => seriesId);
+    artwork.section = artworkSeries?.[0]?.[1].section; // section id of first series, since should be all same section
+});
+
+const sectionsData = new Map(sectionsDataArray);
+const seriesData = new Map(seriesDataArray);
 const artworksData = new Map(artworksDataArray);
 
 function clearGeneratedDirectory() {
@@ -91,6 +117,6 @@ writeGeneratedHtmlDirectory(generateHomeSite(sectionOrderData, sectionsData, art
 writeGeneratedHtmlList(generateSectionSites(sectionsData, seriesData, artworksData), "/sections");
 writeGeneratedHtmlDirectory(generateSeriesSearch(seriesData, artworksData), "/series");
 writeGeneratedHtmlList(generateSeriesSites(sectionsData, seriesData, artworksData), "/series");
-writeGeneratedHtmlDirectory(generateArtworksSearch(artworksData), "/artworks");
-writeGeneratedHtmlList(generateArtworkSites(seriesData, artworksData), "/artworks");
+writeGeneratedHtmlDirectory(generateArtworksSearch(sectionsData, seriesData, artworksData), "/artworks");
+writeGeneratedHtmlList(generateArtworkSites(artworksData), "/artworks");
 writeGeneratedHtml(generateError(), "", "404.html");
