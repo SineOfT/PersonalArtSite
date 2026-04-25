@@ -14,12 +14,32 @@ body {
     overflow: clip;
 }
 
+.position-relative {
+    position: relative;
+}
+
 .home-scrollbar {
     background-color: green;
 }
 
 .scroll-section {
     height: 100rem;
+}
+
+.scroll-animations-container {
+    position: relative;
+    width: 100%;
+}
+
+.shika-sprite {
+    position: absolute;
+    pointer-events: none;
+}
+#shika {
+    bottom: 0;
+    left: 0;
+    transform-origin: 75% 100%;
+    translate: -75% 5%;
 }
 
 .scroll-anchors-container {

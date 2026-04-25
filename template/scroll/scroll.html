@@ -1,3 +1,10 @@
+<div class="scroll-animations-container">
+    <div id="shika" class="shika-sprite">
+        <div id="shika-head" class="shika-sprite"></div>
+        <div id="shika-ear"  class="shika-sprite"></div>
+        <div id="shika-tail" class="shika-sprite"></div>
+    </div>
+</div>
 <div class="home-scrollbar-container">
     <div class="home-scrollbar" id="home-scrollbar">Scrollbar</div>
     <div class="scroll-anchors-container" id="scroll-anchors-container">
@@ -7,10 +14,12 @@
 
 <script type="module" defer>
     import initScrollFunctions from "/scripts/scroll.js";
+    import initShika from "/scripts/shika.js";
 
     const scrollData = %__SCROLL_DATA__%;
 
     document.addEventListener("DOMContentLoaded", () => {
         initScrollFunctions(scrollData);
+        initShika();
     }, { once: true });
 </script>
