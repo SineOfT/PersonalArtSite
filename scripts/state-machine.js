@@ -1,21 +1,45 @@
 import { lerp } from "/scripts/util.js";
 
+const ENTER_STATE_EVENT = 'ENTER';
+
 export default class StateMachine {
-    constructor(initialState, globalGoalStates, stateTransitions, statefulObj) {
+    constructor(name, initialState, globalGoalStates, stateTransitions, statefulObj, update) {
+        this.name = name;
         this.state = initialState;
         this.globalGoalStates = globalGoalStates;
         this.stateTransitions = stateTransitions;
         this.statefulObj = statefulObj;
+        this.update = update;
 
-        this.framesQueue = [];       // frames to be displayed until finish state
-        this.pendingGoalStates = []; // goal states to be transitioned after delay
-        this.goalState = null;       // goal state to be transitioned to
+        this.framesQueue = [];             // frames to be displayed until finish state
+        this.pendingGoalStates = [];       // goal states to be transitioned after delay
+        this.pendingEventGoalState = null; // goal state to be transitioned once goal state free
+        this.goalState = null;             // goal state to be transitioned to
+        this.event = null;                 // event when new state entered
     }
 
-    tick() {
+    tick(events) {
+        const frame = this.tickFrame(events);
+        this.update(frame);
+    }
+
+    tickFrame(events) {
+        this.event = null; // reset event
+        
         // count down the number of frames before a pending goal state, if exists
         for (const pendingGoalState of this.pendingGoalStates) {
             pendingGoalState.remainingFrames--;
+        }
+
+        // find any pending event goal states based on events this frame
+        if (Array.isArray(this.stateTransitions[this.state].eventGoalStates)) {
+            for (const eventGoalState of this.stateTransitions[this.state].eventGoalStates) {
+                const event = events.find(({ event }) => event == eventGoalState.event);
+                if (event != null && eventGoalState.predicate(this.statefulObj, event.data) && eventGoalState.prob >= Math.random()) {
+                    this.pendingEventGoalState = eventGoalState.state;
+                    break;
+                }
+            }
         }
 
         // if still frames to show, show next frame
@@ -28,12 +52,9 @@ export default class StateMachine {
 
         // if any local goal states to transition to, set goal state to state
         if (Array.isArray(this.stateTransitions[this.state].goalStates)) {
-            for (const { state, predicate, maintainPendingGoalStates } of this.stateTransitions[this.state].goalStates) {
+            for (const { state, predicate } of this.stateTransitions[this.state].goalStates) {
                 if (predicate(this.statefulObj)) {
                     newGoalState = state;
-                    if (!maintainPendingGoalStates) {
-                        this.pendingGoalStates = [];
-                    }
                     break;
                 }
             }
@@ -43,8 +64,7 @@ export default class StateMachine {
         if (newGoalState == null) {
             for (const { state, predicate } of this.globalGoalStates) {
                 if (predicate(this.statefulObj)) {
-                    this.goalState = state;
-                    this.pendingGoalStates = [];
+                    newGoalState = state;
                     break;
                 }
             }
@@ -61,8 +81,15 @@ export default class StateMachine {
                 if (this.pendingGoalStates[i].remainingFrames <= 0) {
                     this.goalState = this.pendingGoalStates[i].state;
                     this.pendingGoalStates.splice(i);
+                    break;
                 }
             }
+        }
+
+        // if no current goal state and pending event goal state exists, set to goal state
+        if (this.goalState == null && this.pendingEventGoalState != null) {
+            this.goalState = this.pendingEventGoalState;
+            this.pendingEventGoalState = null;
         }
 
         // if goal state is set and not there yet, find the next transition to get closer to the state
@@ -73,6 +100,7 @@ export default class StateMachine {
             } else {
                 const goalState = this.goalState;
                 this.goalState = null;
+                this.event = { event: `${ENTER_STATE_EVENT} ${this.name}.${goalState}` };
                 return this.beginTransition(goalState); // if no intermediary state, transition to goal state
             }
         }
@@ -98,8 +126,6 @@ export default class StateMachine {
                 }
             }
         }
-
-        console.log(JSON.stringify(this.pendingGoalStates));
 
         // if still no transitions found, rerun current state's frames
         const frames = this.stateTransitions[this.state].frames;
@@ -134,9 +160,15 @@ export default class StateMachine {
                 this.framesQueue.push(...exitTransitionFrames);
             }
         }
-
+        // add new state's frames to queue
         const frames = this.stateTransitions[state].frames;
         this.framesQueue.push(...frames);
+
+        // clear pending goal states unless transition should maintain
+        if (!this.stateTransitions[this.state].maintainPendingGoalStates?.[state]) {
+            this.pendingGoalStates = [];
+            this.pendingEventGoalState = null;
+        }
 
         this.state = state;
 

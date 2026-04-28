@@ -1,8 +1,10 @@
 <div class="scroll-animations-container">
     <div id="shika" class="shika-sprite">
-        <div id="shika-head" class="shika-sprite"></div>
-        <div id="shika-ear"  class="shika-sprite"></div>
-        <div id="shika-tail" class="shika-sprite"></div>
+        <div id="shika-head"      class="shika-sprite"></div>
+        <div id="shika-ear"       class="shika-sprite"></div>
+        <div id="shika-eye-left"  class="shika-sprite"></div>
+        <div id="shika-eye-right" class="shika-sprite"></div>
+        <div id="shika-tail"      class="shika-sprite"></div>
     </div>
 </div>
 <div class="home-scrollbar-container">
@@ -14,12 +16,14 @@
 
 <script type="module" defer>
     import initScrollFunctions from "/scripts/scroll.js";
-    import initShika from "/scripts/shika.js";
+    import initShikaStateMachine from "/scripts/shika.js";
+    import initStateMachineManager from "/scripts/state-machine-manager.js";
 
     const scrollData = %__SCROLL_DATA__%;
 
     document.addEventListener("DOMContentLoaded", () => {
         initScrollFunctions(scrollData);
-        initShika();
+        const shikaStateMachine = initShikaStateMachine();
+        initStateMachineManager([shikaStateMachine]);
     }, { once: true });
 </script>
