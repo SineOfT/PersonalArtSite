@@ -1,7 +1,7 @@
 export default function initArtworksSearch() {
     const searchForm = document.getElementById("search-form");
     const searchInput = searchForm.querySelector(".search-input");
-    const includeSketchesCheck = searchForm.querySelector(".include-sketches-check");
+    const excludeSketchesCheck = searchForm.querySelector(".exclude-sketches-check");
     const sectionCheckboxes = searchForm.querySelector(".section-checkboxes");
     const seriesCheckboxes = searchForm.querySelector(".series-checkboxes");
 
@@ -9,10 +9,10 @@ export default function initArtworksSearch() {
     const search = searchParams.get("search")?.trim();
     const sections = searchParams.getAll("sections");
     const series = searchParams.getAll("series");
-    const includeSketches = searchParams.get("include-sketches");
+    const excludeSketches = searchParams.get("exclude-sketches");
     
     if (search) searchInput.value = search;
-    if (includeSketches) includeSketchesCheck.setAttribute("checked", true);
+    if (excludeSketches) excludeSketchesCheck.setAttribute("checked", true);
     sections?.forEach(sections => sectionCheckboxes.querySelector(`[name="sections"][value="${sections}"]`).setAttribute("checked", true))
     series?.forEach(series => seriesCheckboxes.querySelector(`[name="series"][value="${series}"]`).setAttribute("checked", true))
 }
@@ -22,7 +22,7 @@ export function filterArtworksData(artworksData) {
     const search = searchParams.get("search")?.trim();
     const sections = searchParams.getAll("sections");
     const series = searchParams.getAll("series");
-    const includeSketches = searchParams.get("include-sketches");
+    const excludeSketches = searchParams.get("exclude-sketches");
 
     let filteredArtworksData = [...artworksData];
 
@@ -42,7 +42,7 @@ export function filterArtworksData(artworksData) {
         });
     }
 
-    if (includeSketches == null) {
+    if (excludeSketches) {
         filteredArtworksData = filteredArtworksData.filter(([_artworkId, artwork]) => !artwork.sketch);
     }
 

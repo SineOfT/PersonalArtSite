@@ -10,7 +10,8 @@ function generateArtworksList(artworksData, searchParams) {
     let artworkStyles = [];
     const updatedListArtworksHtml = [...artworksData.entries()]
         .map(([artworkId, artwork]) => {
-            const { html: artworkThumbnail, styles: thisArtworkStyles } = generateArtworkThumbnail(artwork);
+            const { html: artworkThumbnail, styles: thisArtworkStyles } =
+                generateArtworkThumbnail(artworkId, artwork);
             if (artworkStyles.length === 0) { artworkStyles = thisArtworkStyles; }
 
             return listArtworkHtml.toString()

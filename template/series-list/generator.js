@@ -16,8 +16,9 @@ function generateSeriesList(seriesList, seriesData, artworksData) {
                 return "";
             }
 
+            const artworkId = series["thumbnail"];
             const { html: seriesThumbnail, styles: thisArtworkStyles } =
-                generateArtworkThumbnail(artworksData.get(series["thumbnail"]));
+                generateArtworkThumbnail(artworkId, artworksData.get(artworkId));
 
             if (artworkStyles.length === 0) { artworkStyles = thisArtworkStyles; }
 

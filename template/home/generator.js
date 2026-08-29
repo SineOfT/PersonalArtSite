@@ -15,11 +15,11 @@ function generateHomeSite(sectionOrderData, sectionsData, artworksData, scrollBe
                 .replaceAll("%__SECTION_ID__%", id)
                 .replaceAll("%__SECTION_TITLE__%", section["title"])
                 .replaceAll("%__SECTION_DESCRIPTION__%", section["description"])
-                .replaceAll("%__SECTION_THUMBNAIL_0__%", artworksData.get(section["thumbnail-0"])?.["thumbnail"] ?? "not-found.jpg")
-                .replaceAll("%__SECTION_THUMBNAIL_1__%", artworksData.get(section["thumbnail-1"])?.["thumbnail"] ?? "not-found.jpg")
-                .replaceAll("%__SECTION_THUMBNAIL_2__%", artworksData.get(section["thumbnail-2"])?.["thumbnail"] ?? "not-found.jpg")
-                .replaceAll("%__SECTION_THUMBNAIL_3__%", artworksData.get(section["thumbnail-3"])?.["thumbnail"] ?? "not-found.jpg")
-                .replaceAll("%__SECTION_THUMBNAIL_4__%", artworksData.get(section["thumbnail-4"])?.["thumbnail"] ?? "not-found.jpg");
+                .replaceAll("%__SECTION_THUMBNAIL_0__%", `${section["thumbnail-0"]}/thumbnail.webp`)
+                .replaceAll("%__SECTION_THUMBNAIL_1__%", `${section["thumbnail-1"]}/thumbnail.webp`)
+                .replaceAll("%__SECTION_THUMBNAIL_2__%", `${section["thumbnail-2"]}/thumbnail.webp`)
+                .replaceAll("%__SECTION_THUMBNAIL_3__%", `${section["thumbnail-3"]}/thumbnail.webp`)
+                .replaceAll("%__SECTION_THUMBNAIL_4__%", `${section["thumbnail-4"]}/thumbnail.webp`);
         })
         .join("\n");
     const updatedHomeHtml = homeHtml.toString()

@@ -9,31 +9,20 @@ function generateArtworkSites(artworksData) {
     return [...artworksData.entries()].map(([artworkId, artwork], artworkIndex) => {
 
         const layerCount = artwork["layer-count"];
-
-        const updatedLayersHtml = layerCount === 0
-            ? layerHtml.toString()
-                .replaceAll("%__LAYER_ID__%", 0)
-                .replaceAll("%__LAYER_IMAGE__%", artwork["thumbnail"])
-                .replaceAll("%__LAYER_CURR__%", 1)
-                .replaceAll("%__LAYER_COUNT__%", 1)
-                .replaceAll("%__LAYER_UP__%", "")
-                .replaceAll("%__LAYER_DOWN__%", "")
-                .replaceAll("%__LAYER_UP_CLASS__%", "disabled")
-                .replaceAll("%__LAYER_DOWN_CLASS__%", "disabled")
-            : Array.from(
-                { length: layerCount },
-                (_, index) => (
-                    layerHtml.toString()
-                        .replaceAll("%__LAYER_ID__%", index)
-                        .replaceAll("%__LAYER_IMAGE__%", `${artworkId}/${index}.jpg`)
-                        .replaceAll("%__LAYER_CURR__%", index + 1)
-                        .replaceAll("%__LAYER_COUNT__%", layerCount)
-                        .replaceAll("%__LAYER_UP__%", index - 1 || "")
-                        .replaceAll("%__LAYER_DOWN__%", index + 1)
-                        .replaceAll("%__LAYER_UP_CLASS__%", index <= 0 ? "disabled" : "")
-                        .replaceAll("%__LAYER_DOWN_CLASS__%", index >= layerCount - 1 ? "disabled" : "")
-                )
-            ).join("\n");
+        const updatedLayersHtml = Array.from(
+            { length: layerCount },
+            (_, index) => (
+                layerHtml.toString()
+                    .replaceAll("%__LAYER_ID__%", index)
+                    .replaceAll("%__LAYER_IMAGE__%", `${artworkId}/${index}.webp`)
+                    .replaceAll("%__LAYER_CURR__%", index + 1)
+                    .replaceAll("%__LAYER_COUNT__%", layerCount)
+                    .replaceAll("%__LAYER_UP__%", index - 1 || "")
+                    .replaceAll("%__LAYER_DOWN__%", index + 1)
+                    .replaceAll("%__LAYER_UP_CLASS__%", index <= 0 ? "disabled" : "")
+                    .replaceAll("%__LAYER_DOWN_CLASS__%", index >= layerCount - 1 ? "disabled" : "")
+            )
+        ).join("\n");
 
         const artworkLeftId  = [...artworksData.keys()][artworkIndex-1] ?? "";
         const artworkRightId = [...artworksData.keys()][artworkIndex+1] ?? "";

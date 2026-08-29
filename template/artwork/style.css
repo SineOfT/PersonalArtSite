@@ -176,12 +176,13 @@ html {
 
 .series-artwork-index-container {
     position: relative;
+    font-size: calc(var(--control-size) / 2);
     display: grid;
     grid-template-areas:
         "index ."
         ". count";
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1em 1em;
+    grid-template-rows:    1em 1em;
     pointer-events: auto;
 }
 
@@ -198,14 +199,15 @@ html {
 
 .series-artwork-index {
     grid-area: index;
-    font-size: calc(var(--control-size) / 2);
-    line-height: 100%;
+    font-size: 1em;
+    line-height: 1em;
+    direction: rtl;
 }
 
 .series-artwork-count {
     grid-area: count;
-    font-size: calc(var(--control-size) / 2);
-    line-height: 100%;
+    font-size: 1em;
+    line-height: 1em;
 }
 
 @media (min-width: 50rem) {

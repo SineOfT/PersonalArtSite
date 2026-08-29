@@ -1,12 +1,26 @@
 .artwork-thumbnail-container {
+    width: 100%;
+    aspect-ratio: var(--artwork-thumbnail-aspect-ratio);
+    background-color: #FFF1;
     border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
 .artwork-thumbnail {
     width: 100%;
-    aspect-ratio: var(--artwork-aspect-ratio);
-    object-fit: cover;
-    object-position: calc(100% * var(--x, 0.5)) calc(100% * var(--y, 0.5));
+    object-fit: contain;
+    aspect-ratio: var(--artwork-thumbnail-aspect-ratio);
+    background-image: url(/assets/artworks/not-found.webp);
+    background-size: contain;
+    transform-origin: center;
+    transform:
+        scale(var(--scale, 1))
+        translate(
+            calc(-100% * var(--x, 0)),
+            calc(-100% * var(--y, 0)));
 }
 
 .censor {

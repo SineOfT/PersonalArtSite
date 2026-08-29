@@ -19,11 +19,11 @@
     --home-section-thumbnail-max-height: 50vh;
     --home-section-thumbnail-width: min(
         var(--home-section-thumbnail-max-width),
-        calc(var(--home-section-thumbnail-max-height) * var(--artwork-aspect-ratio))
+        calc(var(--home-section-thumbnail-max-height) * var(--artwork-thumbnail-aspect-ratio))
     );
     --home-section-thumbnail-height: min(
         var(--home-section-thumbnail-max-height),
-        calc(var(--home-section-thumbnail-max-width) / var(--artwork-aspect-ratio))
+        calc(var(--home-section-thumbnail-max-width) / var(--artwork-thumbnail-aspect-ratio))
     );
 
     position: relative;
@@ -36,6 +36,8 @@
     position: absolute;
     width: var(--home-section-thumbnail-width);
     height: var(--home-section-thumbnail-height);
+    background-image: url(/assets/artworks/not-found.webp);
+    background-size: contain;
     object-fit: cover;
     outline: 2px solid black;
     outline-offset: -2px;

@@ -1,7 +1,7 @@
 import { filterArtworksData } from "/scripts/artworks-search.js";
 
-const MIN_ZOOM = 1;
-const MAX_ZOOM = 10;
+const ZOOM_VALUES = [1, 2, 3, 4, 5, 7.5, 10, 15, 20, 30, 40, 50];
+const MAX_ZOOM_INDEX = ZOOM_VALUES.length-1;
 
 export default function initArtwork(artworkId, artworksData) {
     const artworkElement = document.getElementById("artwork");
@@ -61,32 +61,33 @@ export default function initArtwork(artworkId, artworksData) {
         window.location.href = url.toString();
     });
 
-    let zoom = 1;
+    let zoomIndex = 0;
     const updateZoom = () => {
+        const zoom = ZOOM_VALUES[zoomIndex];
         artworkControlZoomDisplayElement.textContent = `${Math.round(zoom * 100)}%`;
         artworkElement.style.setProperty("--zoom", zoom);
     }
 
-    if (zoom < MAX_ZOOM) {
+    if (zoomIndex < MAX_ZOOM_INDEX) {
         artworkControlZoomInElement.classList.remove("disabled");
     }
     artworkControlZoomInElement.addEventListener("click", () => {
-        zoom++;
-        if (zoom >= MAX_ZOOM) {
-            zoom = MAX_ZOOM;
+        zoomIndex++;
+        if (zoomIndex >= MAX_ZOOM_INDEX) {
+            zoomIndex = MAX_ZOOM_INDEX;
             artworkControlZoomInElement.classList.add("disabled");
         }
         artworkControlZoomOutElement.classList.remove("disabled");
         updateZoom();
     });
 
-    if (zoom > MIN_ZOOM) {
+    if (zoomIndex > 0) {
         artworkControlZoomOutElement.classList.remove("disabled");
     }
     artworkControlZoomOutElement.addEventListener("click", () => {
-        zoom--;
-        if (zoom <= MIN_ZOOM) {
-            zoom = MIN_ZOOM;
+        zoomIndex--;
+        if (zoomIndex <= 0) {
+            zoomIndex = 0;
             artworkControlZoomOutElement.classList.add("disabled");
         }
         artworkControlZoomInElement.classList.remove("disabled");

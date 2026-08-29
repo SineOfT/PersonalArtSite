@@ -7,7 +7,7 @@
 
     --color-site-dirt: hsl(9, 50%, 30%);
 
-    --artwork-aspect-ratio: calc(2880/1800);
+    --artwork-thumbnail-aspect-ratio: calc(2880/1800);
 
     --home-section-cycle-display-duration: 30s;
 }
