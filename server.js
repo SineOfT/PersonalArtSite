@@ -17,10 +17,10 @@ const scrollBehaviorData = JSON.parse(fs.readFileSync(path.join(__dirname, "/dat
 let sectionsDataArray = JSON.parse(fs.readFileSync(path.join(__dirname, "/data/sections.json")));
 
 let seriesDataArray = JSON.parse(fs.readFileSync(path.join(__dirname, "/data/series.json")));
-seriesDataArray.sort(([_aId, a], [_bId, b]) => cmpDateSpan(a["date-span"], b["date-span"]));
+seriesDataArray.sort(([_aId, a], [_bId, b]) => -cmpDateSpan(a["date-span"], b["date-span"]));
 
 let artworksDataArray = JSON.parse(fs.readFileSync(path.join(__dirname, "/data/artworks.json")));
-artworksDataArray.sort(([_aId, a], [_bId, b]) => cmpDate(a["date"], b["date"]));
+artworksDataArray.sort(([_aId, a], [_bId, b]) => -cmpDate(a["date"], b["date"]));
 
 sectionsDataArray.forEach(([_sectionId, section]) => {
     let seriesWithKeys = section.series.map(seriesId =>

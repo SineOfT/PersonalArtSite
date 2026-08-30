@@ -12,7 +12,10 @@ function generateSeriesSites(sectionsData, seriesData, artworksData) {
         const seriesArtworksData = new Map([...artworksData.entries()]
             .filter(([_artworkId, artwork]) => artwork.series.includes(seriesId)));
         const { html: updatedSeriesArtworksListHtml, styles: artworksStyles } =
-            generateArtworksList(seriesArtworksData, `?series=${seriesId}&return-url=%2Fseries%2F${seriesId}%2F`);
+            generateArtworksList(
+                seriesArtworksData,
+                `?series=${seriesId}&reversed&return-url=%2Fseries%2F${seriesId}%2F`,
+                true); // first artwork in series first
 
         const { html: seriesBreadcrumbs, styles: breadcrumbsStyles } = generateBreadcrumbs([
             { "href": `/#${series.section}`, "title": "Home" },

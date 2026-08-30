@@ -1056,7 +1056,8 @@
         "title": "Tokito Muichiro + Ginko",
         "date": {
             "year": 2025,
-            "month": 8
+            "month": 8,
+            "order": 1
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "layer-count": 10
@@ -1065,7 +1066,8 @@
         "title": "Shinazugawa Sanemi + Rhinoceros Beetle",
         "date": {
             "year": 2025,
-            "month": 8
+            "month": 8,
+            "order": 2
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "layer-count": 10
@@ -1074,7 +1076,8 @@
         "title": "Himejima Gyomei + Cats",
         "date": {
             "year": 2025,
-            "month": 8
+            "month": 8,
+            "order": 3
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "layer-count": 10
@@ -1083,7 +1086,8 @@
         "title": "Agatsuma Zenitsu + Chuntaro",
         "date": {
             "year": 2025,
-            "month": 8
+            "month": 8,
+            "order": 4
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "layer-count": 10
@@ -1092,7 +1096,8 @@
         "title": "Tomioka Giyu + Shiba Dog",
         "date": {
             "year": 2025,
-            "month": 9
+            "month": 9,
+            "order": 1
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "layer-count": 9
@@ -1101,7 +1106,8 @@
         "title": "Yushiro + Chachamaru",
         "date": {
             "year": 2025,
-            "month": 9
+            "month": 9,
+            "order": 2
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "layer-count": 9

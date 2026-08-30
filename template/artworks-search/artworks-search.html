@@ -1,4 +1,4 @@
-<div class="search-banner">
+<div class="search-banner v-none">
     <form method="get" id="search-form">
         <div class="flex-row-stretch pb-m">
             <input type="text" name="search" class="search-input flex-item-main" placeholder="Search" />
@@ -17,6 +17,23 @@
                 <legend>In series</legend>
                 %__SERIES_CHECKBOXES__%
             </fieldset>
+            <div class="py-s">
+                <div class="flex-row">
+                    <label for="date-range-select">Date Range: </label>
+                    <select name="date-range" id="date-range-select" class="date-range-select flex-grow">
+                        <option value="">None</option>
+                        <option value="last-month">Within last month</option>
+                        <option value="last-6-months">Within last 6 months</option>
+                        <option value="last-year">Within last year</option>
+                        <option value="range">Between range</option>
+                    </select>
+                </div>
+                <div class="date-from-to-select-container py-s v-none">
+                    <input type="date" name="date-from" class="date-from-select" />
+                    &ndash;
+                    <input type="date" name="date-to"   class="date-to-select" />
+                </div>
+            </div>
         </div>
     </form>
 </div>
@@ -26,9 +43,11 @@
 <script type="module" defer>
     import initArtworksSearch from "/scripts/artworks-search.js";
 
+    const artworksData = JSON.parse('%__ARTWORKS_DATA__%');
+
     document.addEventListener("DOMContentLoaded", () => {
 
-        initArtworksSearch();
+        initArtworksSearch(artworksData);
 
     }, { once: true });
 

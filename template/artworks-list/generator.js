@@ -6,9 +6,11 @@ const generateArtworkThumbnail = require("../artwork-thumbnail/generator");
 const artworksListHtml = fs.readFileSync(path.join(__dirname, "/artworks-list.html"));
 const listArtworkHtml = fs.readFileSync(path.join(__dirname, "/list-artwork.html"));
 
-function generateArtworksList(artworksData, searchParams) {
+function generateArtworksList(artworksData, searchParams, isReversed) {
     let artworkStyles = [];
-    const updatedListArtworksHtml = [...artworksData.entries()]
+    const sortedArtworksData = [...artworksData.entries()];
+    if (isReversed) sortedArtworksData.reverse();
+    const updatedListArtworksHtml = sortedArtworksData
         .map(([artworkId, artwork]) => {
             const { html: artworkThumbnail, styles: thisArtworkStyles } =
                 generateArtworkThumbnail(artworkId, artwork);
