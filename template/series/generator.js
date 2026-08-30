@@ -25,6 +25,7 @@ function generateSeriesSites(sectionsData, seriesData, artworksData) {
         ]);
 
         const updatedSeriesHtml = seriesHtml.toString()
+            .replaceAll("%__SERIES_ARTWORK_COUNT__%", seriesArtworksData.size)
             .replaceAll("%__SERIES_ARTWORKS_LIST__%", updatedSeriesArtworksListHtml)
             .replaceAll("%__SERIES_BREADCRUMBS__%", seriesBreadcrumbs)
             .replaceAll("%__SERIES_TITLE__%", series["title"]);

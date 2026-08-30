@@ -35,6 +35,9 @@
 .fs-xs { font-size: 1.1em; }
 
 
+.ft-italic { font-style: italic; }
+
+
 .p-xxl { padding: 3rem; }
 .px-xxl { padding-inline: 3rem; }
 .py-xxl { padding-block: 3rem; }

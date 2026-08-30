@@ -1,5 +1,6 @@
-<div class="search-banner v-none">
-    <form method="get" id="search-form">
+<div class="search-banner">
+    <span class="js-disabled-display ft-italic">JavaScript must be enabled to enable search functionality</span>
+    <form method="get" id="search-form" class="v-none">
         <div class="flex-row-stretch pb-m">
             <input type="text" name="search" class="search-input flex-item-main" placeholder="Search" />
             <button type="submit" class="search-btn">Search</button>
@@ -36,6 +37,11 @@
             </div>
         </div>
     </form>
+</div>
+
+<div class="px-l fs-s">
+    <span class="artwork-count">%__ARTWORK_COUNT__%</span>
+    artwork<span class="artwork-count-plural">%__ARTWORK_COUNT_PLURAL__%</span> matched your search
 </div>
 
 %__ARTWORKS_LIST__%

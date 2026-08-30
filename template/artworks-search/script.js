@@ -2,7 +2,7 @@ import { updateArtworksList } from "/scripts/artworks-list.js";
 import { cmpDate, getDateFromDateObj, getDateFromDateString } from "/scripts/util.js";
 
 export default function initArtworksSearch(artworksData) {
-    const searchBanner = document.querySelector(".search-banner");
+    const jsDisabledDisplay = document.querySelector(".js-disabled-display");
     const searchForm = document.getElementById("search-form");
     const searchInput = searchForm.querySelector(".search-input");
     const excludeSketchesCheck = searchForm.querySelector(".exclude-sketches-check");
@@ -13,7 +13,11 @@ export default function initArtworksSearch(artworksData) {
     const dateFromSelect = searchForm.querySelector(".date-from-select");
     const dateToSelect = searchForm.querySelector(".date-to-select");
 
-    searchBanner.classList.remove("v-none");
+    const artworkCountDisplay = document.querySelector(".artwork-count");
+    const artworkCountPluralDisplay = document.querySelector(".artwork-count-plural");
+
+    jsDisabledDisplay.classList.add("d-none");
+    searchForm.classList.remove("v-none");
 
     const { search, excludeSketches, sections, series, dateRange, dateFrom, dateTo } = getSearchParams();
     if (search) searchInput.value = search;
@@ -39,8 +43,15 @@ export default function initArtworksSearch(artworksData) {
         const dateFrom = dateFromSelect.value;
         const dateTo = dateToSelect.value;
 
-        updateArtworksList(artworksData,
+        const artworkCount = updateArtworksList(artworksData,
             { search, excludeSketches, sections, series, dateRange, dateFrom, dateTo });
+
+        artworkCountDisplay.textContent = artworkCount;
+        if (artworkCount === 1) {
+            artworkCountPluralDisplay.textContent = "";
+        } else {
+            artworkCountPluralDisplay.textContent = "s";
+        }
     }));
 
     dateRangeSelect.addEventListener("input", e => {

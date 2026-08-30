@@ -26,9 +26,12 @@ function generateArtworksSearch(sectionsData, seriesData, artworksData) {
     const { html: updatedArtworksListHtml, styles: artworksStyles } =
         generateArtworksList(artworksData);
 
+    const artworksDataArray = [...artworksData.entries()]
     const updatedArtworkSearchHtml = artworksSearchHtml.toString()
         .replaceAll("%__ARTWORKS_LIST__%", updatedArtworksListHtml)
-        .replaceAll("%__ARTWORKS_DATA__%", JSON.stringify([...artworksData.entries()]))
+        .replaceAll("%__ARTWORK_COUNT__%", artworksDataArray.length)
+        .replaceAll("%__ARTWORK_COUNT_PLURAL__%", artworksDataArray.length === 1 ? "" : "s")
+        .replaceAll("%__ARTWORKS_DATA__%", JSON.stringify(artworksDataArray))
         .replaceAll("%__SECTIONS_CHECKBOXES__%", sectionCheckboxes)
         .replaceAll("%__SERIES_CHECKBOXES__%", seriesCheckboxes);
 

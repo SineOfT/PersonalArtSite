@@ -2,7 +2,18 @@ import { getSearchParams, filterArtworksData } from "/scripts/artworks-search.js
 import { toURLCase } from "/scripts/util.js";
 
 export default function initArtworksList(artworksData) {
-    updateArtworksList(artworksData, getSearchParams());
+    const artworkCount = updateArtworksList(artworksData, getSearchParams());
+    
+    const artworkCountDisplay = document.querySelectorAll(".artwork-count");
+    for (const display of artworkCountDisplay) {
+        display.textContent = artworkCount;
+    }
+    const artworkCountPluralDisplay = document.querySelectorAll(".artwork-count-plural");
+    if (artworkCount === 1) {
+        for (const display of artworkCountPluralDisplay) { display.textContent = ""; }
+    } else {
+        for (const display of artworkCountPluralDisplay) { display.textContent = "s"; }
+    }
 }
 
 export function updateArtworksList(artworksData, searchParams) {
@@ -35,4 +46,6 @@ export function updateArtworksList(artworksData, searchParams) {
             window.location.href = url.toString();
         });
     }
+
+    return filteredArtworkIds.length;
 }
