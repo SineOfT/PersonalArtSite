@@ -158,28 +158,6 @@
     align-self: end;
 }
 
-.toggle-button {
-    display: none;
-}
-
-.toggle-button + .toggle-button-label {
-    display: block;
-    width: 100%;
-    height: 2rem;
-    font-size: 2rem;
-    line-height: 2rem;
-    text-align: center;
-    cursor: pointer;
-}
-
-.toggle-button + .toggle-button-label::after {
-    content: "v";
-}
-
-.toggle-button:checked + .toggle-button-label::after {
-    content: "^";
-}
-
 .position-relative {
     position: relative;
 }
