@@ -43,6 +43,7 @@ html {
 }
 
 .artwork-title {
+    color: #DDD;
     font-size: calc(var(--control-size) - 1.2rem);
     line-height: 100%;
 }

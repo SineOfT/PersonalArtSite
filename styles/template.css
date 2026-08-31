@@ -9,6 +9,7 @@
     --color-site-dirt: hsl(9, 50%, 30%);
 
     --color-secondary: #555;
+    --color-secondary-dark: #333;
 
     --artwork-thumbnail-aspect-ratio: calc(2880/1800);
 
@@ -26,7 +27,9 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
+    color: #222;
     font-size: 1em;
+    font-family: "Helvetica", sans-serif;
     margin: 0;
 }
 

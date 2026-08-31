@@ -35,7 +35,6 @@
 
 
 .ft-italic { font-style: italic; }
-.ff-sans-serif { font-family: sans-serif; }
 
 
 .p-xxl { padding: 3rem; }
@@ -160,6 +159,19 @@
 
 .position-relative {
     position: relative;
+}
+
+.overlay-link {
+    color: var(--color-site-dirt);
+    text-decoration: none;
+}
+
+.overlay-link:hover {
+    text-decoration: underline;
+}
+
+.overlay-link::before {
+    content: "\21B3  ";
 }
 
 .overlay-link::after {

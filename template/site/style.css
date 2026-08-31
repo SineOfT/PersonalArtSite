@@ -47,20 +47,6 @@ body {
     background-repeat: repeat-x;
 }
 
-#header:has(.header-toggle-button:checked) {
-    top: 0;
-}
-
-@media (hover: hover) {
-    #header:has(.header-container:hover) {
-        top: 0;
-    }
-
-    .header-container:hover .toggle-button-label::after {
-        transform: rotate(45deg);
-    }
-}
-
 .header-toggle-button {
     display: none;
 }
@@ -80,16 +66,31 @@ body {
     height: 0.75em;
     border-style: solid;
     border-width: 3px;
-    border-color: #888;
+    border-color: var(--color-secondary);
     border-bottom-width: 1px;
     border-right-width: 1px;
-    border-bottom-color: transparent;
-    border-right-color: transparent;
+    border-bottom-color: transparent !important;
+    border-right-color: transparent !important;
     transform: rotate(-135deg);
 }
 
+#header:has(.header-toggle-button:checked) {
+    top: 0;
+}
+
 .header-toggle-button:checked + .toggle-button-label::after {
+    border-color: var(--color-secondary-dark);
     transform: rotate(45deg);
+}
+
+@media (hover: hover) {
+    #header:has(.header-container:hover) {
+        top: 0;
+    }
+
+    .header-container:hover .toggle-button-label::after {
+        transform: rotate(45deg);
+    }
 }
 
 #header .header-body {
@@ -103,9 +104,14 @@ body {
 }
 
 #header .header-heading {
+    color: var(--color-secondary);
     font-size: min(2.5em, 9vw);
     font-style: italic;
     text-wrap: nowrap;
+}
+
+#header .header-heading a:hover {
+    color: var(--color-secondary-dark);
 }
 
 #header .header-nav {
@@ -114,6 +120,11 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 1rem;
+}
+
+#header .header-nav a:hover {
+    color: var(--color-secondary-dark);
+    text-decoration: underline;
 }
 
 #site-main {
