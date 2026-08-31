@@ -5,9 +5,10 @@ const generateScroll = require("../scroll/generator");
 
 const siteHtml = fs.readFileSync(path.join(__dirname, "/site.html"));
 
-function generateSite(mainHtml, scrollData) {
+function generateSite(mainHtml, breadcrumbsHtml, scrollData) {
     const { html: scrollHtml, styles: scrollStyles } = generateScroll(scrollData);
     const updatedSiteHtml = siteHtml.toString()
+        .replaceAll("%__BREADCRUMBS__%", breadcrumbsHtml)
         .replaceAll("%__SITE_MAIN__%", mainHtml)
         .replaceAll("%__SITE_SCROLL__%", scrollHtml);
     

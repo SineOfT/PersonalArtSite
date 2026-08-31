@@ -28,10 +28,10 @@ function generateSectionSites(sectionsData, seriesData, artworksData) {
 
         const updatedSectionHtml = sectionHtml.toString()
             .replaceAll("%__SECTION_SERIES_LIST__%", updatedSectionSeriesListHtml)
-            .replaceAll("%__SECTION_BREADCRUMBS__%", sectionBreadcrumbs)
             .replaceAll("%__SECTION_TITLE__%", section["title"]);
 
-        const { html: updatedSectionSite, styles: siteStyles } = generateSite(updatedSectionHtml, seriesScroll);
+        const { html: updatedSectionSite, styles: siteStyles } =
+            generateSite(updatedSectionHtml, sectionBreadcrumbs, seriesScroll);
 
         return {
             id: sectionId,

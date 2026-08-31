@@ -17,7 +17,7 @@ function generateBreadcrumbs(breadcrumbs) {
     
     return {
         html: updatedBreadcrumbsHtml,
-        styles: []
+        styles: ["breadcrumbs"]
     };
 }
 

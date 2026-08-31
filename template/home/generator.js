@@ -25,7 +25,8 @@ function generateHomeSite(sectionOrderData, sectionsData, artworksData, scrollBe
     const updatedHomeHtml = homeHtml.toString()
         .replaceAll("%__HOME_SECTIONS__%", updatedSectionsHtml);
 
-    const { html: updatedHomeSite, styles: siteStyles } = generateSite(updatedHomeHtml, scrollBehaviorData);
+    const { html: updatedHomeSite, styles: siteStyles } =
+        generateSite(updatedHomeHtml, "", scrollBehaviorData);
 
     return {
         html: updatedHomeSite,

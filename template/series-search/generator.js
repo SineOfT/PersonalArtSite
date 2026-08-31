@@ -13,7 +13,8 @@ function generateSeriesSearch(seriesData, artworksData) {
     const updatedSeriesSearchHtml = seriesSearchHtml.toString()
         .replaceAll("%__SERIES_LIST__%", updatedSeriesListHtml);
 
-    const { html: updatedSeriesSearchSite, styles: siteStyles } = generateSite(updatedSeriesSearchHtml, []);
+    const { html: updatedSeriesSearchSite, styles: siteStyles } =
+        generateSite(updatedSeriesSearchHtml, "", []);
 
     return {
         html: updatedSeriesSearchSite,

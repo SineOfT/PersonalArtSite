@@ -5,26 +5,31 @@
 
 body {
     min-height: 100vh;
+    background-color: var(--color-site-main);
 }
 
 #header {
-    background: var(--color-site-accent);
     position: sticky;
     top: calc(var(--site-header-height) * -1);
     z-index: 99999;
+    background-color: var(--color-site-main);
     transition: top 0.2s;
 }
 
-#header:has(.toggle-button:checked) {
+#header .header-container {
+    background-color: var(--color-site-accent);
+}
+
+#header:has(.header-container .toggle-button:checked) {
     top: 0;
 }
 
 @media (hover: hover) {
-    #header:hover {
+    #header:has(.header-container:hover) {
         top: 0;
     }
 
-    #header:hover .toggle-button-label::after {
+    #header .header-container:hover .toggle-button-label::after {
         content: "^";
     }
 }
@@ -44,7 +49,7 @@ body {
 #footer {
     position: sticky;
     bottom: calc(var(--site-footer-height) * -1);
-    background: var(--color-site-dirt);
+    background-color: var(--color-site-dirt);
     color: white;
     z-index: 99999;
 }
