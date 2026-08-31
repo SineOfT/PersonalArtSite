@@ -3,6 +3,10 @@
     --site-footer-height: 10rem;
 }
 
+html {
+    background-color: #FFF;
+}
+
 body {
     min-height: 100vh;
     background-color: var(--color-site-main);
@@ -11,17 +15,36 @@ body {
 #header {
     position: sticky;
     top: calc(var(--site-header-height) * -1);
-    margin-bottom: 2rem;
     z-index: 99999;
     background-color: var(--color-site-main);
+    font-family: "Trebuchet MS", sans-serif;
+    font-weight: bold;
+    color: var(--color-secondary);
     transition: top 0.2s;
 }
 
-.header-bg {
-    background-image: url(/assets/site/header.png);
-    background-size: auto 100%;
-    background-position: center bottom;
-    padding-bottom: 2rem;
+.header-container {
+    background-image:
+        radial-gradient(circle at center      100%,          var(--color-site-accent)    0em, transparent    0em),
+        radial-gradient(circle at left   calc(100% - 0.5em), var(--color-site-accent) 0.05em, transparent 0.05em),
+        radial-gradient(circle at right  calc(100% - 0.5em), var(--color-site-accent) 0.05em, transparent 0.05em),
+        radial-gradient(circle at center calc(100% -   1em), var(--color-site-accent)  0.1em, transparent  0.1em),
+        radial-gradient(circle at left   calc(100% - 1.5em), var(--color-site-accent) 0.15em, transparent 0.15em),
+        radial-gradient(circle at right  calc(100% - 1.5em), var(--color-site-accent) 0.15em, transparent 0.15em),
+        radial-gradient(circle at center calc(100% -   2em), var(--color-site-accent)  0.2em, transparent  0.2em),
+        radial-gradient(circle at left   calc(100% - 2.5em), var(--color-site-accent) 0.25em, transparent 0.25em),
+        radial-gradient(circle at right  calc(100% - 2.5em), var(--color-site-accent) 0.25em, transparent 0.25em),
+        radial-gradient(circle at center calc(100% -   3em), var(--color-site-accent)  0.3em, transparent  0.3em),
+        radial-gradient(circle at left   calc(100% - 3.5em), var(--color-site-accent) 0.35em, transparent 0.35em),
+        radial-gradient(circle at right  calc(100% - 3.5em), var(--color-site-accent) 0.35em, transparent 0.35em),
+        radial-gradient(circle at center calc(100% -   4em), var(--color-site-accent)  0.4em, transparent  0.4em),
+        radial-gradient(circle at left   calc(100% - 4.5em), var(--color-site-accent) 0.45em, transparent 0.45em),
+        radial-gradient(circle at right  calc(100% - 4.5em), var(--color-site-accent) 0.45em, transparent 0.45em),
+        radial-gradient(circle at center calc(100% -   5em), var(--color-site-accent)  0.5em, transparent  0.5em),
+        radial-gradient(50% 0.25em at center calc(100% - 0.25em), var(--color-site-accent-dark) 100%, transparent 100%),
+        linear-gradient(to top, transparent 0.25em, var(--color-site-accent-dark) 0.25em 5em, var(--color-site-accent) 5em);
+    background-size: 1em 100%;
+    background-repeat: repeat-x;
 }
 
 #header:has(.header-toggle-button:checked) {
@@ -45,22 +68,23 @@ body {
 .header-toggle-button + .toggle-button-label {
     position: relative;
     display: block;
-    height: 3rem;
-    color: #333;
+    height: 2rem;
 }
 
 .header-toggle-button + .toggle-button-label::after {
     content: "";
     position: absolute;
-    top: 1rem;
+    top: 0.5rem;
     left: 50%;
-    width: 1em;
-    height: 1em;
+    width: 0.75em;
+    height: 0.75em;
     border-style: solid;
-    border-top-width: 3px;
-    border-left-width: 3px;
-    border-bottom-width: 0;
-    border-right-width: 0;
+    border-width: 3px;
+    border-color: #888;
+    border-bottom-width: 1px;
+    border-right-width: 1px;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
     transform: rotate(-135deg);
 }
 
@@ -72,8 +96,24 @@ body {
     height: var(--site-header-height);
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem 2rem;
     justify-content: space-between;
     align-items: center;
+}
+
+#header .header-heading {
+    font-size: min(2.5em, 9vw);
+    font-style: italic;
+    text-wrap: nowrap;
+}
+
+#header .header-nav {
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 #site-main {

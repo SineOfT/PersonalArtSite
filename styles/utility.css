@@ -7,7 +7,7 @@
 }
 
 .text-secondary {
-    color: #555;
+    color: var(--color-secondary);
     font-weight: bold;
     font-style: italic;
 }
@@ -27,7 +27,6 @@
 }
 
 
-.fs-xxl { font-size: 2.5em; }
 .fs-xl { font-size: 2em; }
 .fs-l { font-size: 1.7em; }
 .fs-m { font-size: 1.5em; }
@@ -36,6 +35,7 @@
 
 
 .ft-italic { font-style: italic; }
+.ff-sans-serif { font-family: sans-serif; }
 
 
 .p-xxl { padding: 3rem; }

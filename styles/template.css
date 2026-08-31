@@ -3,9 +3,12 @@
     --color-site-main: hsl(198, 41%, 92%);
     --color-site-main-dark: hsl(198, 30%, 50%);
 
-    --color-site-accent: hsl(9, 25%, 65%);
+    --color-site-accent: hsl(270, 10%, 91%);
+    --color-site-accent-dark: hsl(270, 5%, 84%);
 
     --color-site-dirt: hsl(9, 50%, 30%);
+
+    --color-secondary: #555;
 
     --artwork-thumbnail-aspect-ratio: calc(2880/1800);
 
