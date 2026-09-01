@@ -119,7 +119,7 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 2rem;
 }
 
 #header .header-nav a:hover {
@@ -134,11 +134,11 @@ body {
 #footer {
     position: sticky;
     bottom: calc(var(--site-footer-height) * -1);
-    background-color: var(--color-site-dirt);
+    background-image: url(/assets/site/dirt-texture.svg);
     color: white;
     z-index: 99999;
 }
-
+ 
 #footer .footer-body {
     height: var(--site-footer-height);
 }

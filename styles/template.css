@@ -2,11 +2,10 @@
     --color-backdrop: #000B;
     --color-site-main: hsl(198, 41%, 92%);
     --color-site-main-dark: hsl(198, 30%, 50%);
+    --color-site-main-text: hsl(199, 40%, 25%);
 
     --color-site-accent: hsl(270, 10%, 91%);
-    --color-site-accent-dark: hsl(270, 5%, 84%);
-
-    --color-site-dirt: hsl(9, 50%, 30%);
+    --color-site-accent-dark: hsl(268, 16%, 84%);
 
     --color-secondary: #555;
     --color-secondary-dark: #333;
