@@ -1,16 +1,4 @@
 [
-    ["study", {
-        "title": "Art Studies",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
-        "series": [
-            "anatomy"
-        ],
-        "thumbnail-0": "kanroji-bunny",
-        "thumbnail-1": "kanroji-bunny",
-        "thumbnail-2": "kanroji-bunny",
-        "thumbnail-3": "kanroji-bunny",
-        "thumbnail-4": "kanroji-bunny"
-    }],
     ["digital", {
         "title": "Digital Art",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
@@ -22,10 +10,31 @@
             "ghibli",
             "pokemon"
         ],
-        "thumbnail-0": "kanroji-bunny",
-        "thumbnail-1": "mimikyu",
-        "thumbnail-2": "rengoku-ink24",
-        "thumbnail-3": "medium-totoro",
-        "thumbnail-4": "tomioka-ink24"
+        "thumbnails": [
+            { "thumbnail": "kanroji-bunny", "position": { "x": 0.5 } },
+            { "thumbnail": "mimikyu", "position": { "x": -0.2 } },
+            "medium-totoro",
+            "tomioka-ink24",
+            { "thumbnail": "xerneas-az", "position" : { "y": -0.2 } },
+            { "thumbnail": "fletchling-vert-pan", "position": { "x": 0.3 } },
+            { "thumbnail": "umbreon-az", "position": { "y": -0.4 } }
+        ],
+        "display-type": "radial"
+    }],
+    ["study", {
+        "title": "Art Studies",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "series": [
+            "anatomy"
+        ],
+        "thumbnails": [
+            { "thumbnail": "anatomy-32-foot-1",  "position": { "y":  0.2 } },
+            { "thumbnail": "anatomy-30-calves",  "position": { "y": -0.5 }, "scale": 1.25 },
+            { "thumbnail": "anatomy-21-hands" },
+            { "thumbnail": "anatomy-repractice", "position": { "x": -0.3 } },
+            { "thumbnail": "anatomy-28-quadriceps-0" },
+            { "thumbnail": "anatomy-23-hands" }
+        ],
+        "display-type": "cube"
     }]
 ]

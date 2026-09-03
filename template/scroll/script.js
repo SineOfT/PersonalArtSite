@@ -3,18 +3,27 @@ export default function initScrollFunctions(scrollData) {
         const screenHeight = window.innerHeight;
         const scrollY = window.scrollY;
         const scrollHeight = document.body.offsetHeight - screenHeight;
+
         const sectionOffsets = scrollData.map(({ sectionId: id, transition }) => {
             const element = document.getElementById(id);
+            const anchor = document.querySelector(`#${id}-anchor > .scroll-anchor`);
             if (!element) { return { id, transitionElement: false, offset: scrollHeight }; }
             const viewportOffset = element.getBoundingClientRect();
             const offset = scrollY + viewportOffset.top;
-            return { id, transitionElement: transition ? element : false, offset };
+            return { id, transitionElement: transition ? element : false, anchor, offset };
         });
         sectionOffsets.sort((a, b) => { a.offset - b.offset });
 
         const scrollbarElement = document.getElementById("home-scrollbar");
 
-        let prevScroll = scrollHeight;
+        const scrollbarSpriteOffsets = [...scrollbarElement.querySelectorAll(".scrollbar-sprite")]
+            .map((element) => {
+                const viewportOffset = element.getBoundingClientRect();
+                const offset = viewportOffset.left + viewportOffset.width/2;
+                return { element, offset };
+            });
+
+        let prevScroll = -1;
 
         function initScrollAnchors() {
             sectionOffsets.forEach(({ id, offset }) => {
@@ -46,7 +55,26 @@ export default function initScrollFunctions(scrollData) {
                             hideSection(transitionElement);
                         }
                     });
+                    let isSectionExceeded = !currSection;
+                    sectionOffsets.forEach(({ id, anchor }) => {
+                        if (isSectionExceeded) {
+                            hideElement(anchor);
+                        } else {
+                            showElement(anchor);
+                        }
+                        if (id === currSection) {
+                            isSectionExceeded = true;
+                        }
+                    });
                 }
+
+                scrollbarSpriteOffsets.forEach(({ element, offset }) => {
+                    if (offset/window.innerWidth < currScrollFr) {
+                        showElement(element);
+                    } else {
+                        hideElement(element);
+                    }
+                })
 
                 scrollbarElement.style.width = currScrollFr * 100 + "%";
 
@@ -57,12 +85,12 @@ export default function initScrollFunctions(scrollData) {
         }
 
         function getCurrSection(currScroll) {
-            const { currSection, isNew } = sectionOffsets.reduce(
+            let { currSection, isNew } = sectionOffsets.reduce(
                 (acc, section) => {
                     if (acc.isFound) { return acc; }
                     const isCurrSectionPassed = section.offset > currScroll;
                     const isPrevSectionPassed = section.offset > prevScroll;
-                    
+
                     if (!isCurrSectionPassed && !isPrevSectionPassed) {
                         return {
                             prevSectionFound: false,
@@ -115,6 +143,11 @@ export default function initScrollFunctions(scrollData) {
                     isNew: false
                 }
             );
+
+            if (prevScroll < 0) {
+                isNew = true;
+            }
+
             return { currSection, isNew };
         }
 
@@ -136,6 +169,16 @@ export default function initScrollFunctions(scrollData) {
 
         function removeShowOnEnd(event) {
             event.target.classList.remove("show");
+        }
+
+        function showElement(element) {
+            element.classList.add("show");
+            element.classList.remove("hide");
+        }
+
+        function hideElement(element) {
+            element.classList.remove("show");
+            element.classList.add("hide");
         }
 
         initScrollAnchors();

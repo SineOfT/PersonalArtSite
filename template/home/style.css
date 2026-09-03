@@ -1,6 +1,5 @@
 .home-section-container {
     height: 200rem;
-    /* margin-bottom: -100vh; */
 }
 
 .home-section-end {
@@ -10,52 +9,359 @@
 .home-section {
     position: sticky;
     top: 0;
+    max-width: 75rem;
     height: 100vh;
-    padding:1rem;
+    padding: 5rem 2rem;
+    margin-inline: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.home-section-display {
-    --home-section-thumbnail-max-width: 90vw;
-    --home-section-thumbnail-max-height: 50vh;
-    --home-section-thumbnail-width: min(
-        var(--home-section-thumbnail-max-width),
-        calc(var(--home-section-thumbnail-max-height) * var(--artwork-thumbnail-aspect-ratio))
-    );
-    --home-section-thumbnail-height: min(
-        var(--home-section-thumbnail-max-height),
-        calc(var(--home-section-thumbnail-max-width) / var(--artwork-thumbnail-aspect-ratio))
-    );
+.home-section-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem 5rem;
+}
 
+.home-section-text {
+    flex-basis: 25rem;
+    flex-grow: 1;
+}
+
+
+
+.section-diplay-slide-container {
+    --section-thumbnail-max-width: 90vw;
+    --section-thumbnail-max-height: 50vh;
+    --section-thumbnail-width: min(
+        var(--section-thumbnail-max-width),
+        calc(var(--section-thumbnail-max-height) * var(--artwork-thumbnail-aspect-ratio))
+    );
+    --section-thumbnail-height: min(
+        var(--section-thumbnail-max-height),
+        calc(var(--section-thumbnail-max-width) / var(--artwork-thumbnail-aspect-ratio))
+    );
+    --section-cycle-display-duration: 30s;
+}
+
+.section-display-slide {
     position: relative;
-    width: var(--home-section-thumbnail-width);
-    height: calc(var(--home-section-thumbnail-height) * 1.25);
+    width: var(--section-thumbnail-width);
+    height: calc(var(--section-thumbnail-height) * 1.25);
     align-self: center;
 }
 
-.home-section-thumbnail {
+.section-thumbnail-slide-container {
     position: absolute;
-    width: var(--home-section-thumbnail-width);
-    height: var(--home-section-thumbnail-height);
-    background-image: url(/assets/artworks/not-found.webp);
-    background-size: contain;
-    object-fit: cover;
-    outline: 2px solid black;
-    outline-offset: -2px;
+    width: var(--section-thumbnail-width);
+    height: var(--section-thumbnail-height);
+    border: 2px solid black;
     transform-origin: top left;
-    animation: var(--home-section-cycle-display-duration) ease-in-out infinite cycle-display;
+    animation: var(--section-cycle-display-duration) ease-in-out infinite slide-display;
 }
 
-.delay-0 { animation-delay: 0; }
-.delay-1 { animation-delay: calc(var(--home-section-cycle-display-duration) * -0.8); }
-.delay-2 { animation-delay: calc(var(--home-section-cycle-display-duration) * -0.6); }
-.delay-3 { animation-delay: calc(var(--home-section-cycle-display-duration) * -0.4); }
-.delay-4 { animation-delay: calc(var(--home-section-cycle-display-duration) * -0.2); }
+.section-thumbnail-slide {
+    width: 100%;
+    height: 100%;
+}
 
-@keyframes cycle-display {
+.thumbnail-slide-index-0 { animation-delay: 0; }
+.thumbnail-slide-index-1 { animation-delay: calc(var(--section-cycle-display-duration) * -0.8); }
+.thumbnail-slide-index-2 { animation-delay: calc(var(--section-cycle-display-duration) * -0.6); }
+.thumbnail-slide-index-3 { animation-delay: calc(var(--section-cycle-display-duration) * -0.4); }
+.thumbnail-slide-index-4 { animation-delay: calc(var(--section-cycle-display-duration) * -0.2); }
+
+@keyframes slide-display {
     0%,  15% { transform: translate(0, 0)      scale(1);    z-index: 9;   }
     20%, 35% { transform: translate(0,   100%) scale(0.25); z-index: 3;   }
     40%, 55% { transform: translate(25%, 100%) scale(0.25); z-index: 2;   }
     60%, 75% { transform: translate(50%, 100%) scale(0.25); z-index: 1;   }
     80%, 95% { transform: translate(75%, 100%) scale(0.25); z-index: 0;   }
     100%     { transform: translate(0, 0)      scale(1);    z-index: 999; }
+}
+
+
+
+.section-display-radial-container {
+    --section-thumbnail-size: min(40vw, 30vh);  
+    --section-cycle-display-duration: 35s;
+}
+
+.section-display-radial {
+    position: relative;
+    width:  calc(var(--section-thumbnail-size) * 2);
+    height: calc(var(--section-thumbnail-size) * 2);
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-thumbnail-radial-container {
+    position: absolute;
+    width:  var(--section-thumbnail-size);
+    height: var(--section-thumbnail-size);
+    border-radius: 50%;
+    border: 2px solid black;
+    animation:
+        var(--section-cycle-display-duration) linear infinite radial-display-position,
+        var(--section-cycle-display-duration) linear infinite radial-display-scale;
+}
+
+.section-thumbnail-radial {
+    width:  100%;
+    height: 100%;
+}
+
+.thumbnail-radial-index-0 { animation-delay: 0; }
+.thumbnail-radial-index-1 { animation-delay: calc(var(--section-cycle-display-duration) * -6/7); }
+.thumbnail-radial-index-2 { animation-delay: calc(var(--section-cycle-display-duration) * -5/7); }
+.thumbnail-radial-index-3 { animation-delay: calc(var(--section-cycle-display-duration) * -4/7); }
+.thumbnail-radial-index-4 { animation-delay: calc(var(--section-cycle-display-duration) * -3/7); }
+.thumbnail-radial-index-5 { animation-delay: calc(var(--section-cycle-display-duration) * -2/7); }
+.thumbnail-radial-index-6 { animation-delay: calc(var(--section-cycle-display-duration) * -1/7); }
+
+@keyframes radial-display-position {
+     0%     { transform: rotate(0)       translate(0, 0)    rotate(0)      scale(1);   animation-timing-function: ease-in-out; z-index: 0; }
+     4.762% { transform: rotate(-190deg) translate(0, -80%) rotate(190deg) scale(0.4); }
+    14.286% { transform: rotate(-150deg) translate(0, -80%) rotate(150deg) scale(0.4); }
+    28.571% { transform: rotate(-90deg)  translate(0, -80%) rotate(90deg)  scale(0.4); animation-timing-function: ease-in-out; }
+    33.333% { transform: rotate(-310deg) translate(0, -80%) rotate(310deg) scale(0.4); }
+    42.857% { transform: rotate(-270deg) translate(0, -80%) rotate(270deg) scale(0.4); }
+    57.143% { transform: rotate(-210deg) translate(0, -80%) rotate(210deg) scale(0.4); animation-timing-function: ease-in-out; }
+    61.905% { transform: rotate(-430deg) translate(0, -80%) rotate(430deg) scale(0.4); }
+    71.429% { transform: rotate(-390deg) translate(0, -80%) rotate(390deg) scale(0.4);                                         z-index: 0; }
+    85.714% { transform: rotate(-330deg) translate(0, -80%) rotate(330deg) scale(0.4); animation-timing-function: ease-in-out; z-index: 1; }
+    90.476% { transform: rotate(-540deg) translate(0, 0)    rotate(540deg) scale(1); }
+}
+
+@keyframes radial-display-scale {
+     0%     { scale: 1;   animation-timing-function: ease-out; }
+     2.381% { scale: 0.5; animation-timing-function: ease-in; }
+     4.762%,
+    28.571% { scale: 1;   animation-timing-function: ease-out; }
+    30.952% { scale: 0.5; animation-timing-function: ease-in; }
+    33.333%,
+    57.143% { scale: 1;   animation-timing-function: ease-out; }
+    59.523% { scale: 0.5; animation-timing-function: ease-in; }
+    61.905%,
+    85.714% { scale: 1;   animation-timing-function: ease-out; }
+    88.095% { scale: 0.5; animation-timing-function: ease-in; }
+    90.476% { scale: 1; }
+}
+
+
+
+.section-display-cube-container {
+    --section-thumbnail-size: min(40vw, 30vh);  
+    --section-cycle-display-duration: 30s;
+
+    perspective: calc(var(--section-thumbnail-size) * 2);
+}
+
+.section-display-cube {
+    position: relative;
+    width:  calc(var(--section-thumbnail-size) * 1.732);
+    height: calc(var(--section-thumbnail-size) * 1.732);
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    animation: var(--section-cycle-display-duration) linear infinite cube-display;
+} 
+
+.section-thumbnail-cube-container {
+    position: absolute;
+    width:  var(--section-thumbnail-size);
+    height: var(--section-thumbnail-size);
+    border: 2px solid black;
+    transform:
+        matrix3d(var(--rotation-matrix))
+        translate3d(0, 0, calc(var(--section-thumbnail-size) / 2));
+    backface-visibility: hidden;
+}
+
+.section-thumbnail-cube {
+    width:  100%;
+    height: 100%;
+}
+
+.thumbnail-cube-index-0 { --rotation-matrix:  1,  0,  0, 0,
+                                              0,  1,  0, 0,
+                                              0,  0,  1, 0,
+                                              0,  0,  0, 1; }
+.thumbnail-cube-index-1 { --rotation-matrix:  1,  0,  0, 0,
+                                              0,  0, -1, 0,
+                                              0,  1,  0, 0,
+                                              0,  0,  0, 1; }
+.thumbnail-cube-index-2 { --rotation-matrix:  0,  0,  1, 0,
+                                             -1,  0,  0, 0,
+                                              0, -1,  0, 0,
+                                              0,  0,  0, 1; }
+.thumbnail-cube-index-3 { --rotation-matrix:  0,  0,  1, 0,
+                                              0,  1,  0, 0,
+                                             -1,  0,  0, 0,
+                                              0,  0,  0, 1; }
+.thumbnail-cube-index-4 { --rotation-matrix:  0, -1,  0, 0,
+                                              0,  0, -1, 0,
+                                              1,  0,  0, 0,
+                                              0,  0,  0, 1; }
+.thumbnail-cube-index-5 { --rotation-matrix:  0, -1,  0, 0,
+                                             -1,  0,  0, 0,
+                                              0,  0, -1, 0,
+                                              0,  0,  0, 1; }
+
+@keyframes cube-display {
+     0%     { transform: matrix3d( 0.707, -0.577, -0.408, 0,
+                                   0,      0.577, -0.816, 0,
+                                   0.707,  0.577,  0.408, 0,
+                                   0,      0,      0,     1); animation-timing-function: cubic-bezier(0.25, 0, 0.75, 1); }
+    11.111% { transform: matrix3d( 0.707, -0.577,  0.408, 0,
+                                   0,      0.577,  0.816, 0,
+                                  -0.707, -0.577,  0.408, 0,
+                                   0,      0,      0,     1); animation-timing-function: cubic-bezier(0, 0, 0.5, 0); }
+    12.346% { transform: matrix3d( 0.707, -0.577, -0.408, 0,
+                                   0.707,  0.577,  0.408, 0,
+                                   0,     -0.577,  0.816, 0,
+                                   0,      0,      0,     1); }
+    13.580% { transform: matrix3d(-0.707, -0.577, -0.408, 0,
+                                   0,      0.577, -0.816, 0,
+                                   0.707, -0.577, -0.408, 0,
+                                   0,      0,      0,     1); }
+    14.198% { transform: matrix3d(-0.707, -0.577,  0.408, 0,
+                                  -0.707,  0.577, -0.408, 0,
+                                   0,     -0.577, -0.816, 0,
+                                   0,      0,      0,     1); }
+    15.432% { transform: matrix3d( 0.707, -0.577,  0.408, 0,
+                                   0,      0.577,  0.816, 0,
+                                  -0.707, -0.577,  0.408, 0,
+                                   0,      0,      0,     1); animation-timing-function: cubic-bezier(0.5, 1, 1, 1); }
+    16.667% { transform: matrix3d( 0.707, -0.577, -0.408, 0,
+                                   0.707,  0.577,  0.408, 0,
+                                   0,     -0.577,  0.816, 0,
+                                   0,      0,      0,     1); animation-timing-function: cubic-bezier(0.25, 0, 0.75, 1); }
+    27.778% { transform: matrix3d( 0.707, -0.577,  0.408, 0,
+                                  -0.707, -0.577,  0.408, 0,
+                                   0,     -0.577, -0.816, 0,
+                                   0,      0,      0,     1); animation-timing-function: cubic-bezier(0, 0, 0.5, 0); }
+    29.012% { transform: matrix3d( 0,     -0.577,  0.816, 0,
+                                  -0.707, -0.577, -0.408, 0,
+                                   0.707, -0.577, -0.408, 0,
+                                   0,      0,      0,     1); }
+    30.247% { transform: matrix3d(-0.707, -0.577, -0.408, 0,
+                                   0.707, -0.577, -0.408, 0,
+                                   0,     -0.577,  0.816, 0,
+                                   0,      0,      0,     1); }
+    30.864% { transform: matrix3d( 0,     -0.577, -0.816, 0,
+                                   0.707, -0.577,  0.408, 0,
+                                  -0.707, -0.577,  0.408, 0,
+                                   0,      0,      0,     1); }
+    32.099% { transform: matrix3d( 0.707, -0.577,  0.408, 0,
+                                  -0.707, -0.577,  0.408, 0,
+                                   0,     -0.577, -0.816, 0,
+                                   0,      0,      0,     1); animation-timing-function: cubic-bezier(0.5, 1, 1, 1); }
+    33.333% { transform: matrix3d( 0,     -0.577,  0.816, 0,
+                                  -0.707, -0.577, -0.408, 0,
+                                   0.707, -0.577, -0.408, 0,
+                                   0,      0,      0,     1); animation-timing-function: cubic-bezier(0.25, 0, 0.75, 1); }
+    44.444% { transform: matrix3d( 0,     -0.577, -0.816, 0,
+                                   0.707,  0.577, -0.408, 0,
+                                   0.707, -0.577,  0.408, 0,
+                                   0,      0,      0,     1); animation-timing-function: cubic-bezier(0, 0, 0.5, 0); }
+    45.679% { transform: matrix3d(-0.707, -0.577, -0.408, 0,
+                                   0,      0.577, -0.816, 0,
+                                   0.707, -0.577, -0.408, 0,
+                                   0,      0,      0,     1); }
+    46.916% { transform: matrix3d( 0,     -0.577,  0.816, 0,
+                                  -0.707,  0.577,  0.408, 0,
+                                  -0.707, -0.577, -0.408, 0,
+                                   0,      0,      0,     1); }
+    47.531% { transform: matrix3d( 0.707, -0.577,  0.408, 0,
+                                   0,      0.577,  0.816, 0,
+                                  -0.707, -0.577,  0.408, 0,
+                                   0,      0,      0,     1); }
+    48.765% { transform: matrix3d( 0,     -0.577, -0.816, 0,
+                                   0.707,  0.577, -0.408, 0,
+                                   0.707, -0.577,  0.408, 0,
+                                   0,      0,      0,     1); animation-timing-function: cubic-bezier(0.5, 1, 1, 1); }
+    50%     { transform: matrix3d(-0.707, -0.577, -0.408, 0,
+                                   0,      0.577, -0.816, 0,
+                                   0.707, -0.577, -0.408, 0,
+                                   0,      0,      0,     1); animation-timing-function: cubic-bezier(0.25, 0, 0.75, 1); }
+    61.111% { transform: matrix3d( 0.707,  0.577, -0.408, 0,
+                                   0,      0.577,  0.816, 0,
+                                   0.707, -0.577,  0.408, 0,
+                                   0,      0,      0,     1); animation-timing-function: cubic-bezier(0, 0, 0.5, 0); }
+    62.346% { transform: matrix3d( 0.707,  0.577,  0.408, 0,
+                                  -0.707,  0.577,  0.408, 0,
+                                   0,     -0.577,  0.816, 0,
+                                   0,      0,      0,     1); }
+    63.580% { transform: matrix3d(-0.707,  0.577,  0.408, 0,
+                                   0,      0.577, -0.816, 0,
+                                  -0.707, -0.577, -0.408, 0,
+                                   0,      0,      0,     1); }
+    64.198% { transform: matrix3d(-0.707,  0.577, -0.408, 0,
+                                   0.707,  0.577, -0.408, 0,
+                                   0,     -0.577, -0.816, 0,
+                                   0,      0,      0,     1); }
+    65.432% { transform: matrix3d( 0.707,  0.577, -0.408, 0,
+                                   0,      0.577,  0.816, 0,
+                                   0.707, -0.577,  0.408, 0,
+                                   0,      0,      0,     1); animation-timing-function: cubic-bezier(0.5, 1, 1, 1);}
+    66.667% { transform: matrix3d( 0.707,  0.577,  0.408, 0,
+                                  -0.707,  0.577,  0.408, 0,
+                                   0,     -0.577,  0.816, 0,
+                                   0,      0,      0,     1); animation-timing-function: cubic-bezier(0.25, 0, 0.75, 1); }
+    77.778% { transform: matrix3d(-0.707, -0.577,  0.408, 0,
+                                  -0.707,  0.577, -0.408, 0,
+                                   0,     -0.577, -0.816, 0,
+                                   0,      0,      0,     1); animation-timing-function: cubic-bezier(0, 0, 0.5, 0); }
+    79.012% { transform: matrix3d( 0,     -0.577,  0.816, 0,
+                                  -0.707,  0.577,  0.408, 0,
+                                  -0.707, -0.577, -0.408, 0,
+                                   0,      0,      0,     1); }
+    80.247% { transform: matrix3d( 0.707, -0.577, -0.408, 0,
+                                   0.707,  0.577,  0.408, 0,
+                                   0,     -0.577,  0.816, 0,
+                                   0,      0,      0,     1); }
+    80.864% { transform: matrix3d( 0,     -0.577, -0.816, 0,
+                                   0.707,  0.577, -0.408, 0,
+                                   0.707, -0.577,  0.408, 0,
+                                   0,      0,      0,     1); }
+    82.099% { transform: matrix3d(-0.707, -0.577,  0.408, 0,
+                                  -0.707,  0.577, -0.408, 0,
+                                   0,     -0.577, -0.816, 0,
+                                   0,      0,      0,     1); animation-timing-function: cubic-bezier(0.5, 1, 1, 1); }
+    83.333% { transform: matrix3d( 0,     -0.577,  0.816, 0,
+                                  -0.707,  0.577,  0.408, 0,
+                                  -0.707, -0.577, -0.408, 0,
+                                   0,      0,      0,     1); animation-timing-function: cubic-bezier(0.25, 0, 0.75, 1); }
+    94.444% { transform: matrix3d( 0,     -0.577, -0.816, 0,
+                                  -0.707,  0.577, -0.408, 0,
+                                   0.707,  0.577, -0.408, 0,
+                                   0,      0,      0,     1); animation-timing-function: cubic-bezier(0, 0, 0.5, 0); }
+    95.679% { transform: matrix3d( 0.707, -0.577, -0.408, 0,
+                                   0,      0.577, -0.816, 0,
+                                   0.707,  0.577,  0.408, 0,
+                                   0,      0,      0,     1); }
+    96.914% { transform: matrix3d( 0,     -0.577,  0.816, 0,
+                                   0.707,  0.577,  0.408, 0,
+                                  -0.707,  0.577,  0.408, 0,
+                                   0,      0,      0,     1); }
+    97.531% { transform: matrix3d(-0.707, -0.577,  0.408, 0,
+                                   0,      0.577,  0.816, 0,
+                                  -0.707,  0.577, -0.408, 0,
+                                   0,      0,      0,     1); }
+    98.765% { transform: matrix3d( 0,     -0.577, -0.816, 0,
+                                  -0.707,  0.577, -0.408, 0,
+                                   0.707,  0.577, -0.408, 0,
+                                   0,      0,      0,     1); animation-timing-function: cubic-bezier(0.5, 1, 1, 1); }
+    100% { transform: matrix3d( 0.707, -0.577, -0.408, 0,
+                                   0,      0.577, -0.816, 0,
+                                   0.707,  0.577,  0.408, 0,
+                                   0,      0,      0,     1); }
 }

@@ -1,24 +1,15 @@
 const fs = require("fs");
 const path = require("path");
+const { getThumbnailImage, getThumbnailCssVariables } = require("../utility");
 
 const artworkImageHtml = fs.readFileSync(path.join(__dirname, "/artwork-thumbnail.html"));
 
 function generateArtworkThumbnail(artworkId, artwork = { }) {
-    let cssVariables = "";
-
-    const scale = artwork["scale"];
-    const { x, y } = artwork["position"] || { };
-    cssVariables = `${
-        scale != null ? `--scale: ${scale};` : ""} ${
-        x != null ? `--x: ${x};` : ""} ${
-        y != null ? `--y: ${y};` : ""}`;
-
     return {
         html: artworkImageHtml.toString()
-            .replaceAll("%__ARTWORK_IMAGE__%",
-                artworkId.endsWith(".webp") ? artworkId : `${artworkId}/thumbnail.webp`)
+            .replaceAll("%__ARTWORK_IMAGE__%", getThumbnailImage(artworkId))
             .replaceAll("%__ARTWORK_CLASS__%", artwork["censor"] ? "censor" : "")
-            .replaceAll("%__ARTWORK_CSS_VARIABLES__%", cssVariables),
+            .replaceAll("%__ARTWORK_CSS_VARIABLES__%", getThumbnailCssVariables(artwork)),
         styles: ["artwork-thumbnail"]
     };
 }

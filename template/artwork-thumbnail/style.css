@@ -3,24 +3,11 @@
     aspect-ratio: var(--artwork-thumbnail-aspect-ratio);
     background-color: #FFF1;
     border: 2px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
 }
 
 .artwork-thumbnail {
     width: 100%;
-    object-fit: contain;
-    aspect-ratio: var(--artwork-thumbnail-aspect-ratio);
-    background-image: url(/assets/artworks/not-found.webp);
-    background-size: contain;
-    transform-origin: center;
-    transform:
-        scale(var(--scale, 1.02))
-        translate(
-            calc(-100% * var(--x, 0)),
-            calc(-100% * var(--y, 0)));
+    height: 100%;
 }
 
 .censor {

@@ -118,6 +118,30 @@ export function getPositionOnSprite(sprite, [x, y], direction) {
     ]
 };
 
+export function getThumbnail(thumbnail) {
+    if (typeof thumbnail === "string") {
+        return { thumbnail: getThumbnailImage(thumbnail), cssVariables: "" };
+    } else {
+        return {
+            thumbnail: getThumbnailImage(thumbnail.thumbnail),
+            cssVariables: getThumbnailCssVariables(thumbnail),
+        };
+    }
+}
+
+export function getThumbnailImage(thumbnailString) {
+    return thumbnailString.endsWith(".webp") ? thumbnailString : `${thumbnailString}/thumbnail.webp`;
+}
+
+export function getThumbnailCssVariables(thumbnail) {
+    const scale = thumbnail["scale"];
+    const { x, y } = thumbnail["position"] || { };
+    return `${
+        scale != null ? `--scale: ${scale};` : ""} ${
+        x != null ? `--x: ${x};` : ""} ${
+        y != null ? `--y: ${y};` : ""}`;
+}
+
 export function isWithinDistance(pointA, pointB, maxDistance) {
     const distanceX = Math.abs(pointB[0] - pointA[0]);
     const distanceY = Math.abs(pointB[1] - pointA[1]);
