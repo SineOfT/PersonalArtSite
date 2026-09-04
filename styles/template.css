@@ -4,8 +4,8 @@
     --color-site-main-dark: hsl(198, 30%, 50%);
     --color-site-main-text: hsl(199, 40%, 25%);
 
-    --color-site-accent: hsl(210, 9%, 91%);
-    --color-site-accent-dark: hsl(258, 16%, 84%);
+    --color-site-accent: hsl(0, 0%, 98%);
+    --color-site-accent-dark: hsl(0, 0%, 94%);
 
     --color-secondary: #555;
     --color-secondary-dark: #333;
@@ -36,4 +36,9 @@ button {
 
 img {
     display: block;
+}
+
+#page-bottom {
+    padding-top: 100vh;
+    margin-top: -100vh;
 }

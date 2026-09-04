@@ -1,37 +1,36 @@
-[
-    {
-        "sectionId": "home",
-        "hashId": "",
-        "title": "Home",
-        "color": "#ACF",
-        "transition": false
-    },
-    {
-        "sectionId": "digital",
-        "hashId": "digital",
-        "title": "Digital",
-        "color": "#FAF",
-        "transition": true
-    },
-    {
-        "sectionId": "study",
-        "hashId": "study",
-        "title": "Studies",
-        "color": "#AAA",
-        "transition": true
-    },
-    {
-        "sectionId": "timeline",
-        "hashId": "timeline",
-        "title": "Timeline",
-        "color": "#A8F",
-        "transition": true
-    },
-    {
-        "sectionId": "end",
-        "hashId": "page-bottom",
-        "title": "Footer",
-        "color": "#FFF",
-        "transition": false
-    }
-]
+{
+    "data": [
+        {
+            "sectionId": "home",
+            "hashId": "",
+            "title": "Home",
+            "color": "#ACF",
+            "transition": false
+        },
+        {
+            "sectionId": "digital",
+            "hashId": "digital",
+            "title": "Digital",
+            "color": "#FAF",
+            "transition": true,
+            "instant": true
+        },
+        {
+            "sectionId": "study",
+            "hashId": "study",
+            "title": "Studies",
+            "color": "#AAA",
+            "transition": true,
+            "instant": true
+        },
+        {
+            "sectionId": "timeline",
+            "hashId": "timeline",
+            "title": "Timeline",
+            "color": "#A8F",
+            "transition": true,
+            "instant": true
+        }
+    ],
+    "excludeTop": true
+}

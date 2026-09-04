@@ -9,16 +9,19 @@ const sectionHtml = fs.readFileSync(path.join(__dirname, "/section.html"));
 function generateSectionSites(sectionsData, seriesData, artworksData) {
     return [...sectionsData.entries()].map(([sectionId, section]) => {
         const sectionSeriesList = section["series"] ?? [];
-        const seriesScroll = sectionSeriesList.map((seriesId) => {
-            const series = seriesData.get(seriesId);
-            return {
-                sectionId: seriesId,
-                hashId: seriesId,
-                title: series["title"],
-                transition: false,
-                color: series["color"]
-            };
-        });
+        const seriesScroll = {
+            data: sectionSeriesList.map((seriesId) => {
+                const series = seriesData.get(seriesId);
+                return {
+                    sectionId: seriesId,
+                    hashId: seriesId,
+                    title: series["title"],
+                    transition: false,
+                    color: series["color"]
+                };
+            }),
+            excludeTop: true,
+        };
         
         const { html: updatedSectionSeriesListHtml, styles: seriesStyles } =
             generateSeriesList(sectionSeriesList, seriesData, artworksData);

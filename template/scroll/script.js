@@ -3,13 +3,13 @@ export default function initScrollFunctions(scrollData) {
         const scrollY = window.scrollY;
         const scrollHeight = document.body.offsetHeight - window.innerHeight;
 
-        const sectionOffsets = scrollData.map(({ sectionId: id, transition }) => {
+        const sectionOffsets = scrollData.map(({ sectionId: id, transition, instant }) => {
             const element = document.getElementById(id);
             const anchor = document.querySelector(`#${id}-anchor .scroll-anchor-marker`);
             if (!element) { return { id, transitionElement: false, offset: scrollHeight }; }
             const viewportOffset = element.getBoundingClientRect();
             const offset = scrollY + viewportOffset.top;
-            return { id, transitionElement: transition ? element : false, anchor, offset };
+            return { id, transitionElement: transition ? element : false, anchor, offset, isInstant: instant };
         });
         sectionOffsets.sort((a, b) => { a.offset - b.offset });
 
@@ -24,11 +24,18 @@ export default function initScrollFunctions(scrollData) {
         let prevScroll = -1;
 
         function initScrollAnchors() {
-            sectionOffsets.forEach(({ id, offset }) => {
+            sectionOffsets.forEach(({ id, offset, isInstant }) => {
                 const sectionScrollFr = offset / scrollHeight;
                 const sectionAnchor = document.getElementById(`${id}-anchor`);
                 sectionAnchor.style.setProperty("--fr", sectionScrollFr);
                 sectionAnchor.classList.add("scroll-anchor-position");
+                if (isInstant) {
+                    sectionAnchor.querySelector(".scroll-anchor").addEventListener("click", () => {
+                        document.documentElement.style.scrollBehavior = "auto";
+                        window.scrollTo(0, offset, { behavior: "instant" });
+                        document.documentElement.style.scrollBehavior = "smooth";
+                    });
+                }
             });
         }
 

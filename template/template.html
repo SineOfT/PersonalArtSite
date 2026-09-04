@@ -16,10 +16,14 @@
 <body>
     <script>document.body.classList.add("v-none");</script>
 
+    <div id="page-top"></div>
     %__SITE__%
     <div id="page-bottom"></div>
 
-    <script defer>
+    <script type="module" defer>
+        import { scrollToFrag } from "/scripts/frag-anchor.js";
+
+        scrollToFrag();
         document.addEventListener("DOMContentLoaded", () => {
             document.body.classList.remove("v-none");
         }, { once: true });

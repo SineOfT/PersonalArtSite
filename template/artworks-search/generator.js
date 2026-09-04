@@ -36,7 +36,7 @@ function generateArtworksSearch(sectionsData, seriesData, artworksData) {
         .replaceAll("%__SERIES_CHECKBOXES__%", seriesCheckboxes);
 
     const { html: updatedArtworksSearchSite, styles: siteStyles } =
-        generateSite(updatedArtworkSearchHtml, "", []);
+        generateSite(updatedArtworkSearchHtml, "", { });
 
     return {
         html: updatedArtworksSearchSite,
