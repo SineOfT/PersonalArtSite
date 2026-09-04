@@ -1,3 +1,6 @@
+import initShikaStateMachine from "/scripts/shika.js";
+import initStateMachineManager from "/scripts/state-machine-manager.js";
+
 export default function initScrollFunctions(scrollData) {
     function initScroll() {
         const scrollY = window.scrollY;
@@ -193,4 +196,7 @@ export default function initScrollFunctions(scrollData) {
     }
     
     initScroll();
+
+    const shikaStateMachine = initShikaStateMachine();
+    initStateMachineManager([shikaStateMachine]);
 }

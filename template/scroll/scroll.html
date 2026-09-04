@@ -24,13 +24,8 @@
 
 <script type="module" defer>
     import initScrollFunctions from "/scripts/scroll.js";
-    import initShikaStateMachine from "/scripts/shika.js";
-    import initStateMachineManager from "/scripts/state-machine-manager.js";
 
     const scrollData = %__SCROLL_DATA__%;
 
     initScrollFunctions(scrollData);
-    
-    const shikaStateMachine = initShikaStateMachine();
-    initStateMachineManager([shikaStateMachine]);
 </script>

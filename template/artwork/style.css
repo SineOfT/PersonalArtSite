@@ -1,5 +1,6 @@
 html {
     overflow: hidden;
+    touch-action: none;
 }
 
 .artwork-main {
@@ -21,7 +22,9 @@ html {
 
     padding: 1rem;
     width: 100vw;
+    width: 100svw;
     height: 100vh;
+    height: 100svh;
     display: grid;
     grid-template-areas:
         "close heading heading heading ."
@@ -44,7 +47,7 @@ html {
 
 .artwork-title {
     color: #EEE;
-    font-size: calc(var(--control-size) - 1.2rem);
+    font-size: min(calc(var(--control-size) - 1.2rem), 5vw);
     line-height: 100%;
 }
 

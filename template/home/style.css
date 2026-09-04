@@ -156,7 +156,7 @@
 
 
 .section-display-cube-container {
-    --section-thumbnail-size: min(40vw, 30vh);  
+    --section-thumbnail-size: min(40vw, 30vh);
     --section-cycle-display-duration: 30s;
 
     perspective: calc(var(--section-thumbnail-size) * 2);
