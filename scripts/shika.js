@@ -182,7 +182,7 @@ const SHIKA_GLOBAL_GOAL_STATES = [
     },
     {
         state: TURN,
-        predicate: (shika) => shika.distance < 0,
+        predicate: (shika) => shika.distance < -TURN_DISTANCE,
     },
 ];
 
