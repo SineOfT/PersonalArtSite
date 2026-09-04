@@ -84,11 +84,11 @@ body {
 }
 
 @media (hover: hover) {
-    #header:has(.header-container:hover) {
+    :is(#header:has(.header-container:hover), #header.hover) {
         top: 0;
     }
 
-    .header-container:hover .toggle-button-label::after {
+    :is(.header-container:hover, #header.hover) .toggle-button-label::after {
         transform: rotate(45deg);
     }
 }

@@ -144,9 +144,10 @@ const TAIL_SIT_POS = ['24%', '7%'];
 const HEAD_STAND_POS_CENTER = [0.65, 0.45];
 const HEAD_SIT_POS_CENTER = [0.66, 0.29];
 
+const TURN_START_DISTANCE = 0.3 * BODY_SPRITE_WIDTH;
 const JUMP_START_DISTANCE = 2 * BODY_SPRITE_WIDTH;
 const HOP_START_DISTANCE = 1 * BODY_SPRITE_WIDTH;
-const WALK_START_DISTANCE = 0.3 * BODY_SPRITE_WIDTH;
+const WALK_START_DISTANCE = 0.15 * BODY_SPRITE_WIDTH;
 
 const TURN_DISTANCE = 0.55 * BODY_SPRITE_WIDTH;
 const JUMP_DISTANCE = 1 * BODY_SPRITE_WIDTH;
@@ -163,7 +164,7 @@ const TAIL_FLICK_DELAY = {
     maxDelay: 96,
 };
 
-const SHIKA_SCROLLBAR_DISTANCE = 30;
+const SHIKA_SCROLLBAR_DISTANCE = 150;
 
 const FACE_MOUSE_SIDE_MAX_DISTANCE = 10;
 const FACE_MOUSE_FRONT_BACK_MAX_SLOPE = 0.5;
@@ -185,7 +186,7 @@ const SHIKA_GLOBAL_GOAL_STATES = [
     },
     {
         state: TURN,
-        predicate: (shika) => shika.distance < -TURN_DISTANCE,
+        predicate: (shika) => shika.distance < -TURN_START_DISTANCE,
     },
 ];
 
@@ -1641,7 +1642,7 @@ export default function initShikaStateMachine() {
     };
 
     function update(frame) {
-        const scrollbarX = parseFloat(homeScrollbar.offsetWidth);
+        const scrollbarX = parseFloat(homeScrollbar.getBoundingClientRect().width);
         shika.distance = (scrollbarX - shika.x - SHIKA_SCROLLBAR_DISTANCE) * shika.direction;
 
         // apply transformations after changed by state machine

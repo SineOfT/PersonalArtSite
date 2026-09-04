@@ -58,7 +58,8 @@
             "anatomy-32-foot-0",
             "anatomy-32-foot-1"
         ],
-        "thumbnail": "anatomy-thumbnail.webp"
+        "thumbnail": "anatomy-thumbnail.webp",
+        "color": "#AAA"
     }],
     ["ghibli", {
         "title": "Studio Ghibli Artworks",
@@ -73,7 +74,8 @@
             "ponyo",
             "medium-totoro"
         ],
-        "thumbnail": "medium-totoro"
+        "thumbnail": "medium-totoro",
+        "color": "#FCF"
     }],
     ["pokemon-vert-pan", {
         "title": "Pokemon Vertical Panorama",
@@ -106,7 +108,8 @@
             "fletchling-vert-pan",
             "hydreigon-vert-pan"
         ],
-        "thumbnail": "pokemon-vert-pan"
+        "thumbnail": "pokemon-vert-pan",
+        "color": "#DBF"
     }],
     ["ink24", {
         "title": "Inktober 2024",
@@ -150,7 +153,8 @@
             "tomioka-ink24",
             "kyojuro-ink24"
         ],
-        "thumbnail": "tomioka-ink24"
+        "thumbnail": "tomioka-ink24",
+        "color": "#FBE"
     }],
     ["kny-animal", {
         "title": "Kimetsu no Yaiba + Favorite Animal Series",
@@ -172,7 +176,8 @@
             "tomioka-dog",
             "yushiro-chachamaru"
         ],
-        "thumbnail": "kanroji-bunny"
+        "thumbnail": "kanroji-bunny",
+        "color": "#F9D"
     }],
     ["pokemon", {
         "title": "Pokemon Artworks",
@@ -186,7 +191,8 @@
         "artworks": [
             "mimikyu"
         ],
-        "thumbnail": "mimikyu"
+        "thumbnail": "mimikyu",
+        "color": "#EBE"
     }],
     ["pokemon-az", {
         "title": "Pokemonth 2025 A-Z",
@@ -226,6 +232,7 @@
             "yamask-az",
             "zweilous-az"
         ],
-        "thumbnail": "axew-az"
+        "thumbnail": "axew-az",
+        "color": "#E8F"
     }]
 ]

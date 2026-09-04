@@ -15,7 +15,8 @@ function generateSectionSites(sectionsData, seriesData, artworksData) {
                 sectionId: seriesId,
                 hashId: seriesId,
                 title: series["title"],
-                transition: false
+                transition: false,
+                color: series["color"]
             };
         });
         

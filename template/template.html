@@ -10,13 +10,19 @@
     <script type="module" defer>
         import initFragAnchors from "/scripts/frag-anchor.js";
 
-        document.addEventListener("DOMContentLoaded", () => {
-            initFragAnchors();
-        }, { once: true });
+        initFragAnchors();
     </script>
 </head>
 <body>
+    <script>document.body.classList.add("v-none");</script>
+
     %__SITE__%
     <div id="page-bottom"></div>
+
+    <script defer>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.body.classList.remove("v-none");
+        }, { once: true });
+    </script>
 </body>
 </html>

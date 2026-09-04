@@ -14,75 +14,102 @@ body {
     overflow: clip;
 }
 
-.home-scrollbar {
+.home-scrollbar-container {
+    --scrollbar-height: 0.75rem;
+    --sprite-size: 1rem;
+}
+
+.home-scrollbar-bg {
     position: absolute;
-    height: 0.5em;
+    width: 100%;
+    height: var(--scrollbar-height);
+    background-color: #0002;
+    z-index: 1;
+}
+
+.home-scrollbar {
+    width: 100%;
+    height: 100%;
+    transform-origin: left;
+    transform: scale(var(--width-fr), 1);
     background-color: green;
+}
+
+.scrollbar-sprites-front-container {
+    position: absolute;
+    left: 0;
+    bottom: calc(100% - var(--scrollbar-height));
+    z-index: 4;
+}
+
+.scrollbar-sprites-back-container {
+    position: absolute;
+    left: 0;
+    bottom: calc(100% - var(--sprite-size) * 0.3);
     z-index: 1;
 }
 
 .scrollbar-sprite {
-    --sprite-size: 1rem;
-
     position: absolute;
-    left: calc(var(--sprite-size) * 0.6 * var(--sprite-index));
-    bottom: calc(100% - 0.5rem);
-    background-image: url(/assets/site/grass-scrollbar.png);
-    background-size: 100% 100%;
-    background-position: center;
-    transition:
-        width  0.3s cubic-bezier(0, 0.5, 1, 0.5),
-        height 0.3s cubic-bezier(0, 0, 0.5, 2);
-}
-
-.scrollbar-sprite.show {
+    left: calc(var(--sprite-size) * (0.6 * var(--sprite-index) - 0.5));
+    bottom: 0;
     width: var(--sprite-size);
     height: var(--sprite-size);
+    background-image: url(/assets/site/grass-scrollbar.webp);
+    background-size: 100% 100%;
+    background-position: center;
+    transform-origin: bottom;
+    transform: none;
+    scale: 1 1;
+    transition:
+        transform 0.3s cubic-bezier(0, 0.5, 1, 0.5),
+        scale     0.3s cubic-bezier(0, 0, 0.5, 2);
+    animation:
+        3s
+        cubic-bezier(0.37, 0, 0.63, 1)
+        calc(-0.1s * var(--sprite-index) + 0.5s * (mod(var(--sprite-index) * 1.618, 1) - 0.5))
+        infinite
+        alternate
+        scrollbar-sprite-wind;
+}
+
+.scrollbar-sprites-back-container .scrollbar-sprite {
+    animation-delay: calc(-0.1s * var(--sprite-index) + 0.5s * (mod(var(--sprite-index) * 1.618, 1) - 0.5) + 0.5s);
 }
 
 .scrollbar-sprite.hide {
-    width: 0;
-    height: 0;
+    transform: scale(0, 1);
+    scale: 1 0;
+    transition:
+        transform 0.2s ease-in,
+        scale     0.2s ease-in;
 }
 
-.scroll-section {
-    height: 100rem;
+@keyframes scrollbar-sprite-wind {
+    0%   { rotate:  20deg; }
+    100% { rotate: -20deg; }
 }
 
-.scroll-animations-container {
-    position: relative;
-    width: 100%;
-}
-
-.shika-sprite {
-    position: absolute;
-    pointer-events: none;
-}
-#shika {
-    bottom: 0;
-    left: 0;
-    transform-origin: 75% 100%;
-    translate: -75% 5%;
-}
 
 .scroll-anchors-container {
     --scroll-anchor-size: 2.5rem;
 
     position: relative;
     width: 100%;
-    height: 2.5rem;
+    height: var(--scroll-anchor-size);
+    padding-top: var(--scrollbar-height);
+    margin-bottom: 0.5rem;
     transform: rotate(0);
     display: flex;
     flex-direction: row;
     align-items: start;
     justify-content: space-around;
+    z-index: 3;
 }
 
 .scroll-anchor-position {
     position: absolute;
     left: clamp(0%, 100% * var(--fr, 0) - var(--scroll-anchor-size) / 2, 100% - var(--scroll-anchor-size));
-    top: auto;
-    bottom: auto;
 }
 
 .scroll-anchor {
@@ -98,13 +125,18 @@ body {
 
 .scroll-anchor-marker {
     position: absolute;
-    inset: auto auto 100%;
+    inset: auto auto calc(100% + var(--scrollbar-height) / 2);
+    width: 100%;
+    height: 100%;
     background-image: url(/assets/site/flower-anchor.webp);
     background-size: 100% 100%;
     background-position: center;
+    transform-origin: bottom;
+    transform: none;
+    scale: 1 1;
     transition:
-        width  0.5s cubic-bezier(0, 0.5, 1, 0.5),
-        height 0.5s cubic-bezier(0, 0, 0.5, 2);
+        transform 0.5s cubic-bezier(0, 0.5, 1, 0.5),
+        scale     0.5s cubic-bezier(0, 0, 0.5, 2);
 }
 
 .scroll-anchor-marker::after {
@@ -116,20 +148,21 @@ body {
     mask-size: 100% 100%;
     mask-position: center;
     mix-blend-mode: multiply;
-    z-index: 1;
 }
 
-.scroll-anchor.show .scroll-anchor-marker {
-    width: 100%;
-    height: 100%;
-}
-
-.scroll-anchor.hide .scroll-anchor-marker {
-    width: 0%;
-    height: 0%;
+.scroll-anchor-marker.hide {
+    transform: scale(0, 1);
+    scale: 1 0;
+    transition:
+        transform 0.2s ease-in,
+        scale     0.2s ease-in;
 }
 
 @media (hover: hover) {
+    .scroll-anchor-position:hover {
+        z-index: 1;
+    }
+
     .scroll-anchor-position:hover::after {
         content: "Jump to " attr(data-anchor-title);
         position: fixed;
@@ -139,5 +172,23 @@ body {
         font-size: 1.2rem;
         font-weight: bold;
         text-wrap: nowrap;
+        pointer-events: none;
     }
+}
+
+.scroll-animations-container {
+    position: absolute;
+    bottom: calc(100% - var(--scrollbar-height));
+    width: 100%;
+    z-index: 2;
+}
+
+.shika-sprite {
+    position: absolute;
+    pointer-events: none;
+}
+#shika {
+    bottom: 0;
+    left: 0;
+    transform-origin: 75% 100%;
 }

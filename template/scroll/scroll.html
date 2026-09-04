@@ -1,18 +1,24 @@
-<div class="scroll-animations-container">
-    <div id="shika" class="shika-sprite">
-        <div id="shika-head"      class="shika-sprite"></div>
-        <div id="shika-ear"       class="shika-sprite"></div>
-        <div id="shika-eye-left"  class="shika-sprite"></div>
-        <div id="shika-eye-right" class="shika-sprite"></div>
-        <div id="shika-tail"      class="shika-sprite"></div>
-    </div>
-</div>
 <div class="home-scrollbar-container">
-    <div class="home-scrollbar" id="home-scrollbar">
+    <div class="home-scrollbar-bg">
+        <div class="home-scrollbar" id="home-scrollbar"></div>
+    </div>
+    <div class="scrollbar-sprites-front-container">
+        %__SCROLLBAR_SPRITES__%
+    </div>
+    <div class="scrollbar-sprites-back-container">
         %__SCROLLBAR_SPRITES__%
     </div>
     <div class="scroll-anchors-container" id="scroll-anchors-container">
         %__SCROLL_ANCHORS__%
+    </div>
+    <div class="scroll-animations-container">
+        <div id="shika" class="shika-sprite">
+            <div id="shika-head"      class="shika-sprite"></div>
+            <div id="shika-ear"       class="shika-sprite"></div>
+            <div id="shika-eye-left"  class="shika-sprite"></div>
+            <div id="shika-eye-right" class="shika-sprite"></div>
+            <div id="shika-tail"      class="shika-sprite"></div>
+        </div>
     </div>
 </div>
 
@@ -23,9 +29,8 @@
 
     const scrollData = %__SCROLL_DATA__%;
 
-    document.addEventListener("DOMContentLoaded", () => {
-        initScrollFunctions(scrollData);
-        const shikaStateMachine = initShikaStateMachine();
-        initStateMachineManager([shikaStateMachine]);
-    }, { once: true });
+    initScrollFunctions(scrollData);
+    
+    const shikaStateMachine = initShikaStateMachine();
+    initStateMachineManager([shikaStateMachine]);
 </script>

@@ -1,12 +1,11 @@
 export default function initScrollFunctions(scrollData) {
     function initScroll() {
-        const screenHeight = window.innerHeight;
         const scrollY = window.scrollY;
-        const scrollHeight = document.body.offsetHeight - screenHeight;
+        const scrollHeight = document.body.offsetHeight - window.innerHeight;
 
         const sectionOffsets = scrollData.map(({ sectionId: id, transition }) => {
             const element = document.getElementById(id);
-            const anchor = document.querySelector(`#${id}-anchor > .scroll-anchor`);
+            const anchor = document.querySelector(`#${id}-anchor .scroll-anchor-marker`);
             if (!element) { return { id, transitionElement: false, offset: scrollHeight }; }
             const viewportOffset = element.getBoundingClientRect();
             const offset = scrollY + viewportOffset.top;
@@ -14,14 +13,13 @@ export default function initScrollFunctions(scrollData) {
         });
         sectionOffsets.sort((a, b) => { a.offset - b.offset });
 
-        const scrollbarElement = document.getElementById("home-scrollbar");
+        const scrollbarSpriteOffsets = [...document.querySelectorAll(".scrollbar-sprite")].map((element) => {
+            const viewportOffset = element.getBoundingClientRect();
+            const offset = viewportOffset.left + viewportOffset.width/2;
+            return { element, offset };
+        });
 
-        const scrollbarSpriteOffsets = [...scrollbarElement.querySelectorAll(".scrollbar-sprite")]
-            .map((element) => {
-                const viewportOffset = element.getBoundingClientRect();
-                const offset = viewportOffset.left + viewportOffset.width/2;
-                return { element, offset };
-            });
+        const scrollbarElement = document.getElementById("home-scrollbar");
 
         let prevScroll = -1;
 
@@ -34,7 +32,7 @@ export default function initScrollFunctions(scrollData) {
             });
         }
 
-        function updateScroll(prevScrollHeight) {
+        function updateScroll(prevScrollHeight, shouldTransition = true) {
             return () => {
                 const currScrollHeight = document.body.offsetHeight - window.innerHeight;
                 if (currScrollHeight !== prevScrollHeight) {
@@ -58,9 +56,9 @@ export default function initScrollFunctions(scrollData) {
                     let isSectionExceeded = !currSection;
                     sectionOffsets.forEach(({ id, anchor }) => {
                         if (isSectionExceeded) {
-                            hideElement(anchor);
+                            hideElement(anchor, shouldTransition);
                         } else {
-                            showElement(anchor);
+                            showElement(anchor, shouldTransition);
                         }
                         if (id === currSection) {
                             isSectionExceeded = true;
@@ -70,13 +68,13 @@ export default function initScrollFunctions(scrollData) {
 
                 scrollbarSpriteOffsets.forEach(({ element, offset }) => {
                     if (offset/window.innerWidth < currScrollFr) {
-                        showElement(element);
+                        showElement(element, shouldTransition);
                     } else {
-                        hideElement(element);
+                        hideElement(element, shouldTransition);
                     }
                 })
 
-                scrollbarElement.style.width = currScrollFr * 100 + "%";
+                scrollbarElement.style.setProperty("--width-fr", currScrollFr);
 
                 prevScroll = currScroll;
 
@@ -171,18 +169,20 @@ export default function initScrollFunctions(scrollData) {
             event.target.classList.remove("show");
         }
 
-        function showElement(element) {
-            element.classList.add("show");
+        function showElement(element, shouldTransition) {
             element.classList.remove("hide");
+            element.classList.remove("v-none");
         }
 
-        function hideElement(element) {
-            element.classList.remove("show");
+        function hideElement(element, shouldTransition) {
             element.classList.add("hide");
+            if (!shouldTransition) {
+                element.classList.add("v-none");
+            }
         }
 
         initScrollAnchors();
-        window.requestAnimationFrame(updateScroll(scrollHeight));
+        updateScroll(scrollHeight, false)();
     }
     
     initScroll();
