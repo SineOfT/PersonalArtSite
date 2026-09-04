@@ -190,5 +190,6 @@ body {
 #shika {
     bottom: 0;
     left: 0;
-    transform-origin: 75% 100%;
+    transform-origin: 50% 100%;
+    translate: -100% 0;
 }
