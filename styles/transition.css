@@ -25,16 +25,16 @@
 
 /* SLIDE */
 
-.slide {
+html:not(.minimal-animations) .slide {
     --slide-duration: 0.5s;
     --slide-delay-increment: 0.1s;
 }
 
-.slide-transition {
+html:not(.minimal-animations) .slide-transition {
     transition: transform var(--slide-duration) calc(var(--slide-delay-increment) * var(--index, 0));
     transition-timing-function: ease-out;
 }
 
-.slide.hide {
+html:not(.minimal-animations) .slide.hide {
     transform: translateX(100vw);
 }

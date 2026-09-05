@@ -1,17 +1,19 @@
-const sectionSeriesElements = document.getElementsByClassName("list-series-container");
+document.addEventListener("DOMContentLoaded", () => {
+    const sectionSeriesElements = document.getElementsByClassName("list-series-container");
 
-for (const sectionSeriesElement of sectionSeriesElements) {
-    sectionSeriesElement.classList.add("slide", "hide");
-}
+    for (const sectionSeriesElement of sectionSeriesElements) {
+        sectionSeriesElement.classList.add("slide", "hide");
+    }
 
-document.body.offsetHeight; // force redraw
+    document.body.offsetHeight; // force redraw
 
-for (const sectionSeriesElement of sectionSeriesElements) {
-    sectionSeriesElement.classList.add("slide-transition");
-}
+    for (const sectionSeriesElement of sectionSeriesElements) {
+        sectionSeriesElement.classList.add("slide-transition");
+    }
 
-document.body.offsetHeight; // force redraw
+    document.body.offsetHeight; // force redraw
 
-for (const sectionSeriesElement of sectionSeriesElements) {
-    sectionSeriesElement.classList.remove("hide");
-}
+    for (const sectionSeriesElement of sectionSeriesElements) {
+        sectionSeriesElement.classList.remove("hide");
+    }
+}, { once: true });

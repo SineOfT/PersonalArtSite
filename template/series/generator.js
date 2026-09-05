@@ -30,7 +30,7 @@ function generateSeriesSites(sectionsData, seriesData, artworksData) {
             .replaceAll("%__SERIES_TITLE__%", series["title"]);
 
         const { html: updatedSeriesSite, styles: siteStyles } =
-            generateSite(updatedSeriesHtml, seriesBreadcrumbs, { });
+            generateSite(updatedSeriesHtml, seriesBreadcrumbs, []);
 
         return {
             id: seriesId,

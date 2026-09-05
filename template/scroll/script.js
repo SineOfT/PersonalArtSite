@@ -1,26 +1,43 @@
 import initShikaStateMachine from "/scripts/shika.js";
 import initStateMachineManager from "/scripts/state-machine-manager.js";
 
+const MIN_SECTION_OFFSET = 0.1;
+
 export default function initScrollFunctions(scrollData) {
     function initScroll() {
+        const scrollbarSpritesFrontContainer = document.querySelector(".scrollbar-sprites-front-container");
+        const scrollbarSpritesBackContainer = document.querySelector(".scrollbar-sprites-back-container");
+        const scrollbarSprites = [...document.querySelectorAll(".scrollbar-sprite")];
+
         const scrollY = window.scrollY;
         const scrollHeight = document.body.offsetHeight - window.innerHeight;
 
         const sectionOffsets = scrollData.map(({ sectionId: id, transition, instant }) => {
             const element = document.getElementById(id);
-            const anchor = document.querySelector(`#${id}-anchor .scroll-anchor-marker`);
+            const container = document.getElementById(`${id}-anchor`);
+            const anchor = container.querySelector(".scroll-anchor-marker");
             if (!element) { return { id, transitionElement: false, offset: scrollHeight }; }
             const viewportOffset = element.getBoundingClientRect();
             const offset = scrollY + viewportOffset.top;
-            return { id, transitionElement: transition ? element : false, anchor, offset, isInstant: instant };
+            return { id, transitionElement: transition ? element : false, container, anchor, offset, isInstant: instant };
         });
         sectionOffsets.sort((a, b) => { a.offset - b.offset });
+        if (sectionOffsets[1].offset - sectionOffsets[0].offset < MIN_SECTION_OFFSET * window.innerWidth) {
+            sectionOffsets[0].container.classList.add("d-none");
+        }
+        if (sectionOffsets[sectionOffsets.length-1].offset - sectionOffsets[sectionOffsets.length-2].offset < MIN_SECTION_OFFSET * window.innerWidth) {
+            sectionOffsets[sectionOffsets.length-1].container.classList.add("d-none");
+        }
 
-        const scrollbarSpriteOffsets = [...document.querySelectorAll(".scrollbar-sprite")].map((element) => {
+        scrollbarSpritesFrontContainer.style.display = "block";
+        scrollbarSpritesBackContainer.style.display = "block";
+        const scrollbarSpriteOffsets = scrollbarSprites.map((element) => {
             const viewportOffset = element.getBoundingClientRect();
             const offset = viewportOffset.left + viewportOffset.width/2;
             return { element, offset };
         });
+        scrollbarSpritesFrontContainer.style.display = "";
+        scrollbarSpritesBackContainer.style.display = "";
 
         const scrollbarElement = document.getElementById("home-scrollbar");
 
@@ -44,6 +61,8 @@ export default function initScrollFunctions(scrollData) {
 
         function updateScroll(prevScrollHeight, shouldTransition = true) {
             return () => {
+                const showAnimations = !document.documentElement.classList.contains("medium-animations");
+
                 const currScrollHeight = document.body.offsetHeight - window.innerHeight;
                 if (currScrollHeight !== prevScrollHeight) {
                     initScroll();
@@ -63,6 +82,9 @@ export default function initScrollFunctions(scrollData) {
                             hideSection(transitionElement);
                         }
                     });
+                }
+
+                if (isNew && showAnimations) {
                     let isSectionExceeded = !currSection;
                     sectionOffsets.forEach(({ id, anchor }) => {
                         if (isSectionExceeded) {
@@ -76,13 +98,16 @@ export default function initScrollFunctions(scrollData) {
                     });
                 }
 
-                scrollbarSpriteOffsets.forEach(({ element, offset }) => {
-                    if (offset/window.innerWidth < currScrollFr) {
-                        showElement(element, shouldTransition);
-                    } else {
-                        hideElement(element, shouldTransition);
-                    }
-                })
+                if (showAnimations) {
+                    console.log(scrollbarSpriteOffsets);
+                    scrollbarSpriteOffsets.forEach(({ element, offset }) => {
+                        if (offset/window.innerWidth < currScrollFr) {
+                            showElement(element, shouldTransition);
+                        } else {
+                            hideElement(element, shouldTransition);
+                        }
+                    });
+                }
 
                 scrollbarElement.style.setProperty("--width-fr", currScrollFr);
 

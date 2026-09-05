@@ -17,7 +17,8 @@
             "tomioka-ink24",
             { "thumbnail": "xerneas-az", "position" : { "y": -0.2 } },
             { "thumbnail": "fletchling-vert-pan", "position": { "x": 0.3 } },
-            { "thumbnail": "umbreon-az", "position": { "y": -0.4 } }
+            { "thumbnail": "umbreon-az", "position": { "y": -0.4 } },
+            "kanroji-bunny"
         ],
         "display-type": "radial"
     }],
@@ -33,7 +34,8 @@
             { "thumbnail": "anatomy-21-hands" },
             { "thumbnail": "anatomy-repractice", "position": { "x": -0.3 } },
             { "thumbnail": "anatomy-28-quadriceps-0" },
-            { "thumbnail": "anatomy-23-hands" }
+            { "thumbnail": "anatomy-23-hands" },
+            "anatomy-thumbnail.webp"
         ],
         "display-type": "cube"
     }]

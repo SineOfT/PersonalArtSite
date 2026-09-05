@@ -7,17 +7,15 @@ const scrollAnchorHtml = fs.readFileSync(path.join(__dirname, "/scroll-anchor.ht
 
 const SCROLLBAR_SPRITE_COUNT = 300;
 
-function generateScroll({ data = [], excludeTop }) {
-    if (!excludeTop) {
-        data.unshift({
-            sectionId: "page-top",
-            hashId: "",
-            title: "Top",
-            color: "#ACF",
-            transition: false,
-        });
-    }
-    data.push({
+function generateScroll(scrollData) {
+    scrollData.unshift({
+        sectionId: "page-top",
+        hashId: "",
+        title: "Top",
+        color: "#ACF",
+        transition: false,
+    });
+    scrollData.push({
         sectionId: "page-bottom",
         hashId: "page-bottom",
         title: "End",
@@ -33,7 +31,7 @@ function generateScroll({ data = [], excludeTop }) {
             )
         )
         .join("\n");
-    const updatedScrollAnchorsHtml = data
+    const updatedScrollAnchorsHtml = scrollData
         .map(({ sectionId, hashId, title, color }) => {
             return scrollAnchorHtml.toString()
                 .replaceAll("%__SCROLL_ID__%", sectionId)
@@ -45,7 +43,7 @@ function generateScroll({ data = [], excludeTop }) {
     const updatedScrollHtml = scrollHtml.toString()
         .replaceAll("%__SCROLLBAR_SPRITES__%", updatedScrollbarSpritesHtml)
         .replaceAll("%__SCROLL_ANCHORS__%", updatedScrollAnchorsHtml)
-        .replaceAll("%__SCROLL_DATA__%", JSON.stringify(data));
+        .replaceAll("%__SCROLL_DATA__%", JSON.stringify(scrollData));
 
     return {
         html: updatedScrollHtml,

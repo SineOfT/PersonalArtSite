@@ -44,6 +44,11 @@ body {
     z-index: 1;
 }
 
+html.medium-animations .scrollbar-sprites-front-container,
+html.medium-animations .scrollbar-sprites-back-container {
+    display: none;
+}
+
 .scrollbar-sprite {
     position: absolute;
     left: calc(var(--sprite-size) * (0.6 * var(--sprite-index) - 0.5));
@@ -135,6 +140,10 @@ body {
         scale     0.5s cubic-bezier(0, 0, 0.5, 2);
 }
 
+html.medium-animations .scroll-anchor-marker {
+    display: none;
+}
+
 .scroll-anchor-marker::after {
     content: "";
     position: absolute;
@@ -179,10 +188,15 @@ body {
     z-index: 2;
 }
 
+html.minimal-animations .scroll-animations-container {
+    display: none;
+}
+
 .shika-sprite {
     position: absolute;
     pointer-events: none;
 }
+
 #shika {
     bottom: 0;
     left: 0;

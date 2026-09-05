@@ -14,7 +14,7 @@ function generateSeriesSearch(seriesData, artworksData) {
         .replaceAll("%__SERIES_LIST__%", updatedSeriesListHtml);
 
     const { html: updatedSeriesSearchSite, styles: siteStyles } =
-        generateSite(updatedSeriesSearchHtml, "", { });
+        generateSite(updatedSeriesSearchHtml, "", []);
 
     return {
         html: updatedSeriesSearchSite,
