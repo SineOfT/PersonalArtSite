@@ -1,7 +1,5 @@
 html {
-    overflow: hidden;
-    touch-action: none;
-    overscroll-behavior: none;
+    scroll-snap-type: y mandatory;
 }
 
 .artwork-main {
@@ -37,6 +35,7 @@ html {
     text-align: center;
     color: white;
     pointer-events: none;
+    scroll-snap-align: center;
 }
 
 .artwork-heading {
@@ -225,11 +224,11 @@ html {
     }
 }
 
-.close-button::before,
-.close-button::after,
-.control-zoom-out::before,
-.control-zoom-in::before,
-.control-zoom-in::after {
+.close-button:not(.hidden)::before,
+.close-button:not(.hidden)::after,
+.control-zoom-out:not(.hidden)::before,
+.control-zoom-in:not(.hidden)::before,
+.control-zoom-in:not(.hidden)::after {
     content: "";
     position: absolute;
     left: 50%;
@@ -239,14 +238,14 @@ html {
     background-color: currentColor;
     translate: -50% -50%;
 }
-.close-button::before   { rotate: -45deg; }
-.close-button::after    { rotate:  45deg; }
-.control-zoom-in::after { rotate:  90deg; }
+.close-button:not(.hidden)::before   { rotate: -45deg; }
+.close-button:not(.hidden)::after    { rotate:  45deg; }
+.control-zoom-in:not(.hidden)::after { rotate:  90deg; }
 
-.control-layer-up::before,
-.control-layer-down::before,
-.control-artwork-left::before,
-.control-artwork-right::before {
+.control-layer-up:not(.hidden)::before,
+.control-layer-down:not(.hidden)::before,
+.control-artwork-left:not(.hidden)::before,
+.control-artwork-right:not(.hidden)::before {
     content: "";
     position: absolute;
     left: 50%;
@@ -263,7 +262,7 @@ html {
     translate: -35% -35%;
     transform-origin: 35% 35%;
 }
-.control-layer-up::before      { rotate:   45deg; }
-.control-layer-down::before    { rotate: -135deg; }
-.control-artwork-left::before  { rotate:  -45deg; }
-.control-artwork-right::before { rotate:  135deg; }
+.control-layer-up:not(.hidden)::before      { rotate:   45deg; }
+.control-layer-down:not(.hidden)::before    { rotate: -135deg; }
+.control-artwork-left:not(.hidden)::before  { rotate:  -45deg; }
+.control-artwork-right:not(.hidden)::before { rotate:  135deg; }
