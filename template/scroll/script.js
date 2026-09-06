@@ -4,9 +4,10 @@ import initStateMachineManager from "/scripts/state-machine-manager.js";
 const MIN_SECTION_OFFSET = 0.1;
 
 export default function initScrollFunctions(scrollData) {
-    function initScroll() {
-        const showAnimations = !document.documentElement.classList.contains("reduced-animations");
-        
+    const isMinimalAnimations = document.documentElement.classList.contains("minimal-animations");
+    const isReducedAnimations = document.documentElement.classList.contains("reduced-animations");
+
+    function initScroll() {    
         const scrollbarSpritesFrontContainer = document.querySelector(".scrollbar-sprites-front-container");
         const scrollbarSpritesBackContainer = document.querySelector(".scrollbar-sprites-back-container");
         const scrollbarSprites = [...document.querySelectorAll(".scrollbar-sprite")];
@@ -31,13 +32,13 @@ export default function initScrollFunctions(scrollData) {
             sectionOffsets[sectionOffsets.length-1].container.classList.add("d-none");
         }
 
-        const scrollbarSpriteOffsets = showAnimations
-            ? scrollbarSprites.map((element) => {
+        const scrollbarSpriteOffsets = isReducedAnimations
+            ? null
+            : scrollbarSprites.map((element) => {
                 const viewportOffset = element.getBoundingClientRect();
                 const offset = viewportOffset.left + viewportOffset.width/2;
                 return { element, offset };
-            })
-            : null;
+            });
 
         const scrollbarElement = document.getElementById("home-scrollbar");
 
@@ -82,7 +83,7 @@ export default function initScrollFunctions(scrollData) {
                     });
                 }
 
-                if (isNew && showAnimations) {
+                if (isNew && !isReducedAnimations) {
                     let isSectionExceeded = !currSection;
                     sectionOffsets.forEach(({ id, anchor }) => {
                         if (isSectionExceeded) {
@@ -96,7 +97,7 @@ export default function initScrollFunctions(scrollData) {
                     });
                 }
 
-                if (showAnimations) {
+                if (!isReducedAnimations) {
                     scrollbarSpriteOffsets.forEach(({ element, offset }) => {
                         if (offset/window.innerWidth < currScrollFr) {
                             showElement(element, shouldTransition);
@@ -106,7 +107,9 @@ export default function initScrollFunctions(scrollData) {
                     });
                 }
 
-                scrollbarElement.style.setProperty("--width-fr", currScrollFr);
+                if (!isMinimalAnimations) {
+                    scrollbarElement.style.setProperty("--width-fr", currScrollFr);
+                }
 
                 prevScroll = currScroll;
 
@@ -219,7 +222,7 @@ export default function initScrollFunctions(scrollData) {
     
     initScroll();
 
-    if (!document.documentElement.classList.contains("minimal-animations")) {
+    if (!isMinimalAnimations) {
         const shikaStateMachine = initShikaStateMachine();
         initStateMachineManager([shikaStateMachine]);
     }

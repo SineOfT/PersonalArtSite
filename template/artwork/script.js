@@ -7,7 +7,8 @@ export default function initArtwork(artworkId, artworksData) {
     const artworkElement = document.getElementById("artwork");
 
     const artworkCloseButton               = artworkElement.querySelector(".close-button");
-    const artworkImageHover                = artworkElement.querySelector(".artwork-image-hover");
+    const artworkImageInteract             = artworkElement.querySelector(".artwork-image-interact");
+    const artworkImage                     = artworkElement.querySelector(".artwork-image");
     const artworkControlZoomInElement      = artworkElement.querySelector(".control-zoom-in");
     const artworkControlZoomOutElement     = artworkElement.querySelector(".control-zoom-out");
     const artworkControlZoomDisplayElement = artworkElement.querySelector(".control-zoom-display");
@@ -96,8 +97,56 @@ export default function initArtwork(artworkId, artworksData) {
     });
     updateZoom();
 
-    artworkImageHover.addEventListener("mousemove", (event) => {
-        artworkElement.style.setProperty("--hover-x", event.offsetX / artworkImageHover.offsetWidth);
-        artworkElement.style.setProperty("--hover-y", event.offsetY / artworkImageHover.offsetHeight);
+    let isHoverActive = true;
+
+    artworkImageInteract.addEventListener("mousemove", (event) => {
+        if (isHoverActive) {
+            artworkElement.style.setProperty("--hover-x", event.offsetX / artworkImageInteract.offsetWidth);
+            artworkElement.style.setProperty("--hover-y", event.offsetY / artworkImageInteract.offsetHeight);
+        }
+    });
+
+    artworkImageInteract.addEventListener("pointerup", (event) => {
+        let hoverX = parseFloat(artworkElement.style.getPropertyValue("--hover-x"));
+        let hoverY = parseFloat(artworkElement.style.getPropertyValue("--hover-y"));
+        let zoom = ZOOM_VALUES[zoomIndex];
+        let zoomInv = 1 / zoom;
+        if (isNaN(hoverX) || isNaN(hoverY)) {
+            hoverX = 0.5;
+            hoverY = 0.5
+            zoomInv += 1
+        } else {
+            zoom -= 1;
+            zoomInv = 1 / zoom;
+        }
+
+        const x = (event.offsetX - artworkImageInteract.offsetWidth /2) / artworkImage.offsetWidth;
+        const y = (event.offsetY - artworkImageInteract.offsetHeight/2) / artworkImage.offsetHeight;
+
+        const newHoverX = Math.min(Math.max(hoverX + x * zoomInv, 0), 1);
+        const newHoverY = Math.min(Math.max(hoverY + y * zoomInv, 0), 1);
+
+        console.log(hoverX, hoverY, zoomInv, x, y, newHoverX, newHoverY);
+
+        artworkElement.style.setProperty("--hover-x", newHoverX);
+        artworkElement.style.setProperty("--hover-y", newHoverY);
+
+        isHoverActive = false;
+    });
+
+    artworkImageInteract.addEventListener("mouseleave", () => {
+        if (isHoverActive) {
+            artworkElement.style.removeProperty("--hover-x");
+            artworkElement.style.removeProperty("--hover-y");
+            isHoverActive = true;
+        }
+    });
+
+    artworkElement.addEventListener("pointerup", (event) => {
+        if (event.target === event.currentTarget) {
+            artworkElement.style.removeProperty("--hover-x");
+            artworkElement.style.removeProperty("--hover-y");
+            isHoverActive = true;
+        }
     });
 }
