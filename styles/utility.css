@@ -40,55 +40,52 @@
 .text-right { text-align: right; }
 
 
-.p-xxl { padding: 3rem; }
-.px-xxl { padding-inline: 3rem; }
-.py-xxl { padding-block: 3rem; }
-.pb-xxl { padding-bottom: 3rem; }
-
+.p-xxl { padding: 5rem; }
 .p-xl { padding: 2rem; }
-.px-xl { padding-inline: 2rem; }
-.py-xl { padding-block: 2rem; }
-.pb-xl { padding-bottom: 2rem; }
-
 .p-l { padding: 1.5rem; }
-.px-l { padding-inline: 1.5rem; }
-.py-l { padding-block: 1.5rem; }
-.pb-l { padding-bottom: 1.5rem; }
-
 .p-m { padding: 1rem; }
-.px-m { padding-inline: 1rem; }
-.py-m { padding-block: 1rem; }
-.pb-m { padding-bottom: 1rem; }
-
 .p-s { padding: 0.5rem; }
-.px-s { padding-inline: 0.5rem; }
-.py-s { padding-block: 0.5rem; }
-.pb-s { padding-bottom: 0.5rem; }
-
 .p-xs { padding: 0.2rem; }
+
+
+.px-xxl { padding-inline: 5rem; }
+.px-xl { padding-inline: 2rem; }
+.px-l { padding-inline: 1.5rem; }
+.px-m { padding-inline: 1rem; }
+.px-s { padding-inline: 0.5rem; }
 .px-xs { padding-inline: 0.2rem; }
+
+.py-xxl { padding-block: 5rem; }
+.py-xl { padding-block: 2rem; }
+.py-l { padding-block: 1.5rem; }
+.py-m { padding-block: 1rem; }
+.py-s { padding-block: 0.5rem; }
 .py-xs { padding-block: 0.2rem; }
+
+.pb-xxl { padding-bottom: 5rem; }
+.pb-xl { padding-bottom: 2rem; }
+.pb-l { padding-bottom: 1.5rem; }
+.pb-m { padding-bottom: 1rem; }
+.pb-s { padding-bottom: 0.5rem; }
 .pb-xs { padding-bottom: 0.2rem; }
 
 
-.gap-xxl { gap: 3rem; }
-.gapx-xxl { column-gap: 3rem; }
-.gapy-xxl { row-gap: 3rem; }
-
+.gap-xxl { gap: 5rem; }
 .gap-xl { gap: 2rem; }
-.gapx-xl { column-gap: 2rem; }
-.gapy-xl { row-gap: 2rem; }
-
 .gap-l { gap: 1.5rem; }
-.gapx-l { column-gap: 1.5rem; }
-.gapy-l { row-gap: 1.5rem; }
-
 .gap-m { gap: 1rem; }
-.gapx-m { column-gap: 1rem; }
-.gapy-m { row-gap: 1rem; }
-
 .gap-s { gap: 0.5rem; }
+
+.gapx-xxl { column-gap: 5rem; }
+.gapx-xl { column-gap: 2rem; }
+.gapx-l { column-gap: 1.5rem; }
+.gapx-m { column-gap: 1rem; }
 .gapx-s { column-gap: 0.5rem; }
+
+.gapy-xxl { row-gap: 5rem; }
+.gapy-xl { row-gap: 2rem; }
+.gapy-l { row-gap: 1.5rem; }
+.gapy-m { row-gap: 1rem; }
 .gapy-s { row-gap: 0.5rem; }
 
 

@@ -5,6 +5,8 @@ const MIN_SECTION_OFFSET = 0.1;
 
 export default function initScrollFunctions(scrollData) {
     function initScroll() {
+        const showAnimations = !document.documentElement.classList.contains("reduced-animations");
+        
         const scrollbarSpritesFrontContainer = document.querySelector(".scrollbar-sprites-front-container");
         const scrollbarSpritesBackContainer = document.querySelector(".scrollbar-sprites-back-container");
         const scrollbarSprites = [...document.querySelectorAll(".scrollbar-sprite")];
@@ -22,22 +24,20 @@ export default function initScrollFunctions(scrollData) {
             return { id, transitionElement: transition ? element : false, container, anchor, offset, isInstant: instant };
         });
         sectionOffsets.sort((a, b) => { a.offset - b.offset });
-        if (sectionOffsets[1].offset - sectionOffsets[0].offset < MIN_SECTION_OFFSET * window.innerWidth) {
+        if (sectionOffsets[1].offset - sectionOffsets[0].offset < MIN_SECTION_OFFSET * scrollHeight) {
             sectionOffsets[0].container.classList.add("d-none");
         }
-        if (sectionOffsets[sectionOffsets.length-1].offset - sectionOffsets[sectionOffsets.length-2].offset < MIN_SECTION_OFFSET * window.innerWidth) {
+        if (sectionOffsets[sectionOffsets.length-1].offset - sectionOffsets[sectionOffsets.length-2].offset < MIN_SECTION_OFFSET * scrollHeight) {
             sectionOffsets[sectionOffsets.length-1].container.classList.add("d-none");
         }
 
-        scrollbarSpritesFrontContainer.style.display = "block";
-        scrollbarSpritesBackContainer.style.display = "block";
-        const scrollbarSpriteOffsets = scrollbarSprites.map((element) => {
-            const viewportOffset = element.getBoundingClientRect();
-            const offset = viewportOffset.left + viewportOffset.width/2;
-            return { element, offset };
-        });
-        scrollbarSpritesFrontContainer.style.display = "";
-        scrollbarSpritesBackContainer.style.display = "";
+        const scrollbarSpriteOffsets = showAnimations
+            ? scrollbarSprites.map((element) => {
+                const viewportOffset = element.getBoundingClientRect();
+                const offset = viewportOffset.left + viewportOffset.width/2;
+                return { element, offset };
+            })
+            : null;
 
         const scrollbarElement = document.getElementById("home-scrollbar");
 
@@ -61,8 +61,6 @@ export default function initScrollFunctions(scrollData) {
 
         function updateScroll(prevScrollHeight, shouldTransition = true) {
             return () => {
-                const showAnimations = !document.documentElement.classList.contains("medium-animations");
-
                 const currScrollHeight = document.body.offsetHeight - window.innerHeight;
                 if (currScrollHeight !== prevScrollHeight) {
                     initScroll();
@@ -99,7 +97,6 @@ export default function initScrollFunctions(scrollData) {
                 }
 
                 if (showAnimations) {
-                    console.log(scrollbarSpriteOffsets);
                     scrollbarSpriteOffsets.forEach(({ element, offset }) => {
                         if (offset/window.innerWidth < currScrollFr) {
                             showElement(element, shouldTransition);
@@ -222,6 +219,8 @@ export default function initScrollFunctions(scrollData) {
     
     initScroll();
 
-    const shikaStateMachine = initShikaStateMachine();
-    initStateMachineManager([shikaStateMachine]);
+    if (!document.documentElement.classList.contains("minimal-animations")) {
+        const shikaStateMachine = initShikaStateMachine();
+        initStateMachineManager([shikaStateMachine]);
+    }
 }

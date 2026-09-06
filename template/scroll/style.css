@@ -44,8 +44,8 @@ body {
     z-index: 1;
 }
 
-html.medium-animations .scrollbar-sprites-front-container,
-html.medium-animations .scrollbar-sprites-back-container {
+html.reduced-animations .scrollbar-sprites-front-container,
+html.reduced-animations .scrollbar-sprites-back-container {
     display: none;
 }
 
@@ -140,7 +140,7 @@ html.medium-animations .scrollbar-sprites-back-container {
         scale     0.5s cubic-bezier(0, 0, 0.5, 2);
 }
 
-html.medium-animations .scroll-anchor-marker {
+html.reduced-animations .scroll-anchor-marker {
     display: none;
 }
 
@@ -163,22 +163,20 @@ html.medium-animations .scroll-anchor-marker {
         scale     0.2s ease-in;
 }
 
-@media (hover: hover) {
-    .scroll-anchor-position:hover {
-        z-index: 1;
-    }
+.scroll-anchor-position:hover {
+    z-index: 1;
+}
 
-    .scroll-anchor-position:hover::after {
-        content: "Jump to " attr(data-anchor-title);
-        position: fixed;
-        inset: auto 0 0;
-        text-align: center;
-        color: white;
-        font-size: 1.2rem;
-        font-weight: bold;
-        text-wrap: nowrap;
-        pointer-events: none;
-    }
+.scroll-anchor-position:hover::after {
+    content: "Jump to " attr(data-anchor-title);
+    position: fixed;
+    inset: auto 0 0;
+    text-align: center;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-wrap: nowrap;
+    pointer-events: none;
 }
 
 .scroll-animations-container {

@@ -27,29 +27,19 @@ updateHeaderHeight();
 const animations = localStorage.getItem("animations");
 if (animations === "minimal") {
     document.documentElement.classList.add("minimal-animations");
-    document.documentElement.classList.add("medium-animations");
-    toggleAnimationsBtn.textContent = "MINIMAL";
-} else if (animations === "medium") {
-    document.documentElement.classList.add("medium-animations");
-    toggleAnimationsBtn.textContent = "MEDIUM";
-} else {
-    toggleAnimationsBtn.textContent = "FULL";
+    document.documentElement.classList.add("reduced-animations");
+} else if (animations === "reduced") {
+    document.documentElement.classList.add("reduced-animations");
 }
 
 toggleAnimationsBtn.addEventListener("click", () => {
     const animations = localStorage.getItem("animations");
     if (animations === "minimal") {
-        document.documentElement.classList.remove("minimal-animations");
-        document.documentElement.classList.remove("medium-animations");
         localStorage.removeItem("animations");
-        toggleAnimationsBtn.textContent = "FULL";
-    } else if (animations === "medium") {
-        document.documentElement.classList.add("minimal-animations");
+    } else if (animations === "reduced") {
         localStorage.setItem("animations", "minimal");
-        toggleAnimationsBtn.textContent = "MINIMAL";
     } else {
-        document.documentElement.classList.add("medium-animations");
-        localStorage.setItem("animations", "medium");
-        toggleAnimationsBtn.textContent = "MEDIUM";
+        localStorage.setItem("animations", "reduced");
     }
+    window.location.reload();
 });
