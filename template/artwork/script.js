@@ -150,6 +150,5 @@ export default function initArtwork(artworkId, artworksData) {
         }
     });
 
-    history.scrollRestoration = "manual";
-    window.scrollTo(1, 1, { behavior: "instant" });
+    window.scrollTo(0, 0, { behavior: instant });
 }

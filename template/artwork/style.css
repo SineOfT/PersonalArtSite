@@ -1,6 +1,6 @@
 html {
-    overflow: auto;
-    scroll-snap-type: y mandatory;
+    overflow: hidden;
+    touch-action: none;
 }
 
 .artwork-main {
@@ -37,7 +37,6 @@ html {
     text-align: center;
     color: white;
     pointer-events: none;
-    scroll-snap-align: center;
 }
 
 .artwork-heading {
