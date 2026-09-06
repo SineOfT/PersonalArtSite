@@ -1,9 +1,11 @@
 html {
+    overflow: auto;
     scroll-snap-type: y mandatory;
 }
 
 .artwork-main {
     isolation: isolate;
+    margin-bottom: 50vh;
 }
 
 .artwork-container {    

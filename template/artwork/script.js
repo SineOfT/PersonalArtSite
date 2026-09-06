@@ -149,4 +149,7 @@ export default function initArtwork(artworkId, artworksData) {
             isHoverActive = true;
         }
     });
+
+    history.scrollRestoration = "manual";
+    window.scrollTo(1, 1, { behavior: "instant" });
 }
