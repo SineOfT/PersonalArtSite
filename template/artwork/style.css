@@ -1,6 +1,7 @@
 html {
     overflow: hidden;
     touch-action: none;
+    overscroll-behavior: none;
 }
 
 .artwork-main {
