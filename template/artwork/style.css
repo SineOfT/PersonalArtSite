@@ -1,6 +1,7 @@
 html {
-    overflow: hidden;
+    overflow: clip;
     touch-action: none;
+    scroll-behavior: auto;
 }
 
 .artwork-main {
