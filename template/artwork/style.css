@@ -44,7 +44,6 @@ html {
     grid-area: heading;
     display: flex;
     flex-direction: column;
-    pointer-events: auto;    
 }
 
 .artwork-title {

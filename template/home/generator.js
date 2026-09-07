@@ -7,6 +7,7 @@ const { getThumbnail } = require("../utility");
 const homeHtml = fs.readFileSync(path.join(__dirname, "/home.html"));
 const sectionHtml = fs.readFileSync(path.join(__dirname, "/section.html"));
 const sectionThumbnailHtml = fs.readFileSync(path.join(__dirname, "/section-thumbnail.html"));
+const homeTextHtml = fs.readFileSync(path.join(__dirname, "../../data/home-text.html"));
 
 function generateHomeSite(sectionOrderData, sectionsData, artworksData, scrollBehaviorData) {
     const updatedSectionsHtml = sectionOrderData
@@ -32,6 +33,7 @@ function generateHomeSite(sectionOrderData, sectionsData, artworksData, scrollBe
         })
         .join("\n");
     const updatedHomeHtml = homeHtml.toString()
+        .replaceAll("%__HOME_TEXT__%", homeTextHtml)
         .replaceAll("%__HOME_SECTIONS__%", updatedSectionsHtml);
 
     const { html: updatedHomeSite, styles: siteStyles } =

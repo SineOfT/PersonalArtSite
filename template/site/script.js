@@ -1,6 +1,10 @@
 const header = document.getElementById("header");
 const headerContainer = header.querySelector(".header-container");
 const headerContent = header.querySelector(".header-content");
+
+const footer = document.getElementById("footer");
+const footerContent = footer.querySelector(".footer-content");
+
 const toggleAnimationsBtn = header.querySelector(".toggle-animations-btn");
 
 headerContainer.addEventListener("mouseenter", () => {
@@ -22,6 +26,18 @@ const updateHeaderHeight = () => {
 const headerContentResizeObserver = new ResizeObserver(updateHeaderHeight);
 headerContentResizeObserver.observe(headerContent);
 updateHeaderHeight();
+
+let prevFooterContentHeight = NaN;
+const updateFooterHeight = () => {
+    const currFooterContentHeight = footerContent.getBoundingClientRect().height;
+    if (currFooterContentHeight !== prevFooterContentHeight) {
+        document.documentElement.style.setProperty("--site-footer-height", `calc(${currFooterContentHeight}px + 2rem)`);
+    }
+}
+const footerContentResizeObserver = new ResizeObserver(updateFooterHeight);
+footerContentResizeObserver.observe(footerContent);
+updateFooterHeight();
+
 
 
 const animations = localStorage.getItem("animations");

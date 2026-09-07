@@ -1,3 +1,10 @@
+.home-text {
+    max-width: calc(50vw + min(30rem, 50vw));
+    padding: 5rem 3rem 0;
+    margin-inline: auto;
+    text-align: center;
+}
+
 .home-section-container {
     height: 200rem;
 }
@@ -37,6 +44,25 @@
     --section-basic-thumbnail-width: min(
         var(--section-basic-thumbnail-max-width),
         calc(var(--section-basic-thumbnail-max-height) * var(--artwork-thumbnail-aspect-ratio))
+    );
+    --section-basic-thumbnail-height: min(
+        var(--section-basic-thumbnail-max-height),
+        calc(var(--section-basic-thumbnail-max-width) / var(--artwork-thumbnail-aspect-ratio))
+    );
+}
+
+.section-thumbnail {
+    display: none;
+}
+
+
+
+html:not(.minimal-animations) .section-display-slide-container {
+    --section-thumbnail-max-width: 90vw;
+    --section-thumbnail-max-height: 50vh;
+    --section-thumbnail-width: min(
+        var(--section-thumbnail-max-width),
+        calc(var(--section-thumbnail-max-height) * var(--artwork-thumbnail-aspect-ratio))
     );
     --section-basic-thumbnail-height: min(
         var(--section-basic-thumbnail-max-height),
@@ -133,7 +159,7 @@ html:not(.minimal-animations) .thumbnail-radial-index-4 { display: block; animat
 html:not(.minimal-animations) .thumbnail-radial-index-5 { display: block; animation-delay: calc(var(--section-cycle-display-duration) * -2/7); }
 html:not(.minimal-animations) .thumbnail-radial-index-6 { display: block; animation-delay: calc(var(--section-cycle-display-duration) * -1/7); }
 
-.minimal-animations .thumbnail-radial-index-7 {
+html.minimal-animations .thumbnail-radial-index-7 {
     display: block;
     width: var(--section-basic-thumbnail-width);
     height: var(--section-basic-thumbnail-height);
@@ -229,6 +255,18 @@ html:not(.minimal-animations) .thumbnail-cube-index-5 { display: block; --rotati
                                                                                            -1,  0,  0, 0,
                                                                                             0,  0, -1, 0,
                                                                                             0,  0,  0, 1; }
+    
+html.minimal-animations .thumbnail-cube-index-6 {
+    display: block;
+    width: var(--section-basic-thumbnail-width);
+    height: var(--section-basic-thumbnail-height);
+    border: 2px solid black;
+}
+
+.section-thumbnail-cube {
+    width:  100%;
+    height: 100%;
+}
 
 .minimal-animations .thumbnail-cube-index-6 {
     display: block;

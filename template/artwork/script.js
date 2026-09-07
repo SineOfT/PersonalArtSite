@@ -126,8 +126,6 @@ export default function initArtwork(artworkId, artworksData) {
         const newHoverX = Math.min(Math.max(hoverX + x * zoomInv, 0), 1);
         const newHoverY = Math.min(Math.max(hoverY + y * zoomInv, 0), 1);
 
-        console.log(hoverX, hoverY, zoomInv, x, y, newHoverX, newHoverY);
-
         artworkElement.style.setProperty("--hover-x", newHoverX);
         artworkElement.style.setProperty("--hover-y", newHoverY);
 

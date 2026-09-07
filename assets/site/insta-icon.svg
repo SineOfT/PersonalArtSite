@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <path d="
+        M 20 5 A 15 15 0 0 0 5 20 L 5 80 A 15 15 0 0 0 20 95 L 80 95 A 15 15 0 0 0 95 80 L 95 20 A 15 15 0 0 0 80 5 Z
+        M 50 30 A 20 20 0 1 0 50.001 30 Z
+        M 77.5 20 Z A 0 0 0 1 0 77.501 20 Z"
+        fill="transparent"
+        stroke="currentColor" stroke-width="10" stroke-linejoin="round"
+    />
+</svg>
