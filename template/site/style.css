@@ -1,6 +1,6 @@
 :root {
-    --site-header-height: 5rem;
-    --site-footer-height: 10rem;
+    --site-header-height: 7.5rem;
+    --site-footer-height: 40rem;
 }
 
 html {
@@ -141,4 +141,44 @@ body {
  
 #footer .footer-body {
     height: var(--site-footer-height);
+    padding: 1rem 3rem;
+}
+
+#footer .footer-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#footer .footer-content > * {
+    margin-bottom: 3rem;
+}
+
+#footer .footer-text {
+    max-width: 60rem;
+}
+
+#footer h2 {
+    color: white;
+}
+
+#footer a {
+    color: white;
+}
+
+.contact-list {
+    margin: 0;
+    padding-inline-start: 1rem;
+    list-style: none;
+}
+
+.contact-list > li {
+    margin-top: 0.5rem;
+}
+
+.contact-icon {
+    vertical-align: top;
+    width: 1em;
+    height: 1em;
 }

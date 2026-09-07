@@ -1,3 +1,10 @@
+.home-text {
+    max-width: calc(50vw + min(30rem, 50vw));
+    padding: 5rem 3rem 0;
+    margin-inline: auto;
+    text-align: center;
+}
+
 .home-section-container {
     height: 200rem;
 }
