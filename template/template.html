@@ -3,26 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="hsl(0, 0%, 94%)">
     <title>Shyuu's Art</title>
     <link rel="stylesheet" href="/styles/utility.css" />
     <link rel="stylesheet" href="/styles/template.css" />
     %__STYLES__%
-    <script type="module" defer>
-        import initFragAnchors from "/scripts/frag-anchor.js";
-
-        initFragAnchors();
-    </script>
+    <script type="module" defer src="/scripts/frag-anchor.js"></script>
 </head>
 <body>
-    <script>document.body.classList.add("v-none");</script>
+    <script src="/scripts/hide-until-ready.js"></script>
 
+    <div id="page-top"></div>
     %__SITE__%
     <div id="page-bottom"></div>
 
-    <script defer>
-        document.addEventListener("DOMContentLoaded", () => {
-            document.body.classList.remove("v-none");
-        }, { once: true });
-    </script>
+    <script type="module" defer src="/scripts/scroll-to-frag.js"></script>
 </body>
 </html>

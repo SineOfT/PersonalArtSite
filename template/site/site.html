@@ -1,22 +1,28 @@
 <header id="header">
     <div class="header-container">
         <div class="header-body flex-row-between p-m">
-            <h1 class="header-heading"><a href="/" class="anchor-unstyled">
-                Shyuu's Art Website
-            </a></h1>
-            <nav class="header-nav">
-                <a href="/series" class="anchor-unstyled fs-s">Series</a>
-                <a href="/artworks" class="anchor-unstyled fs-s">Artworks</a>
-            </nav>
+            <div class="header-content">
+                <h1 class="header-heading"><a href="/" class="anchor-unstyled">
+                    Shyuu's Art Website
+                </a></h1>
+                <nav class="header-nav">
+                    <a href="/series" class="anchor-unstyled fs-s">Series</a>
+                    <a href="/artworks" class="anchor-unstyled fs-s">Artworks</a>
+                    <button class="header-btn toggle-animations-btn"></button>
+                </nav>
+            </div>
         </div>
         <input type="checkbox" id="header-toggle-button" class="header-toggle-button" />
         <label for="header-toggle-button" class="toggle-button-label"></label>
     </div>
     %__BREADCRUMBS__%
 </header>
+<script type="module" src="/scripts/site.js"></script>
+
 <main id="site-main">
     %__SITE_MAIN__%
 </main>
+
 <footer id="footer">
     %__SITE_SCROLL__%
     <div class="footer-body">
@@ -40,9 +46,3 @@
         </div>
     </div>
 </footer>
-
-<script type="module" defer>
-    import initSite from "/scripts/site.js";
-
-    initSite();
-</script>

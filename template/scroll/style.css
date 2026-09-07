@@ -1,14 +1,9 @@
 
 html {
     scroll-behavior: smooth;
-    /* scrollbar-width: 0; */
     overflow-x: hidden;
     overflow-y: scroll;
 }
-
-/* html::-webkit-scrollbar {
-    display: none;
-} */
 
 body {
     overflow: clip;
@@ -49,6 +44,11 @@ body {
     z-index: 1;
 }
 
+html.reduced-animations .scrollbar-sprites-front-container,
+html.reduced-animations .scrollbar-sprites-back-container {
+    display: none;
+}
+
 .scrollbar-sprite {
     position: absolute;
     left: calc(var(--sprite-size) * (0.6 * var(--sprite-index) - 0.5));
@@ -74,6 +74,7 @@ body {
 }
 
 .scrollbar-sprites-back-container .scrollbar-sprite {
+    left: calc(var(--sprite-size) * (0.6 * (var(--sprite-index) - 0.5) - 0.5));
     animation-delay: calc(-0.1s * var(--sprite-index) + 0.5s * (mod(var(--sprite-index) * 1.618, 1) - 0.5) + 0.5s);
 }
 
@@ -139,6 +140,10 @@ body {
         scale     0.5s cubic-bezier(0, 0, 0.5, 2);
 }
 
+html.reduced-animations .scroll-anchor-marker {
+    display: none;
+}
+
 .scroll-anchor-marker::after {
     content: "";
     position: absolute;
@@ -158,22 +163,20 @@ body {
         scale     0.2s ease-in;
 }
 
-@media (hover: hover) {
-    .scroll-anchor-position:hover {
-        z-index: 1;
-    }
+.scroll-anchor-position:hover {
+    z-index: 1;
+}
 
-    .scroll-anchor-position:hover::after {
-        content: "Jump to " attr(data-anchor-title);
-        position: fixed;
-        inset: auto 0 0;
-        text-align: center;
-        color: white;
-        font-size: 1.2rem;
-        font-weight: bold;
-        text-wrap: nowrap;
-        pointer-events: none;
-    }
+.scroll-anchor-position:hover::after {
+    content: "Jump to " attr(data-anchor-title);
+    position: fixed;
+    inset: auto 0 0;
+    text-align: center;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-wrap: nowrap;
+    pointer-events: none;
 }
 
 .scroll-animations-container {
@@ -181,6 +184,10 @@ body {
     bottom: calc(100% - var(--scrollbar-height));
     width: 100%;
     z-index: 2;
+}
+
+html.minimal-animations .scroll-animations-container {
+    display: none;
 }
 
 .shika-sprite {

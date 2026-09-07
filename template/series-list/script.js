@@ -1,4 +1,7 @@
-export default function initSeriesList() {
+document.addEventListener("DOMContentLoaded", () => {
+    if (document.documentElement.classList.contains("minimal-animations")) { return; }
+    if (window.scrollY !== 0) { return; }
+
     const sectionSeriesElements = document.getElementsByClassName("list-series-container");
 
     for (const sectionSeriesElement of sectionSeriesElements) {
@@ -16,4 +19,4 @@ export default function initSeriesList() {
     for (const sectionSeriesElement of sectionSeriesElements) {
         sectionSeriesElement.classList.remove("hide");
     }
-}
+}, { once: true });

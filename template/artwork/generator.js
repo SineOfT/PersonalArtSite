@@ -17,10 +17,10 @@ function generateArtworkSites(artworksData) {
                     .replaceAll("%__LAYER_IMAGE__%", `${artworkId}/${index}.webp`)
                     .replaceAll("%__LAYER_CURR__%", index + 1)
                     .replaceAll("%__LAYER_COUNT__%", layerCount)
-                    .replaceAll("%__LAYER_UP__%", index - 1 || "")
+                    .replaceAll("%__LAYER_UP__%", index - 1)
                     .replaceAll("%__LAYER_DOWN__%", index + 1)
-                    .replaceAll("%__LAYER_UP_CLASS__%", index <= 0 ? "disabled" : "")
-                    .replaceAll("%__LAYER_DOWN_CLASS__%", index >= layerCount - 1 ? "disabled" : "")
+                    .replaceAll("%__LAYER_UP_CLASS__%", index <= 0 ? "disabled" : "hidden")
+                    .replaceAll("%__LAYER_DOWN_CLASS__%", index >= layerCount - 1 ? "disabled" : "hidden")
             )
         ).join("\n");
 

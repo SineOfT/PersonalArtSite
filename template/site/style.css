@@ -4,7 +4,7 @@
 }
 
 html {
-    background-color: #FFF;
+    background-color: var(--color-site-accent-dark);
 }
 
 body {
@@ -25,24 +25,24 @@ body {
 
 .header-container {
     background-image:
-        radial-gradient(circle at center      100%,          var(--color-site-accent)    0em, transparent    0em),
-        radial-gradient(circle at left   calc(100% - 0.5em), var(--color-site-accent) 0.05em, transparent 0.05em),
-        radial-gradient(circle at right  calc(100% - 0.5em), var(--color-site-accent) 0.05em, transparent 0.05em),
-        radial-gradient(circle at center calc(100% -   1em), var(--color-site-accent)  0.1em, transparent  0.1em),
-        radial-gradient(circle at left   calc(100% - 1.5em), var(--color-site-accent) 0.15em, transparent 0.15em),
-        radial-gradient(circle at right  calc(100% - 1.5em), var(--color-site-accent) 0.15em, transparent 0.15em),
-        radial-gradient(circle at center calc(100% -   2em), var(--color-site-accent)  0.2em, transparent  0.2em),
-        radial-gradient(circle at left   calc(100% - 2.5em), var(--color-site-accent) 0.25em, transparent 0.25em),
-        radial-gradient(circle at right  calc(100% - 2.5em), var(--color-site-accent) 0.25em, transparent 0.25em),
-        radial-gradient(circle at center calc(100% -   3em), var(--color-site-accent)  0.3em, transparent  0.3em),
-        radial-gradient(circle at left   calc(100% - 3.5em), var(--color-site-accent) 0.35em, transparent 0.35em),
-        radial-gradient(circle at right  calc(100% - 3.5em), var(--color-site-accent) 0.35em, transparent 0.35em),
-        radial-gradient(circle at center calc(100% -   4em), var(--color-site-accent)  0.4em, transparent  0.4em),
-        radial-gradient(circle at left   calc(100% - 4.5em), var(--color-site-accent) 0.45em, transparent 0.45em),
-        radial-gradient(circle at right  calc(100% - 4.5em), var(--color-site-accent) 0.45em, transparent 0.45em),
-        radial-gradient(circle at center calc(100% -   5em), var(--color-site-accent)  0.5em, transparent  0.5em),
-        radial-gradient(50% 0.25em at center calc(100% - 0.25em), var(--color-site-accent-dark) 100%, transparent 100%),
-        linear-gradient(to top, transparent 0.25em, var(--color-site-accent-dark) 0.25em 5em, var(--color-site-accent) 5em);
+        radial-gradient(circle at center      100%,          var(--color-site-accent-dark)    0em, transparent    0em),
+        radial-gradient(circle at left   calc(100% - 0.5em), var(--color-site-accent-dark) 0.05em, transparent 0.05em),
+        radial-gradient(circle at right  calc(100% - 0.5em), var(--color-site-accent-dark) 0.05em, transparent 0.05em),
+        radial-gradient(circle at center calc(100% -   1em), var(--color-site-accent-dark)  0.1em, transparent  0.1em),
+        radial-gradient(circle at left   calc(100% - 1.5em), var(--color-site-accent-dark) 0.15em, transparent 0.15em),
+        radial-gradient(circle at right  calc(100% - 1.5em), var(--color-site-accent-dark) 0.15em, transparent 0.15em),
+        radial-gradient(circle at center calc(100% -   2em), var(--color-site-accent-dark)  0.2em, transparent  0.2em),
+        radial-gradient(circle at left   calc(100% - 2.5em), var(--color-site-accent-dark) 0.25em, transparent 0.25em),
+        radial-gradient(circle at right  calc(100% - 2.5em), var(--color-site-accent-dark) 0.25em, transparent 0.25em),
+        radial-gradient(circle at center calc(100% -   3em), var(--color-site-accent-dark)  0.3em, transparent  0.3em),
+        radial-gradient(circle at left   calc(100% - 3.5em), var(--color-site-accent-dark) 0.35em, transparent 0.35em),
+        radial-gradient(circle at right  calc(100% - 3.5em), var(--color-site-accent-dark) 0.35em, transparent 0.35em),
+        radial-gradient(circle at center calc(100% -   4em), var(--color-site-accent-dark)  0.4em, transparent  0.4em),
+        radial-gradient(circle at left   calc(100% - 4.5em), var(--color-site-accent-dark) 0.45em, transparent 0.45em),
+        radial-gradient(circle at right  calc(100% - 4.5em), var(--color-site-accent-dark) 0.45em, transparent 0.45em),
+        radial-gradient(circle at center calc(100% -   5em), var(--color-site-accent-dark)  0.5em, transparent  0.5em),
+        radial-gradient(50% 0.25em at center calc(100% - 0.25em), var(--color-site-accent) 99.999%, transparent 99.999%),
+        linear-gradient(to top, transparent 0.25em, var(--color-site-accent) 0.25em 5em, var(--color-site-accent-dark) 5em);
     background-size: 1em 100%;
     background-repeat: repeat-x;
 }
@@ -83,18 +83,25 @@ body {
     transform: rotate(45deg);
 }
 
-@media (hover: hover) {
-    :is(#header:has(.header-container:hover), #header.hover) {
-        top: 0;
-    }
+#header:has(.header-container:hover),
+#header:has(.header-container:focus-within),
+#header.hover {
+    top: 0;
+}
 
-    :is(.header-container:hover, #header.hover) .toggle-button-label::after {
-        transform: rotate(45deg);
-    }
+:is(.header-container:hover, .header-container:focus-within, #header.hover) .toggle-button-label::after {
+    transform: rotate(45deg);
 }
 
 #header .header-body {
     height: var(--site-header-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#header .header-content {
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -119,12 +126,40 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    align-items: center;
     gap: 2rem;
 }
 
 #header .header-nav a:hover {
     color: var(--color-secondary-dark);
     text-decoration: underline;
+}
+
+#header .header-btn {
+    width: 3rem;
+    height: 3rem;
+    padding: 0;
+    font-size: 0.5em;
+    border-radius: 4px;
+    border: 2px solid var(--color-secondary);
+    background-color: #FFF;
+}
+
+#header .header-btn:hover {
+    background-color: #DDD;
+    border-color: #000;
+}
+
+html .toggle-animations-btn {
+    background-image: url(/assets/site/full-animations-icon.svg);
+}
+
+html.reduced-animations .toggle-animations-btn {
+    background-image: url(/assets/site/reduced-animations-icon.svg);
+}
+
+html.minimal-animations .toggle-animations-btn {
+    background-image: url(/assets/site/minimal-animations-icon.svg);
 }
 
 #site-main {

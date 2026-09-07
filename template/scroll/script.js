@@ -1,34 +1,62 @@
+import initShikaStateMachine from "/scripts/shika.js";
+import initStateMachineManager from "/scripts/state-machine-manager.js";
+
+const MIN_SECTION_OFFSET = 0.1;
+
 export default function initScrollFunctions(scrollData) {
-    function initScroll() {
+    const isMinimalAnimations = document.documentElement.classList.contains("minimal-animations");
+    const isReducedAnimations = document.documentElement.classList.contains("reduced-animations");
+
+    function initScroll() {    
+        const scrollbarSpritesFrontContainer = document.querySelector(".scrollbar-sprites-front-container");
+        const scrollbarSpritesBackContainer = document.querySelector(".scrollbar-sprites-back-container");
+        const scrollbarSprites = [...document.querySelectorAll(".scrollbar-sprite")];
+
         const scrollY = window.scrollY;
         const scrollHeight = document.body.offsetHeight - window.innerHeight;
 
-        const sectionOffsets = scrollData.map(({ sectionId: id, transition }) => {
+        const sectionOffsets = scrollData.map(({ sectionId: id, transition, instant }) => {
             const element = document.getElementById(id);
-            const anchor = document.querySelector(`#${id}-anchor .scroll-anchor-marker`);
+            const container = document.getElementById(`${id}-anchor`);
+            const anchor = container.querySelector(".scroll-anchor-marker");
             if (!element) { return { id, transitionElement: false, offset: scrollHeight }; }
             const viewportOffset = element.getBoundingClientRect();
             const offset = scrollY + viewportOffset.top;
-            return { id, transitionElement: transition ? element : false, anchor, offset };
+            return { id, transitionElement: transition ? element : false, container, anchor, offset, isInstant: instant };
         });
         sectionOffsets.sort((a, b) => { a.offset - b.offset });
+        if (sectionOffsets[1].offset - sectionOffsets[0].offset < MIN_SECTION_OFFSET * scrollHeight) {
+            sectionOffsets[0].container.classList.add("d-none");
+        }
+        if (sectionOffsets[sectionOffsets.length-1].offset - sectionOffsets[sectionOffsets.length-2].offset < MIN_SECTION_OFFSET * scrollHeight) {
+            sectionOffsets[sectionOffsets.length-1].container.classList.add("d-none");
+        }
 
-        const scrollbarSpriteOffsets = [...document.querySelectorAll(".scrollbar-sprite")].map((element) => {
-            const viewportOffset = element.getBoundingClientRect();
-            const offset = viewportOffset.left + viewportOffset.width/2;
-            return { element, offset };
-        });
+        const scrollbarSpriteOffsets = isReducedAnimations
+            ? null
+            : scrollbarSprites.map((element) => {
+                const viewportOffset = element.getBoundingClientRect();
+                const offset = viewportOffset.left + viewportOffset.width/2;
+                return { element, offset };
+            });
 
         const scrollbarElement = document.getElementById("home-scrollbar");
 
         let prevScroll = -1;
 
         function initScrollAnchors() {
-            sectionOffsets.forEach(({ id, offset }) => {
+            sectionOffsets.forEach(({ id, offset, isInstant }) => {
                 const sectionScrollFr = offset / scrollHeight;
                 const sectionAnchor = document.getElementById(`${id}-anchor`);
                 sectionAnchor.style.setProperty("--fr", sectionScrollFr);
                 sectionAnchor.classList.add("scroll-anchor-position");
+                if (isInstant) {
+                    sectionAnchor.querySelector(".scroll-anchor").addEventListener("click", () => {
+                        document.documentElement.style.scrollBehavior = "auto";
+                        window.scrollTo(0, offset, { behavior: "instant" });
+                        document.documentElement.style.scrollBehavior = "smooth";
+                    });
+                }
             });
         }
 
@@ -53,28 +81,34 @@ export default function initScrollFunctions(scrollData) {
                             hideSection(transitionElement);
                         }
                     });
-                    let isSectionExceeded = !currSection;
-                    sectionOffsets.forEach(({ id, anchor }) => {
-                        if (isSectionExceeded) {
-                            hideElement(anchor, shouldTransition);
+                    if (isNew && !isReducedAnimations) {
+                        let isSectionExceeded = !currSection;
+                        sectionOffsets.forEach(({ id, anchor }) => {
+                            if (isSectionExceeded) {
+                                hideElement(anchor, shouldTransition);
+                            } else {
+                                showElement(anchor, shouldTransition);
+                            }
+                            if (id === currSection) {
+                                isSectionExceeded = true;
+                            }
+                        });
+                    }
+                }
+
+                if (!isReducedAnimations) {
+                    scrollbarSpriteOffsets.forEach(({ element, offset }) => {
+                        if (offset/window.innerWidth < currScrollFr) {
+                            showElement(element, shouldTransition);
                         } else {
-                            showElement(anchor, shouldTransition);
-                        }
-                        if (id === currSection) {
-                            isSectionExceeded = true;
+                            hideElement(element, shouldTransition);
                         }
                     });
                 }
 
-                scrollbarSpriteOffsets.forEach(({ element, offset }) => {
-                    if (offset/window.innerWidth < currScrollFr) {
-                        showElement(element, shouldTransition);
-                    } else {
-                        hideElement(element, shouldTransition);
-                    }
-                })
-
-                scrollbarElement.style.setProperty("--width-fr", currScrollFr);
+                if (!isMinimalAnimations) {
+                    scrollbarElement.style.setProperty("--width-fr", currScrollFr);
+                }
 
                 prevScroll = currScroll;
 
@@ -186,4 +220,9 @@ export default function initScrollFunctions(scrollData) {
     }
     
     initScroll();
+
+    if (!isMinimalAnimations) {
+        const shikaStateMachine = initShikaStateMachine();
+        initStateMachineManager([shikaStateMachine]);
+    }
 }

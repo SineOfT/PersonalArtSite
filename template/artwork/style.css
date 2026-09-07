@@ -1,9 +1,12 @@
 html {
-    overflow: hidden;
+    overflow: clip;
+    touch-action: none;
+    scroll-behavior: auto;
 }
 
 .artwork-main {
     isolation: isolate;
+    margin-bottom: 50vh;
 }
 
 .artwork-container {    
@@ -20,8 +23,8 @@ html {
     --control-size: 3rem;
 
     padding: 1rem;
-    width: 100vw;
-    height: 100vh;
+    width: 100svw;
+    height: 100svh;
     display: grid;
     grid-template-areas:
         "close heading heading heading ."
@@ -39,12 +42,11 @@ html {
     grid-area: heading;
     display: flex;
     flex-direction: column;
-    pointer-events: auto;    
 }
 
 .artwork-title {
     color: #EEE;
-    font-size: calc(var(--control-size) - 1.2rem);
+    font-size: min(calc(var(--control-size) - 1.2rem), 5vw);
     line-height: 100%;
 }
 
@@ -94,7 +96,7 @@ html {
     overflow: hidden;
 }
 
-.artwork-image-hover {
+.artwork-image-interact {
     pointer-events: auto;
 }
 
@@ -103,18 +105,15 @@ html {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
-}
-
-.artwork-main:has(.artwork-image-hover:hover) .artwork-image {
     transform:
         translate(
-            calc(-50% + (100% * var(--hover-x, 0))),
-            calc(-50% + (100% * var(--hover-y, 0)))
+            calc(-50% + (100% * var(--hover-x, unset))),
+            calc(-50% + (100% * var(--hover-y, unset)))
         )
         scale(var(--zoom, 1))
         translate(
-            calc(50% - (100% * var(--hover-x, 0))),
-            calc(50% - (100% * var(--hover-y, 0)))
+            calc(50% - (100% * var(--hover-x, unset))),
+            calc(50% - (100% * var(--hover-y, unset)))
         );
 }
 
@@ -224,11 +223,11 @@ html {
     }
 }
 
-.close-button::before,
-.close-button::after,
-.control-zoom-out::before,
-.control-zoom-in::before,
-.control-zoom-in::after {
+.close-button:not(.hidden)::before,
+.close-button:not(.hidden)::after,
+.control-zoom-out:not(.hidden)::before,
+.control-zoom-in:not(.hidden)::before,
+.control-zoom-in:not(.hidden)::after {
     content: "";
     position: absolute;
     left: 50%;
@@ -238,14 +237,14 @@ html {
     background-color: currentColor;
     translate: -50% -50%;
 }
-.close-button::before   { rotate: -45deg; }
-.close-button::after    { rotate:  45deg; }
-.control-zoom-in::after { rotate:  90deg; }
+.close-button:not(.hidden)::before   { rotate: -45deg; }
+.close-button:not(.hidden)::after    { rotate:  45deg; }
+.control-zoom-in:not(.hidden)::after { rotate:  90deg; }
 
-.control-layer-up::before,
-.control-layer-down::before,
-.control-artwork-left::before,
-.control-artwork-right::before {
+.control-layer-up:not(.hidden)::before,
+.control-layer-down:not(.hidden)::before,
+.control-artwork-left:not(.hidden)::before,
+.control-artwork-right:not(.hidden)::before {
     content: "";
     position: absolute;
     left: 50%;
@@ -262,7 +261,7 @@ html {
     translate: -35% -35%;
     transform-origin: 35% 35%;
 }
-.control-layer-up::before      { rotate:   45deg; }
-.control-layer-down::before    { rotate: -135deg; }
-.control-artwork-left::before  { rotate:  -45deg; }
-.control-artwork-right::before { rotate:  135deg; }
+.control-layer-up:not(.hidden)::before      { rotate:   45deg; }
+.control-layer-down:not(.hidden)::before    { rotate: -135deg; }
+.control-artwork-left:not(.hidden)::before  { rotate:  -45deg; }
+.control-artwork-right:not(.hidden)::before { rotate:  135deg; }

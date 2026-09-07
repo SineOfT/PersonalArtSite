@@ -8,6 +8,20 @@ const scrollAnchorHtml = fs.readFileSync(path.join(__dirname, "/scroll-anchor.ht
 const SCROLLBAR_SPRITE_COUNT = 300;
 
 function generateScroll(scrollData) {
+    scrollData.unshift({
+        sectionId: "page-top",
+        hashId: "",
+        title: "Top",
+        color: "#ACF",
+        transition: false,
+    });
+    scrollData.push({
+        sectionId: "page-bottom",
+        hashId: "page-bottom",
+        title: "End",
+        color: "#FFF",
+        transition: false,
+    });
     const updatedScrollbarSpritesHtml =
         Array.from(
             { length: SCROLLBAR_SPRITE_COUNT},
