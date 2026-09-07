@@ -5,5 +5,5 @@ if (frag && window.scrollY === 0) {
 
     document.documentElement.style.scrollBehavior = "auto";
     window.scrollTo(0, fragElementRect.y, { behavior: "instant" });
-    document.documentElement.style.scrollBehavior = "smooth";
+    document.documentElement.style.scrollBehavior = "";
 }

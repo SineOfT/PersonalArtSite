@@ -98,36 +98,35 @@ export default function initArtwork(artworkId, artworksData) {
     updateZoom();
 
     let isHoverActive = true;
+    artworkElement.style.setProperty("--is-not-interacting", "100%");
 
     artworkImageInteract.addEventListener("mousemove", (event) => {
         if (isHoverActive) {
             artworkElement.style.setProperty("--hover-x", event.offsetX / artworkImageInteract.offsetWidth);
             artworkElement.style.setProperty("--hover-y", event.offsetY / artworkImageInteract.offsetHeight);
+            artworkElement.style.removeProperty("--is-not-interacting");
         }
     });
 
     artworkImageInteract.addEventListener("pointerup", (event) => {
         let hoverX = parseFloat(artworkElement.style.getPropertyValue("--hover-x"));
         let hoverY = parseFloat(artworkElement.style.getPropertyValue("--hover-y"));
-        let zoom = ZOOM_VALUES[zoomIndex];
-        let zoomInv = 1 / zoom;
         if (isNaN(hoverX) || isNaN(hoverY)) {
             hoverX = 0.5;
             hoverY = 0.5
-            zoomInv += 1
-        } else {
-            zoom -= 1;
-            zoomInv = 1 / zoom;
         }
+        const zoom = ZOOM_VALUES[zoomIndex];
+        const zoomFactor = zoom === 1 ? 0 : zoom / (zoom - 1);
 
         const x = (event.offsetX - artworkImageInteract.offsetWidth /2) / artworkImage.offsetWidth;
         const y = (event.offsetY - artworkImageInteract.offsetHeight/2) / artworkImage.offsetHeight;
 
-        const newHoverX = Math.min(Math.max(hoverX + x * zoomInv, 0), 1);
-        const newHoverY = Math.min(Math.max(hoverY + y * zoomInv, 0), 1);
+        const newHoverX = Math.min(Math.max(hoverX + x * zoomFactor, 0), 1);
+        const newHoverY = Math.min(Math.max(hoverY + y * zoomFactor, 0), 1);
 
         artworkElement.style.setProperty("--hover-x", newHoverX);
         artworkElement.style.setProperty("--hover-y", newHoverY);
+        artworkElement.style.removeProperty("--is-not-interacting");
 
         isHoverActive = false;
     });
@@ -136,7 +135,7 @@ export default function initArtwork(artworkId, artworksData) {
         if (isHoverActive) {
             artworkElement.style.removeProperty("--hover-x");
             artworkElement.style.removeProperty("--hover-y");
-            isHoverActive = true;
+            artworkElement.style.setProperty("--is-not-interacting", "100%");
         }
     });
 
@@ -144,6 +143,7 @@ export default function initArtwork(artworkId, artworksData) {
         if (event.target === event.currentTarget) {
             artworkElement.style.removeProperty("--hover-x");
             artworkElement.style.removeProperty("--hover-y");
+            artworkElement.style.setProperty("--is-not-interacting", "100%");
             isHoverActive = true;
         }
     });
