@@ -7,6 +7,22 @@ html {
     background-color: var(--color-site-accent-dark);
 }
 
+html::before {
+    content: "";
+    position: fixed;
+    inset: 0 0 auto;
+    height: 1rem;
+    background-color: var(--color-site-accent-dark);
+}
+
+html::after {
+    content: "";
+    position: fixed;
+    inset: auto 0 0;
+    height: 1rem;
+    background-color: var(--color-site-footer);
+}
+
 body {
     min-height: 100vh;
     background-color: var(--color-site-main);

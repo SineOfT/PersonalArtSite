@@ -58,25 +58,6 @@
 
 
 html:not(.minimal-animations) .section-display-slide-container {
-    --section-thumbnail-max-width: 90vw;
-    --section-thumbnail-max-height: 50vh;
-    --section-thumbnail-width: min(
-        var(--section-thumbnail-max-width),
-        calc(var(--section-thumbnail-max-height) * var(--artwork-thumbnail-aspect-ratio))
-    );
-    --section-basic-thumbnail-height: min(
-        var(--section-basic-thumbnail-max-height),
-        calc(var(--section-basic-thumbnail-max-width) / var(--artwork-thumbnail-aspect-ratio))
-    );
-}
-
-.section-thumbnail {
-    display: none;
-}
-
-
-
-html:not(.minimal-animations) .section-display-slide-container {
     --section-cycle-display-duration: 30s;
 }
 
@@ -257,18 +238,6 @@ html:not(.minimal-animations) .thumbnail-cube-index-5 { display: block; --rotati
                                                                                             0,  0,  0, 1; }
     
 html.minimal-animations .thumbnail-cube-index-6 {
-    display: block;
-    width: var(--section-basic-thumbnail-width);
-    height: var(--section-basic-thumbnail-height);
-    border: 2px solid black;
-}
-
-.section-thumbnail-cube {
-    width:  100%;
-    height: 100%;
-}
-
-.minimal-animations .thumbnail-cube-index-6 {
     display: block;
     width: var(--section-basic-thumbnail-width);
     height: var(--section-basic-thumbnail-height);
