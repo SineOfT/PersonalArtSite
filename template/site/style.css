@@ -7,20 +7,22 @@ html {
     background-color: var(--color-site-accent-dark);
 }
 
-html::before {
-    content: "";
+.header-tint {
     position: fixed;
-    inset: 0 0 auto;
-    height: 1rem;
+    inset: -5px 0 auto;
+    height: 10px;
     background-color: var(--color-site-accent-dark);
+    z-index: 9999;
+    pointer-events: none;
 }
 
-html::after {
-    content: "";
+.footer-tint {
     position: fixed;
-    inset: auto 0 0;
-    height: 1rem;
+    inset: auto 0 -5px;
+    height: 10px;
     background-color: var(--color-site-footer);
+    z-index: 9999;
+    pointer-events: none;
 }
 
 body {
