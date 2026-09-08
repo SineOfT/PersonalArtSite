@@ -63,12 +63,7 @@
     }],
     ["ghibli", {
         "title": "Studio Ghibli Artworks",
-        "date-span": {
-            "start-date": {
-                "year": 2024
-            },
-            "end-date": "current"
-        },
+        "date-span": { },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "artworks": [
             "ponyo",
@@ -179,14 +174,9 @@
         "thumbnail": "kanroji-bunny",
         "color": "#F9D"
     }],
-    ["pokemon", {
-        "title": "Pokemon Artworks",
-        "date-span": {
-            "start-date": {
-                "year": 2024
-            },
-            "end-date": "current"
-        },
+    ["misc-pokemon", {
+        "title": "Miscellaneous Pokemon Artworks",
+        "date-span": { },
         "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "artworks": [
             "mimikyu"
