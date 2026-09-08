@@ -4,6 +4,8 @@ const { getDate } = require("../utility");
 
 const artworkHtml = fs.readFileSync(path.join(__dirname, "/artwork.html"));
 const layerHtml = fs.readFileSync(path.join(__dirname, "/layer.html"));
+const layerImg = fs.readFileSync(path.join(__dirname, "/layer-img.html"));
+const layerVideo = fs.readFileSync(path.join(__dirname, "/layer-video.html"));
 
 function generateArtworkSites(artworksData) {
     return [...artworksData.entries()].map(([artworkId, artwork], artworkIndex) => {
@@ -11,17 +13,23 @@ function generateArtworkSites(artworksData) {
         const layerCount = artwork["layer-count"];
         const updatedLayersHtml = Array.from(
             { length: layerCount },
-            (_, index) => (
-                layerHtml.toString()
+            (_, index) => {
+                const isVideo = (artwork["animated"] && index === 0);
+                const updatedLayerMediaContentHtml = isVideo
+                    ? layerVideo.toString()
+                        .replaceAll("%__LAYER_MEDIA__%", `${artworkId}/${index}.mp4`)
+                    : layerImg.toString()
+                        .replaceAll("%__LAYER_MEDIA__%", `${artworkId}/${index}.webp`);
+                return layerHtml.toString()
+                    .replaceAll("%__LAYER_MEDIA_CONTENT__%", updatedLayerMediaContentHtml)
                     .replaceAll("%__LAYER_ID__%", index)
-                    .replaceAll("%__LAYER_IMAGE__%", `${artworkId}/${index}.webp`)
                     .replaceAll("%__LAYER_CURR__%", index + 1)
                     .replaceAll("%__LAYER_COUNT__%", layerCount)
                     .replaceAll("%__LAYER_UP__%", index - 1)
                     .replaceAll("%__LAYER_DOWN__%", index + 1)
                     .replaceAll("%__LAYER_UP_CLASS__%", index <= 0 ? "disabled" : "hidden")
-                    .replaceAll("%__LAYER_DOWN_CLASS__%", index >= layerCount - 1 ? "disabled" : "hidden")
-            )
+                    .replaceAll("%__LAYER_DOWN_CLASS__%", index >= layerCount - 1 ? "disabled" : "hidden");
+            }
         ).join("\n");
 
         const artworkLeftId  = [...artworksData.keys()][artworkIndex-1] ?? "";

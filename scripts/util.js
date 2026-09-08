@@ -5,6 +5,8 @@ export const toURLCase = (string) => string.replaceAll(/([A-Z])/g, '-$1').toLowe
 
 export function getDateSpan(dateSpan) {
     const { ["start-date"]: startDate, ["end-date"]: endDate } = dateSpan;
+    if (!startDate || !endDate) { return ""; }
+
     const startDateString = getDate(startDate);
     
     if (endDate === "no-range") {
@@ -26,6 +28,9 @@ export function getDateSpan(dateSpan) {
 export function cmpDateSpan(dateSpanA, dateSpanB) {
     const { ["start-date"]: startDateA, ["end-date"]: endDateA } = dateSpanA;
     const { ["start-date"]: startDateB, ["end-date"]: endDateB } = dateSpanB;
+
+    if (!startDateA || !endDateA) { return -1; }
+    if (!startDateB || !endDateB) { return  1; }
 
     if (endDateA === "current" && endDateB !== "current") { return  1; }
     if (endDateA !== "current" && endDateB === "current") { return -1; }

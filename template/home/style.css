@@ -90,11 +90,6 @@ html.minimal-animations .thumbnail-slide-index-5 {
     border: 2px solid black;
 }
 
-.section-thumbnail-slide {
-    width: 100%;
-    height: 100%;
-}
-
 @keyframes slide-display {
     0%,  15% { transform: translate(0, 0)      scale(1);    z-index: 9;   }
     20%, 35% { transform: translate(0,   100%) scale(0.25); z-index: 3;   }
@@ -145,11 +140,6 @@ html.minimal-animations .thumbnail-radial-index-7 {
     width: var(--section-basic-thumbnail-width);
     height: var(--section-basic-thumbnail-height);
     border: 2px solid black;
-}
-
-.section-thumbnail-radial {
-    width:  100%;
-    height: 100%;
 }
 
 @keyframes radial-display-position {
@@ -242,11 +232,6 @@ html.minimal-animations .thumbnail-cube-index-6 {
     width: var(--section-basic-thumbnail-width);
     height: var(--section-basic-thumbnail-height);
     border: 2px solid black;
-}
-
-.section-thumbnail-cube {
-    width:  100%;
-    height: 100%;
 }
 
 @keyframes cube-display {

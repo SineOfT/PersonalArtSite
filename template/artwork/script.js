@@ -7,8 +7,8 @@ export default function initArtwork(artworkId, artworksData) {
     const artworkElement = document.getElementById("artwork");
 
     const artworkCloseButton               = artworkElement.querySelector(".close-button");
-    const artworkImageInteract             = artworkElement.querySelector(".artwork-image-interact");
-    const artworkImage                     = artworkElement.querySelector(".artwork-image");
+    const artworkMediaInteract             = artworkElement.querySelector(".artwork-media-interact");
+    const artworkMedia                     = artworkElement.querySelector(".artwork-media");
     const artworkControlZoomInElement      = artworkElement.querySelector(".control-zoom-in");
     const artworkControlZoomOutElement     = artworkElement.querySelector(".control-zoom-out");
     const artworkControlZoomDisplayElement = artworkElement.querySelector(".control-zoom-display");
@@ -100,15 +100,15 @@ export default function initArtwork(artworkId, artworksData) {
     let isHoverActive = true;
     artworkElement.style.setProperty("--is-not-interacting", "100%");
 
-    artworkImageInteract.addEventListener("mousemove", (event) => {
+    artworkMediaInteract.addEventListener("mousemove", (event) => {
         if (isHoverActive) {
-            artworkElement.style.setProperty("--hover-x", event.offsetX / artworkImageInteract.offsetWidth);
-            artworkElement.style.setProperty("--hover-y", event.offsetY / artworkImageInteract.offsetHeight);
+            artworkElement.style.setProperty("--hover-x", event.offsetX / artworkMediaInteract.offsetWidth);
+            artworkElement.style.setProperty("--hover-y", event.offsetY / artworkMediaInteract.offsetHeight);
             artworkElement.style.removeProperty("--is-not-interacting");
         }
     });
 
-    artworkImageInteract.addEventListener("pointerup", (event) => {
+    artworkMediaInteract.addEventListener("pointerup", (event) => {
         let hoverX = parseFloat(artworkElement.style.getPropertyValue("--hover-x"));
         let hoverY = parseFloat(artworkElement.style.getPropertyValue("--hover-y"));
         if (isNaN(hoverX) || isNaN(hoverY)) {
@@ -118,8 +118,8 @@ export default function initArtwork(artworkId, artworksData) {
         const zoom = ZOOM_VALUES[zoomIndex];
         const zoomFactor = zoom === 1 ? 0 : zoom / (zoom - 1);
 
-        const x = (event.offsetX - artworkImageInteract.offsetWidth /2) / artworkImage.offsetWidth;
-        const y = (event.offsetY - artworkImageInteract.offsetHeight/2) / artworkImage.offsetHeight;
+        const x = (event.offsetX - artworkMediaInteract.offsetWidth /2) / artworkMedia.offsetWidth;
+        const y = (event.offsetY - artworkMediaInteract.offsetHeight/2) / artworkMedia.offsetHeight;
 
         const newHoverX = Math.min(Math.max(hoverX + x * zoomFactor, 0), 1);
         const newHoverY = Math.min(Math.max(hoverY + y * zoomFactor, 0), 1);
@@ -131,7 +131,7 @@ export default function initArtwork(artworkId, artworksData) {
         isHoverActive = false;
     });
 
-    artworkImageInteract.addEventListener("mouseleave", () => {
+    artworkMediaInteract.addEventListener("mouseleave", () => {
         if (isHoverActive) {
             artworkElement.style.removeProperty("--hover-x");
             artworkElement.style.removeProperty("--hover-y");

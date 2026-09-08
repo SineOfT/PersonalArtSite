@@ -217,6 +217,8 @@
 
 .thumbnail-contain,
 .thumbnail-cover {
+    width:  calc(100% * var(--scale, 1.02));
+    height: calc(100% * var(--scale, 1.02));
     background-image: url(/assets/artworks/not-found.webp);
     background-size: cover;
     background-position: center;
@@ -225,16 +227,15 @@
 .thumbnail-contain {
     object-fit: contain;
     transform-origin: center;
-    transform:
-        scale(var(--scale, 1.02))
-        translate(
-            calc(-100% * var(--x, 0)),
-            calc(-100% * var(--y, 0)));
+    transform: translate(
+        calc(-100% * var(--x, 0)),
+        calc(-100% * var(--y, 0)));
 }
 
 .thumbnail-cover {
     object-fit: cover;
     object-position: calc(50% + 100% * var(--x, 0)) calc(50% + 100% * var(--y, 0));
-    transform-origin: calc(50% + 100% * var(--x, 0)) calc(50% + 100% * var(--y, 0));
-    transform: scale(var(--scale, 1));
+    /* transform: translate(
+        calc(50% + 100% * var(--x, 0)),
+        calc(50% + 100% * var(--y, 0))); */
 }

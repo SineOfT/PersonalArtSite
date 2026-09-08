@@ -234,5 +234,15 @@
         ],
         "thumbnail": "axew-az",
         "color": "#E8F"
+    }],
+    ["misc", {
+        "title": "Miscellaneous",
+        "date-span": { },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "artworks": [
+            "hiccup-toothless"
+        ],
+        "thumbnail": "hiccup-toothless",
+        "color": "#DAD"
     }]
 ]
