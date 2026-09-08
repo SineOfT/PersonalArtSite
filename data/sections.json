@@ -17,7 +17,7 @@
             "medium-totoro",
             "tomioka-ink24",
             { "thumbnail": "xerneas-az", "position" : { "y": -0.2 } },
-            { "thumbnail": "fletchling-vert-pan", "position": { "x": 0.3 } },
+            { "thumbnail": "hiccup-toothless", "position": { "x": 0.05, "y": -0.15 }, "scale": 2 },
             { "thumbnail": "umbreon-az", "position": { "y": -0.4 } },
             "kanroji-bunny"
         ],
@@ -31,7 +31,7 @@
         ],
         "thumbnails": [
             { "thumbnail": "anatomy-32-foot-1",  "position": { "y":  0.2 } },
-            { "thumbnail": "anatomy-30-calves",  "position": { "y": -0.5 }, "scale": 1.25 },
+            { "thumbnail": "anatomy-30-calves",  "position": { "y": -0.4 }, "scale": 1.25 },
             { "thumbnail": "anatomy-21-hands" },
             { "thumbnail": "anatomy-repractice", "position": { "x": -0.3 } },
             { "thumbnail": "anatomy-28-quadriceps-0" },

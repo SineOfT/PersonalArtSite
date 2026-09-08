@@ -77,14 +77,14 @@ html:not(.minimal-animations) .section-thumbnail-slide-container {
     animation: var(--section-cycle-display-duration) ease-in-out infinite slide-display;
 }
 
-html:not(.minimal-animations) .thumbnail-slide-index-0 { display: block; animation-delay: 0; }
-html:not(.minimal-animations) .thumbnail-slide-index-1 { display: block; animation-delay: calc(var(--section-cycle-display-duration) * -0.8); }
-html:not(.minimal-animations) .thumbnail-slide-index-2 { display: block; animation-delay: calc(var(--section-cycle-display-duration) * -0.6); }
-html:not(.minimal-animations) .thumbnail-slide-index-3 { display: block; animation-delay: calc(var(--section-cycle-display-duration) * -0.4); }
-html:not(.minimal-animations) .thumbnail-slide-index-4 { display: block; animation-delay: calc(var(--section-cycle-display-duration) * -0.2); }
+html:not(.minimal-animations) .thumbnail-slide-index-0 { display: flex; animation-delay: 0; }
+html:not(.minimal-animations) .thumbnail-slide-index-1 { display: flex; animation-delay: calc(var(--section-cycle-display-duration) * -0.8); }
+html:not(.minimal-animations) .thumbnail-slide-index-2 { display: flex; animation-delay: calc(var(--section-cycle-display-duration) * -0.6); }
+html:not(.minimal-animations) .thumbnail-slide-index-3 { display: flex; animation-delay: calc(var(--section-cycle-display-duration) * -0.4); }
+html:not(.minimal-animations) .thumbnail-slide-index-4 { display: flex; animation-delay: calc(var(--section-cycle-display-duration) * -0.2); }
 
 html.minimal-animations .thumbnail-slide-index-5 {
-    display: block;
+    display: flex;
     width: var(--section-basic-thumbnail-width);
     height: var(--section-basic-thumbnail-height);
     border: 2px solid black;
@@ -127,16 +127,16 @@ html:not(.minimal-animations) .section-thumbnail-radial-container {
         var(--section-cycle-display-duration) linear infinite radial-display-scale;
 }
 
-html:not(.minimal-animations) .thumbnail-radial-index-0 { display: block; animation-delay: 0; }
-html:not(.minimal-animations) .thumbnail-radial-index-1 { display: block; animation-delay: calc(var(--section-cycle-display-duration) * -6/7); }
-html:not(.minimal-animations) .thumbnail-radial-index-2 { display: block; animation-delay: calc(var(--section-cycle-display-duration) * -5/7); }
-html:not(.minimal-animations) .thumbnail-radial-index-3 { display: block; animation-delay: calc(var(--section-cycle-display-duration) * -4/7); }
-html:not(.minimal-animations) .thumbnail-radial-index-4 { display: block; animation-delay: calc(var(--section-cycle-display-duration) * -3/7); }
-html:not(.minimal-animations) .thumbnail-radial-index-5 { display: block; animation-delay: calc(var(--section-cycle-display-duration) * -2/7); }
-html:not(.minimal-animations) .thumbnail-radial-index-6 { display: block; animation-delay: calc(var(--section-cycle-display-duration) * -1/7); }
+html:not(.minimal-animations) .thumbnail-radial-index-0 { display: flex; animation-delay: 0; }
+html:not(.minimal-animations) .thumbnail-radial-index-1 { display: flex; animation-delay: calc(var(--section-cycle-display-duration) * -6/7); }
+html:not(.minimal-animations) .thumbnail-radial-index-2 { display: flex; animation-delay: calc(var(--section-cycle-display-duration) * -5/7); }
+html:not(.minimal-animations) .thumbnail-radial-index-3 { display: flex; animation-delay: calc(var(--section-cycle-display-duration) * -4/7); }
+html:not(.minimal-animations) .thumbnail-radial-index-4 { display: flex; animation-delay: calc(var(--section-cycle-display-duration) * -3/7); }
+html:not(.minimal-animations) .thumbnail-radial-index-5 { display: flex; animation-delay: calc(var(--section-cycle-display-duration) * -2/7); }
+html:not(.minimal-animations) .thumbnail-radial-index-6 { display: flex; animation-delay: calc(var(--section-cycle-display-duration) * -1/7); }
 
 html.minimal-animations .thumbnail-radial-index-7 {
-    display: block;
+    display: flex;
     width: var(--section-basic-thumbnail-width);
     height: var(--section-basic-thumbnail-height);
     border: 2px solid black;
@@ -202,33 +202,33 @@ html:not(.minimal-animations) .section-thumbnail-cube-container {
     backface-visibility: hidden;
 }
 
-html:not(.minimal-animations) .thumbnail-cube-index-0 { display: block; --rotation-matrix:  1,  0,  0, 0,
+html:not(.minimal-animations) .thumbnail-cube-index-0 { display: flex; --rotation-matrix:  1,  0,  0, 0,
                                                                                             0,  1,  0, 0,
                                                                                             0,  0,  1, 0,
                                                                                             0,  0,  0, 1; }
-html:not(.minimal-animations) .thumbnail-cube-index-1 { display: block; --rotation-matrix:  1,  0,  0, 0,
+html:not(.minimal-animations) .thumbnail-cube-index-1 { display: flex; --rotation-matrix:  1,  0,  0, 0,
                                                                                             0,  0, -1, 0,
                                                                                             0,  1,  0, 0,
                                                                                             0,  0,  0, 1; }
-html:not(.minimal-animations) .thumbnail-cube-index-2 { display: block; --rotation-matrix:  0,  0,  1, 0,
+html:not(.minimal-animations) .thumbnail-cube-index-2 { display: flex; --rotation-matrix:  0,  0,  1, 0,
                                                                                            -1,  0,  0, 0,
                                                                                             0, -1,  0, 0,
                                                                                             0,  0,  0, 1; }
-html:not(.minimal-animations) .thumbnail-cube-index-3 { display: block; --rotation-matrix:  0,  0,  1, 0,
+html:not(.minimal-animations) .thumbnail-cube-index-3 { display: flex; --rotation-matrix:  0,  0,  1, 0,
                                                                                             0,  1,  0, 0,
                                                                                            -1,  0,  0, 0,
                                                                                             0,  0,  0, 1; }
-html:not(.minimal-animations) .thumbnail-cube-index-4 { display: block; --rotation-matrix:  0, -1,  0, 0,
+html:not(.minimal-animations) .thumbnail-cube-index-4 { display: flex; --rotation-matrix:  0, -1,  0, 0,
                                                                                             0,  0, -1, 0,
                                                                                             1,  0,  0, 0,
                                                                                             0,  0,  0, 1; }
-html:not(.minimal-animations) .thumbnail-cube-index-5 { display: block; --rotation-matrix:  0, -1,  0, 0,
+html:not(.minimal-animations) .thumbnail-cube-index-5 { display: flex; --rotation-matrix:  0, -1,  0, 0,
                                                                                            -1,  0,  0, 0,
                                                                                             0,  0, -1, 0,
                                                                                             0,  0,  0, 1; }
     
 html.minimal-animations .thumbnail-cube-index-6 {
-    display: block;
+    display: flex;
     width: var(--section-basic-thumbnail-width);
     height: var(--section-basic-thumbnail-height);
     border: 2px solid black;
