@@ -97,45 +97,48 @@ export default function initArtwork(artworkId, artworksData) {
     });
     updateZoom();
 
-    let isHoverActive = true;
+    let isHoverActive = null;
     artworkElement.style.setProperty("--is-not-interacting", "100%");
 
     artworkMediaInteract.addEventListener("mousemove", (event) => {
-        if (isHoverActive) {
+        if (isHoverActive !== false) {
             artworkElement.style.setProperty("--hover-x", event.offsetX / artworkMediaInteract.offsetWidth);
             artworkElement.style.setProperty("--hover-y", event.offsetY / artworkMediaInteract.offsetHeight);
             artworkElement.style.removeProperty("--is-not-interacting");
+            isHoverActive = true;
         }
     });
 
     artworkMediaInteract.addEventListener("pointerup", (event) => {
-        let hoverX = parseFloat(artworkElement.style.getPropertyValue("--hover-x"));
-        let hoverY = parseFloat(artworkElement.style.getPropertyValue("--hover-y"));
-        if (isNaN(hoverX) || isNaN(hoverY)) {
-            hoverX = 0.5;
-            hoverY = 0.5
+        if (isHoverActive !== true) {
+            let hoverX = parseFloat(artworkElement.style.getPropertyValue("--hover-x"));
+            let hoverY = parseFloat(artworkElement.style.getPropertyValue("--hover-y"));
+            if (isNaN(hoverX) || isNaN(hoverY)) {
+                hoverX = 0.5;
+                hoverY = 0.5
+            }
+            const zoom = ZOOM_VALUES[zoomIndex];
+            const zoomFactor = zoom === 1 ? 0 : zoom / (zoom - 1);
+
+            const x = (event.offsetX - artworkMediaInteract.offsetWidth /2) / artworkMedia.offsetWidth;
+            const y = (event.offsetY - artworkMediaInteract.offsetHeight/2) / artworkMedia.offsetHeight;
+
+            const newHoverX = Math.min(Math.max(hoverX + x * zoomFactor, 0), 1);
+            const newHoverY = Math.min(Math.max(hoverY + y * zoomFactor, 0), 1);
+
+            artworkElement.style.setProperty("--hover-x", newHoverX);
+            artworkElement.style.setProperty("--hover-y", newHoverY);
+            artworkElement.style.removeProperty("--is-not-interacting");
         }
-        const zoom = ZOOM_VALUES[zoomIndex];
-        const zoomFactor = zoom === 1 ? 0 : zoom / (zoom - 1);
-
-        const x = (event.offsetX - artworkMediaInteract.offsetWidth /2) / artworkMedia.offsetWidth;
-        const y = (event.offsetY - artworkMediaInteract.offsetHeight/2) / artworkMedia.offsetHeight;
-
-        const newHoverX = Math.min(Math.max(hoverX + x * zoomFactor, 0), 1);
-        const newHoverY = Math.min(Math.max(hoverY + y * zoomFactor, 0), 1);
-
-        artworkElement.style.setProperty("--hover-x", newHoverX);
-        artworkElement.style.setProperty("--hover-y", newHoverY);
-        artworkElement.style.removeProperty("--is-not-interacting");
-
         isHoverActive = false;
     });
 
     artworkMediaInteract.addEventListener("mouseleave", () => {
-        if (isHoverActive) {
+        if (isHoverActive === true) {
             artworkElement.style.removeProperty("--hover-x");
             artworkElement.style.removeProperty("--hover-y");
             artworkElement.style.setProperty("--is-not-interacting", "100%");
+            isHoverActive = null;
         }
     });
 
@@ -144,7 +147,7 @@ export default function initArtwork(artworkId, artworksData) {
             artworkElement.style.removeProperty("--hover-x");
             artworkElement.style.removeProperty("--hover-y");
             artworkElement.style.setProperty("--is-not-interacting", "100%");
-            isHoverActive = true;
+            isHoverActive = null;
         }
     });
 }
