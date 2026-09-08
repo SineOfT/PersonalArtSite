@@ -1638,7 +1638,11 @@ export default function initShikaStateMachine() {
     };
 
     function update(frame) {
-        const scrollbarX = parseFloat(homeScrollbar.getBoundingClientRect().width);
+        let scrollbarX = parseFloat(homeScrollbar.getBoundingClientRect().width);
+        // if reach end of page, send shika outside screen
+        if (window.innerWidth - scrollbarX < 0.001) {
+            scrollbarX = window.innerWidth + BODY_SPRITE_WIDTH;
+        }
         shika.distance = (scrollbarX - shika.x) * shika.direction;
 
         // apply transformations after changed by state machine
