@@ -37,7 +37,8 @@ function generateSectionSites(sectionsData, seriesData, artworksData) {
         return {
             id: sectionId,
             html: updatedSectionSite,
-            styles: [...siteStyles, ...breadcrumbsStyles, ...seriesStyles]
+            styles: [...siteStyles, ...breadcrumbsStyles, ...seriesStyles],
+            title: section["title"],
         };
     });
 }

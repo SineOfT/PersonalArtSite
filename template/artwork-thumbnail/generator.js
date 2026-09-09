@@ -10,7 +10,7 @@ function generateArtworkThumbnail(artworkId, artwork = { }) {
             .replaceAll("%__ARTWORK_IMAGE__%", getThumbnailImage(artworkId))
             .replaceAll("%__ARTWORK_CLASS__%", artwork["censor"] ? "censor" : "")
             .replaceAll("%__ARTWORK_CSS_VARIABLES__%", getThumbnailCssVariables(artwork)),
-        styles: ["artwork-thumbnail"]
+        styles: ["artwork-thumbnail"],
     };
 }
 

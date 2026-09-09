@@ -48,7 +48,8 @@ function generateArtworkSites(artworksData) {
         return {
             id: artworkId,
             html: updatedArtworkHtml,
-            styles: ["artwork"]
+            styles: ["artwork"],
+            title: artwork["title"],
         };
     });
 }

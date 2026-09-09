@@ -9,6 +9,7 @@ const generateArtworkSites = require("./template/artwork/generator");
 const generateSeriesSearch = require("./template/series-search/generator");
 const generateArtworksSearch = require("./template/artworks-search/generator");
 const generateError = require("./template/error/generator");
+const generateSiteMap = require("./template/sitemap/generator");
 const { cmpDate, cmpDateSpan } = require("./template/utility");
 
 const sectionOrderData   = JSON.parse(fs.readFileSync(path.join(__dirname, "/data/section-order.json")));
@@ -84,24 +85,26 @@ function copyTemplateFiles(extension, filename, outDirname) {
     });
 }
 
-function writeGeneratedHtml({ html, styles }, pathname, filename) {
+function writeGeneratedHtml({ html, styles, title }, pathname, filename) {
     const dirPathname = path.join(__dirname, "public", pathname);
     fs.mkdirSync(dirPathname, { recursive: true });
     fs.writeFile(
         path.join(dirPathname, filename),
-        generateTemplate(html, styles),
+        generateTemplate(html, styles, title),
         (err) => { if (err) { throw err; } }
     );
+    const link = path.join("/", pathname, (filename === "index.html") ? "" : filename);
+    return { link, title };
 }
 
 function writeGeneratedHtmlDirectory(htmlStyles, pathname) {
-    writeGeneratedHtml(htmlStyles, pathname, "index.html");
+    return writeGeneratedHtml(htmlStyles, pathname, "index.html");
 }
 
 function writeGeneratedHtmlList(htmlList, pathname) {
-    htmlList.forEach(({ id, html, styles }) => {
-        writeGeneratedHtmlDirectory({ html, styles }, path.join(pathname, id));
-    });
+    return htmlList.map(({ id, html, styles, title }) => (
+        writeGeneratedHtmlDirectory({ html, styles, title }, path.join(pathname, id))
+    ));
 }
 
 
@@ -113,10 +116,32 @@ copyTemplateFiles("css", "style", "/styles");
 copyDirectory("/scripts");
 copyTemplateFiles("js", "script", "/scripts");
 
-writeGeneratedHtmlDirectory(generateHomeSite(sectionOrderData, sectionsData, artworksData, scrollBehaviorData), "");
-writeGeneratedHtmlList(generateSectionSites(sectionsData, seriesData, artworksData), "/sections");
-writeGeneratedHtmlDirectory(generateSeriesSearch(seriesData, artworksData), "/series");
-writeGeneratedHtmlList(generateSeriesSites(sectionsData, seriesData, artworksData), "/series");
-writeGeneratedHtmlDirectory(generateArtworksSearch(sectionsData, seriesData, artworksData), "/artworks");
-writeGeneratedHtmlList(generateArtworkSites(artworksData), "/artworks");
-writeGeneratedHtml(generateError(), "", "404.html");
+const siteLinks = [
+    {
+        title: "Main",
+        links: [
+            writeGeneratedHtmlDirectory(generateHomeSite(sectionOrderData, sectionsData, artworksData, scrollBehaviorData), ""),
+            { link: "/#page-bottom", title: "Info" },
+            writeGeneratedHtml(generateError(), "", "404.html"),
+        ],
+    },
+    {
+        title: "Sections",
+        links: writeGeneratedHtmlList(generateSectionSites(sectionsData, seriesData, artworksData), "/sections"),
+    },
+    {
+        title: "Series",
+        links: [
+            writeGeneratedHtmlDirectory(generateSeriesSearch(seriesData, artworksData), "/series"),
+            ...writeGeneratedHtmlList(generateSeriesSites(sectionsData, seriesData, artworksData), "/series"),
+        ],
+    },
+    {
+        title: "Artworks",
+        links: [
+            writeGeneratedHtmlDirectory(generateArtworksSearch(sectionsData, seriesData, artworksData), "/artworks"),
+            ...writeGeneratedHtmlList(generateArtworkSites(artworksData), "/artworks"),
+        ],
+    },
+];
+writeGeneratedHtmlDirectory(...generateSiteMap(siteLinks, "/sitemap"));

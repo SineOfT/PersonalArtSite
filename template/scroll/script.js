@@ -1,7 +1,7 @@
 import initShikaStateMachine from "/scripts/shika.js";
 import initStateMachineManager from "/scripts/state-machine-manager.js";
 
-const MIN_SECTION_OFFSET = 0.1;
+const MIN_SECTION_OFFSET = 50;
 
 export default function initScrollFunctions(scrollData) {
     const isMinimalAnimations = document.documentElement.classList.contains("minimal-animations");
@@ -25,11 +25,16 @@ export default function initScrollFunctions(scrollData) {
             return { id, transitionElement: transition ? element : false, container, anchor, offset, isInstant: instant };
         });
         sectionOffsets.sort((a, b) => { a.offset - b.offset });
-        if (sectionOffsets[1].offset - sectionOffsets[0].offset < MIN_SECTION_OFFSET * scrollHeight) {
+        if (sectionOffsets[1].offset - sectionOffsets[0].offset < MIN_SECTION_OFFSET * scrollHeight / window.innerWidth) {
             sectionOffsets[0].container.classList.add("d-none");
+        } else {
+            sectionOffsets[0].container.classList.remove("d-none");
         }
-        if (sectionOffsets[sectionOffsets.length-1].offset - sectionOffsets[sectionOffsets.length-2].offset < MIN_SECTION_OFFSET * scrollHeight) {
+        console.log(sectionOffsets[sectionOffsets.length-1].offset - sectionOffsets[sectionOffsets.length-2].offset, MIN_SECTION_OFFSET * scrollHeight / window.innerWidth);
+        if (sectionOffsets[sectionOffsets.length-1].offset - sectionOffsets[sectionOffsets.length-2].offset < MIN_SECTION_OFFSET * scrollHeight / window.innerWidth) {
             sectionOffsets[sectionOffsets.length-1].container.classList.add("d-none");
+        } else {
+            sectionOffsets[sectionOffsets.length-1].container.classList.remove("d-none");
         }
 
         const scrollbarSpriteOffsets = isReducedAnimations

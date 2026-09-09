@@ -35,7 +35,8 @@ function generateSeriesSites(sectionsData, seriesData, artworksData) {
         return {
             id: seriesId,
             html: updatedSeriesSite,
-            styles: [...siteStyles, ...breadcrumbsStyles, ...artworksStyles]
+            styles: [...siteStyles, ...breadcrumbsStyles, ...artworksStyles],
+            title: series["title"],
         };
     });
 }

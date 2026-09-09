@@ -1,0 +1,50 @@
+body {
+    padding: 2rem;
+}
+
+.sitemap-container {
+}
+
+.sitemap-entries-list-container {
+    padding: 1rem;
+    margin: 1rem;
+    border: 2px solid var(--color-site-footer);
+    border-radius: 2rem;
+    background-color: var(--color-site-main);
+}
+
+.sitemap-entries-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(25rem, 100%), 1fr));
+}
+
+.sitemap-entries-list > li {
+    padding-inline: 1rem;
+}
+
+a {
+    color: black;
+    line-height: 1.5em;
+}
+
+@media (min-width: 50rem) {
+    .sitemap-container {
+        display: grid;
+        grid-template-areas:
+            "Main     Series"
+            "Sections Series"
+            "Artworks Artworks";
+    }
+}
+
+@media (min-width: 75rem) {
+    .sitemap-container {
+        display: grid;
+        grid-template-areas:
+            "Main     Sections Series"
+            "Artworks Artworks Artworks";
+    }
+}

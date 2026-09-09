@@ -6,7 +6,7 @@ const generateScroll = require("../scroll/generator");
 const siteHtml = fs.readFileSync(path.join(__dirname, "/site.html"));
 const siteFooterTextHtml = fs.readFileSync(path.join(__dirname, "../../data/footer-text.html"));
 
-function generateSite(mainHtml, breadcrumbsHtml, scrollData) {
+function generateSite(mainHtml, breadcrumbsHtml, scrollData, title) {
     const { html: scrollHtml, styles: scrollStyles } = generateScroll(scrollData);
     const updatedSiteHtml = siteHtml.toString()
         .replaceAll("%__BREADCRUMBS__%", breadcrumbsHtml)
@@ -16,7 +16,8 @@ function generateSite(mainHtml, breadcrumbsHtml, scrollData) {
     
     return {
         html: updatedSiteHtml,
-        styles: [...scrollStyles, "site"]
+        styles: [...scrollStyles, "site"],
+        title,
     };
 }
 

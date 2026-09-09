@@ -6,7 +6,7 @@ const generateSite = require("../site/generator");
 const errorHtml = fs.readFileSync(path.join(__dirname, "/error.html"));
 
 function generateError() {
-    return generateSite(errorHtml, "", []);
+    return generateSite(errorHtml, "", [], "Error");
 }
 
 module.exports = generateError;

@@ -18,7 +18,8 @@ function generateSeriesSearch(seriesData, artworksData) {
 
     return {
         html: updatedSeriesSearchSite,
-        styles: [...siteStyles, ...seriesStyles]
+        styles: [...siteStyles, ...seriesStyles],
+        title: "Series Search",
     };
 }
 

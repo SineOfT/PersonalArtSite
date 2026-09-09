@@ -41,7 +41,8 @@ function generateHomeSite(sectionOrderData, sectionsData, artworksData, scrollBe
 
     return {
         html: updatedHomeSite,
-        styles: [...siteStyles, "transition", "home"]
+        styles: [...siteStyles, "transition", "home"],
+        title: "Home",
     };
 }
 

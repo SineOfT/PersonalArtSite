@@ -220,6 +220,10 @@ html.minimal-animations .toggle-animations-btn {
     color: white;
 }
 
+#footer a:hover {
+    text-decoration-thickness: 3px;
+}
+
 .contact-list {
     margin: 0;
     padding-inline-start: 1rem;
