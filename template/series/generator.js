@@ -13,9 +13,10 @@ function generateSeriesSites(sectionsData, seriesData, artworksData) {
             .filter(([_artworkId, artwork]) => artwork.series.includes(seriesId)));
         const { html: updatedSeriesArtworksListHtml, styles: artworksStyles } =
             generateArtworksList(
+                seriesData,
                 seriesArtworksData,
                 `?series=${seriesId}&reversed&return-url=%2Fseries%2F${seriesId}%2F`,
-                true); // first artwork in series first
+                true); // in series
 
         const { html: seriesBreadcrumbs, styles: breadcrumbsStyles } = generateBreadcrumbs([
             { "href": `/#${series.section}`, "title": "Home" },

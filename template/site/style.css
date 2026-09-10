@@ -165,7 +165,7 @@ body {
 
 #header .header-btn:hover {
     background-color: #DDD;
-    border-color: #000;
+    border-color: black;
 }
 
 html .toggle-animations-btn {
@@ -218,10 +218,6 @@ html.minimal-animations .toggle-animations-btn {
 
 #footer a {
     color: white;
-}
-
-#footer a:hover {
-    text-decoration-thickness: 3px;
 }
 
 .contact-list {

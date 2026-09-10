@@ -72,9 +72,9 @@ export function getDate(date) {
 
 export function cmpDate(dateA, dateB) {
     function cmpNumberOrNull(a, b) {
-        if (!a && !b) { return 0; }
-        if (!b) { return -1; }
-        if (!a) { return  1; }
+        if (a == null && b == null) { return 0; }
+        if (b == null) { return -1; }
+        if (a == null) { return  1; }
         if (a < b) { return  -1; }
         if (a > b) { return   1; }
         return 0;

@@ -37,6 +37,13 @@ button {
     cursor: pointer;
 }
 
+a {
+    color: inherit;
+}
+a:hover {
+    text-decoration-thickness: 2.5px;
+}
+
 p {
     line-height: 1.5em;
     margin: 0;
@@ -51,6 +58,6 @@ img {
 }
 
 #page-bottom {
-    padding-top: 100vh;
-    margin-top: -100vh;
+    padding-top: 101vh;
+    margin-top: -101vh;
 }

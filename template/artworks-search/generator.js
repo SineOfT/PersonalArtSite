@@ -24,7 +24,7 @@ function generateArtworksSearch(sectionsData, seriesData, artworksData) {
         .join("")
 
     const { html: updatedArtworksListHtml, styles: artworksStyles } =
-        generateArtworksList(artworksData);
+        generateArtworksList(seriesData, artworksData);
 
     const artworksDataArray = [...artworksData.entries()]
     const updatedArtworkSearchHtml = artworksSearchHtml.toString()

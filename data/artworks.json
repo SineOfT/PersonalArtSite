@@ -104,7 +104,7 @@
         "date": {
             "year": 2025,
             "month": 2,
-            "order": 7
+            "day": 3
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "layer-count": 1,
@@ -242,7 +242,7 @@
         "date": {
             "year": 2025,
             "month": 3,
-            "order": 15
+            "day": 3
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "layer-count": 1,
@@ -549,172 +549,209 @@
         "title": "Pokemon Vertical Panorama",
         "date": {
             "year": 2024,
-            "month": 8
+            "month": 8,
+            "order": 0
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "layer-count": 9
     }],
     ["roggenrola-vert-pan", {
-        "title": "Rogglenrola in Pokemon Vertical Panorama",
+        "title": "Rogglenrola",
         "date": {
             "year": 2024,
-            "month": 8
+            "month": 8,
+            "order": 1
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
-        "layer-count": 1
+        "layer-count": 1,
+        "parent-artwork": "pokemon-vert-pan"
     }],
     ["klang-vert-pan", {
-        "title": "Klang in Pokemon Vertical Panorama",
+        "title": "Klang",
         "date": {
             "year": 2024,
-            "month": 8
+            "month": 8,
+            "order": 2
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
-        "layer-count": 1
+        "layer-count": 1,
+        "parent-artwork": "pokemon-vert-pan"
     }],
     ["litwick-vert-pan", {
-        "title": "Litwick in Pokemon Vertical Panorama",
+        "title": "Litwick",
         "date": {
             "year": 2024,
-            "month": 8
+            "month": 8,
+            "order": 3
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
-        "layer-count": 1
+        "layer-count": 1,
+        "parent-artwork": "pokemon-vert-pan"
     }],
     ["swadloon-vert-pan", {
-        "title": "Swadloon in Pokemon Vertical Panorama",
+        "title": "Swadloon",
         "date": {
             "year": 2024,
-            "month": 8
+            "month": 8,
+            "order": 4
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
-        "layer-count": 1
+        "layer-count": 1,
+        "parent-artwork": "pokemon-vert-pan"
     }],
     ["trubbish-vert-pan", {
-        "title": "Trubbish in Pokemon Vertical Panorama",
+        "title": "Trubbish",
         "date": {
             "year": 2024,
-            "month": 8
+            "month": 8,
+            "order": 5
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
-        "layer-count": 1
+        "layer-count": 1,
+        "parent-artwork": "pokemon-vert-pan"
     }],
     ["excadrill-vert-pan", {
-        "title": "Excadrill in Pokemon Vertical Panorama",
+        "title": "Excadrill",
         "date": {
             "year": 2024,
-            "month": 8
+            "month": 8,
+            "order": 6
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
-        "layer-count": 1
+        "layer-count": 1,
+        "parent-artwork": "pokemon-vert-pan"
     }],
     ["pancham-vert-pan", {
-        "title": "Pancham in Pokemon Vertical Panorama",
+        "title": "Pancham",
         "date": {
             "year": 2024,
-            "month": 8
+            "month": 8,
+            "order": 7
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
-        "layer-count": 1
+        "layer-count": 1,
+        "parent-artwork": "pokemon-vert-pan"
     }],
     ["lapras-vert-pan", {
-        "title": "Lapras in Pokemon Vertical Panorama",
+        "title": "Lapras",
         "date": {
             "year": 2024,
-            "month": 8
+            "month": 8,
+            "order": 8
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
-        "layer-count": 1
+        "layer-count": 1,
+        "parent-artwork": "pokemon-vert-pan"
     }],
     ["spheal-vert-pan", {
-        "title": "Spheal in Pokemon Vertical Panorama",
+        "title": "Spheal",
         "date": {
             "year": 2024,
-            "month": 8
+            "month": 8,
+            "order": 9
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
-        "layer-count": 1
+        "layer-count": 1,
+        "parent-artwork": "pokemon-vert-pan"
     }],
     ["vulpix-vert-pan", {
-        "title": "Vulpix in Pokemon Vertical Panorama",
+        "title": "Vulpix",
         "date": {
             "year": 2024,
-            "month": 8
+            "month": 8,
+            "order": 10
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
-        "layer-count": 1
+        "layer-count": 1,
+        "parent-artwork": "pokemon-vert-pan"
     }],
     ["victreebel-vert-pan", {
-        "title": "Victreebel in Pokemon Vertical Panorama",
+        "title": "Victreebel",
         "date": {
             "year": 2024,
-            "month": 8
+            "month": 8,
+            "order": 11
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
-        "layer-count": 1
+        "layer-count": 1,
+        "parent-artwork": "pokemon-vert-pan"
     }],
     ["snorlax-vert-pan", {
-        "title": "Snorlax in Pokemon Vertical Panorama",
+        "title": "Snorlax",
         "date": {
             "year": 2024,
-            "month": 8
+            "month": 8,
+            "order": 12
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
-        "layer-count": 1
+        "layer-count": 1,
+        "parent-artwork": "pokemon-vert-pan"
     }],
     ["togepi-vert-pan", {
-        "title": "Togepi in Pokemon Vertical Panorama",
+        "title": "Togepi",
         "date": {
             "year": 2024,
-            "month": 8
+            "month": 8,
+            "order": 13
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
-        "layer-count": 1
+        "layer-count": 1,
+        "parent-artwork": "pokemon-vert-pan"
     }],
     ["espurr-vert-pan", {
-        "title": "Espurr in Pokemon Vertical Panorama",
+        "title": "Espurr",
         "date": {
             "year": 2024,
-            "month": 8
+            "month": 8,
+            "order": 14
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
-        "layer-count": 1
+        "layer-count": 1,
+        "parent-artwork": "pokemon-vert-pan"
     }],
     ["dragonair-vert-pan", {
-        "title": "Dragonair in Pokemon Vertical Panorama",
+        "title": "Dragonair",
         "date": {
             "year": 2024,
-            "month": 8
+            "month": 8,
+            "order": 15
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
-        "layer-count": 1
+        "layer-count": 1,
+        "parent-artwork": "pokemon-vert-pan"
     }],
     ["emolga-vert-pan", {
-        "title": "Emolga in Pokemon Vertical Panorama",
+        "title": "Emolga",
         "date": {
             "year": 2024,
-            "month": 8
+            "month": 8,
+            "order": 16
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
-        "layer-count": 1
+        "layer-count": 1,
+        "parent-artwork": "pokemon-vert-pan"
     }],
     ["fletchling-vert-pan", {
-        "title": "Fletchling in Pokemon Vertical Panorama",
+        "title": "Fletchling",
         "date": {
             "year": 2024,
-            "month": 8
+            "month": 8,
+            "order": 17
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
-        "layer-count": 1
+        "layer-count": 1,
+        "parent-artwork": "pokemon-vert-pan"
     }],
     ["hydreigon-vert-pan", {
-        "title": "Hydreigon in Pokemon Vertical Panorama",
+        "title": "Hydreigon",
         "date": {
             "year": 2024,
-            "month": 8
+            "month": 8,
+            "order": 18
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
-        "layer-count": 1
+        "layer-count": 1,
+        "parent-artwork": "pokemon-vert-pan"
     }],
     ["mimikyu", {
         "title": "Mimikyu Autumn",
