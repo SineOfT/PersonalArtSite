@@ -1,1 +1,30 @@
+<div class="search-banner p-m">
+    <span class="js-disabled-display ft-italic">JavaScript must be enabled to enable search functionality</span>
+    <form method="get" id="search-form" class="v-none">
+        <div class="flex-row-stretch pb-m">
+            <input type="text" name="search" class="search-input flex-item-main" placeholder="Search" />
+            <button type="submit" class="search-btn">Search</button>
+        </div>
+        <div class="flex-row-wrap">
+            <fieldset class="section-checkboxes">
+                <legend>In section</legend>
+                %__SECTIONS_CHECKBOXES__%
+            </fieldset>
+        </div>
+    </form>
+</div>
+
+<div class="px-l fs-s">
+    <span class="series-count">%__SERIES_COUNT__%</span> series matched your search
+</div>
+
+
 %__SERIES_LIST__%
+
+<script type="module" defer>
+    import initSeriesSearch from "/scripts/series-search.js";
+
+    const seriesData = JSON.parse('%__SERIES_DATA__%');
+
+    initSeriesSearch(seriesData);
+</script>

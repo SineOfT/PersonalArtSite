@@ -6,16 +6,10 @@ const generateArtworkThumbnail = require("../artwork-thumbnail/generator");
 const seriesListHtml = fs.readFileSync(path.join(__dirname, "/series-list.html"));
 const listSeriesHtml = fs.readFileSync(path.join(__dirname, "/list-series.html"));
 
-function generateSeriesList(seriesList, seriesData, artworksData) {
+function generateSeriesList(seriesData, artworksData) {
     let artworkStyles = [];
-    const updatedListSeries = seriesList
-        .map((seriesId, index) => {
-            const series = seriesData.get(seriesId);
-            if (!series) {
-                console.warn(`Series ${seriesId} not found`);
-                return "";
-            }
-
+    const updatedListSeries = [...seriesData.entries()]
+        .map(([seriesId, series], index) => {
             const artworkId = series["thumbnail"];
             const { html: seriesThumbnail, styles: thisArtworkStyles } =
                 generateArtworkThumbnail(artworkId, artworksData.get(artworkId));

@@ -8,8 +8,9 @@ const sectionHtml = fs.readFileSync(path.join(__dirname, "/section.html"));
 
 function generateSectionSites(sectionsData, seriesData, artworksData) {
     return [...sectionsData.entries()].map(([sectionId, section]) => {
-        const sectionSeriesList = section["series"] ?? [];
-        const seriesScroll = sectionSeriesList.map((seriesId) => {
+        const sectionSeriesData = new Map([...seriesData.entries()]
+            .filter(([_seriesId, series]) => series["section"] === sectionId));
+        const seriesScroll = section["series"].map((seriesId) => {
             const series = seriesData.get(seriesId);
             return {
                 sectionId: seriesId,
@@ -21,7 +22,7 @@ function generateSectionSites(sectionsData, seriesData, artworksData) {
         });
         
         const { html: updatedSectionSeriesListHtml, styles: seriesStyles } =
-            generateSeriesList(sectionSeriesList, seriesData, artworksData);
+            generateSeriesList(sectionSeriesData, artworksData);
 
         const { html: sectionBreadcrumbs, styles: breadcrumbsStyles } = generateBreadcrumbs([
             { "href": `/#${sectionId}`, "title": "Home" }

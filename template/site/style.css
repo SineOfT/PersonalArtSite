@@ -35,7 +35,7 @@ body {
     top: calc(var(--site-header-height) * -1);
     z-index: 99999;
     background-color: var(--color-site-main);
-    font-family: "Trebuchet MS", sans-serif;
+    font-family: var(--font-sans-serif);
     font-weight: bold;
     color: var(--color-secondary);
     transition: top 0.2s;

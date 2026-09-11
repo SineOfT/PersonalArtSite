@@ -40,7 +40,7 @@ function generateArtworksSearch(sectionsData, seriesData, artworksData) {
 
     return {
         html: updatedArtworksSearchSite,
-        styles: [...siteStyles, ...artworksStyles, "artworks-search"],
+        styles: [...siteStyles, ...artworksStyles],
         title: "Artworks Search",
     };
 }

@@ -30,7 +30,6 @@ export default function initScrollFunctions(scrollData) {
         } else {
             sectionOffsets[0].container.classList.remove("d-none");
         }
-        console.log(sectionOffsets[sectionOffsets.length-1].offset - sectionOffsets[sectionOffsets.length-2].offset, MIN_SECTION_OFFSET * scrollHeight / window.innerWidth);
         if (sectionOffsets[sectionOffsets.length-1].offset - sectionOffsets[sectionOffsets.length-2].offset < MIN_SECTION_OFFSET * scrollHeight / window.innerWidth) {
             sectionOffsets[sectionOffsets.length-1].container.classList.add("d-none");
         } else {

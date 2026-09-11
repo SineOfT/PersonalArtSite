@@ -132,7 +132,7 @@ const siteLinks = [
     {
         title: "Series",
         links: [
-            writeGeneratedHtmlDirectory(generateSeriesSearch(seriesData, artworksData), "/series"),
+            writeGeneratedHtmlDirectory(generateSeriesSearch(sectionsData, seriesData, artworksData), "/series"),
             ...writeGeneratedHtmlList(generateSeriesSites(sectionsData, seriesData, artworksData), "/series"),
         ],
     },
