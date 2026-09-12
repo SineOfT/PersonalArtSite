@@ -1,8 +1,8 @@
-import { getSearchParams, filterArtworksData } from "/scripts/artworks-search.js";
+import { filterArtworksData } from "/scripts/artworks-search.js";
 import { toURLCase } from "/scripts/util.js";
 
 export default function initArtworksList(artworksData) {
-    const artworkCount = updateArtworksList(artworksData, getSearchParams());
+    const artworkCount = updateArtworksList(artworksData, { });
     
     const artworkCountDisplay = document.querySelectorAll(".artwork-count");
     for (const display of artworkCountDisplay) {

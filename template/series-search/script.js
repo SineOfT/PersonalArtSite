@@ -9,14 +9,13 @@ let searchData = getSearchFromSearchParams(searchParams);
 let sectionsData = getSectionsFromSearchParams(searchParams);
 
 export default function initSeriesSearch(seriesData) {
+    const searchForm = document.getElementById("search-form");
     const seriesCountDisplay = document.querySelector(".series-count");
 
     const updateSeries = (searchParams) => {
         const seriesCount = updateSeriesList(seriesData, searchParams);
         seriesCountDisplay.textContent = seriesCount;
     }
-
-    const searchForm = document.getElementById("search-form");
 
     initSearch(searchForm, updateSeries);
     initSearchInput(searchForm, updateSeries);

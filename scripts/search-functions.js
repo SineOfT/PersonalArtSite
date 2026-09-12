@@ -30,7 +30,6 @@ export function initExcludeSketchesCheck(form, update) {
     
     const searchParams = new URLSearchParams(window.location.search);
     const excludeSketches = getExcludeSkechesFromSearchParams(searchParams);
-    console.log(excludeSketches);
 
     if (excludeSketches) excludeSketchesCheck.setAttribute("checked", true);
     
@@ -65,7 +64,7 @@ export function initSectionCheckboxes(form, update) {
 }
 
 export const getSeriesFromSearchParams = (searchParams) => searchParams.getAll("series");
-export function initSeriesCheckboxes(form) {
+export function initSeriesCheckboxes(form, update) {
     const seriesCheckboxes = form.querySelector(".series-checkboxes");
     const seriesCheckboxArray = [...seriesCheckboxes.querySelectorAll("input[name='series']")]
 
