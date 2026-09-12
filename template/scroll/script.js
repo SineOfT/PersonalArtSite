@@ -21,7 +21,7 @@ export default function initScrollFunctions(scrollData) {
             const anchor = container.querySelector(".scroll-anchor-marker");
             if (!element) { return { id, transitionElement: false, offset: scrollHeight }; }
             const viewportOffset = element.getBoundingClientRect();
-            const offset = scrollY + viewportOffset.top;
+            const offset = Math.max(scrollY + viewportOffset.top - 10, 0);
             return { id, transitionElement: transition ? element : false, container, anchor, offset, isInstant: instant };
         });
         sectionOffsets.sort((a, b) => { a.offset - b.offset });
@@ -80,9 +80,9 @@ export default function initScrollFunctions(scrollData) {
                     sectionOffsets.forEach(({ id, transitionElement }) => {
                         if (!transitionElement) { return; }
                         if (id === currSection) {
-                            showSection(transitionElement);
+                            showSection(transitionElement, shouldTransition);
                         } else {
-                            hideSection(transitionElement);
+                            hideSection(transitionElement, shouldTransition);
                         }
                     });
                 }
@@ -188,7 +188,9 @@ export default function initScrollFunctions(scrollData) {
             return { currSection, isNew };
         }
 
-        function showSection(element) {
+        function showSection(element, shouldTransition) {
+            element.classList.remove("v-none");
+
             if (element.classList.contains("show")) { return; }
 
             element.classList.add("show");
@@ -196,7 +198,11 @@ export default function initScrollFunctions(scrollData) {
             element.classList.remove("hide");
         }
 
-        function hideSection(element) {
+        function hideSection(element, shouldTransition) {
+            if (!shouldTransition) {
+                element.classList.add("v-none");
+            }
+
             if (element.classList.contains("hide")) { return; }
 
             element.classList.remove("show");
