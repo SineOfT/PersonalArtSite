@@ -89,6 +89,7 @@ html {
 
 .artwork-media-container {
     grid-area: image;
+    position: relative;
     width: 100%;
     height: 100%;
     background-color: #FFF1;
@@ -96,6 +97,15 @@ html {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+}
+
+.artwork-media-container[data-note]::after {
+    content: attr(data-note);
+    position: absolute;
+    inset: auto 0 0;
+    padding: 0.3rem;
+    background-color: var(--color-backdrop);
+    color: white;
 }
 
 .artwork-media-interact {

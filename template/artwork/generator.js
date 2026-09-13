@@ -14,6 +14,8 @@ function generateArtworkSites(artworksData) {
         const updatedLayersHtml = Array.from(
             { length: layerCount },
             (_, index) => {
+                const note = artwork["notes"]?.[index.toString()];
+                const noteAttr = note ? `data-note="${note}"` : "";
                 const isVideo = (artwork["animated"] && index === 0);
                 const updatedLayerMediaContentHtml = isVideo
                     ? layerVideo.toString()
@@ -22,6 +24,7 @@ function generateArtworkSites(artworksData) {
                         .replaceAll("%__LAYER_MEDIA__%", `${artworkId}/${index}.webp`);
                 return layerHtml.toString()
                     .replaceAll("%__LAYER_MEDIA_CONTENT__%", updatedLayerMediaContentHtml)
+                    .replaceAll("%__LAYER_MEDIA_ATTRS__%", noteAttr)
                     .replaceAll("%__LAYER_ID__%", index)
                     .replaceAll("%__LAYER_CURR__%", index + 1)
                     .replaceAll("%__LAYER_COUNT__%", layerCount)
