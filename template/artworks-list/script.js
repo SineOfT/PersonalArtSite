@@ -1,8 +1,8 @@
-import { filterArtworksData } from "/scripts/artworks-search.js";
+import { getArtworkSearchParams, filterArtworksData } from "/scripts/artworks-search.js";
 import { toURLCase } from "/scripts/util.js";
 
 export default function initArtworksList(artworksData) {
-    const artworkCount = updateArtworksList(artworksData, { });
+    const artworkCount = updateArtworksList(artworksData, getArtworkSearchParams());
     
     const artworkCountDisplay = document.querySelectorAll(".artwork-count");
     for (const display of artworkCountDisplay) {
@@ -43,7 +43,10 @@ export function updateArtworksList(artworksData, searchParams) {
                 }
             }
 
-            window.location.href = url.toString();
+            setTimeout(() => {
+                window.location.href = url.toString();
+
+            }, 1000);
         });
     }
 

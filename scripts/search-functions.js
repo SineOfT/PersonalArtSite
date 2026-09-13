@@ -45,7 +45,7 @@ export function initSectionCheckboxes(form, update) {
     const sectionCheckboxArray = [...sectionCheckboxes.querySelectorAll("input[name='sections']")];
 
     const searchParams = new URLSearchParams(window.location.search);
-    const sections = getSearchFromSearchParams(searchParams);
+    const sections = getSectionsFromSearchParams(searchParams);
     
     sectionCheckboxArray.forEach((checkbox) => {
         if (sections?.includes(checkbox.value)) {

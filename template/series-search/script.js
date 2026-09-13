@@ -4,16 +4,23 @@ import {
 } from "/scripts/search-functions.js";
 import { updateSeriesList } from "/scripts/series-list.js";
 
-const searchParams = new URLSearchParams(window.location.search);
-let searchData = getSearchFromSearchParams(searchParams);
-let sectionsData = getSectionsFromSearchParams(searchParams);
+let {
+    search: searchData,
+    sections: sectionsData,
+} = getSeriesSearchParams();
 
 export default function initSeriesSearch(seriesData) {
     const searchForm = document.getElementById("search-form");
     const seriesCountDisplay = document.querySelector(".series-count");
 
-    const updateSeries = (searchParams) => {
-        const seriesCount = updateSeriesList(seriesData, searchParams);
+    const updateSeries = ({ search, sections }) => {
+        if (search != null) { searchData = search; }
+        if (sections != null) { sectionsData = sections; }
+
+        const seriesCount = updateSeriesList(seriesData, {
+            search: searchData,
+            sections: sectionsData,
+        });
         seriesCountDisplay.textContent = seriesCount;
     }
 
@@ -22,25 +29,29 @@ export default function initSeriesSearch(seriesData) {
     initSectionCheckboxes(searchForm, updateSeries);
 }
 
+export function getSeriesSearchParams() {
+    const searchParams = new URLSearchParams(window.location.search);
+    const search = getSearchFromSearchParams(searchParams);
+    const sections = getSectionsFromSearchParams(searchParams);
+    return { search, sections };
+}
+
 export function filterSeriesData(seriesData,
     { search, sections }
 ) {
-    if (search != null) { searchData = search; }
-    if (sections != null) { sectionsData = sections; }
-
     let filteredSeriesData = [...seriesData];
 
-    if (searchData != null && searchData != "") {
-        const searchRegex = searchData.split(" ").map(word => new RegExp(`.*${word}.*`, "i"));
+    if (search != null && search != "") {
+        const searchRegex = search.split(" ").map(word => new RegExp(`.*${word}.*`, "i"));
         filteredSeriesData = filteredSeriesData.filter(([_seriesId, series]) => {
             const seriesString = series.title + series.description + series.tags;
             return searchRegex.every(regex => regex.test(seriesString));
         });
     }
 
-    if (sectionsData.length > 0) {
+    if (sections.length > 0) {
         filteredSeriesData = filteredSeriesData.filter(([_seriesId, series]) => {
-            return sectionsData.includes(series.section);
+            return sections.includes(series.section);
         });
     }
 
