@@ -61,17 +61,6 @@
         "thumbnail": "anatomy-thumbnail.webp",
         "color": "#AAA"
     }],
-    ["ghibli", {
-        "title": "Studio Ghibli Artworks",
-        "date-span": { },
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
-        "artworks": [
-            "ponyo",
-            "medium-totoro"
-        ],
-        "thumbnail": "medium-totoro",
-        "color": "#FCF"
-    }],
     ["pokemon-vert-pan", {
         "title": "Pokemon Vertical Panorama",
         "date-span": {
@@ -174,16 +163,6 @@
         "thumbnail": "kanroji-bunny",
         "color": "#F9D"
     }],
-    ["misc-pokemon", {
-        "title": "Miscellaneous Pokemon Artworks",
-        "date-span": { },
-        "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
-        "artworks": [
-            "mimikyu"
-        ],
-        "thumbnail": "mimikyu",
-        "color": "#EBE"
-    }],
     ["pokemon-az", {
         "title": "Pokemonth 2025 A-Z",
         "date-span": {
@@ -236,10 +215,63 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "artworks": [
-            "dogmas-tree-2025"
+            "dogmas-tree-2025",
+            "catmas-tree-2024"
         ],
         "thumbnail": "dogmas-tree-2025",
         "color": "#A7A"
+    }],
+    ["followers", {
+        "title": "Followers Appreciation",
+        "date-span": {
+            "start-date": {
+                "year": 2024,
+                "month": 9
+            },
+            "end-date": "no-range"
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "artworks": [
+            "followers-100",
+            "followers-200",
+            "followers-300",
+            "followers-400",
+            "followers-500",
+            "followers-600"
+        ],
+        "thumbnail": "followers-500",
+        "color": "#E89"
+    }],
+    ["ghibli", {
+        "title": "Studio Ghibli Artworks",
+        "date-span": { },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "artworks": [
+            "ponyo",
+            "medium-totoro"
+        ],
+        "thumbnail": "medium-totoro",
+        "color": "#FCF"
+    }],
+    ["disney", {
+        "title": "Disney Artworks",
+        "date-span": { },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "artworks": [
+            "pooh-friends"
+        ],
+        "thumbnail": "pooh-friends",
+        "color": "#A8E"
+    }],
+    ["misc-pokemon", {
+        "title": "Miscellaneous Pokemon Artworks",
+        "date-span": { },
+        "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "artworks": [
+            "mimikyu"
+        ],
+        "thumbnail": "mimikyu",
+        "color": "#EBE"
     }],
     ["misc", {
         "title": "Miscellaneous",
