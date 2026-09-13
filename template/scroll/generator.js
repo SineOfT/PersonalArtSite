@@ -43,7 +43,7 @@ function generateScroll(scrollData) {
     const updatedScrollHtml = scrollHtml.toString()
         .replaceAll("%__SCROLLBAR_SPRITES__%", updatedScrollbarSpritesHtml)
         .replaceAll("%__SCROLL_ANCHORS__%", updatedScrollAnchorsHtml)
-        .replaceAll("%__SCROLL_DATA__%", JSON.stringify(scrollData));
+        .replaceAll("%__SCROLL_DATA__%", JSON.stringify(scrollData).replaceAll("'", "\\'"));
 
     return {
         html: updatedScrollHtml,

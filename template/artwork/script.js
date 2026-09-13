@@ -1,4 +1,4 @@
-import { getSearchParams, filterArtworksData } from "/scripts/artworks-search.js";
+import { filterArtworksData } from "/scripts/artworks-search.js";
 
 const ZOOM_VALUES = [1, 2, 3, 4, 5, 7.5, 10, 15, 20, 30, 40, 50];
 const MAX_ZOOM_INDEX = ZOOM_VALUES.length-1;
@@ -22,7 +22,7 @@ export default function initArtwork(artworkId, artworksData) {
     const returnUrl = searchParams.get("return-url");
     const isReversed = searchParams.get("reversed") !== null;
 
-    const filteredArtworkIds = filterArtworksData(artworksData, getSearchParams());
+    const filteredArtworkIds = filterArtworksData(artworksData, { });
     if (isReversed) filteredArtworkIds.reverse();
 
     const index = filteredArtworkIds.indexOf(artworkId);

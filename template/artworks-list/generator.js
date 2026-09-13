@@ -45,7 +45,7 @@ function generateArtworksList(seriesData, artworksData, searchParams, isInSeries
         .join("\n");
     
     const updatedArtworksList = artworksListHtml.toString()
-        .replaceAll("%__ARTWORKS_DATA__%", JSON.stringify([...artworksData.entries()]))
+        .replaceAll("%__ARTWORKS_DATA__%", JSON.stringify([...artworksData.entries()]).replaceAll("'", "\\'"))
         .replaceAll("%__ARTWORKS_LIST__%", updatedListArtworksHtml);
     
     return {

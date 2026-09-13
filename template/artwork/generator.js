@@ -35,7 +35,7 @@ function generateArtworkSites(artworksData) {
         const artworkLeftId  = [...artworksData.keys()][artworkIndex-1] ?? "";
         const artworkRightId = [...artworksData.keys()][artworkIndex+1] ?? "";
         let updatedArtworkHtml = artworkHtml.toString()
-            .replaceAll("%__ARTWORKS_DATA__%", JSON.stringify([...artworksData.entries()]))
+            .replaceAll("%__ARTWORKS_DATA__%", JSON.stringify([...artworksData.entries()]).replaceAll("'", "\\'"))
             .replaceAll("%__ARTWORK_ID__%", artworkId)
             .replaceAll("%__ARTWORK_TITLE__%", artwork["title"])
             .replaceAll("%__ARTWORK_DATE__%", getDate(artwork["date"]))

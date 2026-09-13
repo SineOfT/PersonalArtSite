@@ -31,7 +31,7 @@ function generateArtworksSearch(sectionsData, seriesData, artworksData) {
         .replaceAll("%__ARTWORKS_LIST__%", updatedArtworksListHtml)
         .replaceAll("%__ARTWORK_COUNT__%", artworksDataArray.length)
         .replaceAll("%__ARTWORK_COUNT_PLURAL__%", artworksDataArray.length === 1 ? "" : "s")
-        .replaceAll("%__ARTWORKS_DATA__%", JSON.stringify(artworksDataArray))
+        .replaceAll("%__ARTWORKS_DATA__%", JSON.stringify(artworksDataArray).replaceAll("'", "\\'"))
         .replaceAll("%__SECTIONS_CHECKBOXES__%", sectionCheckboxes)
         .replaceAll("%__SERIES_CHECKBOXES__%", seriesCheckboxes);
 

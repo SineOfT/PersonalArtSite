@@ -22,7 +22,7 @@ function generateSeriesSearch(sectionsData, seriesData, artworksData) {
     const updatedSeriesSearchHtml = seriesSearchHtml.toString()
         .replaceAll("%__SERIES_LIST__%", updatedSeriesListHtml)
         .replaceAll("%__SERIES_COUNT__%", seriesDataArray.length)
-        .replaceAll("%__SERIES_DATA__%", JSON.stringify(seriesDataArray))
+        .replaceAll("%__SERIES_DATA__%", JSON.stringify(seriesDataArray).replaceAll("'", "\\'"))
         .replaceAll("%__SECTIONS_CHECKBOXES__%", sectionCheckboxes);
 
     const { html: updatedSeriesSearchSite, styles: siteStyles } =

@@ -2,6 +2,7 @@ import initShikaStateMachine from "/scripts/shika.js";
 import initStateMachineManager from "/scripts/state-machine-manager.js";
 
 const MIN_SECTION_OFFSET = 50;
+const SECTION_FRAG_OFFSET = -20;
 
 export default function initScrollFunctions(scrollData) {
     const isMinimalAnimations = document.documentElement.classList.contains("minimal-animations");
@@ -21,7 +22,7 @@ export default function initScrollFunctions(scrollData) {
             const anchor = container.querySelector(".scroll-anchor-marker");
             if (!element) { return { id, transitionElement: false, offset: scrollHeight }; }
             const viewportOffset = element.getBoundingClientRect();
-            const offset = Math.max(scrollY + viewportOffset.top - 10, 0);
+            const offset = Math.max(scrollY + viewportOffset.top + SECTION_FRAG_OFFSET, 0);
             return { id, transitionElement: transition ? element : false, container, anchor, offset, isInstant: instant };
         });
         sectionOffsets.sort((a, b) => { a.offset - b.offset });

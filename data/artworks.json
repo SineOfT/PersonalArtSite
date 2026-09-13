@@ -1468,6 +1468,39 @@
         "layer-count": 5,
         "scale": 1.5
     }],
+    ["dogmas-tree-2025", {
+        "title": "Dog'mas Tree 2025",
+        "date": {
+            "year": 2025,
+            "month": 12
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 28,
+        "animated": true,
+        "position": { "y": 0.05 },
+        "scale": 1.5
+    }],
+    ["chess-checkmate", {
+        "title": "Checkmate",
+        "date": {
+            "year": 2026,
+            "month": 1
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 5,
+        "position": { "y": -0.1 },
+        "scale": 1.5
+    }],
+    ["heracles-hydra", {
+        "title": "Heracles vs Lernaean Hydra",
+        "date": {
+            "year": 2026,
+            "month": 2
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 11,
+        "scale": 1.5
+    }],
     ["hiccup-toothless", {
         "title": "Hiccup & Toothless",
         "date": {

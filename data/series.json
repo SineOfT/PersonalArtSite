@@ -225,12 +225,30 @@
         "thumbnail": "axew-az",
         "color": "#E8F"
     }],
+    ["xmas-tree", {
+        "title": "X'mas Tree",
+        "date-span": {
+            "start-date": {
+                "year": 2024,
+                "month": 12
+            },
+            "end-date": "no-range"
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "artworks": [
+            "dogmas-tree-2025"
+        ],
+        "thumbnail": "dogmas-tree-2025",
+        "color": "#A7A"
+    }],
     ["misc", {
         "title": "Miscellaneous",
         "date-span": { },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "artworks": [
-            "hiccup-toothless"
+            "hiccup-toothless",
+            "heracles-hydra",
+            "chess-checkmate"
         ],
         "thumbnail": "hiccup-toothless",
         "color": "#CAB"
