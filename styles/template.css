@@ -94,6 +94,7 @@ input[type="date"] {
     border: 1px solid var(--color-secondary);
     border-radius: 0.2rem;
     background-color: white;
+    color: black;
 }
 select {
     font-size: 0.8em;
@@ -102,6 +103,7 @@ select {
 input[type="date"] {
     margin: 0;
     font-family: var(--font-sans-serif);
+    display: inline-block;
 }
 
 input[type="checkbox"] {
