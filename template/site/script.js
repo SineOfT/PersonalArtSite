@@ -19,6 +19,7 @@ header.addEventListener("mouseleave", () => {
 headerToggleBtn.addEventListener("input", () => {
     if (!headerToggleBtn.checked) {
         headerToggleBtn.blur();
+        header.classList.remove("hover");
     }
 });
 

@@ -101,14 +101,24 @@ body {
     transform: rotate(45deg);
 }
 
-#header:has(.header-container:hover),
 #header:has(.header-container:focus-within),
 #header.hover {
     top: 0;
 }
 
-:is(.header-container:hover, .header-container:focus-within, #header.hover) .toggle-button-label::after {
+.header-container:focus-within .toggle-button-label::after,
+#header.hover .toggle-button-label::after {
     transform: rotate(45deg);
+}
+
+@media (hover: hover) {
+    #header:has(.header-container:hover) {
+        top: 0;
+    }
+
+    .header-container:hover .toggle-button-label::after {
+        transform: rotate(45deg);
+    }
 }
 
 #header .header-body {
