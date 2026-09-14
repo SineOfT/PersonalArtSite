@@ -101,9 +101,7 @@ select {
     font-family: inherit;
 }
 input[type="date"] {
-    margin: 0;
     font-family: var(--font-sans-serif);
-    display: inline-block;
 }
 
 input[type="checkbox"] {
