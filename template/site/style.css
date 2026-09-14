@@ -189,7 +189,7 @@ html.minimal-animations .toggle-animations-btn {
     bottom: calc(var(--site-footer-height) * -1);
     background-image: url(/assets/site/dirt-texture.svg);
     color: white;
-    z-index: 99999;
+    z-index: 9999;
 }
  
 #footer .footer-body {
