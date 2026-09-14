@@ -16,7 +16,7 @@ function generateSeriesSites(sectionsData, seriesData, artworksData) {
                 seriesData,
                 seriesArtworksData,
                 `?series=${seriesId}&reversed&return-url=%2Fseries%2F${seriesId}%2F`,
-                true); // in series
+                series);
 
         const { html: seriesBreadcrumbs, styles: breadcrumbsStyles } = generateBreadcrumbs([
             { "href": `/#${series.section}`, "title": "Home" },

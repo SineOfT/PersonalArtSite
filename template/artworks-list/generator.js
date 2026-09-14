@@ -7,10 +7,10 @@ const artworksListHtml = fs.readFileSync(path.join(__dirname, "/artworks-list.ht
 const listArtworkHtml = fs.readFileSync(path.join(__dirname, "/list-artwork.html"));
 const artworkParentHtml = fs.readFileSync(path.join(__dirname, "/artwork-parent.html"));
 
-function generateArtworksList(seriesData, artworksData, searchParams, isInSeries) {
+function generateArtworksList(seriesData, artworksData, searchParams, isInSeriesData) {
     let artworkStyles = [];
     const sortedArtworksData = [...artworksData.entries()];
-    if (isInSeries) sortedArtworksData.reverse();
+    if (isInSeriesData?.["ordered"]) sortedArtworksData.reverse();
     const updatedListArtworksHtml = sortedArtworksData
         .map(([artworkId, artwork]) => {
             const { html: artworkThumbnail, styles: thisArtworkStyles } =
@@ -18,14 +18,14 @@ function generateArtworksList(seriesData, artworksData, searchParams, isInSeries
             if (artworkStyles.length === 0) { artworkStyles = thisArtworkStyles; }
 
             let updatedArtworkParent = "";
-            if (!isInSeries) {
+            if (isInSeriesData == null) {
                 const seriesId = artwork.series[0];
                 const seriesTitle = seriesData.get(seriesId)?.["title"];
                 updatedArtworkParent = artworkParentHtml.toString()
                     .replaceAll("%__PARENT_PATH__%", `/series/${seriesId}/`)
                     .replaceAll("%__PARENT_TITLE__%", seriesTitle);
 
-            } else if (isInSeries && artwork["parent-artwork"] != null) {
+            } else if (artwork["parent-artwork"] != null) {
                 const parentId = artwork["parent-artwork"];
                 updatedArtworkParent = artworkParentHtml.toString()
                     .replaceAll("%__PARENT_PATH__%", `/artworks/${parentId}/${searchParams ?? ""}`)

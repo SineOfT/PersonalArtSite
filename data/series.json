@@ -59,7 +59,8 @@
             "anatomy-32-foot-1"
         ],
         "thumbnail": "anatomy-thumbnail.webp",
-        "color": "#AAA"
+        "color": "#AAA",
+        "ordered": true
     }],
     ["pokemon-vert-pan", {
         "title": "Pokemon Vertical Panorama",
@@ -93,7 +94,8 @@
             "hydreigon-vert-pan"
         ],
         "thumbnail": "pokemon-vert-pan",
-        "color": "#DBF"
+        "color": "#DBF",
+        "ordered": true
     }],
     ["ink24", {
         "title": "Inktober 2024",
@@ -138,7 +140,8 @@
             "kyojuro-ink24"
         ],
         "thumbnail": "tomioka-ink24",
-        "color": "#FBE"
+        "color": "#FBE",
+        "ordered": true
     }],
     ["kny-animal", {
         "title": "Kimetsu no Yaiba + Favorite Animal Series",
@@ -162,7 +165,8 @@
             "yushiro-chachamaru"
         ],
         "thumbnail": "kanroji-bunny",
-        "color": "#F9D"
+        "color": "#F9D",
+        "ordered": true
     }],
     ["pokemon-az", {
         "title": "Pokemonth 2025 A-Z",
@@ -203,7 +207,8 @@
             "zweilous-az"
         ],
         "thumbnail": "axew-az",
-        "color": "#E8F"
+        "color": "#E8F",
+        "ordered": true
     }],
     ["xmas-tree", {
         "title": "X'mas Tree",
