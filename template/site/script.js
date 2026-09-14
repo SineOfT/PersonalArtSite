@@ -1,6 +1,7 @@
 const header = document.getElementById("header");
 const headerContainer = header.querySelector(".header-container");
 const headerContent = header.querySelector(".header-content");
+const headerToggleBtn = document.getElementById("header-toggle-button");
 
 const footer = document.getElementById("footer");
 const footerContent = footer.querySelector(".footer-content");
@@ -13,6 +14,12 @@ headerContainer.addEventListener("mouseenter", () => {
 
 header.addEventListener("mouseleave", () => {
     header.classList.remove("hover");
+});
+
+headerToggleBtn.addEventListener("input", () => {
+    if (!headerToggleBtn.checked) {
+        headerToggleBtn.blur();
+    }
 });
 
 let prevHeaderContentHeight = NaN;
