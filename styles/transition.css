@@ -13,6 +13,7 @@
 
 .fade.hide {
     opacity: 0;
+    pointer-events: none;
 }
 
 .fade.show {
