@@ -144,7 +144,8 @@
         "title": "Kimetsu no Yaiba + Favorite Animal Series",
         "date-span": {
             "start-date": {
-                "year": 2025
+                "year": 2025,
+                "month": 4
             },
             "end-date": "current"
         },
@@ -211,7 +212,7 @@
                 "year": 2024,
                 "month": 12
             },
-            "end-date": "no-range"
+            "end-date": "current"
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "artworks": [
@@ -221,6 +222,25 @@
         "thumbnail": "dogmas-tree-2025",
         "color": "#A7A"
     }],
+    ["ocs", {
+        "title": "Original Character Artworks",
+        "date-span": {
+            "start-date": {
+                "year": 2024,
+                "month": 4
+            },
+            "end-date": "current"
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "artworks": [
+            "route-16",
+            "tears-of-acceptance",
+            "denn-profile",
+            "kaieh-profile"
+        ],
+        "thumbnail": "denn-profile",
+        "color": "#96B"
+    }],
     ["profiles", {
         "title": "Profile Photo Artworks",
         "date-span": {
@@ -228,7 +248,7 @@
                 "year": 2024,
                 "month": 4
             },
-            "end-date": "no-range"
+            "end-date": "current"
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "artworks": [
@@ -246,7 +266,7 @@
                 "year": 2024,
                 "month": 9
             },
-            "end-date": "no-range"
+            "end-date": "current"
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "artworks": [
@@ -305,7 +325,6 @@
             "hiccup-toothless",
             "heracles-hydra",
             "chess-checkmate",
-            "route-16",
             "boy-beast"
         ],
         "thumbnail": "hiccup-toothless",

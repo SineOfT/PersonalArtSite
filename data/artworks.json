@@ -1751,11 +1751,24 @@
         "title": "Checkmate",
         "date": {
             "year": 2026,
-            "month": 1
+            "month": 1,
+            "order": 1
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "layer-count": 5,
         "position": { "y": -0.1 },
+        "scale": 1.5
+    }],
+    ["tears-of-acceptance", {
+        "title": "Tears of Acceptance",
+        "date": {
+            "year": 2026,
+            "month": 1,
+            "order": 2
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 5,
+        "position": { "y": -0.05 },
         "scale": 1.5
     }],
     ["heracles-hydra", {
@@ -1768,16 +1781,42 @@
         "layer-count": 11,
         "scale": 1.5
     }],
+    ["denn-profile", {
+        "title": "Denn Profile",
+        "date": {
+            "year": 2026,
+            "month": 5,
+            "order": 1
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 6,
+        "animated": true,
+        "position": { "y": -0.05 },
+        "scale": 1.5
+    }],
     ["hiccup-toothless", {
         "title": "Hiccup & Toothless",
         "date": {
             "year": 2026,
-            "month": 5
+            "month": 5,
+            "order": 2
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "layer-count": 6,
         "animated": true,
         "position": { "y": -0.15 },
         "scale": 2
+    }],
+    ["kaieh-profile", {
+        "title": "Kaieh Profile",
+        "date": {
+            "year": 2026,
+            "month": 8
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 8,
+        "animated": true,
+        "position": { "y": -0.1 },
+        "scale": 1.5
     }]
 ]
