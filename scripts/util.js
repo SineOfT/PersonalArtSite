@@ -14,7 +14,7 @@ export function getDateSpan(dateSpan) {
     }
 
     if (endDate === "current") {
-        return `${startDateString} &ndash;`;
+        return `${startDateString} &#126;`;
     }
 
     if (startDate.year === endDate.year) {

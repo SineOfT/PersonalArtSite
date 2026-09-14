@@ -17,8 +17,14 @@ const scrollBehaviorData = JSON.parse(fs.readFileSync(path.join(__dirname, "/dat
 
 let sectionsDataArray = JSON.parse(fs.readFileSync(path.join(__dirname, "/data/sections.json")));
 
-let seriesDataArray = JSON.parse(fs.readFileSync(path.join(__dirname, "/data/series.json")));
-seriesDataArray.sort(([_aId, a], [_bId, b]) => -cmpDateSpan(a["date-span"], b["date-span"]));
+let seriesDataArrayUnsorted = JSON.parse(fs.readFileSync(path.join(__dirname, "/data/series.json")));
+let seriesDataArray = [];
+sectionsDataArray.forEach(([_sectionId, section]) => {
+    section["series"].forEach((seriesId) => {
+        const seriesData = seriesDataArrayUnsorted.find(([sId, _s]) => sId === seriesId);
+        if (seriesData) { seriesDataArray.push(seriesData); }
+    });
+});
 
 let artworksDataArray = JSON.parse(fs.readFileSync(path.join(__dirname, "/data/artworks.json")));
 artworksDataArray.sort(([_aId, a], [_bId, b]) => -cmpDate(a["date"], b["date"]));
