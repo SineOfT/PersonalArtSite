@@ -11,11 +11,14 @@ function generateSeriesSites(sectionsData, seriesData, artworksData) {
         const section = sectionsData.get(series.section);
         const seriesArtworksData = new Map([...artworksData.entries()]
             .filter(([_artworkId, artwork]) => artwork.series.includes(seriesId)));
+        const searchParams = `?series=${seriesId}${
+            series["ordered"] ? "&reversed" : ""
+            }&return-url=%2Fseries%2F${seriesId}%2F`
         const { html: updatedSeriesArtworksListHtml, styles: artworksStyles } =
             generateArtworksList(
                 seriesData,
                 seriesArtworksData,
-                `?series=${seriesId}&reversed&return-url=%2Fseries%2F${seriesId}%2F`,
+                searchParams,
                 series);
 
         const { html: seriesBreadcrumbs, styles: breadcrumbsStyles } = generateBreadcrumbs([
