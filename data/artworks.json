@@ -639,7 +639,7 @@
         "layer-count": 9
     }],
     ["roggenrola-vert-pan", {
-        "title": "Rogglenrola",
+        "title": "Roggenrola",
         "date": {
             "year": 2024,
             "month": 8,
@@ -647,7 +647,8 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "layer-count": 1,
-        "parent-artwork": "pokemon-vert-pan"
+        "parent-artwork": "pokemon-vert-pan",
+        "parent-title": "Vertical Panorama"
     }],
     ["klang-vert-pan", {
         "title": "Klang",
@@ -658,7 +659,8 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "layer-count": 1,
-        "parent-artwork": "pokemon-vert-pan"
+        "parent-artwork": "pokemon-vert-pan",
+        "parent-title": "Vertical Panorama"
     }],
     ["litwick-vert-pan", {
         "title": "Litwick",
@@ -669,7 +671,8 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "layer-count": 1,
-        "parent-artwork": "pokemon-vert-pan"
+        "parent-artwork": "pokemon-vert-pan",
+        "parent-title": "Vertical Panorama"
     }],
     ["swadloon-vert-pan", {
         "title": "Swadloon",
@@ -680,7 +683,8 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "layer-count": 1,
-        "parent-artwork": "pokemon-vert-pan"
+        "parent-artwork": "pokemon-vert-pan",
+        "parent-title": "Vertical Panorama"
     }],
     ["trubbish-vert-pan", {
         "title": "Trubbish",
@@ -691,7 +695,8 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "layer-count": 1,
-        "parent-artwork": "pokemon-vert-pan"
+        "parent-artwork": "pokemon-vert-pan",
+        "parent-title": "Vertical Panorama"
     }],
     ["excadrill-vert-pan", {
         "title": "Excadrill",
@@ -702,7 +707,8 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "layer-count": 1,
-        "parent-artwork": "pokemon-vert-pan"
+        "parent-artwork": "pokemon-vert-pan",
+        "parent-title": "Vertical Panorama"
     }],
     ["pancham-vert-pan", {
         "title": "Pancham",
@@ -713,7 +719,8 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "layer-count": 1,
-        "parent-artwork": "pokemon-vert-pan"
+        "parent-artwork": "pokemon-vert-pan",
+        "parent-title": "Vertical Panorama"
     }],
     ["lapras-vert-pan", {
         "title": "Lapras",
@@ -724,7 +731,8 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "layer-count": 1,
-        "parent-artwork": "pokemon-vert-pan"
+        "parent-artwork": "pokemon-vert-pan",
+        "parent-title": "Vertical Panorama"
     }],
     ["spheal-vert-pan", {
         "title": "Spheal",
@@ -735,7 +743,8 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "layer-count": 1,
-        "parent-artwork": "pokemon-vert-pan"
+        "parent-artwork": "pokemon-vert-pan",
+        "parent-title": "Vertical Panorama"
     }],
     ["vulpix-vert-pan", {
         "title": "Vulpix",
@@ -746,7 +755,8 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "layer-count": 1,
-        "parent-artwork": "pokemon-vert-pan"
+        "parent-artwork": "pokemon-vert-pan",
+        "parent-title": "Vertical Panorama"
     }],
     ["victreebel-vert-pan", {
         "title": "Victreebel",
@@ -757,7 +767,8 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "layer-count": 1,
-        "parent-artwork": "pokemon-vert-pan"
+        "parent-artwork": "pokemon-vert-pan",
+        "parent-title": "Vertical Panorama"
     }],
     ["snorlax-vert-pan", {
         "title": "Snorlax",
@@ -768,7 +779,8 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "layer-count": 1,
-        "parent-artwork": "pokemon-vert-pan"
+        "parent-artwork": "pokemon-vert-pan",
+        "parent-title": "Vertical Panorama"
     }],
     ["togepi-vert-pan", {
         "title": "Togepi",
@@ -779,7 +791,8 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "layer-count": 1,
-        "parent-artwork": "pokemon-vert-pan"
+        "parent-artwork": "pokemon-vert-pan",
+        "parent-title": "Vertical Panorama"
     }],
     ["espurr-vert-pan", {
         "title": "Espurr",
@@ -790,7 +803,8 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "layer-count": 1,
-        "parent-artwork": "pokemon-vert-pan"
+        "parent-artwork": "pokemon-vert-pan",
+        "parent-title": "Vertical Panorama"
     }],
     ["dragonair-vert-pan", {
         "title": "Dragonair",
@@ -801,7 +815,8 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "layer-count": 1,
-        "parent-artwork": "pokemon-vert-pan"
+        "parent-artwork": "pokemon-vert-pan",
+        "parent-title": "Vertical Panorama"
     }],
     ["emolga-vert-pan", {
         "title": "Emolga",
@@ -812,7 +827,8 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "layer-count": 1,
-        "parent-artwork": "pokemon-vert-pan"
+        "parent-artwork": "pokemon-vert-pan",
+        "parent-title": "Vertical Panorama"
     }],
     ["fletchling-vert-pan", {
         "title": "Fletchling",
@@ -823,7 +839,8 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "layer-count": 1,
-        "parent-artwork": "pokemon-vert-pan"
+        "parent-artwork": "pokemon-vert-pan",
+        "parent-title": "Vertical Panorama"
     }],
     ["hydreigon-vert-pan", {
         "title": "Hydreigon",
@@ -834,7 +851,8 @@
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "layer-count": 1,
-        "parent-artwork": "pokemon-vert-pan"
+        "parent-artwork": "pokemon-vert-pan",
+        "parent-title": "Vertical Panorama"
     }],
     ["calcifer", {
         "title": "Calcifer from Howl's Moving Castle",

@@ -33,8 +33,11 @@
 .fs-s { font-size: 1.2em; }
 .fs-xs { font-size: 1.1em; }
 
+.fw-bold { font-weight: bold; }
 
 .ft-italic { font-style: italic; }
+
+.ff-sans-serif { font-family: var(--font-sans-serif); }
 
 
 .text-right { text-align: right; }
@@ -86,6 +89,9 @@
 .gapy-l { row-gap: 1.5rem; }
 .gapy-m { row-gap: 1rem; }
 .gapy-s { row-gap: 0.5rem; }
+
+
+.pointer-events-all { pointer-events: all; }
 
 
 .button-unstyled {

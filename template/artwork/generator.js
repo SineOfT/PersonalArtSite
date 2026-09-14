@@ -6,6 +6,7 @@ const artworkHtml = fs.readFileSync(path.join(__dirname, "/artwork.html"));
 const layerHtml = fs.readFileSync(path.join(__dirname, "/layer.html"));
 const layerImg = fs.readFileSync(path.join(__dirname, "/layer-img.html"));
 const layerVideo = fs.readFileSync(path.join(__dirname, "/layer-video.html"));
+const artworkParentHtml = fs.readFileSync(path.join(__dirname, "/artwork-parent.html"));
 
 function generateArtworkSites(artworksData) {
     return [...artworksData.entries()].map(([artworkId, artwork], artworkIndex) => {
@@ -35,12 +36,19 @@ function generateArtworkSites(artworksData) {
             }
         ).join("\n");
 
+        const updatedArtworkParentHtml = artwork["parent-artwork"]
+            ? artworkParentHtml.toString()
+                .replaceAll("%__PARENT_PATH__%", `/artworks/${artwork["parent-artwork"]}/`)
+                .replaceAll("%__PARENT_TITLE__%", artwork["parent-title"])
+            : "";
+
         const artworkLeftId  = [...artworksData.keys()][artworkIndex-1] ?? "";
         const artworkRightId = [...artworksData.keys()][artworkIndex+1] ?? "";
         let updatedArtworkHtml = artworkHtml.toString()
             .replaceAll("%__ARTWORKS_DATA__%", JSON.stringify([...artworksData.entries()]).replaceAll("'", "\\'"))
             .replaceAll("%__ARTWORK_ID__%", artworkId)
             .replaceAll("%__ARTWORK_TITLE__%", artwork["title"])
+            .replaceAll("%__ARTWORK_PARENT__%", updatedArtworkParentHtml)
             .replaceAll("%__ARTWORK_DATE__%", getDate(artwork["date"]))
             .replaceAll("%__ARTWORK_LAYERS__%", updatedLayersHtml)
             .replaceAll("%__ARTWORK_LEFT_ID__%",  artworkLeftId)
@@ -48,11 +56,14 @@ function generateArtworkSites(artworksData) {
             .replaceAll("%__ARTWORK_LEFT_CLASS__%",  artworkLeftId  ? "" : "disabled")
             .replaceAll("%__ARTWORK_RIGHT_CLASS__%", artworkRightId ? "" : "disabled");
 
+        const title = artwork["parent-title"]
+            ? `${artwork["title"]} in ${artwork["parent-title"]}`
+            :    artwork["title"];
         return {
             id: artworkId,
             html: updatedArtworkHtml,
             styles: ["artwork"],
-            title: artwork["title"],
+            title,
         };
     });
 }

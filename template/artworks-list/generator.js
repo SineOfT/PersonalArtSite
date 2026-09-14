@@ -27,10 +27,9 @@ function generateArtworksList(seriesData, artworksData, searchParams, isInSeries
 
             } else if (isInSeries && artwork["parent-artwork"] != null) {
                 const parentId = artwork["parent-artwork"];
-                const parentTitle = artworksData.get(parentId)?.["title"];
-                updatedArtworkParent= artworkParentHtml.toString()
+                updatedArtworkParent = artworkParentHtml.toString()
                     .replaceAll("%__PARENT_PATH__%", `/artworks/${parentId}/${searchParams ?? ""}`)
-                    .replaceAll("%__PARENT_TITLE__%", parentTitle);
+                    .replaceAll("%__PARENT_TITLE__%", artwork["parent-title"]);
             }
 
             return listArtworkHtml.toString()

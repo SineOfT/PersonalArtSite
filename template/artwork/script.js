@@ -5,7 +5,7 @@ const MAX_ZOOM_INDEX = ZOOM_VALUES.length-1;
 
 export default function initArtwork(artworkId, artworksData) {
     const artworkElement = document.getElementById("artwork");
-
+    
     const artworkCloseButton               = artworkElement.querySelector(".close-button");
     const artworkMediaInteract             = artworkElement.querySelector(".artwork-media-interact");
     const artworkMedia                     = artworkElement.querySelector(".artwork-media");
@@ -18,6 +18,8 @@ export default function initArtwork(artworkId, artworksData) {
     const seriesArtworkIndex               = artworkElement.querySelector(".series-artwork-index");
     const seriesArtworkCount               = artworkElement.querySelector(".series-artwork-count");
 
+    const parentLink = artworkElement.querySelector(".parent-link");
+
     const searchParams = new URLSearchParams(window.location.search);
     const returnUrl = searchParams.get("return-url");
     const isReversed = searchParams.get("reversed") !== null;
@@ -27,24 +29,30 @@ export default function initArtwork(artworkId, artworksData) {
 
     const index = filteredArtworkIds.indexOf(artworkId);
 
-    seriesArtworkIndexContainer.classList.remove("d-none");
-    seriesArtworkIndex.textContent = index+1;
-    seriesArtworkCount.textContent = filteredArtworkIds.length;
-
-    const seriesArtworkLeftId = filteredArtworkIds[index-1];
-    if (seriesArtworkLeftId) {
-        artworkControlLeftElement.href = `/artworks/${seriesArtworkLeftId}/${window.location.search}`;
-        artworkControlLeftElement.classList.remove("disabled");
-    } else {
+    if (index === -1) {
         artworkControlLeftElement.classList.add("disabled");
-    }
-
-    const seriesArtworkRightId = filteredArtworkIds[index+1];
-    if (seriesArtworkRightId) {
-        artworkControlRightElement.href = `/artworks/${seriesArtworkRightId}/${window.location.search}`;
-        artworkControlRightElement.classList.remove("disabled");
-    } else {
         artworkControlRightElement.classList.add("disabled");
+
+    } else {
+        seriesArtworkIndexContainer.classList.remove("d-none");
+        seriesArtworkIndex.textContent = index+1;
+        seriesArtworkCount.textContent = filteredArtworkIds.length;
+    
+        const seriesArtworkLeftId = filteredArtworkIds[index-1];
+        if (seriesArtworkLeftId) {
+            artworkControlLeftElement.href = `/artworks/${seriesArtworkLeftId}/${window.location.search}`;
+            artworkControlLeftElement.classList.remove("disabled");
+        } else {
+            artworkControlLeftElement.classList.add("disabled");
+        }
+    
+        const seriesArtworkRightId = filteredArtworkIds[index+1];
+        if (seriesArtworkRightId) {
+            artworkControlRightElement.href = `/artworks/${seriesArtworkRightId}/${window.location.search}`;
+            artworkControlRightElement.classList.remove("disabled");
+        } else {
+            artworkControlRightElement.classList.add("disabled");
+        }
     }
 
     artworkCloseButton.addEventListener("click", (event) => {
@@ -150,4 +158,8 @@ export default function initArtwork(artworkId, artworksData) {
             isHoverActive = null;
         }
     });
+
+    if (parentLink) {
+        parentLink.href = `${parentLink.href}${window.location.search}`;
+    }
 }
