@@ -221,6 +221,24 @@
         "thumbnail": "dogmas-tree-2025",
         "color": "#A7A"
     }],
+    ["profiles", {
+        "title": "Profile Photo Artworks",
+        "date-span": {
+            "start-date": {
+                "year": 2024,
+                "month": 4
+            },
+            "end-date": "no-range"
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "artworks": [
+            "profile-1",
+            "profile-2",
+            "profile-swadloon"
+        ],
+        "thumbnail": "profile-swadloon",
+        "color": "#D7A"
+    }],
     ["followers", {
         "title": "Followers Appreciation",
         "date-span": {
@@ -247,8 +265,11 @@
         "date-span": { },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "artworks": [
+            "totoro-sleeping",
             "ponyo",
-            "medium-totoro"
+            "medium-totoro",
+            "totoro-snorlax",
+            "calcifer"
         ],
         "thumbnail": "medium-totoro",
         "color": "#FCF"
@@ -268,6 +289,9 @@
         "date-span": { },
         "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "artworks": [
+            "eeveelutions-sleeping",
+            "togepi-easter",
+            "totoro-snorlax",
             "mimikyu"
         ],
         "thumbnail": "mimikyu",
@@ -280,7 +304,9 @@
         "artworks": [
             "hiccup-toothless",
             "heracles-hydra",
-            "chess-checkmate"
+            "chess-checkmate",
+            "route-16",
+            "boy-beast"
         ],
         "thumbnail": "hiccup-toothless",
         "color": "#CAB"

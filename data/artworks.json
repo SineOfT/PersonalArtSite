@@ -527,11 +527,12 @@
         "layer-count": 1,
         "sketch": true
     }],
-    ["medium-totoro", {
-        "title": "Medium & Small Totoro",
+    ["totoro-sleeping", {
+        "title": "Sleeping Totoro & Friends",
         "date": {
             "year": 2024,
-            "month": 1
+            "month": 1,
+            "order": 1
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "layer-count": 1
@@ -540,10 +541,92 @@
         "title": "Ponyo",
         "date": {
             "year": 2024,
-            "month": 1
+            "month": 1,
+            "order": 2
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "layer-count": 1
+    }],
+    ["medium-totoro", {
+        "title": "Medium & Small Totoro",
+        "date": {
+            "year": 2024,
+            "month": 1,
+            "order": 3
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 1
+    }],
+    ["togepi-easter", {
+        "title": "Togepi Easter",
+        "date": {
+            "year": 2024,
+            "month": 3,
+            "day": 31
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 1,
+        "animated": true
+    }],
+    ["profile-1", {
+        "title": "Profile Photo 1",
+        "date": {
+            "year": 2024,
+            "month": 4,
+            "order": 1
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 1
+    }],
+    ["eeveelutions-sleeping", {
+        "title": "Sleeping Eeveelutions",
+        "date": {
+            "year": 2024,
+            "month": 4,
+            "order": 2
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 7
+    }],
+    ["route-16", {
+        "title": "Route 16",
+        "date": {
+            "year": 2024,
+            "month": 4,
+            "order": 3
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 6
+    }],
+    ["profile-2", {
+        "title": "Profile Photo 2",
+        "date": {
+            "year": 2024,
+            "month": 4,
+            "order": 4
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 1
+    }],
+    ["profile-swadloon", {
+        "title": "Profile Photo 3 (with Swadloon)",
+        "date": {
+            "year": 2024,
+            "month": 5,
+            "order": 1
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 1
+    }],
+    ["totoro-snorlax", {
+        "title": "Totoro and Snorlax",
+        "date": {
+            "year": 2024,
+            "month": 5,
+            "order": 2
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 7
     }],
     ["pokemon-vert-pan", {
         "title": "Pokemon Vertical Panorama",
@@ -753,11 +836,32 @@
         "layer-count": 1,
         "parent-artwork": "pokemon-vert-pan"
     }],
+    ["calcifer", {
+        "title": "Calcifer from Howl's Moving Castle",
+        "date": {
+            "year": 2024,
+            "month": 8,
+            "order": 19
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 6
+    }],
+    ["boy-beast", {
+        "title": "The Boy and the Beast",
+        "date": {
+            "year": 2024,
+            "month": 9,
+            "order": 1
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 8
+    }],
     ["followers-100", {
         "title": "100 Followers Appreciation",
         "date": {
             "year": 2024,
-            "month": 9
+            "month": 9,
+            "order": 2
         },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "layer-count": 1
