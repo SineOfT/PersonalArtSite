@@ -43,10 +43,7 @@ export function updateArtworksList(artworksData, searchParams) {
                 }
             }
 
-            setTimeout(() => {
-                window.location.href = url.toString();
-
-            }, 1000);
+            window.location.href = url.toString();
         });
     }
 
