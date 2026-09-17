@@ -4,13 +4,32 @@ import initStateMachineManager from "/scripts/state-machine-manager.js";
 const MIN_SECTION_OFFSET = 50;
 const SECTION_FRAG_OFFSET = -20;
 
+const SPRITE_OVERLAP = 10;
+
 export default function initScrollFunctions(scrollData) {
     const isMinimalAnimations = document.documentElement.classList.contains("minimal-animations");
     const isReducedAnimations = document.documentElement.classList.contains("reduced-animations");
 
-    function initScroll() {    
-        const scrollbarSpritesFrontContainer = document.querySelector(".scrollbar-sprites-front-container");
-        const scrollbarSpritesBackContainer = document.querySelector(".scrollbar-sprites-back-container");
+    const homeScrollbarContainer = document.querySelector(".home-scrollbar-container");
+    const scrollbarSpritesFrontContainer = document.querySelector(".scrollbar-sprites-front-container");
+    const scrollbarSpritesBackContainer = document.querySelector(".scrollbar-sprites-back-container");
+    const scrollbarSpriteTemplate = document.querySelector(".scrollbar-sprite.template");
+
+    function initScroll() {
+        const spriteCount = Math.ceil(window.innerWidth / SPRITE_OVERLAP) + 1;
+        const scrollbarSpritesFront = scrollbarSpritesFrontContainer.querySelectorAll(".scrollbar-sprite");
+        const scrollbarSpritesBack = scrollbarSpritesBackContainer.querySelectorAll(".scrollbar-sprite");
+
+        const newSpriteCount = spriteCount - scrollbarSpritesFront.length;
+        if (newSpriteCount > 0) {
+            for (let i = 0; i < newSpriteCount; i++) {
+                const newSpriteFront = scrollbarSpriteTemplate.cloneNode();
+                newSpriteFront.classList.remove("d-none", "template");
+                newSpriteFront.style.setProperty("--sprite-index", scrollbarSpritesFront.length + i);
+                scrollbarSpritesFrontContainer.appendChild(newSpriteFront.cloneNode());
+                scrollbarSpritesBackContainer.appendChild(newSpriteFront);
+            }
+        }
         const scrollbarSprites = [...document.querySelectorAll(".scrollbar-sprite")];
 
         const scrollY = window.scrollY;
@@ -65,8 +84,13 @@ export default function initScrollFunctions(scrollData) {
             });
         }
 
-        function updateScroll(prevScrollHeight, shouldTransition = true) {
+        function updateScroll(prevWidth, prevScrollHeight, shouldTransition = true) {
             return () => {
+                if (window.innerWidth != prevWidth) {
+                    initScroll();
+                    return;
+                }
+
                 const currScrollHeight = document.body.offsetHeight - window.innerHeight;
                 if (currScrollHeight !== prevScrollHeight) {
                     initScroll();
@@ -118,7 +142,7 @@ export default function initScrollFunctions(scrollData) {
 
                 prevScroll = currScroll;
 
-                window.requestAnimationFrame(updateScroll(currScrollHeight));
+                window.requestAnimationFrame(updateScroll(window.innerWidth, currScrollHeight));
             }
         }
 
@@ -228,8 +252,10 @@ export default function initScrollFunctions(scrollData) {
         }
 
         initScrollAnchors();
-        updateScroll(scrollHeight, false)();
+        updateScroll(window.innerWidth, scrollHeight, false)();
     }
+    
+    homeScrollbarContainer.style.setProperty("--sprite-overlap", `${SPRITE_OVERLAP}px`);
     
     initScroll();
 
@@ -237,7 +263,7 @@ export default function initScrollFunctions(scrollData) {
         document.addEventListener("DOMContentLoaded", () => requestAnimationFrame(() => {
             const shikaStateMachine = initShikaStateMachine();
             initStateMachineManager([shikaStateMachine]);
-            
+
         }), { once: true });
     }
 }

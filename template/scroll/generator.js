@@ -2,10 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 const scrollHtml = fs.readFileSync(path.join(__dirname, "/scroll.html"));
-const scrollbarSpriteHtml = fs.readFileSync(path.join(__dirname, "/scrollbar-sprite.html"));
 const scrollAnchorHtml = fs.readFileSync(path.join(__dirname, "/scroll-anchor.html"));
-
-const SCROLLBAR_SPRITE_COUNT = 300;
 
 function generateScroll(scrollData) {
     scrollData.unshift({
@@ -22,15 +19,7 @@ function generateScroll(scrollData) {
         color: "#FFF",
         transition: false,
     });
-    const updatedScrollbarSpritesHtml =
-        Array.from(
-            { length: SCROLLBAR_SPRITE_COUNT},
-            (_, index) => (
-                scrollbarSpriteHtml.toString()
-                    .replaceAll("%__SCROLLBAR_SPRITE_INDEX__%", index)
-            )
-        )
-        .join("\n");
+    
     const updatedScrollAnchorsHtml = scrollData
         .map(({ sectionId, hashId, title, color }) => {
             return scrollAnchorHtml.toString()
@@ -41,7 +30,6 @@ function generateScroll(scrollData) {
         })
         .join("\n");
     const updatedScrollHtml = scrollHtml.toString()
-        .replaceAll("%__SCROLLBAR_SPRITES__%", updatedScrollbarSpritesHtml)
         .replaceAll("%__SCROLL_ANCHORS__%", updatedScrollAnchorsHtml)
         .replaceAll("%__SCROLL_DATA__%", JSON.stringify(scrollData).replaceAll("'", "\\'"));
 
