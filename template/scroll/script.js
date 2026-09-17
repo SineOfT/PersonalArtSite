@@ -234,7 +234,10 @@ export default function initScrollFunctions(scrollData) {
     initScroll();
 
     if (!isMinimalAnimations) {
-        const shikaStateMachine = initShikaStateMachine();
-        initStateMachineManager([shikaStateMachine]);
+        document.addEventListener("DOMContentLoaded", () => requestAnimationFrame(() => {
+            const shikaStateMachine = initShikaStateMachine();
+            initStateMachineManager([shikaStateMachine]);
+            
+        }), { once: true });
     }
 }

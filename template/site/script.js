@@ -1,27 +1,5 @@
-const header = document.getElementById("header");
-const headerContainer = header.querySelector(".header-container");
-const headerContent = header.querySelector(".header-content");
-const headerToggleBtn = document.getElementById("header-toggle-button");
-
-const footer = document.getElementById("footer");
-const footerContent = footer.querySelector(".footer-content");
-
-const toggleAnimationsBtn = header.querySelector(".toggle-animations-btn");
-
-headerContainer.addEventListener("mouseenter", () => {
-    header.classList.add("hover");
-});
-
-header.addEventListener("mouseleave", () => {
-    header.classList.remove("hover");
-});
-
-headerToggleBtn.addEventListener("input", () => {
-    if (!headerToggleBtn.checked) {
-        headerToggleBtn.blur();
-        header.classList.remove("hover");
-    }
-});
+const headerContent = document.querySelector("#header .header-content");
+const footerContent = document.querySelector("#footer .footer-content");
 
 let prevHeaderContentHeight = NaN;
 const updateHeaderHeight = () => {
@@ -31,8 +9,6 @@ const updateHeaderHeight = () => {
         prevHeaderContentHeight = currHeaderContentHeight;
     }
 }
-const headerContentResizeObserver = new ResizeObserver(updateHeaderHeight);
-headerContentResizeObserver.observe(headerContent);
 updateHeaderHeight();
 
 let prevFooterContentHeight = NaN;
@@ -42,11 +18,7 @@ const updateFooterHeight = () => {
         document.documentElement.style.setProperty("--site-footer-height", `calc(${currFooterContentHeight}px + 2rem)`);
     }
 }
-const footerContentResizeObserver = new ResizeObserver(updateFooterHeight);
-footerContentResizeObserver.observe(footerContent);
 updateFooterHeight();
-
-
 
 const animations = localStorage.getItem("animations");
 if (animations === "minimal") {
@@ -56,14 +28,43 @@ if (animations === "minimal") {
     document.documentElement.classList.add("reduced-animations");
 }
 
-toggleAnimationsBtn.addEventListener("click", () => {
-    const animations = localStorage.getItem("animations");
-    if (animations === "minimal") {
-        localStorage.removeItem("animations");
-    } else if (animations === "reduced") {
-        localStorage.setItem("animations", "minimal");
-    } else {
-        localStorage.setItem("animations", "reduced");
-    }
-    window.location.reload();
-});
+document.addEventListener("DOMContentLoaded", () => requestAnimationFrame(() => {    
+    const header = document.getElementById("header");
+    const headerContainer = header.querySelector(".header-container");
+    const headerToggleBtn = document.getElementById("header-toggle-button");
+    const toggleAnimationsBtn = header.querySelector(".toggle-animations-btn");
+
+    headerContainer.addEventListener("mouseenter", () => {
+        header.classList.add("hover");
+    });
+
+    header.addEventListener("mouseleave", () => {
+        header.classList.remove("hover");
+    });
+
+    headerToggleBtn.addEventListener("input", () => {
+        if (!headerToggleBtn.checked) {
+            headerToggleBtn.blur();
+            header.classList.remove("hover");
+        }
+    });
+
+    const headerContentResizeObserver = new ResizeObserver(updateHeaderHeight);
+    headerContentResizeObserver.observe(headerContent);
+
+    const footerContentResizeObserver = new ResizeObserver(updateFooterHeight);
+    footerContentResizeObserver.observe(footerContent);
+
+    toggleAnimationsBtn.addEventListener("click", () => {
+        const animations = localStorage.getItem("animations");
+        if (animations === "minimal") {
+            localStorage.removeItem("animations");
+        } else if (animations === "reduced") {
+            localStorage.setItem("animations", "minimal");
+        } else {
+            localStorage.setItem("animations", "reduced");
+        }
+        window.location.reload();
+    });
+
+}), { once: true });

@@ -6,7 +6,7 @@ export function initSearch(form) {
     const artworkCountPluralDisplay = document.querySelector(".artwork-count-plural");
 
     jsDisabledDisplay.classList.add("d-none");
-    form.classList.remove("v-none");
+    form.classList.remove("d-none");
 }
 
 export const getSearchFromSearchParams = (searchParams) => searchParams.get("search")?.trim();
@@ -18,10 +18,13 @@ export function initSearchInput(form, update) {
     
     if (search) searchInput.value = search;
 
-    searchInput.addEventListener("input", () => {
-        const search = searchInput.value;
-        update({ search });
-    });
+    document.addEventListener("DOMContentLoaded", () => requestAnimationFrame(() => {
+        searchInput.addEventListener("input", () => {
+            const search = searchInput.value;
+            update({ search });
+        });
+
+    }), { once: true });
 }
 
 export const getExcludeSkechesFromSearchParams = (searchParams) => searchParams.get("exclude-sketches");
@@ -33,10 +36,13 @@ export function initExcludeSketchesCheck(form, update) {
 
     if (excludeSketches) excludeSketchesCheck.setAttribute("checked", true);
     
-    excludeSketchesCheck.addEventListener("input", () => {
-        const excludeSketches = excludeSketchesCheck.checked;
-        update({ excludeSketches });
-    });
+    document.addEventListener("DOMContentLoaded", () => requestAnimationFrame(() => {
+        excludeSketchesCheck.addEventListener("input", () => {
+            const excludeSketches = excludeSketchesCheck.checked;
+            update({ excludeSketches });
+        });
+
+    }), { once: true });
 }
 
 export const getSectionsFromSearchParams = (searchParams) => searchParams.getAll("sections");
@@ -53,14 +59,17 @@ export function initSectionCheckboxes(form, update) {
         }
     });
 
-    sectionCheckboxArray.forEach((checkbox) => {
-        checkbox.addEventListener("input", () => {
-            const sections = sectionCheckboxArray
-                .filter(checkbox => checkbox.checked)
-                .map(checkbox => checkbox.value);
-            update({ sections });
+    document.addEventListener("DOMContentLoaded", () => requestAnimationFrame(() => {
+        sectionCheckboxArray.forEach((checkbox) => {
+            checkbox.addEventListener("input", () => {
+                const sections = sectionCheckboxArray
+                    .filter(checkbox => checkbox.checked)
+                    .map(checkbox => checkbox.value);
+                update({ sections });
+            });
         });
-    });
+
+    }), { once: true });
 }
 
 export const getSeriesFromSearchParams = (searchParams) => searchParams.getAll("series");
@@ -77,14 +86,17 @@ export function initSeriesCheckboxes(form, update) {
         }
     });
 
-    seriesCheckboxArray.forEach((checkbox) => {
-        checkbox.addEventListener("input", () => {
-            const series = seriesCheckboxArray
-                .filter(checkbox => checkbox.checked)
-                .map(checkbox => checkbox.value);
-            update({ series });
+    document.addEventListener("DOMContentLoaded", () => requestAnimationFrame(() => {
+        seriesCheckboxArray.forEach((checkbox) => {
+            checkbox.addEventListener("input", () => {
+                const series = seriesCheckboxArray
+                    .filter(checkbox => checkbox.checked)
+                    .map(checkbox => checkbox.value);
+                update({ series });
+            });
         });
-    });
+
+    }), { once: true });
 }
 
 export const getDateRangeFromSearchParams = (searchParams) => ({
@@ -106,24 +118,27 @@ export function initDateRangeSelect(form, update) {
     if (dateFrom) dateFromSelect.value = dateFrom;
     if (dateTo) dateToSelect.value = dateTo;
 
-    dateRangeSelect.addEventListener("input", (e) => {
-        if (e.target.value === "range") {
-            dateFromToSelectContainer.classList.remove("v-none");
-        } else {
-            dateFromToSelectContainer.classList.add("v-none");
-        }
+    document.addEventListener("DOMContentLoaded", () => requestAnimationFrame(() => {
+        dateRangeSelect.addEventListener("input", (e) => {
+            if (e.target.value === "range") {
+                dateFromToSelectContainer.classList.remove("v-none");
+            } else {
+                dateFromToSelectContainer.classList.add("v-none");
+            }
 
-        const dateRange = dateRangeSelect.value;
-        update({ dateRange });
-    });
+            const dateRange = dateRangeSelect.value;
+            update({ dateRange });
+        });
 
-    dateFromSelect.addEventListener("input", () => {
-        const dateFrom = dateFromSelect.value;
-        update({ dateFrom });
-    });
+        dateFromSelect.addEventListener("input", () => {
+            const dateFrom = dateFromSelect.value;
+            update({ dateFrom });
+        });
 
-    dateToSelect.addEventListener("input", () => {
-        const dateTo = dateToSelect.value;
-        update({ dateTo });
-    });
+        dateToSelect.addEventListener("input", () => {
+            const dateTo = dateToSelect.value;
+            update({ dateTo });
+        });
+
+    }), { once: true });
 }
