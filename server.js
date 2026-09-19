@@ -12,7 +12,6 @@ const generateError = require("./template/error/generator");
 const generateSiteMap = require("./template/sitemap/generator");
 const { cmpDate, cmpDateSpan } = require("./template/utility");
 
-const sectionOrderData   = JSON.parse(fs.readFileSync(path.join(__dirname, "/data/section-order.json")));
 const scrollBehaviorData = JSON.parse(fs.readFileSync(path.join(__dirname, "/data/scroll-behavior.json")));
 
 let sectionsDataArray = JSON.parse(fs.readFileSync(path.join(__dirname, "/data/sections.json")));
@@ -33,24 +32,27 @@ sectionsDataArray.forEach(([_sectionId, section]) => {
     let seriesWithKeys = section.series.map(seriesId =>
         [seriesId, seriesDataArray.findIndex(([sId, _s]) => sId === seriesId)]);
     seriesWithKeys.sort(([_aId, aKey], [_bId, bKey]) => aKey - bKey);
-    section.series = seriesWithKeys.map(([seriesId, _key]) => seriesId);
+    section["series"] = seriesWithKeys.map(([seriesId, _key]) => seriesId);
 });
 
 seriesDataArray.forEach(([seriesId, series]) => {
     let artworksWithKeys = series.artworks.map(artworkId =>
         [artworkId, artworksDataArray.findIndex(([aId, _a]) => aId === artworkId)]);
     artworksWithKeys.sort(([_aId, aKey], [_bId, bKey]) => aKey - bKey);
-    series.artworks = artworksWithKeys.map(([artworkId, _key]) => artworkId);
-    series.section = sectionsDataArray
+    const section = sectionsDataArray
         .find(([_sectionId, section]) => section.series.includes(seriesId))
-        [0]; // id
+    series["artworks"] = artworksWithKeys.map(([artworkId, _key]) => artworkId);
+    series["section"] = section[0];
+    series["section-title"] = section[1]["title"];
 });
 
 artworksDataArray.forEach(([artworkId, artwork]) => {
     let artworkSeries = seriesDataArray
         .filter(([_seriesId, series]) => series.artworks.includes(artworkId));
-    artwork.series = artworkSeries.map(([seriesId, _series]) => seriesId);
-    artwork.section = artworkSeries?.[0]?.[1].section; // section id of first series, since should be all same section
+    artwork["series"] = artworkSeries.map(([seriesId, _series]) => seriesId);
+    artwork["section"] = artworkSeries[0][1]["section"];
+    artwork["series-title"] = artworkSeries[0][1]["title"];
+    artwork["section-title"] = artworkSeries[0][1]["section-title"];
 });
 
 const sectionsData = new Map(sectionsDataArray);
@@ -126,7 +128,7 @@ const siteLinks = [
     {
         title: "Main",
         links: [
-            writeGeneratedHtmlDirectory(generateHomeSite(sectionOrderData, sectionsData, artworksData, scrollBehaviorData), ""),
+            writeGeneratedHtmlDirectory(generateHomeSite(sectionsData, artworksData, scrollBehaviorData), ""),
             { link: "/#page-bottom", title: "Info" },
             writeGeneratedHtml(generateError(), "", "404.html"),
         ],

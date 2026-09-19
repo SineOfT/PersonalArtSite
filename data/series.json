@@ -322,7 +322,7 @@
         "thumbnail": "mimikyu",
         "color": "#EBE"
     }],
-    ["misc", {
+    ["digital-misc", {
         "title": "Miscellaneous",
         "date-span": { },
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
@@ -334,5 +334,110 @@
         ],
         "thumbnail": "hiccup-toothless",
         "color": "#CAB"
+    }],
+    ["art-studies", {
+        "title": "Art Studies",
+        "date-span": { },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "artworks": [
+            "apple-study",
+            "arthur-segal-hand-study",
+            "cat-study",
+            "eye-study-1",
+            "eye-study-2",
+            "gradient-study",
+            "graphite-control-study",
+            "hand-contour-study",
+            "landscape-study",
+            "photo-strips-study",
+            "shading-study",
+            "upside-down-study",
+            "coloured-pencil-landscape-study",
+            "graphite-sketch-study",
+            "hand-figure-study",
+            "paint-landscape-study-1",
+            "paint-landscape-study-2",
+            "paint-triceratops-study",
+            "paper-study",
+            "pegasus-study"
+        ],
+        "thumbnail": "cat-study",
+        "color": "#888"
+    }],
+    ["pencil-artworks", {
+        "title": "Pencil Artworks",
+        "date-span": {
+            "start-date": {
+                "year": 2021,
+                "month": 5
+            },
+            "end-date": {
+                "year": 2023,
+                "month": 12
+            }
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "artworks": [
+            "charcoal-leopard",
+            "charcoal-ocean",
+            "charcoal-whale-shark",
+            "graphite-red-panda"
+        ],
+        "thumbnail": "charcoal-whale-shark",
+        "color": "#9BE"
+    }],
+    ["dq-sketches", {
+        "title": "Dragon Quest Sketches",
+        "date-span": {
+            "start-date": {
+                "year": 2020,
+                "month": 3
+            },
+            "end-date": "no-range"
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "artworks": [
+            "dq-erdwin-serenica",
+            "dq-erik",
+            "dq-veronica-serena"
+        ],
+        "thumbnail": "dq-erdwin-serenica",
+        "color": "#39D"
+    }],
+    ["tunisian-tapestries", {
+        "title": "Tunisian Crochet Tapestries",
+        "date-span": {
+            "start-date": {
+                "year": 2018,
+                "month": 4
+            },
+            "end-date": {
+                "year": 2019,
+                "month": 8
+            }
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "artworks": [
+            "pooh-tunisian",
+            "eeveelutions-tunisian"
+        ],
+        "thumbnail": "pooh-tunisian",
+        "color": "#68D"
+    }],
+    ["physical-misc", {
+        "title": "Miscellaneous",
+        "date-span": { },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "artworks": [
+            "linoleum-eurasia",
+            "ceramic-fushu",
+            "cyanotype-world",
+            "meat-collage",
+            "mixed-media",
+            "paint-sunflowers",
+            "screenprint"
+        ],
+        "thumbnail": "linoleum-eurasia",
+        "color": "#5CE"
     }]
 ]

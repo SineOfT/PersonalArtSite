@@ -1,16 +1,17 @@
 [
     {
-        "sectionId": "home",
-        "hashId": "",
-        "title": "Home",
-        "color": "#ACF",
-        "transition": false
-    },
-    {
         "sectionId": "digital",
         "hashId": "digital",
         "title": "Digital",
         "color": "#FAF",
+        "transition": true,
+        "instant": true
+    },
+    {
+        "sectionId": "physical",
+        "hashId": "physical",
+        "title": "Physical Artworks",
+        "color": "#8AF",
         "transition": true,
         "instant": true
     },

@@ -9,7 +9,7 @@ function generateScroll(scrollData) {
         sectionId: "page-top",
         hashId: "",
         title: "Top",
-        color: "#ACF",
+        color: "#F94",
         transition: false,
     });
     scrollData.push({
@@ -19,7 +19,7 @@ function generateScroll(scrollData) {
         color: "#FFF",
         transition: false,
     });
-    
+
     const updatedScrollAnchorsHtml = scrollData
         .map(({ sectionId, hashId, title, color }) => {
             return scrollAnchorHtml.toString()

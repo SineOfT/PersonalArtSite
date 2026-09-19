@@ -14,7 +14,7 @@
             "ghibli",
             "disney",
             "misc-pokemon",
-            "misc"
+            "digital-misc"
         ],
         "thumbnails": [
             { "thumbnail": "kanroji-bunny", "position": { "x": 0.5 } },
@@ -28,11 +28,30 @@
         ],
         "display-type": "radial"
     }],
+    ["physical", {
+        "title": "Physical Artworks",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "series": [
+            "pencil-artworks",
+            "dq-sketches",
+            "tunisian-tapestries",
+            "physical-misc"
+        ],
+        "thumbnails": [
+            "charcoal-leopard",
+            "charcoal-whale-shark",
+            "charcoal-ocean",
+            "graphite-red-panda",
+            "linoleum-eurasia"
+        ],
+        "display-type": "slide"
+    }],
     ["study", {
         "title": "Art Studies",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
         "series": [
-            "anatomy"
+            "anatomy",
+            "art-studies"
         ],
         "thumbnails": [
             { "thumbnail": "anatomy-32-foot-1",  "position": { "y":  0.2 } },

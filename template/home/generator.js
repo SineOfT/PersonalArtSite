@@ -9,10 +9,10 @@ const sectionHtml = fs.readFileSync(path.join(__dirname, "/section.html"));
 const sectionThumbnailHtml = fs.readFileSync(path.join(__dirname, "/section-thumbnail.html"));
 const homeTextHtml = fs.readFileSync(path.join(__dirname, "../../data/home-text.html"));
 
-function generateHomeSite(sectionOrderData, sectionsData, artworksData, scrollBehaviorData) {
-    const updatedSectionsHtml = sectionOrderData
-        .map((id) => {
-            const section = sectionsData.get(id);
+function generateHomeSite(sectionsData, artworksData, scrollBehaviorData) {
+    const updatedSectionsHtml = scrollBehaviorData
+        .map(({ sectionId }) => {
+            const section = sectionsData.get(sectionId);
             if (!section) { return ""; }
             const updatedSectionThumbnailsHtml = section["thumbnails"]
                 .map((thumbnailObj, i) => {
@@ -25,7 +25,7 @@ function generateHomeSite(sectionOrderData, sectionsData, artworksData, scrollBe
                 })
                 .join("\n");
             return sectionHtml.toString()
-                .replaceAll("%__SECTION_ID__%", id)
+                .replaceAll("%__SECTION_ID__%", sectionId)
                 .replaceAll("%__SECTION_TITLE__%", section["title"])
                 .replaceAll("%__SECTION_DESCRIPTION__%", section["description"])
                 .replaceAll("%__SECTION_DISPLAY_TYPE__%", section["display-type"])

@@ -19,26 +19,28 @@ function generateArtworksList(seriesData, artworksData, searchParams, isInSeries
 
             let updatedArtworkParent = "";
             if (isInSeriesData == null) {
-                const seriesId = artwork.series[0];
-                const seriesTitle = seriesData.get(seriesId)?.["title"];
                 updatedArtworkParent = artworkParentHtml.toString()
-                    .replaceAll("%__PARENT_PATH__%", `/series/${seriesId}/`)
-                    .replaceAll("%__PARENT_TITLE__%", seriesTitle);
-
+                    .replaceAll("%__PARENT_PATH__%", `/series/${artwork.series[0]}/`)
+                    .replaceAll("%__PARENT_TITLE__%", artwork["series-title"]);
             } else if (artwork["parent-artwork"] != null) {
-                const parentId = artwork["parent-artwork"];
                 updatedArtworkParent = artworkParentHtml.toString()
-                    .replaceAll("%__PARENT_PATH__%", `/artworks/${parentId}/${searchParams ?? ""}`)
+                    .replaceAll("%__PARENT_PATH__%", `/artworks/${artwork["parent-artwork"]}/${searchParams ?? ""}`)
                     .replaceAll("%__PARENT_TITLE__%", artwork["parent-title"]);
             }
+
+            const artworkMedium = artwork["medium"] || artwork["section-title"];
+            const artworkDimensions = artwork["dimensions"] ? ` &mdash; ${artwork["dimensions"]}` : "";
 
             return listArtworkHtml.toString()
                 .replaceAll("%__ARTWORK_THUMBNAIL__%", artworkThumbnail)
                 .replaceAll("%__ARTWORK_ID__%", artworkId)
                 .replaceAll("%__ARTWORK_TITLE__%", artwork["title"])
                 .replaceAll("%__ARTWORK_PARENT__%", updatedArtworkParent)
+                .replaceAll("%__ARTWORK_MEDIUM__%", artworkMedium)
+                .replaceAll("%__ARTWORK_DIMENSIONS__%", artworkDimensions)
                 .replaceAll("%__ARTWORK_DATE__%", getDate(artwork["date"]))
                 .replaceAll("%__ARTWORK_DESCRIPTION__%", artwork["description"])
+                .replaceAll("%__SECTION_ID__%", artwork["section"])
                 .replaceAll("%__SEARCH_PARAMS__%", searchParams ?? "");
         })
         .join("\n");

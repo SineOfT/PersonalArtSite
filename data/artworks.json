@@ -1818,5 +1818,414 @@
         "animated": true,
         "position": { "y": -0.1 },
         "scale": 1.5
+    }],
+    ["charcoal-whale-shark", {
+        "title": "Whale Shark",
+        "medium": "Charcoal",
+        "date": {
+            "year": 2023,
+            "month": 12
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 8
+    }],
+
+    ["linoleum-eurasia", {
+        "title": "Worlds Divide",
+        "medium": "Linoleum Print",
+        "dimensions": "W79 x H46 cm",
+        "date": {
+            "year": 2022,
+            "month": 6
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 11
+    }],
+    ["charcoal-ocean", {
+        "title": "Endless Tides",
+        "medium": "Charcoal",
+        "dimensions": "W58 x H45 cm",
+        "date": {
+            "year": 2022,
+            "month": 4
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 17
+    }],
+    ["screenprint", {
+        "title": "Distorted Imagination",
+        "medium": "Screenprint, Yarn",
+        "dimensions": "W30 x H25 cm",
+        "date": {
+            "year": 2023,
+            "month": 4
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 6
+    }],
+    ["charcoal-leopard", {
+        "title": "Immoral",
+        "medium": "Charcoal",
+        "dimensions": "W62 x H48 cm",
+        "date": {
+            "year": 2021,
+            "month": 11
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 19
+    }],
+    ["eye-study-2", {
+        "title": "Eye Study 2",
+        "medium": "Graphite",
+        "date": {
+            "year": 2021,
+            "month": 10,
+            "order": 2
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 1,
+        "sketch": true
+    }],
+    ["apple-study", {
+        "title": "Apple Study",
+        "medium": "Graphite",
+        "date": {
+            "year": 2021,
+            "month": 10,
+            "order": 1
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 1,
+        "sketch": true
+    }],
+    ["graphite-control-study", {
+        "title": "Graphite Control Study",
+        "medium": "Graphite",
+        "date": {
+            "year": 2021,
+            "month": 9,
+            "order": 4
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 2,
+        "sketch": true
+    }],
+    ["hand-contour-study", {
+        "title": "Graphite Control Study",
+        "medium": "Graphite",
+        "date": {
+            "year": 2021,
+            "month": 9,
+            "order": 3
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 1,
+        "sketch": true
+    }],
+    ["arthur-segal-hand-study", {
+        "title": "Arthur Segal Hand Study",
+        "medium": "Graphite",
+        "date": {
+            "year": 2021,
+            "month": 9,
+            "order": 2
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "notes": {
+            "2": "Original Artwork"
+        },
+        "layer-count": 3,
+        "sketch": true
+    }],
+    ["cat-study", {
+        "title": "Cat Study",
+        "medium": "Graphite",
+        "date": {
+            "year": 2021,
+            "month": 9,
+            "order": 1
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 1,
+        "sketch": true
+    }],
+    ["landscape-study", {
+        "title": "Landscape Study",
+        "medium": "Graphite",
+        "date": {
+            "year": 2021,
+            "month": 7
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 1,
+        "sketch": true
+    }],
+    ["graphite-red-panda", {
+        "title": "Red Panda",
+        "medium": "Graphite",
+        "date": {
+            "year": 2021,
+            "month": 5
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 11
+    }],
+    ["upside-down-study", {
+        "title": "Upside Down Study",
+        "medium": "Graphite",
+        "date": {
+            "year": 2021,
+            "month": 3,
+            "order": 5
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 1,
+        "sketch": true
+    }],
+    ["eye-study-1", {
+        "title": "Eye Study 1",
+        "medium": "Graphite",
+        "date": {
+            "year": 2021,
+            "month": 3,
+            "order": 4
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 1,
+        "sketch": true
+    }],
+    ["photo-strips-study", {
+        "title": "Photo Strips Study",
+        "medium": "Graphite",
+        "date": {
+            "year": 2021,
+            "month": 3,
+            "order": 3
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 1,
+        "sketch": true
+    }],
+    ["gradient-study", {
+        "title": "Gradient Study",
+        "medium": "Graphite",
+        "date": {
+            "year": 2021,
+            "month": 3,
+            "order": 2
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 1,
+        "sketch": true
+    }],
+    ["shading-study", {
+        "title": "Shading Study",
+        "medium": "Graphite",
+        "date": {
+            "year": 2021,
+            "month": 3,
+            "order": 1
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 1,
+        "sketch": true
+    }],
+    ["pooh-tunisian", {
+        "title": "Pooh & Friends Tunisian Crochet Tapestry",
+        "medium": "Yarn",
+        "dimensions": "W56 x H56 cm",
+        "date": {
+            "year": 2018,
+            "month": 4
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 1
+    }],
+    ["eeveelutions-tunisian", {
+        "title": "Eeveelutions Tunisian Crochet Tapestry",
+        "medium": "Yarn",
+        "dimensions": "W26 x H27 cm",
+        "date": {
+            "year": 2019,
+            "month": 8
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 1
+    }],
+    ["hand-figure-study", {
+        "title": "Hand Figure Study",
+        "medium": "Grahite",
+        "date": {
+            "year": 2021,
+            "month": 9
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 1,
+        "sketch": true
+    }],
+    ["paper-study", {
+        "title": "Paper Study",
+        "medium": "Charcoal",
+        "date": {
+            "year": 2021,
+            "month": 10
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 1,
+        "sketch": true
+    }],
+    ["meat-collage", {
+        "title": "Jaws of Merchandise",
+        "medium": "Collage",
+        "date": {
+            "year": 2021,
+            "month": 11
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 1,
+        "sketch": true
+    }],
+    ["graphite-sketch-study", {
+        "title": "Graphite Sketch Study",
+        "medium": "Graphite",
+        "date": {
+            "year": 2021,
+            "month": 12
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 1,
+        "sketch": true
+    }],
+    ["coloured-pencil-landscape-study", {
+        "title": "Landscape Study",
+        "medium": "Coloured Pencil",
+        "date": {
+            "year": 2022,
+            "month": 2
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 1,
+        "sketch": true
+    }],
+    ["pegasus-study", {
+        "title": "Pegasus Study",
+        "medium": "Graphite",
+        "date": {
+            "year": 2022,
+            "month": 4
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 1,
+        "sketch": true
+    }],
+    ["cyanotype-world", {
+        "title": "Country Everlasting",
+        "medium": "Cyanotype, Yarn",
+        "dimensions": "W21 x H49 cm",
+        "date": {
+            "year": 2022,
+            "month": 6
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 3
+    }],
+    ["paint-landscape-study-1", {
+        "title": "Landscape Study 1",
+        "medium": "Acrylic Paint",
+        "date": {
+            "year": 2022,
+            "month": 7,
+            "order": 1
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 1,
+        "sketch": true
+    }],
+    ["paint-triceratops-study", {
+        "title": "Triceratops Study",
+        "medium": "Acrylic Paint",
+        "date": {
+            "year": 2022,
+            "month": 7,
+            "order": 2
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 1,
+        "sketch": true
+    }],
+    ["paint-sunflowers", {
+        "title": "Aging of Cut Sunflowers",
+        "medium": "Acrylic Paint",
+        "date": {
+            "year": 2022,
+            "month": 8
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 1
+    }],
+    ["ceramic-fushu", {
+        "title": "Ancient Garden",
+        "medium": "Ceramics, Lace, Wire, Pebbles",
+        "date": {
+            "year": 2023,
+            "month": 3
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 7
+    }],
+    ["mixed-media", {
+        "title": "Missing Documents",
+        "medium": "Mixed Media, Linoleum Print",
+        "dimensions": "W20 x H25 cm each",
+        "date": {
+            "year": 2023,
+            "month": 4
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 9
+    }],
+    ["paint-landscape-study-2", {
+        "title": "Landscape Study 2",
+        "medium": "Acrylic Paint",
+        "date": {
+            "year": 2023,
+            "month": 7
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 1,
+        "sketch": true
+    }],
+    ["dq-erdwin-serenica", {
+        "title": "Dragon Quest &mdash; Erdwin & Serenica",
+        "medium": "Graphite",
+        "date": {
+            "year": 2020,
+            "month": 3,
+            "order": 1
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 1
+    }],
+    ["dq-erik", {
+        "title": "Dragon Quest &mdash; Erik",
+        "medium": "Graphite",
+        "date": {
+            "year": 2020,
+            "month": 3,
+            "order": 2
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 1
+    }],
+    ["dq-veronica-serena", {
+        "title": "Dragon Quest &mdash; Veronica & Serena",
+        "medium": "Graphite",
+        "date": {
+            "year": 2020,
+            "month": 3,
+            "order": 3
+        },
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique reprehenderit eum totam sint rem aliquid libero iure iusto ducimus minus perspiciatis harum, vel veniam, est consequatur adipisci soluta, ut aspernatur.",
+        "layer-count": 1
     }]
 ]
